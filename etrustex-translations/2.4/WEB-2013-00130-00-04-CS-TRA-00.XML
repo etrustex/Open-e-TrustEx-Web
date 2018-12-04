@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>cs</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx Screen 1</hd_short_title>
+		<hd_long_title>eTrustEx Screen 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>20/12/2013</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx Screen 1</ipg_title>
+			<ipg_creator>DIGIT.B.1.001</ipg_creator>
+			<ipg_language>cs</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.custom">Speciální náhled</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageParty">Party</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.notifications">E-mailové upozornění</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.accessRights">Seznam uživatelů</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyAdmins">Party Administrators</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyOperators">Party Operators</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.addUser">Přidat uživatele</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.administration">Správa</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.name">Jméno</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.login">Uživatelské jméno</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.email">E-mailová adresa</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.addUserDialogTitle">Přidat uživatele</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.cancel">Zrušit</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="error.admin.mandatoryFields">Nebyly zadány všechny povinné údaje</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.confirmDeleteText">Chcete opravdu tuto roli uživatele odstranit?</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.delete">Odstranit</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.deleteUserRoleAssignment">Odstranit roli uživatele</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.sendNotificationTo">Zaslat oznámení do funkční e-mailové schránky</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

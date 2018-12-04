@@ -1,0 +1,8 @@
+#if($messageMstStatus == "AVAILABLE")
+    #set($subject = 'e-TrustEx - Upload notification')
+#elseif ($messageMstStatus == "FAILED")
+    #set($subject = 'e-TrustEx - Upload failure notification')
+#else
+    #set($subject = 'New ' + ($messageMstStatus) + ' status received in e-TrustEx for message ' + ($messageTitle))
+#end
+$subject

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-web-app xmlns="http://xmlns.oracle.com/weblogic/weblogic-web-app"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-web-app
+	http://xmlns.oracle.com/weblogic/weblogic-web-app/1.4/weblogic-web-app.xsd">
+	<!-- <container-descriptor> <prefer-web-inf-classes>true</prefer-web-inf-classes> 
+		</container-descriptor> <jsp-descriptor> <precompile>false</precompile> </jsp-descriptor> -->
+
+
+	<!-- We want to allow some resources to be accessed by authenticated users 
+		who do not possess any role -->
+	<session-descriptor>
+		<cookie-path>/${context.root}</cookie-path>
+        <cookie-name>ETX_JSID</cookie-name>
+	</session-descriptor>
+
+	<container-descriptor>
+		<filter-dispatched-requests-enabled>true</filter-dispatched-requests-enabled>
+        <prefer-web-inf-classes>false</prefer-web-inf-classes>
+		<allow-all-roles>true</allow-all-roles>
+
+        <prefer-application-resources>
+            <resource-name>META-INF/services/*</resource-name>
+        </prefer-application-resources>
+
+        <prefer-application-packages>
+            <package-name>javassist</package-name>
+            <package-name>javax.jws.*</package-name>
+            <package-name>javax.ws.rs.*</package-name>
+            <package-name>antlr</package-name>
+            <package-name>org.aspectj</package-name>
+            <package-name>org.dom4j</package-name>
+            <package-name>net.sf.ehcache</package-name>
+            <package-name>org.apache.log4j</package-name>
+        </prefer-application-packages>
+
+    </container-descriptor>
+
+	<context-root>${context.root}</context-root>
+
+
+    <!-- Commented out to allow hot replace of jsp and js files
+	<jsp-descriptor>
+		<page-check-seconds>-1</page-check-seconds>
+		<precompile>true</precompile>
+		<precompile-continue>true</precompile-continue>
+		<optimize-java-expression>true</optimize-java-expression>
+	</jsp-descriptor>
+	-->
+
+</weblogic-web-app>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>fi</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx -näyttö 1</hd_short_title>
+        <hd_long_title>eTrustEx -näyttö 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx -näyttö 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>fi</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Osoite</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Tallennettu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Tiedostoluettelo</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Yrityksen kansallinen rekisteröintinumero</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Tietojen viite</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Tiedoston viite</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Viestiluonnos on tallennettu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Viestiluonnoksen tallennus epäonnistui</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Vastaanotettu viesti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Kilpailunrajoitukset</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Sulautuma</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Valtiontuki</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Horisontaalinen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Poista</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Haluatko varmasti peruuttaa tämän viestin?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Haluatko varmasti peruuttaa tämän viestiluonnoksen?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Kenttä &quot;Asia&quot; on pakollinen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Kenttä &quot;Maa&quot; on täytettävä, jos &quot;Organisaation nimi&quot; -kenttä on täytetty</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Kenttä &quot;Yrityksen kansallinen rekisteröintinumero&quot; on täytettävä, jos &quot;Organisaation nimi&quot; -kenttä on täytetty</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Kenttä &quot;Yhteyshenkilö&quot; on pakollinen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Kenttä &quot;Väline – Viestin tiedot&quot; on pakollinen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Ei kommentteja</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

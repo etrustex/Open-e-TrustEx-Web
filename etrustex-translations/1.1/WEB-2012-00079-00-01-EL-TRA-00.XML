@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>el</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>16/04/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>el</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Όλοι οι φάκελοι</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Νέο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Ανανέωση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">των</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">εισερχομένων</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Σχέδιο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.folder">Φάκελος</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Όλα</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Μη αναγνωσμένο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Μήνυμα</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.download">Τηλεφόρτωση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Μεταδεδομένα</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Απεικόνιση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Επίσημη ηλεκτρονική έκδοση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outbox">Εξερχόμενα</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.created">Δημιουργήθηκε</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxDossierView">Εμφάνιση φακέλου</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandardView">Κανονική εμφάνιση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload">Τηλεφόρτωση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Τηλεφορτώθηκε</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Αποστολή</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Αποθήκευση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Ημερομηνία έγκρισης</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Τμήμα</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.edmaView">Εμφάνιση EDMA</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComment">Καμία παρατήρηση</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

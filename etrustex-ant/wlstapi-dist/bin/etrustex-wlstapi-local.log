@@ -1,0 +1,75 @@
+<28-Sep-2017 13:39:54 o'clock CEST> <Info> <Default> <BEA-000000> <WLST-API version 1.8.1 (build 237) running script [import.py]> 
+<28-Sep-2017 13:39:54 o'clock CEST> <Info> <Default> <BEA-000000> <Running with Weblogic version 12.1.3 located at [C:/Pgm/dev/app/servers/WL_12.1.3/wlserver]> 
+<28-Sep-2017 13:39:56 o'clock CEST> <Warning> <Default> <BEA-000000> <Realm is not set. The default realm will be used.> 
+<28-Sep-2017 13:39:56 o'clock CEST> <Info> <Default> <BEA-000000> <Creating group [USER-REGISTRATION-SERVICE-GROUP]> 
+<28-Sep-2017 13:39:56 o'clock CEST> <Warning> <Default> <BEA-000000> <Realm is not set. The default realm will be used.> 
+<28-Sep-2017 13:39:56 o'clock CEST> <Info> <Default> <BEA-000000> <Creating group [NODE-SERVICE-GROUP]> 
+<28-Sep-2017 13:39:56 o'clock CEST> <Warning> <Default> <BEA-000000> <Realm is not set. The default realm will be used.> 
+<28-Sep-2017 13:39:56 o'clock CEST> <Info> <Default> <BEA-000000> <Creating user 'REGISTRATION-SERVICE-EDMA-USER'> 
+<28-Sep-2017 13:39:56 o'clock CEST> <Warning> <Default> <BEA-000000> <Realm is not set. The default realm will be used.> 
+<28-Sep-2017 13:39:56 o'clock CEST> <Info> <Default> <BEA-000000> <Creating user 'ETX-NODE-SERVICE-USER'> 
+<28-Sep-2017 13:39:56 o'clock CEST> <Warning> <Default> <BEA-000000> <Realm is not set. The default realm will be used.> 
+<28-Sep-2017 13:39:56 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning group [USER-REGISTRATION-SERVICE-GROUP] to user [REGISTRATION-SERVICE-EDMA-USER]> 
+<28-Sep-2017 13:39:56 o'clock CEST> <Warning> <Default> <BEA-000000> <Realm is not set. The default realm will be used.> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning group [NODE-SERVICE-GROUP] to user [ETX-NODE-SERVICE-USER]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Creating data source [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Setting JNDI name for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Adding targets [AdminServer] to MBean [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Setting data source parameters [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Setting transaction protocol for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Setting transaction protocol for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Setting scope option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Setting stream chunk size option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Setting algorithm type option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Setting connection pool parameters for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Setting capcity increment option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Setting inactive connection timeout option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:57 o'clock CEST> <Info> <Default> <BEA-000000> <Setting initial capacity option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Setting max capcity option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Setting test connection on reserve option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Setting secondsToTrustAnIdlePoolConnection option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Setting connection reserve timeout option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Setting data source driver parameters [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Setting JDBC driver name option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Setting JDBC Url connection option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Setting JDBC credentials option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Setting JDBC transaction mode option for datasource [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Setting data source XA parameters [EtxWebJdbcDataSource]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Creating mail session [EtxWebMailSession]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Adding targets [AdminServer] to MBean [EtxWebMailSession]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Creating file store [EtxWebFileStore]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Adding targets [AdminServer] to MBean [EtxWebFileStore]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Creating JMS server [EtxWebJMSServer]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Adding targets [AdminServer] to MBean [EtxWebJMSServer]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Creating Jms system resource [EtxWebJMSSystemModule]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Adding targets [AdminServer] to MBean [EtxWebJMSSystemModule]> 
+<28-Sep-2017 13:39:58 o'clock CEST> <Info> <Default> <BEA-000000> <Create subdeployment [EtxWebJMSSubDeployment] for resource name [EtxWebJMSSystemModule]> 
+<28-Sep-2017 13:39:59 o'clock CEST> <Info> <Default> <BEA-000000> <Adding targets [EtxWebJMSServer] to MBean [EtxWebJMSSubDeployment]> 
+<28-Sep-2017 13:39:59 o'clock CEST> <Info> <Default> <BEA-000000> <Creating JMS connection factory [EtxWebJMSConnectionFactory] for jms module [EtxWebJMSSystemModule]> 
+<28-Sep-2017 13:39:59 o'clock CEST> <Info> <Default> <BEA-000000> <Creating queue [EtxWebMailJMSQueue]> 
+<28-Sep-2017 13:39:59 o'clock CEST> <Info> <Default> <BEA-000000> <Creating queue [EtxWebJMSErrorQueue]> 
+<28-Sep-2017 13:39:59 o'clock CEST> <Info> <Default> <BEA-000000> <Creating queue [EtxWebRetrieveMetadataJMSQueue]> 
+<28-Sep-2017 13:39:59 o'clock CEST> <Info> <Default> <BEA-000000> <Creating queue [EtxWebRetrieveBundleJMSQueue]> 
+<28-Sep-2017 13:39:59 o'clock CEST> <Info> <Default> <BEA-000000> <Creating queue [EtxWebSendStatusJMSQueue]> 
+<28-Sep-2017 13:39:59 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning error queue [EtxWebJMSErrorQueue] to resource [EtxWebMailJMSQueue]> 
+<28-Sep-2017 13:39:59 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning redelivery limit to resource [EtxWebMailJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning delivery params override to resource [EtxWebMailJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning message logging to resource [EtxWebMailJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning redelivery limit to resource [EtxWebJMSErrorQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning delivery params override to resource [EtxWebJMSErrorQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning message logging to resource [EtxWebJMSErrorQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning error queue [EtxWebJMSErrorQueue] to resource [EtxWebRetrieveMetadataJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning redelivery limit to resource [EtxWebRetrieveMetadataJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning delivery params override to resource [EtxWebRetrieveMetadataJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning message logging to resource [EtxWebRetrieveMetadataJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning error queue [EtxWebJMSErrorQueue] to resource [EtxWebRetrieveBundleJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning redelivery limit to resource [EtxWebRetrieveBundleJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning delivery params override to resource [EtxWebRetrieveBundleJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning message logging to resource [EtxWebRetrieveBundleJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning error queue [EtxWebJMSErrorQueue] to resource [EtxWebSendStatusJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning redelivery limit to resource [EtxWebSendStatusJMSQueue]> 
+<28-Sep-2017 13:40:00 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning delivery params override to resource [EtxWebSendStatusJMSQueue]> 
+<28-Sep-2017 13:40:01 o'clock CEST> <Info> <Default> <BEA-000000> <Assigning message logging to resource [EtxWebSendStatusJMSQueue]> 
+<28-Sep-2017 13:45:02 o'clock CEST> <Error> <Default> <BEA-000000> <Unable to save script
+Error occurred while performing activate : Error while Activating changes. : Timed out waiting for completion:  Activate State: STATE_DISTRIBUTING 
+Use dumpStack() to view the full stacktrace :> 

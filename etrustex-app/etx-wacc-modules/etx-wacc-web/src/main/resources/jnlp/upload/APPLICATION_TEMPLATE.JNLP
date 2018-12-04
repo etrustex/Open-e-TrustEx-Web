@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.5" codebase="@jnlp.arguments.href@/applet">
+    <information>
+        <title>@jnlp.title@</title>
+        <vendor>@jnlp.vendor@</vendor>
+        <description>@jnlp.description@</description>
+        <homepage href="@jnlp.arguments.href@"></homepage>
+        <icon href="images/etrustex_logo_64x64.gif" width="64" height="64" />
+        <icon href="images/etrustex_splash.png" kind="splash"/>
+    </information>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <j2se version="@project.java.version@+" href="http://java.sun.com/products/autodl/j2se"/>
+        <property name="jnlp.packEnabled" value="true" />
+        <jar href="etx-wacc-webstart-upload-@eTrustEx.version@.jar" main="true"/>
+        <jar href="etx-wacc-webstart-common-@eTrustEx.version@.jar"/>
+        <jar href="etx-wacc-model-@eTrustEx.version@.jar" />
+        <jar href="etx-wacc-utils-@eTrustEx.version@.jar" />
+        <jar href="etx-wacc-security-@eTrustEx.version@.jar" />
+        <jar href="etx-wacc-node-api-@eTrustEx.version@.jar" />
+        <jar href="log4j-@log4j.logger.version@.jar" />
+        <jar href="slf4j-api-@slf4j.logger.version@.jar" />
+        <jar href="cxf-core-@apache.cxf.version@.jar" />
+        <jar href="cxf-rt-frontend-simple-@apache.cxf.version@.jar" />
+        <jar href="cxf-rt-rs-client-@apache.cxf.version@.jar" />
+        <jar href="cxf-rt-frontend-jaxrs-@apache.cxf.version@.jar" />
+        <jar href="cxf-rt-transports-http-@apache.cxf.version@.jar" />
+        <jar href="javax.ws.rs-api-@javax.ws.rs.api.version@.jar" />
+        <jar href="bcpkix-jdk15on-@bouncycastle.version@.jar" />
+        <jar href="bcprov-jdk15on-@bouncycastle.version@.jar" />
+        <jar href="xades4j-@xades4j.version@.jar" />
+        <jar href="guice-@com.google.inject.version@.jar" />
+        <jar href="guice-multibindings-@com.google.inject.version@.jar" />
+        <jar href="javax.inject-@javax.inject.version@.jar" />
+        <jar href="aopalliance-@aopalliance.version@.jar" />
+        <jar href="xmlsec-@xmlsec.version@.jar" />
+        <jar href="commons-logging-@commons.logging.version@.jar" />
+        <jar href="guava-19.0.jar" />
+        <jar href="gson-2.8.0.jar"/>
+        <!--spring websocket dependencies-->
+        <jar href="spring-aop-@spring.framework.version@.jar"/>
+        <jar href="spring-beans-@spring.framework.version@.jar"/>
+        <jar href="spring-context-@spring.framework.version@.jar"/>
+        <jar href="spring-core-@spring.framework.version@.jar"/>
+        <jar href="spring-expression-@spring.framework.version@.jar"/>
+        <jar href="spring-websocket-@spring.framework.version@.jar"/>
+        <jar href="spring-web-@spring.framework.version@.jar"/>
+        <jar href="spring-messaging-@spring.framework.version@.jar"/>
+        <jar href="websocket-client-@jetty.websocket.client.version@.jar"/>
+        <jar href="websocket-api-@jetty.websocket.client.version@.jar"/>
+        <jar href="websocket-common-@jetty.websocket.client.version@.jar"/>
+        <jar href="jetty-io-@jetty.websocket.client.version@.jar"/>
+        <jar href="jetty-util-@jetty.websocket.client.version@.jar"/>
+        <jar href="jackson-annotations-@fasterxml.jackson.version@.jar"/>
+        <jar href="jackson-core-@fasterxml.jackson.version@.jar"/>
+        <jar href="jackson-databind-@fasterxml.jackson.version@.jar"/>
+        <jar href="javax.json-@javax.json.version@.jar"/>
+        <jar href="spring-jdbc-@spring.framework.version@.jar" />
+        <jar href="spring-orm-@spring.framework.version@.jar" />
+        <jar href="spring-tx-@spring.framework.version@.jar" />
+        <jar href="spring-webmvc-@spring.framework.version@.jar" />
+        <!--ECAS-->
+        <jar href="ecas-desktop-@ecas.desktop.client.version@.jar"/>
+        <jar href="ecas-desktop-windows-@ecas.desktop.client.version@.jar"/>
+        <property name="jnlp.versionEnabled" value="true"/>
+    </resources>
+    <application-desc  main-class="eu.europa.ec.etrustex.webaccess.webstart.upload.UploadWebstartApp"
+                  name="@jnlp.title@"
+                  width="700" height="295">
+        <argument>@jnlp.arguments.ica.details@</argument>
+        <argument>@jnlp.arguments.encoded.files@</argument>
+        <argument>@jnlp.arguments.local.party.id@</argument>
+        <argument>@jnlp.arguments.business@</argument>
+        <argument>true</argument>
+        <argument>false</argument>
+        <argument>@jnlp.arguments.locale.code@</argument>
+        <argument>@jnlp.arguments.lookup.fails.flag@</argument>
+        <argument>@jnlp.arguments.token@</argument>
+        <argument>@jnlp.arguments.retention.expired@</argument>
+        <argument>@jnlp.arguments.retention.expired.message@</argument>
+        <argument>@jnlp.arguments.href@/</argument>
+        <argument>@jnlp.arguments.session.id@</argument>
+        <argument>@jnlp.arguments.message.subject@</argument>
+        <argument>@jnlp.arguments.business.folder.structure.enabled@</argument>
+    </application-desc>
+    <update check="background"/>
+</jnlp>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>hu</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx 1. képernyő</hd_short_title>
+		<hd_long_title>eTrustEx 1. képernyő</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>03/12/2014</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx 1. képernyő</ipg_title>
+			<ipg_creator>DIGIT.B.2.001</ipg_creator>
+			<ipg_language>hu</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageBusiness">Business</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageSystemUsers">Rendszer</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.administrators">Adminisztrátorok</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyOperators">Üzemeltetők</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.editUserDialogTitle">Felhasználó adatainak szerkesztése</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.user.role">Szerep</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.administrator">Adminisztrátor</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.operator">Üzemeltető</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired.on">A mellékletek a következő időponttól kezdve nem állnak rendelkezésre: {0}</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired">A mellékletek a(z) {0} hetes megőrzési időszak letelte miatt már nem állnak rendelkezésre.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataFailure">A rendszer nem tudja megjeleníteni az üzenettel kapcsolatos információkat. Kérjen technikai segítséget.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataNotReady">A rendszer jelenleg nem tudja letölteni az üzenettel kapcsolatos információkat. Kérjük, próbálkozzon újra néhány perc múlva.</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

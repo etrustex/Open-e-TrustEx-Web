@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>da</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>da</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Adresse</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Gemt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Filer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Virksomhedens nationale registreringsnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Oplysningsreference</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Filreference</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Udkastet er gemt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Udkastet blev ikke gemt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Modtaget besked</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Antitrust</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Fusion</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Statsstøtte</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Horisontal</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Slet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Er du sikker på, at du vil slette denne besked?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Er du sikker på, at du vil slette udkastet?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Feltet Emne skal udfyldes</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Feltet Land skal udfyldes, hvis feltet Organisationens navn er udfyldt </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Feltet 	Virksomhedens nationale registreringsnummer skal udfyldes, hvis feltet Organisationens navn er udfyldt </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Feltet Kontaktperson skal udfyldes</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Feltet Meddelelsesoplysningsinstrument skal udfyldes</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Ingen bemærkninger</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

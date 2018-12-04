@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>hu</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx 1. képernyő</hd_short_title>
+		<hd_long_title>eTrustEx 1. képernyő</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>29/03/2013</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx 1. képernyő</ipg_title>
+			<ipg_creator>DIGIT.B.1.001</ipg_creator>
+			<ipg_language>hu</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandard">Normál nézet</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxGroupByDossier">Dosszié szerint csoportosítva</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.Dossier">Dossziénézet</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Az üzenetet a rendszer elmentette üzenetvázlatként</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Kérjük, adja meg az üzenet tárgyát</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Ha Ön kitöltötte a „Szervezet neve” mezőt, országnevet is meg kell adnia.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Ha Ön kitöltötte a „Szervezet neve” mezőt, nemzeti cégnyilvántartási számot is meg kell adnia.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Kérjük, adja meg a kapcsolattartó személy nevét</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Kérjük, válasszon eszközt az „Információk az üzenetről” rovatban.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Az üzenet elküldése nem sikerült.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Címzett</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Üzenetek</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.party">Party</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://publications.europa.eu/resource/resourcetypes/"><xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:documentation>Version: CM-02.11-2012-11-22</xs:documentation>
+</xs:annotation>
+<xs:simpleType xmlns:xs="http://www.w3.org/2001/XMLSchema" name="t_resource-type">
+   <xs:restriction base="xs:string">
+      <xs:enumeration value="ACKNOWLEDGE_RECP"><!--Acknowledgement receipt--></xs:enumeration>
+      <xs:enumeration value="AMEND_PROP"><!--Amended proposal--></xs:enumeration>
+      <xs:enumeration value="AMEND_PROP_DEC"><!--Amended proposal for a decision--></xs:enumeration>
+      <xs:enumeration value="AMEND_PROP_DIR"><!--Amended proposal for a directive--></xs:enumeration>
+      <xs:enumeration value="AMEND_PROP_REG"><!--Amended proposal for a regulation--></xs:enumeration>
+      <xs:enumeration value="ANNEX"><!--Annex--></xs:enumeration>
+      <xs:enumeration value="ANNEX_SUM"><!--Annex summary--></xs:enumeration>
+      <xs:enumeration value="COMMUNIC"><!--Communication--></xs:enumeration>
+      <xs:enumeration value="COMMUNIC_POSIT"><!--Communication concerning the position of the Council--></xs:enumeration>
+      <xs:enumeration value="CORRIGENDUM"><!--Corrigendum--></xs:enumeration>
+      <xs:enumeration value="DATPRO"><!--Provisional data--></xs:enumeration>
+      <xs:enumeration value="DEC"><!--Decision--></xs:enumeration>
+      <xs:enumeration value="DEC_DEL"><!--Delegated decision--></xs:enumeration>
+      <xs:enumeration value="DEC_DRAFT"><!--Draft decision--></xs:enumeration>
+      <xs:enumeration value="DEC_IMPL"><!--Implementing decision--></xs:enumeration>
+      <xs:enumeration value="DIR"><!--Directive--></xs:enumeration>
+      <xs:enumeration value="DIR_DEL"><!--Delegated directive--></xs:enumeration>
+      <xs:enumeration value="DIR_DRAFT"><!--Draft directive--></xs:enumeration>
+      <xs:enumeration value="DIR_IMPL"><!--Implementing directive--></xs:enumeration>
+      <xs:enumeration value="IMPACT_ASSESS"><!--Impact assessment--></xs:enumeration>
+      <xs:enumeration value="IMPACT_ASSESS_SUM"><!--Summary of impact assessment--></xs:enumeration>
+      <xs:enumeration value="JOINT_COMMUNIC"><!--Joint communication--></xs:enumeration>
+      <xs:enumeration value="JOINT_IMPACT_ASSESS"><!--Joint impact assessment--></xs:enumeration>
+      <xs:enumeration value="JOINT_IMPACT_ASSESS_SUM"><!--Joint impact assessment summary--></xs:enumeration>
+      <xs:enumeration value="JOINT_PAPER_GREEN"><!--Joint green paper--></xs:enumeration>
+      <xs:enumeration value="JOINT_PAPER_WHITE"><!--Joint white paper--></xs:enumeration>
+      <xs:enumeration value="JOINT_PROP_DEC"><!--Joint proposal for a decision--></xs:enumeration>
+      <xs:enumeration value="JOINT_PROP_DIR"><!--Joint proposal for a directive--></xs:enumeration>
+      <xs:enumeration value="JOINT_PROP_REG"><!--Joint proposal for a regulation--></xs:enumeration>
+      <xs:enumeration value="JOINT_REPORT"><!--Joint report--></xs:enumeration>
+      <xs:enumeration value="JOINT_SWD"><!--Joint staff working document--></xs:enumeration>
+      <xs:enumeration value="NOTIF"><!--Notification--></xs:enumeration>
+      <xs:enumeration value="OPIN"><!--Opinion--></xs:enumeration>
+      <xs:enumeration value="OPIN_AMEND_EP"><!--Opinion on the European Parliament's amendments--></xs:enumeration>
+      <xs:enumeration value="PAPER_GREEN"><!--Green paper--></xs:enumeration>
+      <xs:enumeration value="PAPER_WHITE"><!--White paper--></xs:enumeration>
+      <xs:enumeration value="PROP_DEC"><!--Proposal for a decision--></xs:enumeration>
+      <xs:enumeration value="PROP_DEC_IMPL"><!--Proposal for an implementing decision--></xs:enumeration>
+      <xs:enumeration value="PROP_DIR"><!--Proposal for a directive--></xs:enumeration>
+      <xs:enumeration value="PROP_DIR_IMPL"><!--Proposal for an implementing directive--></xs:enumeration>
+      <xs:enumeration value="PROP_RECO"><!--Proposal for a recommendation--></xs:enumeration>
+      <xs:enumeration value="PROP_REG"><!--Proposal for a regulation--></xs:enumeration>
+      <xs:enumeration value="PROP_REG_IMPL"><!--Proposal for an implementing regulation--></xs:enumeration>
+      <xs:enumeration value="RECO"><!--Recommendation--></xs:enumeration>
+      <xs:enumeration value="RECO_DEC"><!--Recommendation for a decision--></xs:enumeration>
+      <xs:enumeration value="RECO_OPIN"><!--Recommendation for an opinion--></xs:enumeration>
+      <xs:enumeration value="RECO_RECO"><!--Recommendation for a recommendation--></xs:enumeration>
+      <xs:enumeration value="REFERRAL_LET"><!--Referral letter--></xs:enumeration>
+      <xs:enumeration value="REG"><!--Regulation--></xs:enumeration>
+      <xs:enumeration value="REG_DEL"><!--Delegated regulation--></xs:enumeration>
+      <xs:enumeration value="REG_IMPL"><!--Implementing regulation--></xs:enumeration>
+      <xs:enumeration value="REPLY_OPIN_NP"><!--Reply to national Parliaments' opinion--></xs:enumeration>
+      <xs:enumeration value="REPORT"><!--Report--></xs:enumeration>
+      <xs:enumeration value="REPORT_AAR"><!--Annual activity report--></xs:enumeration>
+      <xs:enumeration value="REPORT_ANNUAL_DAS"><!--Annual report with the statement of assurance--></xs:enumeration>
+      <xs:enumeration value="REPORT_ANNUAL_EDF"><!--Annual report on the activities funded by the European Development Fund--></xs:enumeration>
+      <xs:enumeration value="RES_LEGIS"><!--Legislative resolution--></xs:enumeration>
+      <xs:enumeration value="SWD"><!--Staff working document--></xs:enumeration>
+      <xs:enumeration value="VIEWPOINT"><!--Viewpoint--></xs:enumeration>
+      <xs:enumeration value="WORK_DOC"><!--Working document--></xs:enumeration>
+   </xs:restriction>
+</xs:simpleType></xs:schema>

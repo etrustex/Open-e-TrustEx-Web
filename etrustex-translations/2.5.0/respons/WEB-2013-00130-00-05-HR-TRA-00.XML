@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>hr</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx zaslon 1</hd_short_title>
+		<hd_long_title>eTrustEx zaslon 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>03/12/2014</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx zaslon 1</ipg_title>
+			<ipg_creator>DIGIT.B.2.001</ipg_creator>
+			<ipg_language>hr</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageBusiness">Business</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageSystemUsers">Sustav</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.administrators">Administratori</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyOperators">Operatori</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.editUserDialogTitle">Uredi korisnika</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.user.role">Uloga</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.administrator">Administrator</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.operator">Operator</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired.on">Prilozi će isteći {0}</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired">Prilozi su istekli zbog politike zadržavanja od {0} tjedana.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataFailure">Sustav ne može prikazati informacije o poruci. Obratite se svojoj službi za podršku.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataNotReady">Sustav trenutačno ne može preuzeti informacije o poruci. Pokušajte ponovno za nekoliko minuta.</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

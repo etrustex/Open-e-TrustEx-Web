@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="ec:services:wsdl:DocumentBundle-2"
+	xmlns:dbl="ec:schema:xsd:DocumentBundle-1" xmlns:ack="ec:schema:xsd:Ack-2"
+	xmlns:eccac="ec:schema:xsd:CommonAggregateComponents-2" xmlns:fault="urn:oasis:names:specification:ubl:schema:xsd:Fault-1"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="DocumentBundle"
+	targetNamespace="ec:services:wsdl:DocumentBundle-2">
+	<wsdl:types>
+		<xsd:schema targetNamespace="ec:services:wsdl:DocumentBundle-2"
+			elementFormDefault="qualified">
+			<xsd:import namespace="ec:schema:xsd:DocumentBundle-1"
+				schemaLocation="../xsd/maindoc/EC-DocumentBundle-1.0.xsd" />
+			<xsd:import namespace="ec:schema:xsd:Ack-2"
+				schemaLocation="../xsd/maindoc/EC-Ack-2.0.xsd" />
+			<xsd:import namespace="ec:schema:xsd:CommonAggregateComponents-2"
+				schemaLocation="../xsd/custom/EC-CommonAggregateComponents-2.0.xsd" />
+			<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:Fault-1"
+				schemaLocation="../xsd/maindoc/EC-Fault-1.0.xsd" />
+			<xsd:element name="SubmitDocumentBundleRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DocumentBundle" type="dbl:DocumentBundleType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SubmitDocumentBundleResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Ack" type="ack:AcknowledgmentType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Header" type="eccac:HeaderType" />
+			<xsd:element name="Fault" type="fault:FaultType" />
+		</xsd:schema>
+	</wsdl:types>
+	<message name="submitDocumentBundleRequest">
+		<part name="SubmitDocumentBundleRequest" element="tns:SubmitDocumentBundleRequest" />
+		<part name="Header" element="tns:Header" />
+	</message>
+	<message name="submitDocumentBundleResponse">
+		<part name="SubmitDocumentBundleResponse" element="tns:SubmitDocumentBundleResponse" />
+		<part name="Header" element="tns:Header" />
+	</message>
+	<message name="FaultResponse">
+		<part name="FaultResponse" element="tns:Fault" />
+	</message>
+	<portType name="documentBundlePortType">
+		<operation name="submitDocumentBundle">
+			<input message="tns:submitDocumentBundleRequest" />
+			<output message="tns:submitDocumentBundleResponse" />
+			<fault name="FaultResponse" message="tns:FaultResponse" />
+		</operation>
+	</portType>
+	<binding name="documentBundleBinding" type="tns:documentBundlePortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsaw:UsingAddressing wsdl:required="false" />
+		<operation name="submitDocumentBundle">
+			<input>
+				<soap:body parts="SubmitDocumentBundleRequest" use="literal" />
+				<soap:header message="tns:submitDocumentBundleRequest"
+					part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse"
+						part="FaultResponse" use="literal" />
+				</soap:header>
+			</input>
+			<output>
+				<soap:body parts="SubmitDocumentBundleResponse" use="literal" />
+				<soap:header message="tns:submitDocumentBundleResponse"
+					part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse"
+						part="FaultResponse" use="literal" />
+				</soap:header>
+			</output>
+			<fault name="FaultResponse">
+				<soap:fault name="FaultResponse" use="literal" />
+			</fault>
+		</operation>
+	</binding>
+	<service name="documentBundleService">
+		<port name="documentBundlePort" binding="tns:documentBundleBinding">
+			<soap:address location="http://localhost:18181/documentBundleService/documentBundlePort"/>
+		</port>
+	</service>
+</definitions>

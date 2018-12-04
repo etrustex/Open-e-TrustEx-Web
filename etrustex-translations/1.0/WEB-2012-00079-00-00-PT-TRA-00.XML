@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>pt</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>pt</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Sessão iniciada como</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Informação da mensagem</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Documento</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Confidencial</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Observações ao documento</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Anular</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Enviar mensagem</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Guardar como rascunho</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Caixa de entrada / dossiês
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">De</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Enviado</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Recebido</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Filtro de mensagens</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Limpar filtros</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Rascunho da mensagem</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Caixa de entrada / mensagens</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Encerrar sessão</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">A sua sessão foi encerrada</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Voltar às mensagens</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Descarregar os ficheiros
+                    selecionados
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Encerrar sessão</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">A mensagem foi enviada!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">A mensagem não foi enviada!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Erro! A mensagem não foi
+                    guardada.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Erro! O anexo não foi carregado.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Erro! A mensagem não foi
+                    guardada.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">O campo «instrumento» é de
+                    preenchimento obrigatório.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">O campo «país» deve ser
+                    preenchido se o campo «nome da empresa» ficar vazio.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">O campo «número nacional de
+                    registo» deve ser preenchido se o campo «nome da empresa» ficar vazio.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">O campo «país» é de
+                    preenchimento obrigatório
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">O campo &quot;pessoa de
+                    contacto&quot; é de preenchimento obrigatório
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">O campo «organização»
+                    é de preenchimento obrigatório
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">O campo «assunto» é de preenchimento
+                    obrigatório
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Selecione o ficheiro que
+                    pretende carregar
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Ficheiros em anexo</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Rascunhos</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Mensagens enviadas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Dossiê:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Assunto</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Anexos</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Criados em</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Mensagem</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Enviada em</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Recebida em</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Texto da mensagem</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Primeira</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Anterior</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Seguinte</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Última</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Topo</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Mensagens</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Dossiês</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Página inicial</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Redigir mensagem</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">À atenção de</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Assunto</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Ficheiros ainda não anexados</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Ficheiros anexados (clicar para remover)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Anexar ficheiro</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Carregar ficheiros</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Conteúdo</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Campos (metadados)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Dados do remetente</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Nome da organização</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Número de registo</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Pessoa de contacto</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Posição</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefone</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">Endereço eletrónico (email)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Rua</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Código postal</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Localidade</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">País</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Nome da empresa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">Em nome de</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Observações</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">À atenção de</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Instrumento</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Número do ficheiro</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Número de identificação</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">A data de receção indicada no
+                    campo «filtro» não está no formato correto (aaaa-mm-dd)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">A data de envio indicada no
+                    campo «filtro» não está no formato correto (aaaa-mm-dd)
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

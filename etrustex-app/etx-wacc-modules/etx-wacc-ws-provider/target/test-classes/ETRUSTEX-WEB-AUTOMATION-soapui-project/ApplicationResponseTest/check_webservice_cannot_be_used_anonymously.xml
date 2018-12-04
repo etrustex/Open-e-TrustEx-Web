@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="aa6d4321-cd50-4d9f-8d6d-1f4261d155eb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="check_webservice_cannot_be_used_anonymously" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="566f4206-3ede-45d7-a8ba-8e0fb19b1aa3fileName">APPLICATION_RESPONSE</con:setting><con:setting id="4ab77afa-b8d8-48a9-a2cf-6c702e920fc7fileName">check_webservice_cannot_be_used_anonymously</con:setting><con:setting id="aa6d4321-cd50-4d9f-8d6d-1f4261d155ebfileName">check_webservice_cannot_be_used_anonymously</con:setting></con:settings><con:testStep type="groovy" name="submit_check_webservice_cannot_be_used_anonymously" id="d26fe21f-4eb5-4b47-8d78-984b7ec017c5"><con:settings/><con:config><script>	
+	import groovy.sql.Sql
+	import java.text.SimpleDateFormat	
+
+	// initialise DB driver
+	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver("oracle.jdbc.OracleDriver")
+
+	// load methods from repository
+	scripts = testRunner.testCase.testSuite.project.testSuites["SCRIPTS"]
+	scripts.testCases["METHODS"].testSteps["METHODS"].run(testRunner, context)
+
+	log.debug "================================================================================"
+	log.info "APPLICATION RESPONSE - START CHECKING SUBMIT MESSAGE STATUS OPERATION CANNOT BE USED ANONYMOUSLY"
+
+	long msgId = 1000001
+	long localPartyId = 1000001
+	long businessId = 10000001
+	String partyName = "WEB_SENDER_PARTY"
+	String businessName = "test"
+	String bundleId = "ROBOT_BUNDLE_0002"
+	String receiverPartyName = "ROBOT_APP_PARTY"	
+	String messageStatusId = "ROBOT_MESSAGE_STATUS_ID"
+	String responseCode = "BDL:7"
+	
+	// open DB connection
+	context.commonDao.openDbConnection()
+	
+	try{
+		
+		// create business on business table
+		context.commonDao.createBusiness(businessId, businessName)
+	
+		// create business config on business config table
+		context.commonDao.createBusinessConfig(1000001, businessId, "etx.business.receiver.node.party.name", "ROBOT_APP_PARTY")
+		context.commonDao.createBusinessConfig(1000002, businessId, "etx.business.warn.email.notif.enabled", "0")
+		
+		// create party on party table
+		context.commonDao.createParty(localPartyId, "sysdate", partyName, businessId)
+	
+		// create message on message table
+		context.commonDao.createMessage(msgId, bundleId, localPartyId, receiverPartyName)
+
+		// reset cache
+		context.commonDao.resetCacheWeb()
+
+		// inject values into application response request
+		testRunner.testCase.testSuite.setPropertyValue('SENDER_PARTY', receiverPartyName)
+		testRunner.testCase.testSuite.setPropertyValue('RECEIVER_PARTY', partyName)
+		testRunner.testCase.testSuite.setPropertyValue('MESSAGE_STATUS_ID', messageStatusId)
+		testRunner.testCase.testSuite.setPropertyValue('PARENT_MESSAGE_BUNDLE_ID', bundleId)		
+		testRunner.testCase.testSuite.setPropertyValue('RESPONSE_CODE', responseCode)	
+
+		// define the webservice
+		def testCase = testRunner.testCase.testSuite.testCases["webService_ApplicationResponseService"]
+		def testStep = testCase.testSteps["submitApplicationResponse"]
+         
+          // define the cloned test step
+          def tmpAuthTestStep = null
+          
+		// create a second try to delete cloned test step
+		try{
+			// create a cloned test step to be used for authentication
+			tmpAuthTestStep = testStep.getTestStep().clone(testCase, 'tmpAuthTestStep')
+	
+			// inject username and password into cloned test step
+			tmpAuthTestStep.getProperty('Username').setValue('')
+			tmpAuthTestStep.getProperty('Password').setValue('')
+	
+			// EXECUTE CLONED TEST STEP
+			tmpAuthTestStep.run(testRunner, context)
+	
+			// define the webservice response
+			context.setProperty('xmlResponse', tmpAuthTestStep.getProperty('response'))
+
+		} finally {
+			
+			if (tmpAuthTestStep != null) {
+				
+				// delete cloned test step
+				testCase.removeTestStep(tmpAuthTestStep) 
+			}
+								
+		}
+		
+		// parse the actual response from the webservice
+		def inboxNotificationActualResponse = context.expand( '${xmlResponse#//html[1]/body[1]/noscript[1]/p[2]}' )
+	
+		// check that the actual response from the webservice matches the expected response
+		assert inboxNotificationActualResponse == "This document you requested requires ECAS authentication."
+
+	} finally {
+		
+		// delete message from message table
+		context.commonDao.deleteMessage(bundleId)
+
+		// delete party from party table
+		context.commonDao.deleteParty(partyName)
+
+		// delete business config from business config table
+		context.commonDao.deleteBusinessConfig(businessId)
+	
+		// delete business from business table
+		context.commonDao.deleteBusiness(businessId)
+	
+		// close DB connection
+		context.commonDao.closeDbConnection()
+
+		// reset cache
+		context.commonDao.resetCacheWeb()
+				
+	}
+
+	log.info "APPLICATION RESPONSE - FINISHED CHECKING SUBMIT MESSAGE STATUS OPERATION CANNOT BE USED ANONYMOUSLY"
+</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

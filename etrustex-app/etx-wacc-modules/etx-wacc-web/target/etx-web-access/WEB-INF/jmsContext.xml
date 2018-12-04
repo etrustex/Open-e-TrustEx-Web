@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+			    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+			    http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+			    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- define the JMS Template -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="jmsQueueConnectionFactory"/>
+        <property name="receiveTimeout" value="5000"/>
+        <property name="sessionTransacted" value="true"/>
+        <property name="sessionAcknowledgeModeName" value="AUTO_ACKNOWLEDGE"/>
+    </bean>
+
+    <!-- define the JMS Connection factory -->
+    <jee:jndi-lookup id="jmsQueueConnectionFactory" jndi-name="java:/JmsXA/"/>
+
+    <!-- JMS queue listeners for messages -->
+    <jee:jndi-lookup id="etxWebMailQueue" jndi-name="java:/queue/EtxWebMailQueue"/>
+    <jee:jndi-lookup id="etxWebRetrieveMetadataJMSQueue" jndi-name="java:/queue/EtxWebRetrieveMetadataJMSQueue"/>
+    <jee:jndi-lookup id="etxWebRetrieveBundleJMSQueue" jndi-name="java:/queue/EtxWebRetrieveBundleJMSQueue"/>
+    <jee:jndi-lookup id="etxWebSendStatusJMSQueue" jndi-name="java:/queue/EtxWebSendStatusJMSQueue"/>
+    <jee:jndi-lookup id="etxWebErrorQueue" jndi-name="java:/queue/EtxWebErrorQueue"/>
+
+    <!-- this bean serves as a template for all queue listener containers -->
+    <bean id="jmsQueueListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer"
+          abstract="true">
+        <property name="connectionFactory" ref="jmsQueueConnectionFactory"/>
+        <property name="transactionManager" ref="transactionManager"/>
+        <property name="transactionTimeout" value="180"/>
+        <property name="receiveTimeout" value="10000"/>
+        <property name="recoveryInterval">
+            <util:constant static-field="org.springframework.util.backoff.BackOffExecution.STOP"/>
+        </property>
+        <property name="concurrentConsumers" value="2"/>
+    </bean>
+
+    <!-- Configure the JMS Containers each pointing to the corresponding listener -->
+    <bean id="etxWebMailNotificationListenerContainer" parent="jmsQueueListenerContainer">
+        <property name="destination" ref="etxWebMailQueue"/>
+        <property name="messageListener">
+            <bean class="eu.europa.ec.etrustex.webaccess.business.queue.mail.MailNotificationJmsConsumer"/>
+        </property>
+    </bean>
+
+    <!-- Configure the JMS Containers each pointing to the corresponding listener -->
+    <bean id="etxWebRetrievePayloadListenerContainer" parent="jmsQueueListenerContainer">
+        <property name="destination" ref="etxWebRetrieveMetadataJMSQueue"/>
+        <property name="messageListener">
+            <bean class="eu.europa.ec.etrustex.webaccess.business.queue.retrievepayload.RetrievePayloadJmsConsumer"/>
+        </property>
+    </bean>
+
+    <!-- Configure the JMS Containers each pointing to the corresponding listener -->
+    <bean id="etxRetrieveBundleListenerContainer" parent="jmsQueueListenerContainer">
+        <property name="destination" ref="etxWebRetrieveBundleJMSQueue"/>
+        <property name="messageListener">
+            <bean class="eu.europa.ec.etrustex.webaccess.business.queue.message.RetrieveMessageJmsConsumer"/>
+        </property>
+    </bean>
+
+    <!-- Configure SendStatus JMS Listener -->
+    <bean id="etxSendStatusListenerContainer" parent="jmsQueueListenerContainer">
+        <property name="destination" ref="etxWebSendStatusJMSQueue"/>
+        <property name="messageListener">
+            <bean class="eu.europa.ec.etrustex.webaccess.business.queue.status.SendStatusJmsConsumer"/>
+        </property>
+    </bean>
+
+    <!-- Configure the JMS listener for the error queue -->
+    <bean id="etxWebErrorListenerContainer" parent="jmsQueueListenerContainer">
+        <property name="destination" ref="etxWebErrorQueue"/>
+        <property name="messageListener">
+            <bean class="eu.europa.ec.etrustex.webaccess.business.queue.error.ErrorJmsConsumer"/>
+        </property>
+        <property name="concurrentConsumers" value="1"/>
+    </bean>
+
+</beans>

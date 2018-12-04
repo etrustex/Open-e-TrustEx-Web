@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="9498e027-881d-46d6-8217-54c74e820343" isOneWay="false" action="" name="submitApplicationResponse" bindingOperationName="submitApplicationResponse" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="9498e027-881d-46d6-8217-54c74e820343fileName">submitApplicationResponse</con:setting></con:settings></con:operation>

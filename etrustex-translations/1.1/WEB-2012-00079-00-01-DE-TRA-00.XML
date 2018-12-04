@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>de</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>16/04/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>de</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Alle Ordner</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Neu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Aktualisieren</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">von</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">Posteingang</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Entwurf</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.folder">Ordner</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Alle</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Ungelesen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Nachricht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.download">Herunterladen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Metadaten</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Anzeige</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Offizielle elektronische Fassung</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outbox">Postausgang</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.created">Erstellt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxDossierView">Dossieransicht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandardView">Standardansicht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload">Anlage hinzufügen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Anlage hinzugefügt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Abschicken</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Speichern</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Annahmedatum</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Teil</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.edmaView">EDMA-Sicht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComment">Kein Kommentar</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

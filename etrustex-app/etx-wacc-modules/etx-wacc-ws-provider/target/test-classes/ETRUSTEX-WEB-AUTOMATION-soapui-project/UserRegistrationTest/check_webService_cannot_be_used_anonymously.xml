@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="4b5014e3-a1e9-4ca1-a6be-ea02e3aa9757" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="check_assign_user_operation_cannot_be_used_anonymously" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="583ec887-eefe-48a6-b604-47287b67e9bdfileName">check_standard_incoming_message_is_correctly_persisted</con:setting><con:setting id="51a63d03-2822-40b6-9f58-eb6899d5dbf0fileName">check_signed_message_one_attachment_one_payload_is_correctly_persisted</con:setting><con:setting id="2c021a08-9d90-4ccd-9403-82b8176e7994fileName">check_READ_messageStatus_is_correctly_persisted</con:setting><con:setting id="4bdd89ac-d9d1-48e2-9d45-dbd301f205a5fileName">check_assign_a_party_to_one_user</con:setting><con:setting id="7bdc3f72-ae10-4851-848d-5a79c0fda2f4fileName">check_party_already_assigned_user</con:setting><con:setting id="4b5014e3-a1e9-4ca1-a6be-ea02e3aa9757fileName">check_webService_cannot_be_used_anonymously</con:setting></con:settings><con:testStep type="groovy" name="submit_check_assign_user_operation_cannot_be_used_anonymously" id="a60c166e-c019-4924-aceb-f18ad0a3bbec"><con:settings/><con:config><script>	
+	import groovy.sql.Sql
+	import java.text.SimpleDateFormat
+
+	// initialise DB driver
+	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver("oracle.jdbc.OracleDriver")
+
+	// load methods from repository
+	scripts = testRunner.testCase.testSuite.project.testSuites["SCRIPTS"]
+	scripts.testCases["METHODS"].testSteps["METHODS"].run(testRunner, context)
+
+	log.debug "================================================================================"
+	log.info "USER REGISTRATION - ASSIGN USER - START CHECKING ASSIGN USER OPERATION CANNOT BE USED ANONYMOUSLY"
+
+	long businessId = 10000001	
+	String receiverPartyName = "ROBOT_APP_PARTY"	
+	String businessName = "TEST"
+	String application = "TEST"
+	String partyName = "WEB_SENDER_PARTY1"
+
+	def userLoginList = ["cholaarX", "miclevaX"]
+	def firstNameList = ["Armen", "Valer"]
+	def lastNameList = ["Cholakian", "Micle"]
+	def userEmailList = ["armo@chocko.com", "valer@micle.com"]	
+	
+	// open DB connection
+	context.commonDao.openDbConnection()
+	
+	try{
+		
+		// create business on business table
+		context.commonDao.createBusiness(businessId, businessName)
+	
+		// create business config on business config table
+		context.commonDao.createBusinessConfig(1000001, businessId, "etx.business.receiver.node.party.name", "ROBOT_APP_PARTY")
+		context.commonDao.createBusinessConfig(1000002, businessId, "etx.business.warn.email.notif.enabled", "0")
+		context.commonDao.createBusinessConfig(1000003, businessId, "etx.business.custom.view.name", "edma")	
+		
+		// create party on party table
+		context.commonDao.createParty(1000001, "sysdate", partyName, businessId)
+	
+		// reset cache
+		context.commonDao.resetCacheWeb()
+
+		// inject values into assign user request
+		testRunner.testCase.testSuite.setPropertyValue('USER_LOGIN', userLoginList[0])
+		testRunner.testCase.testSuite.setPropertyValue('PARTY_ID', partyName)
+		testRunner.testCase.testSuite.setPropertyValue('APPLICATION', application)
+		testRunner.testCase.testSuite.setPropertyValue('FIRST_NAME', firstNameList[0])
+		testRunner.testCase.testSuite.setPropertyValue('LAST_NAME', lastNameList[0])
+		testRunner.testCase.testSuite.setPropertyValue('USER_EMAIL', userEmailList[0])
+
+		// define the webservice
+		def testCase = testRunner.testCase.testSuite.testCases["webService_UserRegistrationService"]
+		def testStep = testCase.testSteps["assignUserParty"]
+
+          // define the cloned test step
+          def tmpAuthTestStep = null
+
+		// create a second try to delete cloned test step
+		try{
+			// create a cloned test step to be used for authentication
+			tmpAuthTestStep = testStep.getTestStep().clone(testCase, 'tmpAuthTestStep')
+	
+			// inject username and password into cloned test step
+			tmpAuthTestStep.getProperty('Username').setValue('')
+			tmpAuthTestStep.getProperty('Password').setValue('')
+	
+			// EXECUTE CLONED TEST STEP
+			tmpAuthTestStep.run(testRunner, context)
+	
+			// define the webservice response
+			context.setProperty('xmlResponse', tmpAuthTestStep.getProperty('response'))
+
+		} finally {
+			
+			if (tmpAuthTestStep != null) {
+				
+				// delete cloned test step
+				testCase.removeTestStep(tmpAuthTestStep) 
+			}
+								
+		}
+
+		// parse the actual response from the webservice
+		def assignUserActualResponse = context.expand( '${xmlResponse#//html[1]/body[1]/noscript[1]/p[2]}' )
+
+		// check that the actual response from the webservice matches the expected response
+		assert assignUserActualResponse == "This document you requested requires ECAS authentication."	
+
+	} finally {
+
+		// delete party from party table
+		context.commonDao.deleteParty(partyName)
+
+		// delete business config from business config table
+		context.commonDao.deleteBusinessConfig(businessId)
+	
+		// delete business from business table
+		context.commonDao.deleteBusiness(businessId)
+
+		// close DB connection
+		context.commonDao.closeDbConnection()
+
+		// reset cache
+		context.commonDao.resetCacheWeb()
+	
+	}
+
+	log.info "USER REGISTRATION - ASSIGN USER - FINISHED CHECKING ASSIGN USER OPERATION CANNOT BE USED ANONYMOUSLY"
+</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+  <xsd:include schemaLocation="shared.xsd"/>
+	
+  <xsd:element name="short_content">
+		<xsd:complexType>
+			<xsd:sequence>
+        <xsd:element ref="cwcms_metadata" maxOccurs="1" minOccurs="0"/>
+				<xsd:element ref="language_descriptor"/>
+				<xsd:element name="heading" type="hd_heading_type"/>
+				<xsd:element ref="content_qual"/>
+				<xsd:element name="content_ref_short_content" type="content_ref_type"/>
+				<xsd:element ref="text"/>
+				<xsd:element ref="medias"/>
+				<xsd:element ref="links"/>				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

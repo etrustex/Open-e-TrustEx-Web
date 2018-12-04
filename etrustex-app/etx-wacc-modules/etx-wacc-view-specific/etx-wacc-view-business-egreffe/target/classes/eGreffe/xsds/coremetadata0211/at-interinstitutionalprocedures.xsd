@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://publications.europa.eu/resource/interinstitutionalprocedures/"><xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:documentation>Version: CM-02.11-2012-09-13</xs:documentation>
+</xs:annotation>
+<xs:simpleType xmlns:xs="http://www.w3.org/2001/XMLSchema" name="t_interinstitutionalprocedure">
+   <xs:restriction base="xs:string">
+      <xs:enumeration value="ACC"><!--Agreement (ACC)--></xs:enumeration>
+      <xs:enumeration value="ACI"><!--Interinstitutional agreement--></xs:enumeration>
+      <xs:enumeration value="APP"><!--Special legislative procedure - EP consent required (APP)--></xs:enumeration>
+      <xs:enumeration value="AVC"><!--Assent procedure (AVC)--></xs:enumeration>
+      <xs:enumeration value="BUD"><!--Budgetary procedure--></xs:enumeration>
+      <xs:enumeration value="CNB"><!--Consultation of the European Central Bank (CNB)--></xs:enumeration>
+      <xs:enumeration value="CNC"><!--Consultation of the Court of Auditors (CNC)--></xs:enumeration>
+      <xs:enumeration value="CNS"><!--Consultation procedure (CNS)--></xs:enumeration>
+      <xs:enumeration value="COD"><!--Codecision procedure (COD)--></xs:enumeration>
+      <xs:enumeration value="COS"><!--Procedure on a strategic document (historic)--></xs:enumeration>
+      <xs:enumeration value="DCE"><!--Written declaration--></xs:enumeration>
+      <xs:enumeration value="DEC"><!--Discharge procedure--></xs:enumeration>
+      <xs:enumeration value="IMM"><!--Members' immunity--></xs:enumeration>
+      <xs:enumeration value="INI"><!--Own-initiative procedure--></xs:enumeration>
+      <xs:enumeration value="INS"><!--Institutional procedure--></xs:enumeration>
+      <xs:enumeration value="NLE"><!--Non-legislative procedure (NLE)--></xs:enumeration>
+      <xs:enumeration value="OLP"><!--Ordinary legislative procedure (COD)--></xs:enumeration>
+      <xs:enumeration value="ORP"><!--Ordinary revision procedure--></xs:enumeration>
+      <xs:enumeration value="PRT"><!--Social protocol (PRT)--></xs:enumeration>
+      <xs:enumeration value="REG"><!--Parliament's Rules of Procedures--></xs:enumeration>
+      <xs:enumeration value="RPS"><!--Regulatory procedure with scrutinity--></xs:enumeration>
+      <xs:enumeration value="RSO"><!--Internal decisions organisation--></xs:enumeration>
+      <xs:enumeration value="RSP"><!--Resolution on topical subjects--></xs:enumeration>
+      <xs:enumeration value="SLP"><!--Special legislative procedure - EP consulted (CNS)--></xs:enumeration>
+      <xs:enumeration value="SRP"><!--Simplified revision procedure--></xs:enumeration>
+      <xs:enumeration value="SYN"><!--Cooperation procedure (SYN)--></xs:enumeration>
+   </xs:restriction>
+</xs:simpleType></xs:schema>

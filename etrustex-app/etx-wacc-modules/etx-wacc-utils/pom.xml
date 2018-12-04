@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>etx-wacc-modules</artifactId>
+        <groupId>eu.europa.ec.etrustex</groupId>
+        <version>trunk</version>
+    </parent>
+    <artifactId>etx-wacc-utils</artifactId>
+    <name>etx-wacc-utils</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>eu.europa.ec.etrustex</groupId>
+            <artifactId>etx-wacc-model</artifactId>
+            <version>${eTrustEx.version}</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.etrustex</groupId>
+            <artifactId>etrustex-utils-test</artifactId>
+            <version>${eTrustEx.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>${bouncycastle.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>${bouncycastle.version}</version>
+        </dependency>
+    </dependencies>
+</project>

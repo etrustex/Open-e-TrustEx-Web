@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: eu.europa.ec.etrustex.webaccess.business.mail.AbstractMailHandlerServiceTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.329 sec - in eu.europa.ec.etrustex.webaccess.business.mail.AbstractMailHandlerServiceTest

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>nl</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>16/04/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>nl</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Alle mappen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Nieuw</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Vernieuwen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">van</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">Postvak IN</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Concepten</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.folder">Map</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Alles</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Ongelezen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Bericht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.download">Downloaden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Metadata</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Weergave</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Officiële elektronische versie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outbox">Postvak OUT</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.created">Aangemaakt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxDossierView">Dossier</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandardView">Standaard</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload">Uploaden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Bijlagen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Verzenden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Opslaan</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Datum goedkeuring</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Deel</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.edmaView">EDMA</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComment">Geen opmerkingen</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

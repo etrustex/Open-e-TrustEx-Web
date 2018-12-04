@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>nl</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>nl</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Adres</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Opgeslagen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Lijst van bestanden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Nationaal registratienummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Referentie informatie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Referentie bestand</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Het ontwerp-bericht is opgeslagen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Er is een fout opgetreden bij het opslaan van het ontwerp-bericht.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Ontvangen bericht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Antitrust</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Fusie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Staatssteun</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Horizontaal</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Wissen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Weet u zeker dat u dit bericht wilt annuleren?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Weet u zeker dat u dit ontwerp-bericht wilt wissen?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Het veld &quot;Onderwerp&quot; is verplicht.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Het veld &quot;Land&quot; is verplicht als het veld &quot;Organisatienaam&quot; is ingevuld.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Het veld &quot;Registratienummer&quot; is verplicht als het veld &quot;Organisatienaam&quot; is ingevuld.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Het veld &quot;Contactpersoon&quot; is verplicht.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Het veld &quot;Instrument&quot; is verplicht.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Geen opmerkingen</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

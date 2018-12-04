@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <concat destfile="target/wlstapi-etxweb-wildfly.properties.tmp">
+    <fileset file="C:\Pgm\workspaces\etx-web-open\etrustex-assemblers\etrustex-assembler-webapp/../../etrustex-ant/scripts/weblogic/wlstapi-etxweb-template.properties"/>
+    <fileset file="C:\Pgm\workspaces\etx-web-open\etrustex-assemblers\etrustex-assembler-webapp/../../etrustex-ant/scripts/weblogic/env/wildfly/security.properties"/>
+  </concat>
+  <move file="target/wlstapi-etxweb-wildfly.properties.tmp" tofile="target/wlstapi-etxweb-wildfly.properties" overwrite="true">
+    <filterset filtersfile="C:\Pgm\workspaces\etx-web-open\etrustex-assemblers\etrustex-assembler-webapp/../../etrustex-ant/scripts/weblogic/env/wildfly/web.properties"/>
+  </move>
+  <copy file="C:\Pgm\workspaces\etx-web-open\etrustex-assemblers\etrustex-assembler-webapp/../../etrustex-ant/scripts/weblogic/env/wildfly/mail.properties" tofile="target/mail-wildfly.properties" overwrite="true"></copy>
+</target>
+</project>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>en</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>08/10/2015</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.2.001</ipg_creator>
+            <ipg_language>en</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div id="label.admin.bundle.notifications" class="ETX_WEB_LABEL_TRANSLATION">Message notification</div>
+                <div id="label.admin.notif.check.mandatory" class="ETX_WEB_LABEL_TRANSLATION">At least one email notification is mandatory for this business</div>
+                <div id="label.admin.notif.delete.mandatory" class="ETX_WEB_LABEL_TRANSLATION">Cannot delete this role as at least one email notification is mandatory</div>
+                <div id="label.admin.status.notifications" class="ETX_WEB_LABEL_TRANSLATION">Status notification</div>
+                <div id="label.message.sentOn" class="ETX_WEB_LABEL_TRANSLATION">Message sent on</div>
+                <div id="label.status" class="ETX_WEB_LABEL_TRANSLATION">Status</div>
+                <div id="label.status.all" class="ETX_WEB_LABEL_TRANSLATION">All</div>
+                <div id="label.status.delivered" class="ETX_WEB_LABEL_TRANSLATION">Delivered</div>
+                <div id="label.status.failed" class="ETX_WEB_LABEL_TRANSLATION">Failed</div>
+                <div id="label.status.none" class="ETX_WEB_LABEL_TRANSLATION">None</div>
+                <div id="label.status.read" class="ETX_WEB_LABEL_TRANSLATION">Read</div>
+                <div id="label.status.receivedOn" class="ETX_WEB_LABEL_TRANSLATION">Status received on</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

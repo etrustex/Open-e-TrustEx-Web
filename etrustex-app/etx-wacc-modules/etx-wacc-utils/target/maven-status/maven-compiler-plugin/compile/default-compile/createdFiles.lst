@@ -1,0 +1,15 @@
+eu\europa\ec\etrustex\webaccess\utils\applet\Decoder.class
+eu\europa\ec\etrustex\webaccess\utils\TransferHelper.class
+eu\europa\ec\etrustex\webaccess\utils\HashHelper$HashMethodType.class
+eu\europa\ec\etrustex\webaccess\utils\MessageUUIDGenerator.class
+eu\europa\ec\etrustex\webaccess\utils\ReferenceIDGenerator.class
+eu\europa\ec\etrustex\webaccess\utils\UserRegistrationWSScenarios.class
+eu\europa\ec\etrustex\webaccess\utils\XMLHelper.class
+eu\europa\ec\etrustex\webaccess\utils\ConcurrentHelper.class
+eu\europa\ec\etrustex\webaccess\utils\BuildCertificateData.class
+eu\europa\ec\etrustex\webaccess\utils\TransferProgressNotifiable.class
+eu\europa\ec\etrustex\webaccess\utils\HashHelper.class
+eu\europa\ec\etrustex\webaccess\utils\applet\Encoder.class
+eu\europa\ec\etrustex\webaccess\utils\HashHelper$LazyHolder.class
+eu\europa\ec\etrustex\webaccess\utils\EtxEntityException.class
+eu\europa\ec\etrustex\webaccess\utils\EtxException.class

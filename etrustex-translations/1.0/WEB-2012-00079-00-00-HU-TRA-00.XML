@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>hu</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx 1. képernyő</hd_short_title>
+        <hd_long_title>eTrustEx 1. képernyő</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx 1. képernyő</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>hu</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Bejelentkezett felhasználó:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Információk az üzenetről</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Dokumentum</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Bizalmas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Megjegyzések a dokumentumhoz</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Törlés</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Üzenet elküldése</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Mentés piszkozatként</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Beérkezett dossziék szerinti
+                    nézet
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Feladó</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Címzett</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Beérkezés időpontja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Üzenetek szűrése</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Szűrők törlése</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Üzenetvázlat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Beérkezett üzenetek szerinti
+                    nézet
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Kijelentkezés</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Ön sikeresen kijelentkezett</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Vissza az üzenetekhez</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">A kijelölt fájlok letöltése
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Kijelentkezés</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">A rendszer sikeresen elküldte az
+                    üzenetet
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">A rendszer nem tudta elküldeni az
+                    üzenetet
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Hiba történt az üzenet elmentése
+                    közben
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Hiba történt a csatolni kívánt
+                    melléklet feltöltése közben
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Hiba történt az üzenet elmentése
+                    közben
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Az „Eszköz” mező kitöltése
+                    kötelező
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Az „Ország” mező kitöltése
+                    kötelező, ha a vállalat neve nincs megadva
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">A „Nemzeti nyilvántartási szám”
+                    mező kitöltése kötelező, ha a vállalat neve nincs megadva
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Az „Ország” mező kitöltése
+                    kötelező
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">A „Kapcsolattartó
+                    személy” mező kitöltése kötelező
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">A „Szervezet neve”
+                    mező kitöltése kötelező
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Az „Téma” mező kitöltése kötelező
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">A feltöltéshez válasszon ki
+                    egy fájlt
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Csatolt fájlok</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Vázlatelemek szerinti nézet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Elküldött elemek szerinti nézet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Dosszié:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Üzenet tárgya</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Csatolt mellékletek</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Létrehozás időpontja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Az üzenet adatai</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Elküldés időpontja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Beérkezés időpontja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Üzenet szövege</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Első</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Előző</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Következő</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Utolsó</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Tetejére</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Üzenetek szerinti nézet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Dossziék szerinti nézet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Kezdőlap</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Üzenet írása</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Címzett</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Tárgy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Még nincs fájl csatolva</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Csatolt fájlok (az eltávolításhoz
+                    kattintson ide)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Fájl csatolása</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Fájlok feltöltése</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Tartalom</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Mezők (metaadat)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">A feladó adatai</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">A szervezet neve</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Nyilvántartási szám</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Kapcsolattartó személy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Beosztás</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefonszám</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">E-mail</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Utca</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Irányítószám</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Város</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Ország</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">A vállalat neve</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">Az alábbi vállalat nevében</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Megjegyzések</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Az üzenet címzettje</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Eszköz</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">A fájl sorszáma</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Információs szám</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Ön nem jó formátumban adta
+                    meg a beérkezés időpontját. A helyes formátum: éééé-HH-nn
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Ön nem jó formátumban adta meg
+                    az elküldés időpontját. A helyes formátum: éééé-HH-nn
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

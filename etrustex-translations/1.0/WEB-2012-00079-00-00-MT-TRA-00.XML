@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>mt</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>en</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Illoggjat bħala</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Informazzjoni messaġġ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Dokument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Kunfidenzjali</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Kummenti tad-dokument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Ikkanċella</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Ibgħat messaġġ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Issejvja bħala abbozz</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Inbox / Dehra tad-Dossiers
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Mingħand</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Mibgħut</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Riċevut</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Iffiltra l-messaġġi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Neħħi l-filtri</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Messaġġ abbozz</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Inbox / Dehra tal-messaġġi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Log out</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Il-log out irnexxa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Lura lejn il-messaġġi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Niżżel il-fajls magħżula</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Logout</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Il-messaġġ intbagħat!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Il-messaġġ ma ntbagħatx</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Kien hemm problema waqt li kien qed
+                    jiġi ssejvjat il-messaġġ
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Kien hemm problema waqt li kien qed
+                    tittella&apos; l-hemża
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Kien hemm problema waqt li kien
+                    qed jiġi ssejvjat il-messaġġ
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Il-qasam &quot;strument&quot;
+                    huwa meħtieġ
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Il-qasam &quot;pajjiż&quot;
+                    għandu jimtela&apos; jekk m&apos;hemmx l-isem tal-kumpanija
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Il-qasam &quot;numru ta&apos;
+                    reġistrazzjoni nazzjonali&quot; għandu jimtela&apos; jekk m&apos;hemmx l-isem tal-kumpanija
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Il-qasam &quot;pajjiż&quot;
+                    huwa meħtieġ
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Il-qasam &quot;persuna ta&apos;
+                    kuntatt&quot; huwa meħtieġ
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Il-qasam &quot;isem
+                    tal-organizzazzjoni&quot; huwa meħtieġ
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Il-qasam &quot;suġġett&quot; huwa
+                    meħtieġ
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Trid tagħżel fajl biex tkun
+                    tista&apos; ttellgħu
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Fajls mehmużin</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Dehra draft tal-oġġetti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Dehra tal-oġġetti mibgħuta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Dossier:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Suġġett tal-messaġġ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Hemżiet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Maħluq fi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Dettalji tal-messaġġ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Mibgħut fi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Riċevut fi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Test tal-messaġġ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Tal-ewwel</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Ta&apos; qabel</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Li jmiss</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Tal-aħħar</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Fuq nett</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Dehra tal-messaġġi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Dehra tad-Dossiers</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Paġna Ewlenija</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Ikteb Messaġġ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Lil</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Suġġett</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Għad m&apos;hemmx fajls mehmużin</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Fajls mehmużin (Ikklikkja biex
+                    tneħħihom)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Ehmeż fajl</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Tella&apos; l-fajls</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Kontenut</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Oqsma (Metadata)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Informazzjoni dwar min jibgħat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Isem l-organizzazzjoni</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Numru ta&apos; reġistrazzjoni</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Persuna ta&apos; kuntatt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Pożizzjoni</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefown</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">Email</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Triq</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Kodiċi postali</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Belt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Pajjiż</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Isem il-kumpanija</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">F&apos;isem</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Kummenti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Għall-attenzjoni ta&apos;</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Strument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Numru tal-fajl</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Numru tal-informazzjoni</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Id-data ta&apos; meta wasal
+                    fil-qasam &quot;iffiltra&quot; mhijiex fil-format it-tajjeb. Il-format it-tajjeb huwa ssss-XX-jj
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Id-data ta&apos; meta ntbagħat
+                    fil-qasam &quot;iffiltra&quot; mhijiex fil-format it-tajjeb. Il-format it-tajjeb huwa ssss-XX-jj
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

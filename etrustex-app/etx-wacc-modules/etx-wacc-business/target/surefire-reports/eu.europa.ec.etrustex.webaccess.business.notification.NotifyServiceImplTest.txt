@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: eu.europa.ec.etrustex.webaccess.business.notification.NotifyServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.868 sec - in eu.europa.ec.etrustex.webaccess.business.notification.NotifyServiceImplTest

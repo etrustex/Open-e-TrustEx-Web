@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>bg</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx Screen 1</hd_short_title>
+		<hd_long_title>eTrustEx Screen 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>29/03/2013</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx Screen 1</ipg_title>
+			<ipg_creator>DIGIT.B.1.001</ipg_creator>
+			<ipg_language>bg</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandard">Стандартен изглед</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxGroupByDossier">Групиране по досиета</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.Dossier">Досие</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Съобщението бе запазено успешно като чернова.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Моля, попълнете полето „Относно“.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Моля, посочете държава. Това е задължително, когато сте въвели име на организация.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Моля, посочете националния регистрационен номер на дружеството. Това е задължително, когато сте въвели име на организация.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Моля, посочете лице за контакти.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Моля, посочете инструмент в раздел „Информация за съобщението“.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Неуспешно изпращане на съобщението</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">На вниманието на</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Съобщения</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.party">Party</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

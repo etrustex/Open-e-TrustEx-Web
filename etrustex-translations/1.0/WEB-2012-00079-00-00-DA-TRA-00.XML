@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>da</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>da</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Logget på som</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Meddelelsesoplysninger</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Dokument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Fortroligt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Bemærkninger til dokumentet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Afbryd</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Send meddelelse</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Gem som udkast</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Indbakke/ Mapper</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Fra</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Sendt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Modtaget</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Afgræns søgning</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Ryd</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Udkast</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Indbakke/ Meddelelser</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Log af</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Du er nu logget af</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Tilbage til meddelelser</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Download valgte filer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Log af</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Din meddelelse er blevet sendt!
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Din meddelelse kunne ikke
+                    sendes!
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Der opstod en fejl, da du gemte
+                    meddelelsen
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Der opstod en fejl, da du uploadede
+                    vedhæftelsen
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Der opstod en fejl, da du gemte
+                    meddelelsen
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Feltet Instrument skal
+                    udfyldes
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Feltet Land skal udfyldes,
+                    hvis feltet Virksomhedsnavn står tomt
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Feltet Nationalt
+                    registreringsnummer skal udfyldes, hvis feltet Virksomhedsnavn står tomt
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Feltet Land skal udfyldes</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Feltet Kontaktperson skal
+                    udfyldes
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Feltet Organisationens
+                    navn skal udfyldes
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Feltet Emne skal udfyldes</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Du skal først vælge en fil,
+                    før du kan uploade den
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Vedhæftede filer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Udkast</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Sendte meddelelser</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Mappe:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Meddelelsens emne</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Vedhæftelser</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Oprettet den</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Meddelelsesdata</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Sendt den</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Modtaget den</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Meddelelsens tekst</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Første</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Forrige</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Næste</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Sidste</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Til toppen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Meddelelser</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Mapper</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Forside</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Skriv meddelelse</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Til</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Emne</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Ingen vedhæftede filer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Vedhæftede filer (klik for at fjerne)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Vedhæft fil</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Upload filer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Indhold</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Felter (Metadata)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Oplysninger om afsender</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Organisationens navn</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Registreringsnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Kontaktperson</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Stilling</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefonnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">E-mail</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Gade</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Postnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">By</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Land</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Virksomhedsnavn</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">På vegne af</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Bemærkninger</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Att.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Instrument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Filnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Informationsnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Modtagelsesdatoen i
+                    søgeafgrænsningen har ikke det korrekte format. Det korrekte format er åååå-MM-dd
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Sendedatoen i søgeafgrænsningen
+                    har ikke det korrekte format. Det korrekte format er åååå-MM-dd
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>hr</language_reference>
+	</language_descriptor>
+	<heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>20/12/2013</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx zaslon 1</ipg_title>
+			<ipg_creator>DIGIT.B.1.001</ipg_creator>
+			<ipg_language>hr</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.custom">Prilagođeno</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageParty">Party</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.notifications">Obavijest e-pošte</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.accessRights">Popis korisnika</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyAdmins">Party Administrators</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyOperators">Party Operators</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.addUser">Dodaj korisnika</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.administration">Upravljanje</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.name">Ime</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.login">Korisničko ime</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.email">Adresa e-pošte</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.addUserDialogTitle">Dodavanje korisnika</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.cancel">Odustani</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="error.admin.mandatoryFields">Nisu unesene sve obavezne vrijednosti</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.confirmDeleteText">Jeste li sigurni da želite ukloniti tu ulogu korisnika?</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.delete">Ukloni</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.deleteUserRoleAssignment">Uklanjanje uloge korisnika</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.sendNotificationTo">Pošalji obavijest u zajednički poštanski sandučić</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

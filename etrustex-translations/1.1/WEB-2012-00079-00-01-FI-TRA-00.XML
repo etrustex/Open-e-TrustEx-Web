@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>fi</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>16/04/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>fi</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Kaikki kansiot</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Uusi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Päivitä</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">/</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">Saapuneet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Luonnokset</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.folder">Kansio</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Kaikki</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Lukemattomat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Viesti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.download">Lataa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Metatiedot</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Näytä</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Virallinen sähköinen versio</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outbox">Lähetettävät</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.created">Luotu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxDossierView">Asiakirjanäkymä</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandardView">Perusnäkymä</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload">Lisää liitetiedostoja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Liitteitä</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Lähetä</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Tallenna</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Hyväksymispäivä</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Osa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.edmaView">EDMA-näkymä</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComment">Ei kommentteja</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

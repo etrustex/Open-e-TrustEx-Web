@@ -1,0 +1,5 @@
+eu\europa\ec\etrustex\webaccess\web\view\business\edma\EDMAUtils.class
+eu\europa\ec\etrustex\webaccess\web\view\business\edma\webhandler\MessageViewReceivedHandler.class
+eu\europa\ec\etrustex\webaccess\web\view\business\edma\webhandler\MessageEditHandler.class
+eu\europa\ec\etrustex\webaccess\web\view\business\edma\webhandler\MessageViewSentHandler.class
+eu\europa\ec\etrustex\webaccess\web\view\business\edma\EdmaMessage.class

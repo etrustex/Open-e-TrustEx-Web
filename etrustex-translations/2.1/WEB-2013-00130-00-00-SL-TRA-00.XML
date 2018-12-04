@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>sl</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>sl</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Naslov</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Shranjeno</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Seznam datotek</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Nacionalna matična številka podjetja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Referenca informacije</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Referenca datoteke</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Shranili ste osnutek sporočila</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Osnutka sporočila niste shranili</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Prejeto sporočilo</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Protimonopolni</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Združitev</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Državna pomoč</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Horizontalni</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Izbriši</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Ali res želite izbrisati sporočilo?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Ali res želite izbrisati osnutek sporočila?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Polje Zadeva je obvezno.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Polje Država je obvezno, če ste vpisali ime podjetja.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Polje Nacionalna matična številka podjetja je obvezno, če ste vpisali ime podjetja.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Polje Kontaktna oseba je obvezno.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Polje Ukrep (Podatki o sporočilu) je obvezno.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Brez pripomb</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>da</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx Screen 1</hd_short_title>
+		<hd_long_title>eTrustEx Screen 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>20/12/2013</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx Screen 1</ipg_title>
+			<ipg_creator>DIGIT.B.1.001</ipg_creator>
+			<ipg_language>da</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.custom">Brugerdefineret</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageParty">Party</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.notifications">Besked pr. e-mail</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.accessRights">Brugere</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyAdmins">Party Administrators</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyOperators">Party Operators</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.addUser">Tilføj bruger</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.administration">Administration</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.name">Navn</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.login">Brugernavn</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.email">E-mailadresse</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.addUserDialogTitle">Tilføj bruger</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.cancel">Annuller</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="error.admin.mandatoryFields">Alle de obligatoriske felter er ikke udfyldt</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.confirmDeleteText">Er du sikker på, at du vil fjerne denne brugerrolle?</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.delete">Fjern</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.deleteUserRoleAssignment">Fjern brugerrolle</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.sendNotificationTo">Send meddelelser til funktionel postkasse</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>sk</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>sk</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Adresa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Uložené</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Zoznam súborov</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Vnútroštátne registračné číslo spoločnosti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Číslo informácie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Číslo spisu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Úspešne uložený návrh správy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Nepodarilo sa uložiť návrh správy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Prijatá správa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Antitrust</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Fúzia</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Štátna pomoc</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Horizontálny</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Vymazať</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Naozaj chcete zrušiť túto správu?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Naozaj chcete zrušiť tento návrh správy?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Pole Predmet musí byť vyplnené</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Pole Štát musí byť vyplnené, ak je vyplnené pole Názov organizácie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Pole Vnútroštátne registračné číslo spoločnosti musí byť vyplnené, ak je vyplnené pole Názov organizácie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Pole Kontaktná osoba musí byť vyplnené</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Pole Nástroj informácií o správe musí byť vyplnené</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Žiadne poznámky</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

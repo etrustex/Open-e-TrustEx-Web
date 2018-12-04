@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="40" author="cabalen">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM ETX_WEB_USER WHERE USR_ID = 0</sqlCheck>
+        </preConditions>
+        <comment>ETX-2278: Create system user</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_USER
+            (USR_ID,USR_LOGIN,USR_NAME,USR_CREATED_BY,USR_CREATED_ON,USR_UPDATED_BY,USR_UPDATED_ON,USR_ACTIVE_STATE)
+            values (0,'system','System User',0,SYSDATE,null,null,1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_USER
+            (USR_ID,USR_LOGIN,USR_NAME,USR_CREATED_BY,USR_CREATED_ON,USR_UPDATED_BY,USR_UPDATED_ON,USR_ACTIVE_STATE)
+            values (0,'system','System User',0,SYSDATE,null,null,1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="3" author="cabalen">
+        <comment>Migrate config hardcoded remote party into ETX_WEB_PARTY_ICA</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT
+            INTO ETX_WEB_PARTY_ICA (PCA_ID, PAR_ID, PCA_NODE_NAME, PCA_DISPLAY_NAME, PCA_CREATED_BY, PCA_LOADED_ON,
+            PCA_INTEGRITY, PCA_CONFIDENTIALITY,
+            PCA_CERTIFICATE, PCA_CREATED_ON, PCA_UPDATED_ON, PCA_UPDATED_BY, PCA_STATE)
+            SELECT ETX_WEB_PARTYICASEQ.nextval, p.PAR_ID, bc.BCG_PROPERTY_VALUE, bc.BCG_PROPERTY_VALUE, 0, SYSDATE,
+            null, null, null, SYSDATE, null, null, 1
+            FROM ETX_WEB_PARTY p JOIN ETX_WEB_BUSINESS_CONFIG bc
+            ON p.BUS_ID = bc.BUS_ID
+            WHERE bc.BCG_PROPERTY_NAME = 'etx.business.receiver.node.party.name';
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT
+            INTO ETX_WEB_PARTY_ICA (PCA_ID, PAR_ID, PCA_NODE_NAME, PCA_DISPLAY_NAME, PCA_CREATED_BY, PCA_LOADED_ON,
+            PCA_INTEGRITY, PCA_CONFIDENTIALITY,
+            PCA_CERTIFICATE, PCA_CREATED_ON, PCA_UPDATED_ON, PCA_UPDATED_BY, PCA_STATE)
+            SELECT ETX_WEB_PARTYICASEQ.nextval, p.PAR_ID, bc.BCG_PROPERTY_VALUE, bc.BCG_PROPERTY_VALUE, 0, SYSDATE(),
+            null, null, null, SYSDATE(), null, null, 1
+            FROM ETX_WEB_PARTY p JOIN ETX_WEB_BUSINESS_CONFIG bc
+            ON p.BUS_ID = bc.BUS_ID
+            WHERE bc.BCG_PROPERTY_NAME = 'etx.business.receiver.node.party.name';
+        </sql>
+    </changeSet>
+
+    <changeSet id="4" author="cabalen">
+        <comment>Delete config property etx.business.receiver.node.party.name</comment>
+        <sql dbms="oracle" splitStatements="true">
+            DELETE FROM ETX_WEB_BUSINESS_CONFIG WHERE BCG_PROPERTY_NAME = 'etx.business.receiver.node.party.name';
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            DELETE FROM ETX_WEB_BUSINESS_CONFIG WHERE BCG_PROPERTY_NAME = 'etx.business.receiver.node.party.name';
+        </sql>
+    </changeSet>
+
+    <changeSet id="5" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1 from ETX_WEB_LABEL_TRANSLATION), 'message.recipientErrorMessage', 'Please
+            enter a Recipient', 1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('message.recipientErrorMessage', 'Please enter a Recipient', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="6" author="cabalen">
+        <comment>Alter ETX_WEB_PARTY table</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY ADD (PAR_WEB_MANAGED NUMBER(1) NULL);
+            UPDATE ETX_WEB_PARTY SET PAR_WEB_MANAGED = 1;
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_WEB_MANAGED NOT NULL);
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_NODE_USR NULL);
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_NODE_PASS NULL);
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_NOTIFICATIONS_ENABLED NULL);
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_CONSUME_NODE_MSG NULL);
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_STS_NOTIF_ENABLED NULL);
+            ALTER TABLE ETX_WEB_PARTY DROP UNIQUE (PAR_NODE_NAME);
+            ALTER TABLE ETX_WEB_PARTY ADD CONSTRAINT UNIQUE_NODE_NAME_BUS_ID UNIQUE(PAR_NODE_NAME, BUS_ID);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY ADD PAR_WEB_MANAGED TINYINT(1) NULL;
+            UPDATE ETX_WEB_PARTY SET PAR_WEB_MANAGED = 1;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_WEB_MANAGED TINYINT(1) NOT NULL;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_NODE_USR varchar(255) NULL;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_NODE_PASS varchar(255) NULL;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_NOTIFICATIONS_ENABLED TINYINT(1) NULL;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_CONSUME_NODE_MSG TINYINT(1) NULL;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_STS_NOTIF_ENABLED TINYINT(1) NULL;
+            ALTER TABLE ETX_WEB_PARTY DROP UNIQUE (PAR_NODE_NAME);
+            ALTER TABLE ETX_WEB_PARTY ADD CONSTRAINT UNIQUE_NODE_NAME_BUS_ID UNIQUE(PAR_NODE_NAME, BUS_ID);
+        </sql>
+    </changeSet>
+
+    <changeSet id="7" author="cabalen">
+        <comment>Alter ETX_WEB_PARTY_ICA table</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY_ICA ADD (REMOTE_PAR_ID NUMBER(19));
+            ALTER TABLE ETX_WEB_PARTY_ICA ADD CONSTRAINT FK_PCA_REMOTE_PAR_ID FOREIGN KEY (REMOTE_PAR_ID) REFERENCES
+            ETX_WEB_PARTY (PAR_ID);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY_ICA ADD REMOTE_PAR_ID DECIMAL(19,0);
+            ALTER TABLE ETX_WEB_PARTY_ICA ADD CONSTRAINT FK_PCA_REMOTE_PAR_ID FOREIGN KEY (REMOTE_PAR_ID) REFERENCES
+            ETX_WEB_PARTY (PAR_ID);
+        </sql>
+    </changeSet>
+
+    <changeSet id="8" author="cabalen">
+        <comment>Migrate hardcoded remote party in ICA to ETX_WEB_PARTY</comment>
+        <sql dbms="oracle" endDelimiter="/">
+            DECLARE
+            CURSOR icas_cursor IS
+            SELECT pi.PCA_ID id, pi.PCA_NODE_NAME node_name, pi.PCA_DISPLAY_NAME display_name, p.BUS_ID bus_id,
+            pi.PCA_STATE active_state
+            FROM ETX_WEB_PARTY_ICA pi JOIN ETX_WEB_PARTY p
+            ON pi.PAR_ID = p.PAR_ID
+            WHERE pi.PCA_STATE = 1;
+
+            row_ica icas_cursor%ROWTYPE;
+            remote_party_id NUMBER(19);
+            BEGIN
+            FOR row_ica IN icas_cursor
+            LOOP
+            BEGIN
+            SELECT par_id into remote_party_id from ETX_WEB_PARTY where PAR_NODE_NAME = row_ica.node_name and BUS_ID =
+            row_ica.bus_id;
+            EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+            remote_party_id := ETX_WEB_PRTSEQ.nextval;
+            INSERT INTO ETX_WEB_PARTY (PAR_ID, PAR_NODE_NAME, PAR_DISPLAY_NAME, BUS_ID, PAR_CREATED_BY,
+            PAR_ACTIVE_STATE, PAR_WEB_MANAGED)
+            VALUES (remote_party_id, row_ica.node_name, row_ica.display_name, row_ica.bus_id, 0, 1, 0);
+            END;
+            UPDATE ETX_WEB_PARTY_ICA SET REMOTE_PAR_ID = remote_party_id WHERE PCA_ID = row_ica.id;
+            END LOOP;
+            END;
+            /
+        </sql>
+        <sql dbms="mysql" endDelimiter="/">
+            DROP PROCEDURE IF EXISTS MIGRATE_REMOTE_PARTIES;
+
+            CREATE PROCEDURE MIGRATE_REMOTE_PARTIES()
+            BEGIN
+            DECLARE remote_party_id DECIMAL(19,0);
+            DECLARE icas_id DECIMAL(19, 0);
+            DECLARE icas_node_name VARCHAR(64);
+            DECLARE icas_display_name VARCHAR(75);
+            DECLARE icas_bus_id DECIMAL(19, 0);
+            DECLARE icas_active_state TINYINT;
+
+            DECLARE icas_cursor CURSOR FOR
+            SELECT pi.PCA_ID id, pi.PCA_NODE_NAME node_name, pi.PCA_DISPLAY_NAME display_name, p.BUS_ID bus_id,
+            pi.PCA_STATE active_state
+            FROM ETX_WEB_PARTY_ICA pi JOIN ETX_WEB_PARTY p
+            ON pi.PAR_ID = p.PAR_ID
+            WHERE pi.PCA_STATE = 1;
+            DECLARE CONTINUE HANDLER FOR NOT FOUND SET end_of_tables = 1;
+
+            open icas_cursor;
+            icas_loop: LOOP
+            FETCH icas_cursor INTO icas_id, icas_node_name, icas_display_name, icas_bus_id, icas_active_state;
+
+            IF end_of_tables = 1 THEN
+            close icas_cursor;
+            LEAVE icas_loop;
+            END IF;
+
+            SET remote_party_id = (SELECT PAR_ID FROM ETX_WEB_PARTY WHERE PAR_NODE_NAME = icas_node_name AND BUS_ID =
+            icas_bus_id);
+            IF remote_party_id IS NULL THEN
+            SET remote_party_id = (SELECT MAX(PAR_ID) + 1 FROM ETX_WEB_PARTY);
+            INSERT INTO ETX_WEB_PARTY (PAR_ID, PAR_NODE_NAME, PAR_DISPLAY_NAME, BUS_ID, PAR_CREATED_BY,
+            PAR_ACTIVE_STATE, PAR_WEB_MANAGED)
+            VALUES (remote_party_id, icas_node_name, icas_display_name, icas_bus_id, 0, icas_active_state, 0);
+            END IF
+            UPDATE ETX_WEB_PARTY_ICA SET REMOTE_PAR_ID = remote_party_id WHERE PCA_ID = icas_id;
+            END LOOP icas_loop;
+            END;
+
+            CALL MIGRATE_REMOTE_PARTIES();
+            DROP PROCEDURE MIGRATE_REMOTE_PARTIES;
+            /
+        </sql>
+    </changeSet>
+
+    <changeSet id="9" author="cabalen">
+        <comment>Alter ETX_WEB_PARTY_ICA table</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY_ICA MODIFY (REMOTE_PAR_ID NOT NULL);
+            ALTER TABLE ETX_WEB_PARTY_ICA DROP COLUMN PCA_NODE_NAME;
+            ALTER TABLE ETX_WEB_PARTY_ICA DROP COLUMN PCA_DISPLAY_NAME;
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY_ICA MODIFY REMOTE_PAR_ID DECIMAL(19,0) NOT NULL;
+            ALTER TABLE ETX_WEB_PARTY_ICA DROP COLUMN PCA_NODE_NAME;
+            ALTER TABLE ETX_WEB_PARTY_ICA DROP COLUMN PCA_DISPLAY_NAME;
+        </sql>
+    </changeSet>
+
+    <changeSet id="10" author="cabalen">
+        <comment>Label translations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.admin.ica.inactive', 'Inactive', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.signature.not.required', 'optional signature', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.signature.required', 'mandatory signature', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.encryption.not.required', 'no encryption', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.encryption.required', 'encrypted transmission', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'error.ica.not.loaded', 'Interchange Agreement was not successfully loaded.
+            Please contact the System Administrator', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.close', 'Close', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.openDownloadWebstart', 'Download files', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.openUploadWebstart', 'Upload files', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.downloadedMessage', 'Open the downloaded file to load the
+            attachments of the message', 1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('label.admin.ica.inactive', 'Inactive', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.signature.not.required', 'optional signature', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.signature.required', 'mandatory signature', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.encryption.not.required', 'no encryption', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.encryption.required', 'encrypted transmission', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.close', 'Close', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.openDownloadWebstart', 'Download files', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.openUploadWebstart', 'Upload files', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.downloadedMessage', 'Open the downloaded file to load the
+            attachments of the message', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="11" author="cabalen">
+        <comment>Alter ETX_WEB_MESSAGE table</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_MESSAGE ADD (MSG_REMOTE_PARTY_NAME_BACK VARCHAR2(64));
+            UPDATE ETX_WEB_MESSAGE SET MSG_REMOTE_PARTY_NAME_BACK = MSG_REMOTE_PARTY_NAME;
+            ALTER TABLE ETX_WEB_MESSAGE ADD (MSG_REMOTE_PARTY_ID NUMBER(19));
+            ALTER TABLE ETX_WEB_MESSAGE ADD CONSTRAINT ETX_WEB_MESSAGE_FK_REM_PARTY FOREIGN KEY (MSG_REMOTE_PARTY_ID)
+            REFERENCES ETX_WEB_PARTY(PAR_ID);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_MESSAGE ADD MSG_REMOTE_PARTY_NAME_BACK VARCHAR(64) NULL;
+            UPDATE ETX_WEB_MESSAGE SET MSG_REMOTE_PARTY_NAME_BACK = MSG_REMOTE_PARTY_NAME;
+            ALTER TABLE ETX_WEB_MESSAGE ADD MSG_REMOTE_PARTY_ID DECIMAL(19, 0) NULL;
+            ALTER TABLE ETX_WEB_MESSAGE ADD CONSTRAINT ETX_WEB_MESSAGE_FK_REM_PARTY FOREIGN KEY (MSG_REMOTE_PARTY_ID)
+            REFERENCES ETX_WEB_PARTY (PAR_ID);
+        </sql>
+    </changeSet>
+
+    <changeSet id="12" author="cabalen">
+        <comment>Migrate hardcoded remote party from ETX_WEB_MESSAGE to ETX_WEB_PARTY</comment>
+        <sql dbms="oracle" endDelimiter="/">
+            DECLARE
+            CURSOR messages_cursor IS
+            SELECT m.MSG_ID message_id, m.MSG_LOCAL_PARTY_ID local_party_id, m.MSG_REMOTE_PARTY_NAME_BACK
+            remote_party_node_name, p.BUS_ID bus_id
+            FROM ETX_WEB_MESSAGE m JOIN ETX_WEB_PARTY p
+            ON m.MSG_LOCAL_PARTY_ID = p.PAR_ID;
+
+            row_message messages_cursor%ROWTYPE;
+            remote_party_id NUMBER(19);
+            BEGIN
+            FOR row_message IN messages_cursor
+            LOOP
+
+            BEGIN
+            SELECT PAR_ID into remote_party_id from ETX_WEB_PARTY where PAR_NODE_NAME =
+            row_message.remote_party_node_name and BUS_ID = row_message.bus_id;
+            EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+            -- Insert new remote party if it doesn't exist already
+            remote_party_id := ETX_WEB_PRTSEQ.nextval;
+            INSERT INTO ETX_WEB_PARTY (PAR_ID, PAR_NODE_NAME, PAR_DISPLAY_NAME, BUS_ID, PAR_CREATED_BY,
+            PAR_ACTIVE_STATE, PAR_WEB_MANAGED)
+            VALUES (remote_party_id, row_message.remote_party_node_name, row_message.remote_party_node_name,
+            row_message.bus_id, 0, 1, 0);
+            END;
+
+            UPDATE ETX_WEB_MESSAGE SET MSG_REMOTE_PARTY_ID = remote_party_id WHERE MSG_ID = row_message.message_id;
+
+            END LOOP;
+            END;
+            /
+        </sql>
+        <sql dbms="mysql" endDelimiter="/">
+            DROP PROCEDURE IF EXISTS MIGRATE_MESSAGE_REMOTE_PARTIES;
+
+            CREATE PROCEDURE MIGRATE_MESSAGE_REMOTE_PARTIES()
+            BEGIN
+            DECLARE remote_party_id DECIMAL(19, 0);
+            DECLARE remote_party_ica DECIMAL(19, 0);
+            DECLARE message_id DECIMAL(19, 0);
+            DECLARE message_local_party_id DECIMAL(19, 0);
+            DECLARE message_remote_party_node_name VARCHAR(64);
+            DECLARE message_bus_id DECIMAL(19, 0);
+
+            DECLARE messages_cursor CURSOR FOR
+            SELECT m.MSG_ID message_id, m.MSG_LOCAL_PARTY_ID local_party_id, m.MSG_REMOTE_PARTY_NAME_BACK
+            remote_party_node_name, p.BUS_ID bus_id
+            FROM ETX_WEB_MESSAGE m JOIN ETX_WEB_PARTY p
+            ON m.MSG_LOCAL_PARTY_ID = p.PAR_ID;
+            DECLARE CONTINUE HANDLER FOR NOT FOUND SET end_of_messages = 1;
+
+            OPEN messages_cursor;
+            messages_loop: LOOP
+            FETCH messages_cursor INTO message_id, message_local_party_id, message_remote_party_node_name,
+            message_bus_id;
+
+            IF end_of_messages = 1 THEN
+            close messages_cursor;
+            LEAVE messages_loop;
+            END IF;
+
+            SET remote_party_id = (SELECT PAR_ID from ETX_WEB_PARTY where PAR_NODE_NAME = message_remote_party_node_name
+            and BUS_ID = message_bus_id);
+
+            IF remote_party_id IS NULL THEN
+            -- Insert new remote party if it doesn't exist already
+            SET remote_party_id = (SELECT MAX(PAR_ID) + 1 FROM ETX_WEB_PARTY);
+            INSERT INTO ETX_WEB_PARTY (PAR_ID, PAR_NODE_NAME, PAR_DISPLAY_NAME, BUS_ID, PAR_CREATED_BY,
+            PAR_ACTIVE_STATE, PAR_WEB_MANAGED)
+            VALUES (remote_party_id, message_remote_party_node_name, message_remote_party_node_name, message_bus_id, 0,
+            1, 0);
+            END IF;
+
+            UPDATE ETX_WEB_MESSAGE SET MSG_REMOTE_PARTY_ID = remote_party_id WHERE MSG_ID = message_id;
+            END LOOP messages_loop;
+            END;
+
+            CALL MIGRATE_MESSAGE_REMOTE_PARTIES();
+            DROP PROCEDURE MIGRATE_MESSAGE_REMOTE_PARTIES;
+            /
+        </sql>
+    </changeSet>
+
+    <changeSet id="13" author="cabalen">
+        <comment>Alter ETX_WEB_MESSAGE table</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_MESSAGE MODIFY (MSG_REMOTE_PARTY_ID NUMBER(19) NOT NULL);
+            ALTER TABLE ETX_WEB_MESSAGE DROP COLUMN MSG_REMOTE_PARTY_NAME;
+            ALTER TABLE ETX_WEB_MESSAGE DROP COLUMN MSG_REMOTE_PARTY_NAME_BACK;
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_MESSAGE CHANGE MSG_REMOTE_PARTY_ID MSG_REMOTE_PARTY_ID DECIMAL(19, 0) NOT NULL;
+            ALTER TABLE ETX_WEB_MESSAGE DROP COLUMN MSG_REMOTE_PARTY_NAME;
+            ALTER TABLE ETX_WEB_MESSAGE DROP COLUMN MSG_REMOTE_PARTY_NAME_BACK;
+        </sql>
+    </changeSet>
+
+    <changeSet id="14" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'message.attachmentListEmpty', 'Please select at least one file to upload',
+            1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('message.attachmentListEmpty', 'Please select at least one file to upload', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="15" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.message.send.error', 'An error occurred while trying to send the
+            message. Please try again or save as draft.',
+            1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('label.message.send.error', 'An error occurred while trying to send the message. Please try again or
+            save as draft.', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="16" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'uploadPanel.confidentialToolTip.text', 'Confidential',
+            1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'uploadPanel.nonConfidentToolTip.text', 'Non confidential',
+            1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('uploadPanel.confidentialToolTip.text', 'Confidential', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('uploadPanel.nonConfidentToolTip.text', 'Non confidential', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="17" author="canofcr">
+        <comment>Update label translations for FR</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_fr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_fr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="18" author="canofcr">
+        <comment>Update label translations for PT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_pt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_pt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="19" author="canofcr">
+        <comment>Update label translations for EL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_el.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_el.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="20" author="canofcr">
+        <comment>Update label translations for DE</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_de.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_de.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="21" author="canofcr">
+        <comment>Update label translations for ES</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_es.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_es.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="22" author="canofcr">
+        <comment>Update label translations for MT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_mt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_mt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="23" author="canofcr">
+        <comment>Update label translations for DA</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_da.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_da.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="24" author="canofcr">
+        <comment>Update label translations for SL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_sl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_sl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="25" author="canofcr">
+        <comment>Update label translations for IT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_it.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_it.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="26" author="canofcr">
+        <comment>Update label translations for PL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_pl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_pl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="27" author="canofcr">
+        <comment>Update label translations for SV</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_sv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_sv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="28" author="canofcr">
+        <comment>Update label translations for NL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_nl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_nl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="29" author="canofcr">
+        <comment>Update label translations for ET</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_et.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_et.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="30" author="canofcr">
+        <comment>Update label translations for CS</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_cs.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_cs.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="31" author="canofcr">
+        <comment>Update label translations for HR</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_hr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_hr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="32" author="canofcr">
+        <comment>Update label translations for SK</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_sk.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_sk.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="33" author="canofcr">
+        <comment>Update label transations for LV</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_lv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_lv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="34" author="canofcr">
+        <comment>Update label translations for BG</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_bg.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_bg.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="35" author="canofcr">
+        <comment>Update label translations for RO</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_ro.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_ro.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="36" author="canofcr">
+        <comment>Update label translations for FI</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_fi.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_fi.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="37" author="canofcr">
+        <comment>Update label translations for HU</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_hu.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_hu.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="38" author="canofcr">
+        <comment>Update label translations for LT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_lt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_lt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="41" author="canofcr">
+        <comment>Update label translations for BG</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_bg.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_bg.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="42" author="canofcr">
+        <comment>Update label translations for CS</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_cs.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_cs.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="43" author="canofcr">
+        <comment>Update label translations for DA</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_da.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_da.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="44" author="canofcr">
+        <comment>Update label translations for DE</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_de.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_de.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="45" author="canofcr">
+        <comment>Update label translations for EL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_el.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_el.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="46" author="canofcr">
+        <comment>Update label translations for EN</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_en.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_en.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="47" author="canofcr">
+        <comment>Update label translations for ES</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_es.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_es.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="48" author="canofcr">
+        <comment>Update label translations for ET</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_et.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_et.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="49" author="canofcr">
+        <comment>Update label translations for FI</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_fi.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_fi.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="50" author="canofcr">
+        <comment>Update label translations for HR</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_hr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_hr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="51" author="canofcr">
+        <comment>Update label translations for HU</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_hu.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_hu.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="52" author="canofcr">
+        <comment>Update label translations for IT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_it.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_it.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="53" author="canofcr">
+        <comment>Update label translations for LT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_lt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_lt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="54" author="canofcr">
+        <comment>Update label translations for LV</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_lv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_lv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="55" author="canofcr">
+        <comment>Update label translations for MT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_mt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_mt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="56" author="canofcr">
+        <comment>Update label translations for NL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_nl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_nl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="57" author="canofcr">
+        <comment>Update label translations for PL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_pl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_pl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="58" author="canofcr">
+        <comment>Update label translations for PT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_pt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_pt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="59" author="canofcr">
+        <comment>Update label translations for RO</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_ro.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_ro.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="60" author="canofcr">
+        <comment>Update label translations for SK</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_sk.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_sk.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="61" author="canofcr">
+        <comment>Update label translations for SL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_sl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_sl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="62" author="canofcr">
+        <comment>Update label translations for SV</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_sv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_sv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="63" author="canofcr">
+        <comment>Update label translations for FR</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_fr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_fr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="65" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'admin.messageNotificationToolTip.text', 'You can add up to ten email
+            addresses separated by a comma or semicolon',
+            1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('admin.messageNotificationToolTip.text', 'You can add up to ten email addresses separated by a comma
+            or semicolon', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="66" author="lambept">
+        <comment>Add etx.business.folder.structure.enabled property to ETX_WEB_BUSINESS_CONFIG
+            , true for edma business
+        </comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_BUSINESS_CONFIG (BCG_ID, BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+            SELECT ETX_WEB_BCGSEQ.nextval, BUS_ID,'etx.business.folder.structure.enabled','true'
+            FROM ETX_WEB_BUSINESS_CONFIG
+            WHERE BCG_PROPERTY_NAME = 'etx.business.custom.view.name' and BCG_PROPERTY_VALUE = 'edma';
+            INSERT INTO ETX_WEB_BUSINESS_CONFIG (BCG_ID, BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+            SELECT ETX_WEB_BCGSEQ.nextval, BUS_ID,'etx.business.folder.structure.enabled','false'
+            FROM ETX_WEB_BUSINESS_CONFIG
+            WHERE BCG_PROPERTY_NAME = 'etx.business.custom.view.name' and BCG_PROPERTY_VALUE != 'edma';
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_BUSINESS_CONFIG (BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+            SELECT BUS_ID,'etx.business.folder.structure.enabled','true'
+            FROM ETX_WEB_BUSINESS_CONFIG
+            WHERE BCG_PROPERTY_NAME = 'etx.business.custom.view.name' and BCG_PROPERTY_VALUE = 'edma';
+            INSERT INTO ETX_WEB_BUSINESS_CONFIG (BCG_ID, BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+            SELECT BUS_ID,'etx.business.folder.structure.enabled','false'
+            FROM ETX_WEB_BUSINESS_CONFIG
+            WHERE BCG_PROPERTY_NAME = 'etx.business.custom.view.name' and BCG_PROPERTY_VALUE != 'edma';
+        </sql>
+    </changeSet>
+
+    <changeSet id="68" author="lambept">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.distribution', 'For distribution',
+            1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.distributionToolTip.text', 'You can add email addresses separated by
+            a comma or semicolon, they need to end with @ec.europa.eu',
+            1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'error.no.valid.ec.email', 'The email address should be a valid email
+            ending with @ec.europa.eu',
+            1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('label.distribution', 'For distribution', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('label.distributionToolTip.text', 'You can add email addresses separated by a comma or semicolon',
+            1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('error.no.valid.ec.email', 'The email address should be a valid email ending with @ec.europa.eu', 1,
+            1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="69" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1 FROM ETX_WEB_LABEL_TRANSLATION), 'message.export.pdf', 'Export message in
+            PDF format', 1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('message.export.pdf', 'Export message in PDF format', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="71" author="brighab">
+        <comment>ETRUSTEX-4479</comment>
+        <insert tableName="ETX_WEB_CONFIG">
+            <column name="CFG_ID" value="15" />
+            <column name="CFG_PROP_NAME" value="etrustex.mail.distribution" />
+            <column name="CFG_PROP_VALUE" value="@ec.europa.eu;@ext.ec.europa.eu" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="74" author="brighab">
+        <comment>ETRUSTEX-4508</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('message.shouldBeSignedErrorMessage', 'The signature preference cannot be saved as draft', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.attachmentListTooLong', 'Please attach less than 500 files', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

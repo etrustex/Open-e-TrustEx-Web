@@ -1,0 +1,298 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="cabalen">
+        <comment>Create sequence ETX_WEB_PARTYICASEQ</comment>
+        <sql dbms="oracle" splitStatements="true">
+            CREATE SEQUENCE ETX_WEB_PARTYICASEQ MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT BY 1 START
+            WITH 1 CACHE 20 NOORDER NOCYCLE;
+        </sql>
+    </changeSet>
+
+    <changeSet id="2" author="cabalen">
+        <comment>Create table ETX_WEB_PARTY_ICA</comment>
+        <sql dbms="oracle" splitStatements="true">
+            CREATE TABLE "ETX_WEB_PARTY_ICA"
+            (
+            "PCA_ID" NUMBER(19,0) NOT NULL,
+            "PAR_ID" NUMBER(19,0) NOT NULL,
+            "PCA_NODE_NAME" VARCHAR2(64 CHAR) NOT NULL,
+            "PCA_DISPLAY_NAME" VARCHAR2(75 CHAR) NOT NULL,
+            "PCA_LOADED_ON" DATE NOT NULL,
+            "PCA_INTEGRITY" NUMBER(1,0),
+            "PCA_CONFIDENTIALITY" NUMBER(1,0),
+            "PCA_CERTIFICATE" CLOB,
+            "PCA_CREATED_ON" DATE DEFAULT SYSDATE NOT NULL,
+            "PCA_CREATED_BY" NUMBER(19,0) NOT NULL,
+            "PCA_UPDATED_ON" DATE,
+            "PCA_UPDATED_BY" NUMBER(19,0),
+            "PCA_STATE" NUMBER(1,0) NOT NULL,
+            CONSTRAINT PK_PCA_ID PRIMARY KEY (PCA_ID),
+            CONSTRAINT FK_PCA_PAR_ID FOREIGN KEY (PAR_ID) REFERENCES ETX_WEB_PARTY(PAR_ID),
+            CONSTRAINT FK_PCA_CREATED_USR_ID FOREIGN KEY (PCA_CREATED_BY) REFERENCES ETX_WEB_USER(USR_ID),
+            CONSTRAINT FK_PCA_UPDATED_USR_ID FOREIGN KEY (PCA_UPDATED_BY) REFERENCES ETX_WEB_USER(USR_ID)
+            );
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            CREATE TABLE `ETX_WEB_PARTY_ICA`
+            (
+            `PCA_ID` DECIMAL(19,0) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            `PAR_ID` DECIMAL(19,0) NOT NULL,
+            `PCA_NODE_NAME` VARCHAR(64) NOT NULL,
+            `PCA_DISPLAY_NAME` VARCHAR(75) NOT NULL,
+            `PCA_LOADED_ON` DATETIME NOT NULL,
+            `PCA_INTEGRITY` TINYINT,
+            `PCA_CONFIDENTIALITY` TINYINT,
+            `PCA_CERTIFICATE` LONGTEXT,
+            `PCA_CREATED_ON` DATETIME DEFAULT SYSDATE() NOT NULL,
+            `PCA_CREATED_BY` DECIMAL(19,0) NOT NULL,
+            `PCA_UPDATED_ON` DATETIME,
+            `PCA_UPDATED_BY` DECIMAL(19,0),
+            `PCA_STATE` TINYINT NOT NULL,
+            CONSTRAINT FK_PCA_PAR_ID FOREIGN KEY (PAR_ID) REFERENCES ETX_WEB_PARTY(PAR_ID),
+            CONSTRAINT FK_PCA_CREATED_USR_ID FOREIGN KEY (PCA_CREATED_BY) REFERENCES ETX_WEB_USER(USR_ID),
+            CONSTRAINT FK_PCA_UPDATED_USR_ID FOREIGN KEY (PCA_UPDATED_BY) REFERENCES ETX_WEB_USER(USR_ID)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="17" author="cabalen">
+        <comment>ETX-2257: Reset sequences that are not synchronized</comment>
+        <sql dbms="oracle" endDelimiter="/">
+            DECLARE
+            max_party_id NUMBER(19);
+            BEGIN
+            SELECT (MAX(PAR_ID) + 1) INTO max_party_id FROM ETX_WEB_PARTY;
+            EXECUTE IMMEDIATE 'DROP SEQUENCE ETX_WEB_PRTSEQ';
+            EXECUTE IMMEDIATE 'CREATE SEQUENCE ETX_WEB_PRTSEQ MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT
+            BY 1 START WITH ' || max_party_id || ' CACHE 20 NOORDER NOCYCLE';
+            END;
+            /
+        </sql>
+        <sql dbms="mysql" endDelimiter="/">
+            DROP PROCEDURE IF EXISTS SYNCHRONIZE_PARTY_SEQUENCE;
+
+            CREATE PROCEDURE SYNCHRONIZE_PARTY_SEQUENCE()
+            BEGIN
+            DECLARE max_party_id DECIMAL(19, 0);
+            SET max_party_id = (SELECT (MAX(PAR_ID) + 1) INTO FROM ETX_WEB_PARTY);
+            EXECUTE IMMEDIATE 'DROP SEQUENCE ETX_WEB_PRTSEQ';
+            EXECUTE IMMEDIATE 'CREATE SEQUENCE ETX_WEB_PRTSEQ MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT
+            BY 1 START WITH ' || max_party_id || ' CACHE 20 NOORDER NOCYCLE';
+            END;
+
+            CALL SYNCHRONIZE_PARTY_SEQUENCE();
+            DROP PROCEDURE SYNCHRONIZE_PARTY_SEQUENCE;
+            /
+        </sql>
+    </changeSet>
+
+    <changeSet id="18" author="cabalen">
+        <comment>ETX-2257: Create triggers to synchronize sequences</comment>
+        <sql dbms="oracle" endDelimiter="/">
+            CREATE OR REPLACE TRIGGER TRG_WEB_PARTY_ID
+            BEFORE INSERT ON ETX_WEB_PARTY
+            FOR EACH ROW
+            BEGIN
+
+            SELECT ETX_WEB_PRTSEQ.NEXTVAL
+            INTO :new.PAR_ID
+            FROM dual;
+
+            END;
+            /
+
+            CREATE OR REPLACE TRIGGER TRG_WEB_BUSINESS_ID
+            BEFORE INSERT ON ETX_WEB_BUSINESS
+            FOR EACH ROW
+            BEGIN
+
+            SELECT ETX_WEB_BUSSEQ.NEXTVAL
+            INTO :new.BUS_ID
+            FROM dual;
+
+            END;
+            /
+
+            CREATE OR REPLACE TRIGGER TRG_WEB_BUSINESS_CONFIG_ID
+            BEFORE INSERT ON ETX_WEB_BUSINESS_CONFIG
+            FOR EACH ROW
+            BEGIN
+
+            SELECT ETX_WEB_BCGSEQ.NEXTVAL
+            INTO :new.BCG_ID
+            FROM dual;
+
+            END;
+            /
+        </sql>
+        <sql dbms="mysql" endDelimiter="/">
+            CREATE OR REPLACE TRIGGER TRG_WEB_PARTY_ID
+            BEFORE INSERT ON ETX_WEB_PARTY
+            FOR EACH ROW
+            BEGIN
+
+            SELECT ETX_WEB_PRTSEQ.NEXTVAL
+            INTO :new.PAR_ID
+            FROM dual;
+
+            END;
+            /
+
+            CREATE OR REPLACE TRIGGER TRG_WEB_BUSINESS_ID
+            BEFORE INSERT ON ETX_WEB_BUSINESS
+            FOR EACH ROW
+            BEGIN
+
+            SELECT ETX_WEB_BUSSEQ.NEXTVAL
+            INTO :new.BUS_ID
+            FROM dual;
+
+            END;
+            /
+
+            CREATE OR REPLACE TRIGGER TRG_WEB_BUSINESS_CONFIG_ID
+            BEFORE INSERT ON ETX_WEB_BUSINESS_CONFIG
+            FOR EACH ROW
+            BEGIN
+
+            SELECT ETX_WEB_BCGSEQ.NEXTVAL
+            INTO :new.BCG_ID
+            FROM dual;
+
+            END;
+        </sql>
+    </changeSet>
+
+    <changeSet id="19" author="cabalen">
+        <comment>ETX-2257: Remove triggers to synchronize sequences</comment>
+        <sql dbms="oracle" splitStatements="true">
+            DROP TRIGGER TRG_WEB_PARTY_ID;
+            DROP TRIGGER TRG_WEB_BUSINESS_ID;
+            DROP TRIGGER TRG_WEB_BUSINESS_CONFIG_ID;
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            DROP TRIGGER TRG_WEB_PARTY_ID;
+            DROP TRIGGER TRG_WEB_BUSINESS_ID;
+            DROP TRIGGER TRG_WEB_BUSINESS_CONFIG_ID;
+        </sql>
+    </changeSet>
+
+    <changeSet id="39" author="cabalen">
+        <comment>ETX-2279: Reset sequences that are not synchronized</comment>
+        <sql dbms="oracle" endDelimiter="/">
+            DECLARE
+            max_business_id NUMBER(19);
+            max_business_config_id NUMBER(19);
+            BEGIN
+            SELECT (MAX(BUS_ID) + 1) INTO max_business_id FROM ETX_WEB_BUSINESS;
+            SELECT (MAX(BCG_ID) + 1) INTO max_business_config_id FROM ETX_WEB_BUSINESS_CONFIG;
+
+            EXECUTE IMMEDIATE 'DROP SEQUENCE ETX_WEB_BUSSEQ';
+            EXECUTE IMMEDIATE 'CREATE SEQUENCE ETX_WEB_BUSSEQ MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT
+            BY 1 START WITH ' || max_business_id || ' CACHE 20 NOORDER NOCYCLE';
+
+            EXECUTE IMMEDIATE 'DROP SEQUENCE ETX_WEB_BCGSEQ';
+            EXECUTE IMMEDIATE 'CREATE SEQUENCE ETX_WEB_BCGSEQ MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT
+            BY 1 START WITH ' || max_business_config_id || ' CACHE 20 NOORDER NOCYCLE';
+            END;
+            /
+        </sql>
+        <sql dbms="mysql" endDelimiter="/">
+            DROP PROCEDURE IF EXISTS SYNCHRONIZE_BUSINESS_BUSINESS_CONFIG_SEQUENCES;
+
+            CREATE PROCEDURE SYNCHRONIZE_BUSINESS_BUSINESS_CONFIG_SEQUENCES()
+            BEGIN
+            DECLARE max_business_id DECIMAL(19, 0);
+            DECLARE max_business_config_id DECIMAL(19, 0);
+
+            SET max_business_id = (SELECT (MAX(BUS_ID) + 1) INTO FROM ETX_WEB_BUSINESS);
+            SET max_business_config_id = (SELECT (MAX(BCG_ID) + 1) INTO FROM ETX_WEB_BUSINESS_CONFIG);
+
+            EXECUTE IMMEDIATE 'DROP SEQUENCE ETX_WEB_BUSSEQ';
+            EXECUTE IMMEDIATE 'CREATE SEQUENCE ETX_WEB_BUSSEQ MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT
+            BY 1 START WITH ' || max_business_id || ' CACHE 20 NOORDER NOCYCLE';
+
+            EXECUTE IMMEDIATE 'DROP SEQUENCE ETX_WEB_BCGSEQ';
+            EXECUTE IMMEDIATE 'CREATE SEQUENCE ETX_WEB_BCGSEQ MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT
+            BY 1 START WITH ' || max_business_config_id || ' CACHE 20 NOORDER NOCYCLE';
+            END;
+
+            CALL SYNCHRONIZE_BUSINESS_BUSINESS_CONFIG_SEQUENCES();
+            DROP PROCEDURE SYNCHRONIZE_BUSINESS_BUSINESS_CONFIG_SEQUENCES;
+            /
+        </sql>
+    </changeSet>
+
+    <changeSet id="64" author="cabalen">
+        <comment>ETRUSTEX-4209: Increase message notification email size</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_EMAIL VARCHAR2(1000 CHAR));
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_EMAIL VARCHAR(1000) NULL;
+        </sql>
+    </changeSet>
+
+    <changeSet id="67" author="lambept">
+        <comment>ETRUSTEX-4207: Increase attachment filename size to store folders in name</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_ATTACHMENT MODIFY (ATT_FILE_NAME VARCHAR2(2000 CHAR));
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_ATTACHMENT MODIFY ATT_FILE_NAME VARCHAR(2000) NULL;
+        </sql>
+    </changeSet>
+
+    <changeSet id="70" author="lambept">
+        <comment>ETRUSTEX-4207: restore attachment filename size back to 255 CHAR</comment>
+        <modifyDataType columnName="ATT_FILE_NAME"
+                        newDataType="VARCHAR2(255 CHAR)"
+                        tableName="ETX_WEB_ATTACHMENT"/>
+    </changeSet>
+
+    <changeSet id="72" author="fuscoem">
+        <comment>Folder structure for all users</comment>
+        <addColumn tableName="ETX_WEB_ATTACHMENT">
+            <column name="ATT_FILE_PATH"  type="TEXT" />
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="73" author="brighab">
+        <comment>Create procedure to add label translations</comment>
+        <createProcedure dbms="oracle">
+            CREATE OR REPLACE PROCEDURE ADD_LABEL_TRANSLATION(
+            LTR_KEY IN VARCHAR2,
+            LTR_MESSAGE IN VARCHAR2,
+            LTR_SCREEN_ID IN NUMBER,
+            LTR_SCREEN_POSITION_X IN NUMBER,
+            LTR_SCREEN_POSITION_Y IN NUMBER,
+            LNG_ID IN NUMBER)
+            IS
+            BEGIN
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1 FROM ETX_WEB_LABEL_TRANSLATION), LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X, LTR_SCREEN_POSITION_Y, LNG_ID);
+            END;
+        </createProcedure>
+<!--   NOT WORKING     <createProcedure dbms="mysql">
+			DELIMITER $$
+			CREATE PROCEDURE `ADD_LABEL_TRANSLATION`(
+			IN LTR_KEY CHAR(100),
+			IN LTR_MESSAGE CHAR(250),
+			IN LTR_SCREEN_ID INT,
+			IN LTR_SCREEN_POSITION_X INT,
+			IN LTR_SCREEN_POSITION_Y INT,
+			IN LNG_ID INT)
+			BEGIN
+			INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+			LTR_SCREEN_POSITION_Y, LNG_ID)
+			VALUES (LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X, LTR_SCREEN_POSITION_Y, LNG_ID);
+			END;$$
+			DELIMITER ;
+		</createProcedure>-->
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>etrustex-assembler-zip</artifactId>
+    <groupId>eu.europa.ec.etrustex</groupId>
+    <version>trunk</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven-assembly-plugin.version>2.6</maven-assembly-plugin.version>
+    </properties>
+
+    <name>etrustex-assembler-zip</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven-assembly-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>create-archive-bin</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>etx-wacc-modules-src-public</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <descriptor>${project.basedir}/src/assembly/src_assembly.xml</descriptor>
+                            <descriptors>
+                                <descriptor>src/assembly/src_assembly.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

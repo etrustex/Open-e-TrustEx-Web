@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>fr</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx écran 1</hd_short_title>
+        <hd_long_title>eTrustEx écran 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>26/06/2015</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx écran 1</ipg_title>
+            <ipg_creator>DIGIT.B.2.001</ipg_creator>
+            <ipg_language>fr</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div id="error.admin.wrongEmail" class="ETX_WEB_LABEL_TRANSLATION">Format d&apos;adresse électronique non valable</div>
+                <div id="label.admin.login" class="ETX_WEB_LABEL_TRANSLATION">Identifiant unique ECAS</div>
+                <div id="label.admin.notif.check.mandatory" class="ETX_WEB_LABEL_TRANSLATION">Au moins une notification par courriel est obligatoire pour ce business</div>
+                <div id="label.admin.notif.delete.mandatory" class="ETX_WEB_LABEL_TRANSLATION">Impossible de supprimer ce rôle car au moins une notification par courriel est obligatoire</div>
+                <div id="message.cookie.banner" class="ETX_WEB_LABEL_TRANSLATION">Le site web e-TrustEx utilise des cookies. Les cookies nous aident à améliorer la navigation pour les utilisateurs</div>
+                <div id="error.admin.generic" class="ETX_WEB_LABEL_TRANSLATION">La demande ne peut pas être accomplie. Veuillez contacter votre administrateur système</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="common-xml" basedir=".">
+		
+	<dirname property="this.dir" file="${ant.file.common-xml}"/>
+
+	<property file="${this.dir}/common.properties"/>
+	<property file="${this.dir}/environment.properties"/>
+	
+	<available property="_isconfig" file="${this.dir}/${config.dir}/config.${etrustex.environment}.properties"/>
+	<fail unless="_isconfig" message="No config file found: config.${etrustex.environment}.properties."/>
+	<property file="${this.dir}/${config.dir}/config.${etrustex.environment}.properties"/>
+	
+	<echo level="info">================================</echo>
+	<echo level="info">Environment = ${etrustex.environment}</echo>
+	<echo level="info">================================</echo>
+	
+</project>	

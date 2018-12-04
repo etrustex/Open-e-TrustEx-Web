@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>ro</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>26/06/2015</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.2.001</ipg_creator>
+            <ipg_language>ro</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div id="error.admin.wrongEmail" class="ETX_WEB_LABEL_TRANSLATION">Formatul adresei de e-mail este incorect.</div>
+                <div id="label.admin.login" class="ETX_WEB_LABEL_TRANSLATION">Nume de utilizator ECAS</div>
+                <div id="label.admin.notif.check.mandatory" class="ETX_WEB_LABEL_TRANSLATION">Este obligatoriu să furnizați cel puțin o adresă de e-mail pentru notificări.</div>
+                <div id="label.admin.notif.delete.mandatory" class="ETX_WEB_LABEL_TRANSLATION">Acest rol nu poate fi șters, întrucât este obligatoriu să existe cel puțin o adresă de e-mail pentru notificări.</div>
+                <div id="message.cookie.banner" class="ETX_WEB_LABEL_TRANSLATION">Site-ul e-TrustEx utilizează module cookie. Modulele cookie ne permit să îmbunătățim experiența utilizatorilor site-ului.</div>
+                <div id="error.admin.generic" class="ETX_WEB_LABEL_TRANSLATION">Cererea nu poate fi finalizată. Vă rugăm să contactați administratorul de sistem.</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

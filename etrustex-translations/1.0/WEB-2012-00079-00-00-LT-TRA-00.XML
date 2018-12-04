@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>lt</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>lt</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Prisijungta vardu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Pranešimo informacija</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Dokumentas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Konfidencialus</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Pastabos apie dokumentą</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Atšaukti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Siųsti pranešimą</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Išsaugoti juodraštį</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Pašto dėžutė. Aplankai</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Siuntėjas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Išsiųsta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Gauta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Filtruoti pranešimus</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Valyti filtrus</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Pranešimo juodraštis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Pašto dėžutė. Pranešimai</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Atsijungti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Jūs atsijungėte.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Grįžti į pranešimų puslapį</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Parsisiųsdinti pasirinktas
+                    rinkmenas
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Atsijungimas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Pranešimas išsiųstas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Pranešimo išsiųsti nepavyko</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Bandant išsaugoti pranešimą įvyko
+                    klaida
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Bandant įkelti rinkmeną įvyko
+                    klaida
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Bandant išsaugoti pranešimą įvyko
+                    klaida
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Laukelį „Priemonė“ reikia
+                    užpildyti
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Jei neįrašytas bendrovės
+                    pavadinimas, reikia užpildyti laukelį „Šalis“
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Jei neįrašytas bendrovės
+                    pavadinimas, reikia užpildyti laukelį „Nacionalinis registracijos numeris“
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Laukelį „Šalis“ reikia
+                    užpildyti
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Laukelį „Asmuo ryšiams“
+                    reikia užpildyti
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Laukelį „Organizacijos
+                    pavadinimas“ reikia užpildyti
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Laukelį „Dalykas“ reikia užpildyti
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Turite pasirinkti rinkmeną,
+                    kad galėtumėte ją įkelti
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Pridėtos rinkmenos</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Juodraščiai</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Išsiųsti elementai</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Aplankas:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Pranešimo dalykas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Priedai</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Sukurta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Pranešimo duomenys</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Išsiųsta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Gauta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Pranešimo tekstas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Pirmas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Atgal</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Toliau</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Paskutinis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Į viršų</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Pranešimai</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Aplankai</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Pradžios puslapis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Rašyti pranešimą</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Gavėjas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Dalykas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Nepridėta jokių rinkmenų</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Pridėtos rinkmenos (spustelėkite, jei
+                    norite pašalinti)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Pridėti rinkmeną</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Įkelti rinkmenas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Turinys</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Laukeliai (metaduomenys)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Informacija apie siuntėją</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Organizacijos pavadinimas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Registracijos numeris</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Asmuo ryšiams</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Pareigos</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefonas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">E. pašto adresas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Gatvė</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Pašto kodas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Miestas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Šalis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Bendrovės pavadinimas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">Kieno vardu siunčiama</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Pastabos</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Gavėjas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Priemonė</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Rinkmenos numeris</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Informacinis numeris</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Filtro laukelyje pateiktos
+                    gavimo datos formatas netinkamas. Tinkamas formatas yra mmmm-MM-dd.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Filtro laukelyje pateiktos
+                    siuntimo datos formatas netinkamas. Tinkamas formatas yra mmmm-MM-dd.
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>ro</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>ro</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Adresa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Salvat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Listă fişiere</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Numărul de înregistrare al societăţii</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Referinţă informare</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Referinţă fişier</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Mesaj ciornă salvat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Mesajul ciornă nu a fost salvat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Mesaj primit</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Antitrust</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Fuziune</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Ajutor de stat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Orizontal</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Şterge</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Sunteţi sigur că doriţi să anulaţi mesajul?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Sunteţi sigur că doriţi să ştergeţi mesajul ciornă?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Câmpul „Subiect” obligatoriu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Dacă se completează denumirea organizaţiei, trebuie completat câmpul „Ţara”</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Dacă se completează denumirea organizaţiei, trebuie completat câmpul „Numărul de înregistrare al societăţii”</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Câmpul „Persoana de contact” obligatoriu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Câmpul „Instrument” (rubrica „Informaţii mesaj”) obligatoriu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Niciun comentariu</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

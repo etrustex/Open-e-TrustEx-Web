@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>sk</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>sk</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Prihlásený používateľ:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Informácie o správe</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Dokument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Dôverný</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Poznámky k dokumentu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Zrušiť</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Odoslať správu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Uložiť ako koncept</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Zobrazenie: Schránka / Spisy
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Odosielateľ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Odoslané</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Prijaté</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Filtrovať správy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Odstrániť filtre</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Koncept správy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Zobrazenie: Schránka / Správy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Odhlásenie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Odhlásenie prebehlo úspešne</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Návrat na zoznam správ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Stiahnuť vybrané súbory</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Odhlásiť sa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Správa bola úspešne odoslaná</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Odoslanie správy bolo neúspešné
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Pri ukladaní správy došlo k chybe
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Pri nahrávaní prílohy došlo k
+                    chybe
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Pri ukladaní správy došlo k
+                    chybe
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Pole Nástroj musí byť
+                    vyplnené
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Pole Štát musí byť vyplnené,
+                    ak nie je vyplnené pole Názov spoločnosti
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Pole IČO musí byť vyplnené, ak
+                    nie je vyplnené pole Názov spoločnosti
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Pole Štát musí byť vyplnené
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Pole Kontaktná osoba musí
+                    byť vyplnené
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Pole Názov organizácie
+                    musí byť vyplnené
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Pole Predmet musí byť vyplnené</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Ak chcete nahrať súbor,
+                    musíte ho najprv označiť
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Pripojené súbory</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Zobrazenie: Koncepty</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Zobrazenie: Odoslané položky</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Spis:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Predmet správy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Prílohy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Dátum vytvorenia</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Podrobnosti o správe</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Dátum odoslania</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Dátum prijatia</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Text správy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Prvá</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Predchádzajúca</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Nasledujúca</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Posledná</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Na začiatok</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Zobrazenie: Správy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Zobrazenie: Spisy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Domovská stránka</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Napísať správu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Adresát</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Predmet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Nie sú pripojené žiadne súbory</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Pripojené súbory (kliknutím ich môžete
+                    odstrániť)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Pripojiť súbor</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Nahrať súbory</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Obsah</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Polia (metaúdaje)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Informácie o odosielateľovi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Názov organizácie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">IČO</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Kontaktná osoba</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Funkcia</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefónne číslo</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">E-mail</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Ulica</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">PSČ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Obec</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Štát</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Názov spoločnosti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">V mene</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Poznámky</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Do rúk</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Nástroj</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Číslo záznamu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Číslo informácie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Formát dátumu prijatia
+                    vloženého v poli pre filter je nesprávny. Správny formát je rrrr-MM-dd
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Formát dátumu odoslania
+                    vloženého v poli pre filter je nesprávny. Správny formát je rrrr-MM-dd
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

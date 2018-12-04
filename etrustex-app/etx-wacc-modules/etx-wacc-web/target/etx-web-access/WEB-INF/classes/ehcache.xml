@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache updateCheck="false">
+
+    <defaultCache
+            maxElementsInMemory="100"
+            eternal="false"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <!--QUERY-->
+    <cache
+            name="org.hibernate.cache.StandardQueryCache"
+            eternal="false"
+            maxElementsInMemory="100"
+            overflowToDisk="false"
+            timeToLiveSeconds="3600"
+            />
+
+    <!--RO-->
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.Business"
+            maxElementsInMemory="50"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.BusinessConfig"
+            maxElementsInMemory="50"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.Config"
+            maxElementsInMemory="100"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.Privilege"
+            maxElementsInMemory="100"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.Role"
+            maxElementsInMemory="100"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <!--RW-->
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.BusinessUserConfig"
+            maxElementsInMemory="200"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.Attachment"
+            maxElementsInMemory="200"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.Message"
+            maxElementsInMemory="200"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.MessageStatus"
+            maxElementsInMemory="200"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.MessageRead"
+            maxElementsInMemory="200"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.MessageSignature"
+            maxElementsInMemory="200"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+    />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.Party"
+            maxElementsInMemory="100"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.User"
+            maxElementsInMemory="100"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <cache
+            name="eu.europa.ec.etrustex.webaccess.model.UserRole"
+            maxElementsInMemory="100"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+</ehcache>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>el</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>el</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Συνδεθήκατε ως</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Πληροφορίες του μηνύματος</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Έγγραφο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Εμπιστευτικό</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Σχόλια του εγγράφου</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Ακύρωση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Αποστολή μηνύματος</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Αποθήκευση ως προσχεδίου</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Εισερχόμενα / Εμφάνιση
+                    φακέλων
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Από</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Εστάλη</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Ελήφθη</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Φιλτράρισμα μηνυμάτων</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Εκκαθάριση φίλτρων</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Προσχέδιο μηνύματος</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Εισερχόμενα / Εμφάνιση μηνυμάτων
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Αποσύνδεση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Αποσυνδεθήκατε</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Επιστροφή στα μηνύματα</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Τηλεφορτώστε επιλεγμένα
+                    αρχεία
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Αποσύνδεση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Το μήνυμα εστάλη!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Η αποστολή του μηνύματος
+                    απέτυχε!
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Παρουσιάστηκε σφάλμα κατά την
+                    αποθήκευση του μηνύματος
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Παρουσιάστηκε σφάλμα κατά την
+                    τηλεφόρτωση του συνημμένου
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Παρουσιάστηκε σφάλμα κατά την
+                    αποθήκευση του μηνύματος
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Η συμπλήρωση του πεδίου &quot;εργαλείο&quot;
+                    είναι υποχρεωτική
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Το πεδίο &quot;χώρα&quot;
+                    πρέπει να συμπληρωθεί αν το πεδίο με την επωνυμία της επιχείρησης είναι κενό
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Το πεδίο &quot;εθνικός αριθμός
+                    καταχώρισης&quot; πρέπει να συμπληρωθεί αν το πεδίο με την επωνυμία της επιχείρησης είναι κενό
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Η συμπλήρωση του πεδίου &quot;χώρα&quot;
+                    είναι υποχρεωτική
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Η συμπλήρωση του πεδίου
+                    &quot;πρόσωπο επικοινωνίας&quot; είναι υποχρεωτική
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Η συμπλήρωση του
+                    πεδίου &quot;όνομα οργανισμού&quot; είναι υποχρεωτική
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Η συμπλήρωση του πεδίου &quot;αντικείμενο&quot;
+                    είναι υποχρεωτική
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Πρέπει να επιλέξετε αρχείο
+                    για να το τηλεφορτώσετε
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Συνημμένα αρχεία</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Εμφάνιση προσχεδίων</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Εμφάνιση μηνυμάτων που εστάλησαν</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Φάκελος:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Θέμα μηνύματος</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Συνημμένα</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Δημιουργήθηκε στις</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Στοιχεία μηνύματος</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Εστάλη στις</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Παραλήφθηκε στις</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Κείμενο μηνύματος</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Πρώτο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Προηγούμενο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Επόμενο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Τελευταίο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Αρχή</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Εμφάνιση μηνυμάτων</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Εμφάνιση φακέλων</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Αρχική σελίδα</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Δημιουργία μηνύματος</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Προς</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Αντικείμενο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Δεν υπάρχουν ακόμη συνημμένα αρχεία</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Συνημμένα αρχεία (Κάντε κλικ για να τα
+                    αφαιρέσετε)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Επισύναψη αρχείου</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Τηλεφόρτωση αρχείων</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Περιεχόμενο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Πεδία (Μεταδεδομένα)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Στοιχεία αποστολέα</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Όνομα οργανισμού</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Αριθμός καταχώρισης</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Πρόσωπο επικοινωνίας</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Θέση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Τηλέφωνο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">Ηλ.διεύθυνση</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Οδός</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Ταχ. κώδικας</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Πόλη</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Χώρα</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Επωνυμία επιχείρησης</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">Για λογαριασμό του / της</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Σχόλια</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Υπόψη του / της</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Εργαλείο</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Αριθμός αρχείου</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Αριθμός πληροφορίας</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Η ημερομηνία που αναγράφεται
+                    στο πεδίο φίλτρου δεν έχει τον σωστό μορφότυπο. Ο σωστός μορφότυπος είναι εεεε-ΜΜ-ηη
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Η ημερομηνία που αναγράφεται στο
+                    πεδίο φίλτρου δεν έχει τον σωστό μορφότυπο. Ο σωστός μορφότυπος είναι εεεε-ΜΜ-ηη
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

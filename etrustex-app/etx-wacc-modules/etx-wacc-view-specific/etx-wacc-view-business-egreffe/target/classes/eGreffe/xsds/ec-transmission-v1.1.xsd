@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:eu:ec:transmission:v11" xmlns="urn:eu:ec:transmission:v11"
+	xmlns:cmt="http://publications.europa.eu/resource/core-metadata-transmission"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://publications.europa.eu/resource/core-metadata-transmission" schemaLocation="coremetadata0211/CM-Transmission-02.11-2012-11-15.xsd"/>
+	<xs:import namespace="urn:eu:ec:cm:common:extensions:v11" schemaLocation="ec-cm-common-extensions-v1.1.xsd"/>
+	<xs:annotation>
+		<xs:appinfo>Inter-institutional Transmission Format</xs:appinfo>
+		<xs:documentation>
+			This format intends to be used to describe transmissions done from the European Commission 
+			to other institutions, offices, organisations...
+			It reuses and extends the Core Metadata format defined by the Publications Office (PO)
+			and approved by the Interinstitutional Metadata Management Committee (IMMC).
+		</xs:documentation>
+	</xs:annotation>
+	<xs:element name="ec_transmission_request" type="cmt:TransmissionRequestType">
+		<xs:annotation>
+			<xs:documentation>Request with a transmission (root element).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

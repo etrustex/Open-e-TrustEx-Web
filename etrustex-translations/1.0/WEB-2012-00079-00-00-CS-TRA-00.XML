@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>cs</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>cs</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Jste přihlášeni pod jménem</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Informace o zprávě</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Dokument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Důvěrné</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Komentář k dokumentu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Zrušit</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Odeslat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Uložit jako koncept</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Zobrazení: Schránka/ Složky
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Od</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Odeslané</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Příchozí</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Použít filtr</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Vymazat obsah filtrů</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Koncept zprávy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Zobrazení: Schránka / Zprávy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Odhlášení</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Byli jste odhlášeni</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Zpět na zprávy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Stáhnout vybrané soubory</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Odhlášení</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Zpráva byla odeslána!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Zpráva nebyla odeslána!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Během ukládání zprávy došlo k
+                    chybě
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Během nahrávání přílohy došlo k
+                    chybě
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Během ukládání zprávy došlo k
+                    chybě
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Vyplnění pole „nástroj“ je
+                    povinné
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Vyplnění pole „země“ je
+                    povinné, pokud není vyplněn „podnik“
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Vyplnění pole „země“ je
+                    povinné, pokud není vyplněn „podnik“
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Vyplnění pole „nástroj“ je
+                    povinné
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Vyplnění pole „kontaktní
+                    osoba“ je povinné
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Vyplnění pole „název
+                    organizace“ je povinné
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Vyplnění pole „předmět“ je povinné
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Chcete-li nahrát soubor, je
+                    třeba jej nejprve vybrat
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Přílohy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Zobrazení: Koncepty</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Zobrazení: Odeslané</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Složka:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Předmět zprávy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Přílohy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Vytvořeno</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Podrobnosti o zprávě</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Odesláno</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Přijato</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Text zprávy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">První</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Předchozí</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Následující</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Poslední</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Začátek</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Zobrazení: Zprávy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Zobrazení: Složky</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Úvodní strana</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Napsat zprávu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Adresát</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Předmět</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Žádné soubory zatím nebyly připojeny</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Přílohy (odstraníte kliknutím)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Připojit soubor</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Nahrát soubory</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Obsah</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Pole (Metadata)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Informace o odesílateli</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Název organizace</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Registrační číslo</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Kontaktní osoba</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Funkce</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefon</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">E-mail</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Ulice</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">PSČ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Obec</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Stát</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Podnik</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">Jménem</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Poznámky</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">K rukám</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Nástroj</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Číslo souboru</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Referenční číslo</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Zadané datum přijetí ve
+                    filtru není ve správném formátu. Správný formát je rrrr-MM-dd
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Zadané datum odeslání ve filtru
+                    není ve správném formátu. Správný formát je rrrr-MM-dd
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

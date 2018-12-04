@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="fdf6f0c6-bfcb-423d-a2f7-58a21954ff65" isOneWay="false" action="" name="deleteDocumentWrapperRequest" bindingOperationName="deleteDocumentWrapperRequest" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="fdf6f0c6-bfcb-423d-a2f7-58a21954ff65fileName">deleteDocumentWrapperRequest</con:setting></con:settings></con:operation>

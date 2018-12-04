@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://publications.europa.eu/resource/roles/"><xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:documentation>Version: CM-02.11-2012-11-21</xs:documentation>
+</xs:annotation>
+<xs:simpleType xmlns:xs="http://www.w3.org/2001/XMLSchema" name="t_role">
+   <xs:restriction base="xs:string">
+      <xs:enumeration value="ADDRESSEE"><!--Addressee--></xs:enumeration>
+      <xs:enumeration value="ADDRESSEE_ACT"><!--Addressee for formal act--></xs:enumeration>
+      <xs:enumeration value="ADDRESSEE_CONSULT"><!--Addressee for consultation--></xs:enumeration>
+      <xs:enumeration value="ADDRESSEE_CONSULT_MANDATORY"><!--Addressee for mandatory consultation--></xs:enumeration>
+      <xs:enumeration value="ADDRESSEE_CONSULT_OPTION"><!--Addressee for optional consultation--></xs:enumeration>
+      <xs:enumeration value="ADDRESSEE_INFO"><!--Addressee for information--></xs:enumeration>
+      <xs:enumeration value="ASSOC_CORP"><!--Associated service--></xs:enumeration>
+      <xs:enumeration value="AUT"><!--Author--></xs:enumeration>
+      <xs:enumeration value="AUTHORI"><!--Authorising entity--></xs:enumeration>
+      <xs:enumeration value="AUT_OPIN"><!--Author of opinion--></xs:enumeration>
+      <xs:enumeration value="AUT_REPORT"><!--Author of report--></xs:enumeration>
+      <xs:enumeration value="CHAIR"><!--Chairman--></xs:enumeration>
+      <xs:enumeration value="CHAIR_CMT"><!--Committee Chair--></xs:enumeration>
+      <xs:enumeration value="CHAIR_VICE"><!--Vice-Chairman--></xs:enumeration>
+      <xs:enumeration value="MEDIATOR"><!--Mediator--></xs:enumeration>
+      <xs:enumeration value="MEMBER"><!--Member--></xs:enumeration>
+      <xs:enumeration value="MEMBER_ALT"><!--Alternate member--></xs:enumeration>
+      <xs:enumeration value="MEMBER_COM"><!--Member of the Commission--></xs:enumeration>
+      <xs:enumeration value="MEMBER_EP"><!--Member of the Parliament--></xs:enumeration>
+      <xs:enumeration value="MEMBER_REPORT"><!--Reporting Member--></xs:enumeration>
+      <xs:enumeration value="OMBUDSMAN"><!--European Ombudsman--></xs:enumeration>
+      <xs:enumeration value="PRESID"><!--President--></xs:enumeration>
+      <xs:enumeration value="PRESID_CHAMB"><!--President of the Chamber--></xs:enumeration>
+      <xs:enumeration value="PRESID_CMT"><!--President of the Committee--></xs:enumeration>
+      <xs:enumeration value="PRESID_COM"><!--President of the European Commission--></xs:enumeration>
+      <xs:enumeration value="PRESID_CONSIL"><!--President of the Council--></xs:enumeration>
+      <xs:enumeration value="PRESID_COR"><!--President of the Committee of the Regions--></xs:enumeration>
+      <xs:enumeration value="PRESID_CURIA"><!--President of the Court of Justice--></xs:enumeration>
+      <xs:enumeration value="PRESID_ECA"><!--President of the Court of Auditors--></xs:enumeration>
+      <xs:enumeration value="PRESID_EP"><!--President of the European Parliament--></xs:enumeration>
+      <xs:enumeration value="PRESID_EURCOU"><!--President of the European Council--></xs:enumeration>
+      <xs:enumeration value="PRESID_VICE"><!--Vice-President--></xs:enumeration>
+      <xs:enumeration value="PRESID_VICE_COM"><!--Vice-President of the European Commission--></xs:enumeration>
+      <xs:enumeration value="PRESID_VICE_FIRST"><!--First Vice-President--></xs:enumeration>
+      <xs:enumeration value="PUBLISHER"><!--Publisher--></xs:enumeration>
+      <xs:enumeration value="QUAESTOR"><!--Quaestor--></xs:enumeration>
+      <xs:enumeration value="RAPP"><!--Rapporteur--></xs:enumeration>
+      <xs:enumeration value="RAPP_CO"><!--Co-rapporteur--></xs:enumeration>
+      <xs:enumeration value="RAPP_GEN"><!--Rapporteur-general--></xs:enumeration>
+      <xs:enumeration value="RAPP_OPIN"><!--Draftsman of opinion--></xs:enumeration>
+      <xs:enumeration value="REPR_GOV"><!--Representatives of the Governments of the Member States--></xs:enumeration>
+      <xs:enumeration value="REPR_HIGH"><!--High Representative--></xs:enumeration>
+      <xs:enumeration value="REPR_PERM"><!--Permanent representatives--></xs:enumeration>
+      <xs:enumeration value="RESP_CORP"><!--Leading service--></xs:enumeration>
+      <xs:enumeration value="RESP_JOINT_CORP"><!--Joint leading service--></xs:enumeration>
+      <xs:enumeration value="RESP_JOINT_PERS"><!--Joint leading person--></xs:enumeration>
+      <xs:enumeration value="RESP_PERS"><!--Leading person--></xs:enumeration>
+      <xs:enumeration value="SEC_GEN"><!--Secretary-General--></xs:enumeration>
+      <xs:enumeration value="SIGN"><!--Signatory--></xs:enumeration>
+      <xs:enumeration value="TAKING_OVER"><!--Taking over--></xs:enumeration>
+   </xs:restriction>
+</xs:simpleType></xs:schema>

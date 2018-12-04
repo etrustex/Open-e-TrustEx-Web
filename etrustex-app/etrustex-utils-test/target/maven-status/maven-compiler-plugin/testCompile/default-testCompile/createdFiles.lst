@@ -1,0 +1,10 @@
+eu\europa\ec\etrustex\test\hamcrest\matchers\MapMatcherTest.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\BaseItemMatcherTest.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\GenericItemMatcherTest$TestObject.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\IsBetweenDatesTest.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\BaseItemMatcherTest$NonAbstractBaseItemMatcher.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\IsCloseToTest.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\IterableMatcherTest.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\GenericItemMatcherTest.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\InputStreamMatcherTest.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\CollectionSizeMatcherTest.class

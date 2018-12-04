@@ -1,0 +1,176 @@
+/*customized to show in e-trustex*/
+
+* {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+*:before,
+*:after {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input, select, textarea {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 13px;
+}
+
+.instrument {
+    min-width: 0px!important;
+    width: 120px!important;
+}
+
+.input-group input {
+    min-width: 325px;
+    padding-left: 5px;
+}
+
+#uroletypeundefined {
+    min-width: 182px;
+}
+
+.partyname {
+    line-height: 28px;
+}
+
+.form-control {
+    height: 24px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.status .input-group input {
+    height: 24px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    border: 1px;
+    border-style: solid;
+    border-left-color: rgb(204, 204, 204);
+    border-right-color: rgb(204, 204, 204);
+    border-top-color: rgb(204, 204, 204);
+    border-bottom-color: rgb(204, 204, 204);
+	line-height: normal;
+	color: black;
+	min-width: 25px;
+    width: 70px;
+}
+
+.status .dropdown-menu  {
+    min-width: 105px;
+}
+
+.status .combobox-container {
+	line-height:24px;
+	padding-top:2px;
+}
+
+/* For the status dropdown to be shown correctly when there are no items*/
+.content {
+    min-height: 300px;
+}
+
+/* to show large items */
+.dropdown-menu > li > a {
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+}
+
+.mandatory-value-container .combobox-container{
+	border-color: transparent;
+	outline: 1px solid #fb7125;
+	outline-offset: 0px;
+}
+
+.mandatory-value-container-sts .combobox-container{
+	border-color: transparent;
+	outline: 1px solid #fb7125;
+	outline-offset: 0px;
+}
+.input-group-addon.dropdown-toggle{
+  padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.grid-cell{
+	padding-bottom: 5px;
+}
+
+.default-value-input {
+    width: 155px;
+}
+
+.combobox-container .default-value-input-in {
+    min-width: 120px;
+}
+
+.grid-cell-combobox{
+	display: table-cell;
+    vertical-align: middle;
+    padding-top: 2px;
+
+	min-width: 124px;
+	padding-bottom: 5px;
+}
+
+.message-details {
+	margin: 0px 5px 10px 5px;
+    min-height: 100%;
+}
+
+.message-header {
+	overflow-y: visible;
+}
+
+#recipient{
+    width: 100%;
+}
+
+.ui-dialog .ui-dialog-content{
+	overflow: visible;
+}
+
+.grid-cell-checkbox {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+}
+
+input[type="checkbox"] {
+    margin-top: 0px;
+    margin-right: 3px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.message-subject {
+    min-width: 360px;
+}
+
+.sort-header .sort-selected a:link {
+    color: #0086cb;
+}
+
+.sort-header .sort-unselected a:link {
+    color: #0086cb;
+}
+
+.sort-header .right a:link {
+    color: #0086cb;
+}

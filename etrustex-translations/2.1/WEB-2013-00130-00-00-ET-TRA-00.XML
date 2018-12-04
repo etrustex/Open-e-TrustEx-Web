@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>et</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>et</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Aadress</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Salvestatud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Failid</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Ettevõtte riiklik registreerimisnumber</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Teabe viide</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Faili viide</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Sõnumi mustand edukalt salvestatud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Sõnumi mustandi salvestamine ebaõnnestus</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Saadud sõnum</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Monopolidevastane võitlus</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Ühinemine</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Riigiabi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Horisontaalne</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Kustuta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Olete kindel, et soovite selle sõnumi tühistada?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Olete kindel, et soovite selle sõnumi mustandi tühistada?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Väli „Teema on kohustuslik</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Väli „Riik” tuleks täita juhul, kui väli „Organisatsiooni nimi” on sisestatud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Väli „Ettevõtte riiklik registreerimisnumber” tuleks täita juhul, kui väli „Organisatsiooni nimi” on sisestatud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Väli „Kontaktisik” on kohustuslik</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Väli „Sõnumi teabe instrument” on kohustuslik</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Märkused puuduvad</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.5" codebase="http://127.0.0.1:8080/e-trustex/applet">
+    <information>
+        <title>eTrustEx - Web access</title>
+        <vendor>European Commission</vendor>
+        <description>Trusted Exchange Platform</description>
+        <homepage href="http://127.0.0.1:8080/e-trustex"></homepage>
+        <icon href="images/etrustex_logo_64x64.gif" width="64" height="64" />
+        <icon href="images/etrustex_splash.png" kind="splash"/>
+    </information>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <j2se version="1.7+" href="http://java.sun.com/products/autodl/j2se"/>
+        <property name="jnlp.packEnabled" value="true" />
+        <jar href="etx-wacc-webstart-upload-trunk.jar" main="true"/>
+        <jar href="etx-wacc-webstart-common-trunk.jar"/>
+        <jar href="etx-wacc-model-trunk.jar" />
+        <jar href="etx-wacc-utils-trunk.jar" />
+        <jar href="etx-wacc-security-trunk.jar" />
+        <jar href="etx-wacc-node-api-trunk.jar" />
+        <jar href="log4j-1.2.17.jar" />
+        <jar href="slf4j-api-1.7.21.jar" />
+        <jar href="cxf-core-3.1.10.jar" />
+        <jar href="cxf-rt-frontend-simple-3.1.10.jar" />
+        <jar href="cxf-rt-rs-client-3.1.10.jar" />
+        <jar href="cxf-rt-frontend-jaxrs-3.1.10.jar" />
+        <jar href="cxf-rt-transports-http-3.1.10.jar" />
+        <jar href="javax.ws.rs-api-2.0.1.jar" />
+        <jar href="bcpkix-jdk15on-1.55.jar" />
+        <jar href="bcprov-jdk15on-1.55.jar" />
+        <jar href="xades4j-1.3.0.jar" />
+        <jar href="guice-4.1.0.jar" />
+        <jar href="guice-multibindings-4.1.0.jar" />
+        <jar href="javax.inject-1.jar" />
+        <jar href="aopalliance-1.0.jar" />
+        <jar href="xmlsec-2.0.7.jar" />
+        <jar href="commons-logging-1.2.jar" />
+        <jar href="guava-19.0.jar" />
+        <jar href="gson-2.8.0.jar"/>
+        <!--spring websocket dependencies-->
+        <jar href="spring-aop-4.3.4.RELEASE.jar"/>
+        <jar href="spring-beans-4.3.4.RELEASE.jar"/>
+        <jar href="spring-context-4.3.4.RELEASE.jar"/>
+        <jar href="spring-core-4.3.4.RELEASE.jar"/>
+        <jar href="spring-expression-4.3.4.RELEASE.jar"/>
+        <jar href="spring-websocket-4.3.4.RELEASE.jar"/>
+        <jar href="spring-web-4.3.4.RELEASE.jar"/>
+        <jar href="spring-messaging-4.3.4.RELEASE.jar"/>
+        <jar href="websocket-client-9.2.1.v20140609.jar"/>
+        <jar href="websocket-api-9.2.1.v20140609.jar"/>
+        <jar href="websocket-common-9.2.1.v20140609.jar"/>
+        <jar href="jetty-io-9.2.1.v20140609.jar"/>
+        <jar href="jetty-util-9.2.1.v20140609.jar"/>
+        <jar href="jackson-annotations-2.8.4.jar"/>
+        <jar href="jackson-core-2.8.4.jar"/>
+        <jar href="jackson-databind-2.8.4.jar"/>
+        <jar href="javax.json-1.0.4.jar"/>
+        <jar href="spring-jdbc-4.3.4.RELEASE.jar" />
+        <jar href="spring-orm-4.3.4.RELEASE.jar" />
+        <jar href="spring-tx-4.3.4.RELEASE.jar" />
+        <jar href="spring-webmvc-4.3.4.RELEASE.jar" />
+        <!--ECAS-->
+        <jar href="ecas-desktop-4.19.2.jar"/>
+        <jar href="ecas-desktop-windows-4.19.2.jar"/>
+        <property name="jnlp.versionEnabled" value="true"/>
+    </resources>
+    <application-desc  main-class="eu.europa.ec.etrustex.webaccess.webstart.upload.UploadWebstartApp"
+                  name="eTrustEx - Web access"
+                  width="700" height="295">
+        <argument>$etxIcaDetails</argument>
+        <argument>$etxEncodedFileElements</argument>
+        <argument>$etxLocalPartyId</argument>
+        <argument>$etxBusiness</argument>
+        <argument>true</argument>
+        <argument>false</argument>
+        <argument>$etxLocaleCode</argument>
+        <argument>$etxLookupFailsDefaultEnabled</argument>
+        <argument>$etxConnectionToken</argument>
+        <argument>$etxRetentionExpired</argument>
+        <argument>$etxRetentionExpiredMessage</argument>
+        <argument>http://127.0.0.1:8080/e-trustex/</argument>
+        <argument>$etxSessionId</argument>
+        <argument>$etxMessageSubject</argument>
+        <argument>$etxBusinessFolderStructureEnabled</argument>
+    </application-desc>
+    <update check="background"/>
+</jnlp>

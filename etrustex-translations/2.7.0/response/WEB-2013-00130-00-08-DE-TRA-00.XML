@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>de</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>29/06/2015</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.2.001</ipg_creator>
+            <ipg_language>de</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div id="commonView.optionPane.option.ok" class="ETX_WEB_LABEL_TRANSLATION">OK</div>
+                <div id="downloadView.status.downloadedOk.text" class="ETX_WEB_LABEL_TRANSLATION">Herunterladen erfolgreich abgeschlossen</div>
+                <div id="downloadView.status.downloadedNok.text" class="ETX_WEB_LABEL_TRANSLATION">Fehler beim Herunterladen!</div>
+                <div id="uploadView.transferDoneOk.text" class="ETX_WEB_LABEL_TRANSLATION">Hochladen erfolgreich abgeschlossen</div>
+                <div id="uploadView.transferDoneNok.text" class="ETX_WEB_LABEL_TRANSLATION">Fehler beim Hochladen!</div>
+                <div id="certificateView.ksPwdDlg.password.incorrect.text" class="ETX_WEB_LABEL_TRANSLATION">Der Schlüsselspeicher wurde manipuliert oder das Passwort war falsch</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

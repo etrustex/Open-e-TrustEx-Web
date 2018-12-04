@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>sk</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>08/10/2015</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.2.001</ipg_creator>
+            <ipg_language>sk</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div id="label.admin.bundle.notifications" class="ETX_WEB_LABEL_TRANSLATION">Oznámenie o správe</div>
+                <div id="label.admin.notif.check.mandatory" class="ETX_WEB_LABEL_TRANSLATION">Pre tento podnik musí byť uvedená aspoň jedna e-mailová adresa na zasielanie oznámení</div>
+                <div id="label.admin.notif.delete.mandatory" class="ETX_WEB_LABEL_TRANSLATION">Túto úlohu nie je možné vymazať, pretože na zasielanie oznámení musí byť uvedená aspoň jedna e-mailová adresa</div>
+                <div id="label.admin.status.notifications" class="ETX_WEB_LABEL_TRANSLATION">Oznámenie o stave</div>
+                <div id="label.message.sentOn" class="ETX_WEB_LABEL_TRANSLATION">Dátum odoslania správy</div>
+                <div id="label.status" class="ETX_WEB_LABEL_TRANSLATION">Stav</div>
+                <div id="label.status.all" class="ETX_WEB_LABEL_TRANSLATION">Všetky</div>
+                <div id="label.status.delivered" class="ETX_WEB_LABEL_TRANSLATION">Doručené</div>
+                <div id="label.status.failed" class="ETX_WEB_LABEL_TRANSLATION">Neúspešné</div>
+                <div id="label.status.none" class="ETX_WEB_LABEL_TRANSLATION">Žiadne</div>
+                <div id="label.status.read" class="ETX_WEB_LABEL_TRANSLATION">Prečítané</div>
+                <div id="label.status.receivedOn" class="ETX_WEB_LABEL_TRANSLATION">Dátum potvrdenia stavu</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

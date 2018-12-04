@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="etrustex-ant-db" basedir=".">
+
+	<import file="web-db.xml" />
+
+	<target name="db-drop" description="Drops the e-TrustEx Web DB."
+		depends="db-web-drop">
+	</target>
+	
+	<target name="db-create" description="Creates the e-TrustEx Web DB."
+		depends="db-web-create">
+	</target>
+	
+	<target name="db-recreate" description="Recreates the e-TrustEx Web DB."
+		depends="db-drop, db-create">
+	</target>
+</project>

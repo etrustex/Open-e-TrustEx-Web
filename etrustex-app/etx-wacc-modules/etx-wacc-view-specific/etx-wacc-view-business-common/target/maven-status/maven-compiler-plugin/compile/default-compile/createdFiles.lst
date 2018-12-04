@@ -1,0 +1,14 @@
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\AbstractMessageListHandler.class
+eu\europa\ec\etrustex\webaccess\web\view\business\generic\webhandler\GenericOutboxHandler.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\WebHandlerHelper.class
+eu\europa\ec\etrustex\webaccess\web\view\business\generic\webhandler\GenericInboxHandler.class
+eu\europa\ec\etrustex\webaccess\web\view\business\api\WebAction.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\ConfigurationImpl.class
+eu\europa\ec\etrustex\webaccess\web\view\business\api\Configuration.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\AbstractMessageHandler.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\CommonMessageCreateHandler.class
+eu\europa\ec\etrustex\webaccess\web\view\business\generic\webhandler\GenericDraftsHandler.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\CommonMessageViewHandler.class
+eu\europa\ec\etrustex\webaccess\web\view\business\api\WebHandler.class
+eu\europa\ec\etrustex\webaccess\web\view\business\api\ConfigurationProvider.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\CommonMessageEditHandler.class

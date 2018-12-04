@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:complexType name="ipg_meta_type">
+		<xsd:choice maxOccurs="unbounded">
+			<xsd:element name="ipg_reference" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="ipg_title" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="ipg_creator" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="ipg_language" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="ipg_document_type" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="ipg_classification" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="ipg_description" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="ipg_keywords" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:choice>
+	</xsd:complexType>
+</xsd:schema>

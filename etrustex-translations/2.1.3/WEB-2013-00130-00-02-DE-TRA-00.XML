@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>de</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx Screen 1</hd_short_title>
+		<hd_long_title>eTrustEx Screen 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>29/03/2013</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx Screen 1</ipg_title>
+			<ipg_creator>DIGIT.B.1.001</ipg_creator>
+			<ipg_language>de</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandard">Standard</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxGroupByDossier">Gruppieren nach Akte</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.Dossier">Akte</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Nachricht als Entwurf gespeichert</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Bitte Betreff eingeben</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Zu einem Organisationsnamen muss auch ein Land angegeben werden.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Zu einem Organisationsnamen muss auch die nationale Registrierungsnummer des Unternehmens angegeben werden.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Bitte Kontaktperson eingeben</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Bitte Instrument unter „Informationen zur Nachricht“ eingeben</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Die Nachricht konnte nicht verschickt werden.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">z. Hd.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Nachrichten</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.party">Party</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

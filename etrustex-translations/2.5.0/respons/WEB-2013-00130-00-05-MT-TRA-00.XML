@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>mt</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx Skrin 1</hd_short_title>
+		<hd_long_title>eTrustEx Skrin 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>03/12/2014</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx Skrin 1</ipg_title>
+			<ipg_creator>DIGIT.B.2.001</ipg_creator>
+			<ipg_language>mt</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageBusiness">Business</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageSystemUsers">Sistema</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.administrators">Amministraturi</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyOperators">Operaturi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.editUserDialogTitle">Editja l-Utent</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.user.role">Rwol</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.administrator">Amministratur</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.operator">Operatur</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired.on">Id-dokumenti mehmużin se jiskadu fi {0}</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired">Id-dokumenti mehmużin skadew minħabba l-politika ta&apos; żamma ta&apos; {0} ġimgħat</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataFailure">Is-sistema ma tistax turi l-informazzjoni tal-messaġġ. Jekk jogħġbok ikkuntattja lit-tim ta&apos; appoġġ tiegħek.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataNotReady">Is-sistema mhijiex kapaċi tniżżel l-informazzjoni tal-messaġġ bħalissa. Jekk jogħġbok erġa&apos; ipprova ftit minuti oħra.</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

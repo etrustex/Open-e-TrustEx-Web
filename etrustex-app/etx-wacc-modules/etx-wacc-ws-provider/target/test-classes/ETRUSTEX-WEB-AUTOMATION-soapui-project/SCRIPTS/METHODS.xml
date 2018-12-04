@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="4618376b-7cd0-4ff2-9d3c-aaa141cf6860" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="METHODS" searchProperties="true" disabled="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="4618376b-7cd0-4ff2-9d3c-aaa141cf6860fileName">METHODS</con:setting></con:settings><con:testStep type="groovy" name="METHODS" id="aeba31c3-04ae-4d2f-aa91-1c9320894462" disabled="true"><con:settings/><con:config><script>import groovy.sql.Sql
+import groovyx.net.http.ContentType
+import groovyx.net.http.HTTPBuilder
+
+import static groovyx.net.http.Method.GET
+
+def props = testRunner.testCase.testSuite.project.getProperties();
+context.setProperty("commonDao", new CommonDao(props, log))
+	
+	// methods	
+	class CommonDao {
+
+		def sql;
+		def projectProperties;
+		def log;
+	
+		//=======================================================================================================================
+		public CommonDao(projectProperties, log) {
+			this.projectProperties = projectProperties
+			this.log = log
+		}
+	
+		//=======================================================================================================================
+		def openDbConnection(){	
+			sql = Sql.newInstance(projectProperties['WEB_DATABASE_CONNECTION'].getValue())
+		}
+	
+		//=======================================================================================================================
+		def closeDbConnection(){
+			sql.close()
+		}
+	
+		//=======================================================================================================================
+		def createBusiness(businessId, businessName) {
+			// insert business into ETX_WEB_BUSINESS table
+			sql.execute("Insert into ETX_WEB_BUSINESS (BUS_ID,BUS_NAME,BUS_DESCRIPTION,BUS_CREATED_BY,BUS_CREATED_ON,BUS_UPDATED_BY,BUS_UPDATED_ON,BUS_ACTIVE_STATE)" + 
+			" values ("+businessId+",'"+businessName+"',null,5141,sysdate,null,null,1)") 
+		}
+
+		//=======================================================================================================================
+		def createBusinessConfig(configId, businessId, propertyName, propertyValue) {
+			// insert business config into ETX_WEB_BUSINESS_CONFIG table
+			sql.execute("Insert into ETX_WEB_BUSINESS_CONFIG (BCG_ID,BUS_ID,BCG_PROPERTY_NAME,BCG_PROPERTY_VALUE)" + 
+			" values ("+configId+","+businessId+",'"+propertyName+"','"+propertyValue+"')") 
+		}
+
+		//=======================================================================================================================
+		def createUser(userId, userLogin, userFullName, userActiveState) {
+			// insert user into ETX_WEB_USER table
+			sql.execute("Insert into ETX_WEB_USER (USR_ID,USR_LOGIN,USR_NAME,USR_CREATED_BY,USR_CREATED_ON,USR_UPDATED_BY,USR_UPDATED_ON,USR_ACTIVE_STATE)" + 
+			" values ("+userId+",'"+userLogin+"','"+userFullName+"',0,sysdate,null,null,"+userActiveState+")") 
+		}
+
+		//=======================================================================================================================
+		def createBusinessUserConfig(businessUserConfigId, userId, businessId, businsessUserConfigName, businessUserEmail) {
+			// insert business user config into ETX_WEB_BUSINESS_USER_CONFIG table
+			sql.execute("Insert into ETX_WEB_BUSINESS_USER_CONFIG (BUC_ID,USR_ID,BUS_ID,BUC_NAME,BUC_EMAIL,BUC_NOTIFICATIONS_ENABLED,BUC_CREATED_BY,BUC_CREATED_ON,BUC_UPDATED_BY,BUC_UPDATED_ON,BUC_ACTIVE_STATE,BUC_STS_NOTIF_ENABLED)" + 
+			" values ("+businessUserConfigId+","+userId+","+businessId+",'"+businsessUserConfigName+"','"+businessUserEmail+"',1,0,sysdate,null,null,1,0)") 
+		}
+
+		//=======================================================================================================================
+		def createUserRole(userRoleId, userId, partyId, userActiveState) {
+			// insert user role info ETX_WEB_USER_ROLE table
+			sql.execute("Insert into ETX_WEB_USER_ROLE (URO_ID,USR_ID,ROL_TYPE,PAR_ID,BUS_ID,URO_CREATED_BY,URO_CREATED_ON,URO_UPDATED_BY,URO_UPDATED_ON,URO_ACTIVE_STATE)" + 
+			" values ("+userRoleId+","+userId+",'OPERATOR',"+partyId+",null,0,sysdate,null,null,"+userActiveState+")") 
+		}
+
+		//=======================================================================================================================
+		def createParty(partyId, partyCreationDate, partyName, businessId) {
+			// insert party into ETX_WEB_PARTY table
+			sql.execute("Insert into ETX_WEB_PARTY (PAR_ID,PAR_EMAIL,PAR_CREATED_ON,PAR_NODE_NAME,PAR_NODE_USR,PAR_NODE_PASS,PAR_DISPLAY_NAME,BUS_ID,PAR_NOTIFICATIONS_ENABLED,PAR_CREATED_BY,PAR_UPDATED_BY,PAR_UPDATED_ON,PAR_ACTIVE_STATE,PAR_STS_NOTIF_ENABLED)" +
+			" values ("+partyId+",null,"+partyCreationDate+",'"+partyName+"','USERNAME','PASSWORD','WEB_RECEIVER',"+businessId+",0,5141,null,null,1,0)")
+		}
+
+		//=======================================================================================================================
+		def createMessage(msgId, bundleId, localPartyId, remotePartyName) { 
+			// insert message into ETX_WEB_MESSAGE table
+			sql.execute("Insert into ETX_WEB_MESSAGE (MSG_ID,MSG_CONTENT,MSG_ISSUE_DATE,MSG_REF_ID,MSG_SUBJECT,MSG_STATE,MSG_BUNDLE_ID,MSG_LOCAL_PARTY_ID,MSG_REMOTE_PARTY_NAME,MSG_CREATED_BY,MSG_CREATED_ON,MSG_UPDATED_BY,MSG_UPDATED_ON,MSG_ACTIVE_STATE)" + 
+			" values ("+msgId+",'AUTOMATION MESSAGE BUNDLE',sysdate,null,'MESSAGE SUBJECT','SENT','"+bundleId+"',"+localPartyId+",'"+remotePartyName+"',5141,sysdate,null,null,1)") 
+		}
+
+		//=======================================================================================================================
+		def updateDocWrapperURL(newUrl) { 
+
+			// update URL of docwrapper on ETX_WEB_CONFIG table to use mock service
+			sql.execute("Update ETX_WEB_CONFIG set CFG_PROP_VALUE = '" + newUrl + "' where CFG_PROP_NAME = 'etrustex.doc.wrapper.service.uri' ") 
+		}
+
+		//=======================================================================================================================
+		def revertDocWrapperURL() { 
+			// revert URL of docwrapper on ETX_WEB_CONFIG table to use node URL
+			sql.execute("Update ETX_WEB_CONFIG set CFG_PROP_VALUE = 'https://webgate.acceptance.ec.europa.eu/e-trustexnode/services/DocumentWrapper-2.0' where CFG_PROP_NAME = 'etrustex.doc.wrapper.service.uri' ") 
+		}
+
+		//=======================================================================================================================
+		def getMessageStatuses(msgId) {
+			// check message status in ETX_WEB_MESSAGE_STATUS table
+			return sql.rows("Select * " + 
+					"From ETX_WEB_MESSAGE_STATUS " +
+					"Where MSG_ID = " + msgId)	
+		}
+
+		//=======================================================================================================================
+	    def deleteMessageStatus(msgId) {
+			// delete message status from ETX_WEB_MESSAGE_STATUS table
+			sql.execute("delete from ETX_WEB_MESSAGE_STATUS where MSG_ID = "+msgId+" ")
+		}
+
+		//=======================================================================================================================
+	    def collectMsgId(bundleId) {
+			// collect message ID for the persisted message bundle
+			return sql.rows("Select * " + 
+					"From ETX_WEB_MESSAGE " +
+					"Where MSG_BUNDLE_ID = '"+bundleId+"' ")
+		}
+
+		//=======================================================================================================================
+	    def deleteAttachments(msgId) {
+			// delete attachments from ETX_WEB_ATTACHMENT table
+			sql.execute("delete from ETX_WEB_ATTACHMENT where MSG_ID = "+msgId+" ")
+		}
+
+		//=======================================================================================================================
+		def getMetadata(msgId) {
+			// collect metadata from ETX_WEB_METADATA table
+			return sql.rows("Select * " + 
+					"From ETX_WEB_METADATA " +
+					"Where MSG_ID = "+msgId+" ")
+		}
+
+		//=======================================================================================================================
+		def getAttachments(msgId, attType) {
+			// collect attachments from ETX_WEB_ATTACHMENT table
+			return sql.rows("Select * " + 
+					"From ETX_WEB_ATTACHMENT " +
+					"Where MSG_ID = "+msgId+" " +
+					"and ATT_TYPE = '"+attType+"' ")
+		}
+
+		//=======================================================================================================================
+		def getBusinessUserConfig(businessId) {
+			// collect users from ETX_WEB_BUSINESS_USER_CONFIG table
+			return sql.rows("Select * " + 
+					"From ETX_WEB_BUSINESS_USER_CONFIG " +
+					"Where BUS_ID = "+businessId+" " +
+					"Order by BUC_ID asc ")
+		}
+
+		//=======================================================================================================================
+		def getWebUser(userId) {
+			// collect users from ETX_WEB_USER table
+			return sql.rows("Select * " + 
+					"From ETX_WEB_USER " +
+					"Where USR_ID = "+userId+" ")
+		}
+
+		//=======================================================================================================================
+		def getWebUserRole(partyId) {
+			// collect users from ETX_WEB_USER_ROLE table
+			return sql.rows("Select * " + 
+					"From ETX_WEB_USER_ROLE " +
+					"Where PAR_ID = "+partyId+" ")
+		}
+
+		//=======================================================================================================================
+	    def deleteMetadata(msgId) {
+			// delete metadata from ETX_WEB_METADATA table
+			sql.execute("delete from ETX_WEB_METADATA where MSG_ID = "+msgId+" ")
+		}
+
+		//=======================================================================================================================
+	    def deleteMessage(bundleId) {
+			// delete message from ETX_WEB_MESSAGE table
+			sql.execute("delete from ETX_WEB_MESSAGE where MSG_BUNDLE_ID = '"+bundleId+"' ")
+		}
+	
+		//=======================================================================================================================
+	    def deleteParty(partyName) {
+			// delete party from ETX_WEB_PARTY table
+			sql.execute("delete from ETX_WEB_PARTY where PAR_NODE_NAME = '"+partyName+"' ")
+		}
+
+		//=======================================================================================================================
+	    def deleteBusinessConfig(businessId) {
+			// delete business from ETX_WEB_BUSINESS_CONFIG table
+			sql.execute("delete from ETX_WEB_BUSINESS_CONFIG where BUS_ID = "+businessId+" ")
+		}
+
+		//=======================================================================================================================
+	    def deleteBusiness(businessId) {
+			// delete business from ETX_WEB_BUSINESS table
+			sql.execute("delete from ETX_WEB_BUSINESS where BUS_ID = "+businessId+" ")
+		}
+
+		//=======================================================================================================================
+	    def deleteUserRole(partyId) {
+			// delete user role from ETX_WEB_USER_ROLE table
+			sql.execute("delete from ETX_WEB_USER_ROLE where PAR_ID = "+partyId+" ")
+		}
+
+		//=======================================================================================================================
+	    def deleteUser(userLogin) {
+			// delete user from ETX_WEB_USER table
+			sql.execute("delete from ETX_WEB_USER where USR_LOGIN = '"+userLogin+"' ")
+		}
+
+		//=======================================================================================================================
+	    def deleteBusinessUserConfig(businessId) {
+			// delete business user config from ETX_WEB_BUSINESS_USER_CONFIG table
+			sql.execute("delete from ETX_WEB_BUSINESS_USER_CONFIG where BUS_ID = "+businessId+" ")
+		}
+
+		//=======================================================================================================================
+	    def byteToHexChecksum(inputChecksum) {
+			def outputChecksum = ""
+			inputChecksum.each {
+				outputChecksum = outputChecksum + String.format("%02x", it);
+			}
+			return outputChecksum.toUpperCase()	
+		}
+
+		//=======================================================================================================================
+	    def waitUntil(waitInputCondition) {
+			def waiter = true
+			while(waiter) {
+				// wait until input condition is met
+				if (waitInputCondition()){
+					waiter = false	
+				} else {  
+					sleep 1000	
+				}
+			}
+		}
+
+		//=======================================================================================================================
+	    def resetCacheWeb() {
+			def http = new HTTPBuilder(projectProperties['RESET_CACHE_URL'].getValue());
+			http.request(GET, ContentType.ANY) { req ->
+			    headers.'Authorization' = 'Basic ' + (projectProperties['RESET_CACHE_USER'].getValue() + ':' + projectProperties['RESET_CACHE_PASSWORD'].getValue()).bytes.encodeBase64().toString()
+			    response.success = { resp  ->
+			        log.debug 'Cache reset successful: ' + (resp.entity.content.text == 'true' ? 'true' : 'false');
+			    }
+			    response.failure = { resp  ->
+			        log.debug 'Cache reset FAILED'
+			    }
+			}
+		}
+
+		//=======================================================================================================================
+
+
+
+
+	// END CLASS
+	}</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

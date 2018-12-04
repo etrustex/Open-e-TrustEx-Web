@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>lt</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>„eTrustEx“ 1 ekranas</hd_short_title>
+        <hd_long_title>„eTrustEx“ 1 ekranas</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>16/04/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>„eTrustEx“ 1 ekranas</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>lt</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Visi aplankai</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Nauja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Atnaujinti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">iš</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">Gauta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Juodraščiai</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.folder">Aplankas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Visi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Neperskaitytos</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Žinutė</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.download">Parsisiųsdinimas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Metaduomenys</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Rodyti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Oficiali elektroninė versija</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outbox">Siunčiami</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.created">Sukurta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxDossierView">Dokumento rodinys</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandardView">Standartinis rodinys</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload">Įkelti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Įkelta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Siųsti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Išsaugoti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Priėmimo data</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Dalis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.edmaView">EDMA rodinys</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComment">Pastabų nėra</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

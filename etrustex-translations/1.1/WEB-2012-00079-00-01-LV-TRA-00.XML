@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>lv</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>16/04/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>lv</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Visas mapes</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Jauna</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Atsvaidzināt saturu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">no</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">Iesūtne</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Uzmetumi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.folder">Mape</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Visi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Nelasīts</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Ziņojums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.download">Lejupielādēt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Metadati</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Priekšskatīšana</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Oficiālā elektroniskā versija</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outbox">Izsūtne</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.created">Izveidots</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxDossierView">Datņu skatījums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandardView">Standartskatījums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload">Pievienot datni</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Pievienotās datnes</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Nosūtīt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Saglabāt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Pieņemšanas datums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Daļa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.edmaView">EDMA skatījums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComment">Nav komentāru</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

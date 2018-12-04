@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>ro</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx Screen 1</hd_short_title>
+		<hd_long_title>eTrustEx Screen 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>29/03/2013</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx Screen 1</ipg_title>
+			<ipg_creator>DIGIT.B.1.001</ipg_creator>
+			<ipg_language>ro</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandard">Afişare standard</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxGroupByDossier">Grupate pe dosare</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.Dossier">Dosar</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Mesaj salvat ca ciornă</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Completaţi subiectul mesajului</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Completaţi ţara, deoarece este obligatoriu să apară alături de denumirea organizaţiei</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Completaţi numărul de înregistrare al societăţii, deoarece este obligatoriu să apară alături de denumirea organizaţiei</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Completaţi persoana de contact</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Completaţi instrumentul la Informaţii mesaj</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Mesajul nu a fost trimis</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">În atenţia</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Mesaje</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.party">Party</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

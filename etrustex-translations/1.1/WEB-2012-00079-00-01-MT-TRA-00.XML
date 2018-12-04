@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>mt</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>16/04/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>mt</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Il-Fowlders kollha</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Ġdid</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Irrinfriska</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">ta&apos;</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">Kaxxa postali</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Abbozz</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.folder">Fowlder</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Kollox</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Mhux moqrija</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Messaġġ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.download">Niżżel</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Metadejta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Display</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Verżjoni elettronika uffiċjali</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outbox">Posta mibgħuta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.created">Maħluq</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxDossierView">Dehra tad-dossier</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandardView">Dehra standard</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload">Tella&apos;</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Imtella&apos;</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Ibgħat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Issejvja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Data tal-adozzjoni</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Parti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.edmaView">Dehra EDMA</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComment">Bla kumment</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

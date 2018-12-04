@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>lt</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>lt</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Adresas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Išsaugota</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Rinkmenų sąrašas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Bendrovės nacionalinis registracijos numeris</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Informacijos šaltinis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Rinkmenos numeris</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Žinutės ruošinys sėkmingai išsaugotas</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Žinutės ruošinio išsaugoti nepavyko</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Gauta žinutė</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Antimonopolinė politika</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Įmonių jungimasis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Valstybės pagalba</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Horizontalioji priemonė</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Pašalinti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Ar tikrai norite atšaukti šią žinutę?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Ar tikrai norite pašalinti šį žinutės ruošinį?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Įrašyti temą būtina</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Nurodžius organizaciją būtina nurodyti ir šalį</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Nurodžius organizaciją būtina įrašyti ir bendrovės nacionalinį registracijos numerį</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Kontaktinį asmenį nurodyti būtina</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Prie žinutės informacijos būtina nurodyti priemonę</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Pastabų nėra</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

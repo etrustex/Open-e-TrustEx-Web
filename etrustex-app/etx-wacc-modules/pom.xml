@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>etrustex-app</artifactId>
+        <groupId>eu.europa.ec.etrustex</groupId>
+        <version>trunk</version>
+    </parent>
+    <artifactId>etx-wacc-modules</artifactId>
+    <packaging>pom</packaging>
+    <description>Web Application Block Modules Container</description>
+
+	<properties>
+		<disable.webstart>true</disable.webstart>
+	</properties>
+
+    <modules>
+        <module>etx-wacc-model</module>
+        <module>etx-wacc-business</module>
+        <module>etx-wacc-persistence</module>
+        <module>etx-wacc-integration</module>
+        <module>etx-wacc-ws-provider</module>
+        <module>etx-wacc-web</module>
+        <module>etx-wacc-utils</module>
+        <module>etx-wacc-node-api</module>
+        <module>etx-wacc-security</module>
+        <module>etx-wacc-view-specific</module>
+    </modules>
+</project>

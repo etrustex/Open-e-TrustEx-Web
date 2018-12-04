@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>sl</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx Screen 1</hd_short_title>
+		<hd_long_title>eTrustEx Screen 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>03/12/2014</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx Screen 1</ipg_title>
+			<ipg_creator>DIGIT.B.2.001</ipg_creator>
+			<ipg_language>sl</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageBusiness">Business</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageSystemUsers">Sistem</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.administrators">Skrbniki</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyOperators">Operaterji</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.editUserDialogTitle">Uredi uporabnika</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.user.role">Vloga</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.administrator">Skrbnik</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.operator">Operater</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired.on">Veljavnost priponk bo potekla {0}</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired">Veljavnost priponk je potekla zaradi omejitve roka hranitve na {0} tedne.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataFailure">Sistem ne more prikazati podatkov o sporočilu. Obrnite se na službo za pomoč.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataNotReady">Trenutno iz sistema ne morete prenesti podatkov o sporočilu. Poskusite znova pozneje.</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

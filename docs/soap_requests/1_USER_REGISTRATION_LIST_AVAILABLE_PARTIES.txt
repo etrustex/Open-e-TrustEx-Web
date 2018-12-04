@@ -1,0 +1,25 @@
+URL			.../e-trustex/integration/services/admin/UserRegistrationService/v2.0
+
+REQUEST		
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ec.europa.eu/etrustex/webapp/service/admin/userregistration/v1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:listAvailablePartiesReq>
+         <v1:application>EDMA</v1:application>
+      </v1:listAvailablePartiesReq>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+RESPONSE	
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <listAvailablePartiesResp xmlns="http://ec.europa.eu/etrustex/webapp/service/admin/userregistration/v1.0">
+         <listAvailableParties>
+            <partyID>USER_REG_TEST_PARTY</partyID>
+         </listAvailableParties>
+      </listAvailablePartiesResp>
+   </S:Body>
+</S:Envelope>

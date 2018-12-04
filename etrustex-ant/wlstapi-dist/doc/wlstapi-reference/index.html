@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en" ng-app="app" ng-controller="AppCtrl"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WLST-API Documentation</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/main.css"><style>/*body, h1, h2, h3, h4, h5, h6, .uk-navbar-nav > li > a { 
+				font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+			}*/
+
+			div.container {
+				width: 100%;
+			}
+
+			/*
+			table overflow fix
+			*/
+			div.table-container {
+				overflow: scroll;
+			}
+			table {
+			    /*table-layout: fixed;*/
+			    word-wrap: break-word;
+			}
+
+			/*
+			display sub-title under drop down text. to center it vertically you must set a width, left and height to 0 and margin to 0 auto
+			*/
+
+			li.dropdown a {
+				position: relative;
+			}
+
+			li.dropdown a small {
+				display: block;
+				position: absolute;
+				top: 30px;
+				font-size:10px;
+				left: 20px;
+				/*center vertically (width must be set on the element)
+				left: 0;
+				right: 0;
+				margin: 0 auto;*/
+			}
+
+			/*
+			sidebar
+			*/
+
+			div.sidebar.affix-top {
+				position: static;
+				width: 160px;
+			}
+  
+			div.sidebar.affix {
+				position: fixed;
+				width: 160px;
+			}
+
+			/*
+			table (properties list)
+			*/
+			table td.name a:hover {
+				color: inherit;
+				text-decoration: inherit;
+			}
+			table td.name a {
+				color: inherit;
+			}
+			table td.ptype {
+				font-size: 9px;
+			}
+
+			/*
+			list group collapsible content
+			*/
+
+			.propdef-detail {
+				display: none;
+			}
+			.slideDown {
+				display: block;
+			}</style></head><body><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="#">WLST-API Properties Version 1.8.1 (238)</a></div><div class="navbar-collapse collapse"></div></div></div><div class="container"><div class="row"><div class="col-md-2" style="padding-right: 0"><div class="sidebar panel panel-default" data-spy="affix" data-offset-top="0"><div class="panel-heading"><h3 class="panel-title">Filters <small class="pull-right"><a href="" ng-click="clearFiltersFn()">clear</a></small></h3></div><div class="panel-body"><h4>Script</h4><div class="radio"><label><input type="radio" name="scriptRadio" ng-model="filter.script" value=""> All</label></div><div class="radio"><label><input type="radio" name="scriptRadio" ng-model="filter.script" value="Importer.py"> Import</label></div><div class="radio"><label><input type="radio" name="scriptRadio" ng-model="filter.script" value="Exporter.py"> Export</label></div><div class="radio"><label><input type="radio" name="scriptRadio" ng-model="filter.script" value="Remover.py"> Remove</label></div><div class="radio"><label><input type="radio" name="scriptRadio" ng-model="filter.script" value="domainCreator.py"> Domain creation</label></div><h4>Tags</h4><p style="font-size:10px"><a ng-click="selectAllTagsFn()">all</a> | <a ng-click="filter.tags.length = 0">none</a></p><div class="checkbox"><label><input type="checkbox" ng-checked="filter.tags.indexOf('no tag') > -1" ng-click="tagSelectionChangedFn('no tag')"> <span class="label label-default"><i>no tag</i></span></label></div><div class="checkbox" ng-repeat="tag in tags"><label><input type="checkbox" ng-checked="filter.tags.indexOf(tag) > -1" ng-click="tagSelectionChangedFn(tag)"> <span class="label label-primary">{{tag}}</span></label></div></div></div></div><div class="col-md-10"><div class="panel panel-default"><div class="panel-heading">Properties <span class="badge badge-default">{{filtered.length}}</span> <span class="pull-right">Total&nbsp;<span class="badge badge-info pull-right">{{properties.length}}</span></span></div><div class="panel-body"><div class="input-group"><div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div><input type="text" class="form-control input-sm" placeholder="Search" ng-model="main.query" ng-keydown2="if($event.which === 13){main.query=''}" ng-keydown="clearOnEscFn($event)"><div class="input-group-btn"><button class="btn btn-default btn-sm" type="button" ng-click="main.query=''" ng-disabled="main.query == null || main.query.length == 0"><i class="glyphicon glyphicon-remove-circle"></i></button></div></div></div><div class="list-group"><div class="list-group-item" ng-repeat="propdef in filtered = (properties | filter: filterFn) | orderBy:main.predicate" ng-click="select(propdef)" ng-class="{active: isSelected(propdef)}"><h4 class="list-group-item-heading">{{propdef.name}} <span class="pull-right tag" ng-bind-html="propdef.tags | tagsLabel"></span></h4><p class="list-group-item-text">{{propdef.description}}</p><div class="propdef-detail" ng-class="{slideDown: isSelected(propdef)}"><div class="typeInfo"><span>type: {{propdef.ptype}}</span> <span ng-show="isNotEmpty(propdef.defaultValue)">default value: {{propdef.defaultValue || '-'}}</span> <span ng-show="isNotEmpty(propdef.legalValues)">legal values: {{propdef.legalValues || '-'}}</span></div><div class="links" ng-show="isNotEmpty(propdef.links)"><span class="pull-left">see:</span><ul><li ng-repeat="linkObj in propdef.links"><a href="{{linkObj.url}}" target="_new" onclick="event.stopPropagation()">{{linkObj.url}}</a></li></ul></div></div></div></div></div></div></div></div><script type="text/javascript" src="js/libs/jquery.min.js"></script><script type="text/javascript" src="js/libs/bootstrap.min.js"></script><script type="text/javascript" src="js/libs/angular.min.js"></script><script type="text/javascript" src="js/libs/angular-sanitize.min.js"></script><script type="text/javascript" src="js/libs/angular-animate.min.js"></script><script type="text/javascript" src="js/data.js"></script><script type="text/javascript" src="js/main.js"></script></body></html>

@@ -1,0 +1,144 @@
+URL			.../e-trustex/integration/services/node/DocumentBundleService/v2.0
+
+REQUEST	(Note - Signature and Signed data are optional - I have included them below for the EDMA request, but not required for the Egreffe request)
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Header>
+      <ns7:Header xmlns:ns16="http://uri.etsi.org/01903/v1.4.1#" xmlns:ns15="ec:schema:xsd:DocumentBundle-1" xmlns:ns14="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:ns13="ec:schema:xsd:Ack-2" xmlns:ns12="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns11="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2" xmlns:ns10="http://www.w3.org/2000/09/xmldsig#" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2" xmlns:ns8="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:ns7="ec:services:wsdl:DocumentBundle-2" xmlns:ns6="ec:schema:xsd:CommonBasicComponents-1" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns4="ec:schema:xsd:CommonAggregateComponents-2" xmlns:ns3="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+         <ns4:BusinessHeader>
+            <ns8:Sender>
+               <ns8:Identifier>${PARTY_SENDER}</ns8:Identifier>
+            </ns8:Sender>
+            <ns8:Receiver>
+               <ns8:Identifier>${PARTY_RECEIVER}</ns8:Identifier>
+            </ns8:Receiver>
+         </ns4:BusinessHeader>
+      </ns7:Header>
+   </soap:Header>
+   <soap:Body>
+      <ns7:SubmitDocumentBundleRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ns3="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ns4="ec:schema:xsd:CommonAggregateComponents-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns6="ec:schema:xsd:CommonBasicComponents-1" xmlns:ns7="ec:services:wsdl:DocumentBundle-2" xmlns:ns8="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2" xmlns:ns10="http://www.w3.org/2000/09/xmldsig#" xmlns:ns11="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2" xmlns:ns12="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns13="ec:schema:xsd:Ack-2" xmlns:ns14="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:ns15="ec:schema:xsd:DocumentBundle-1" xmlns:ns16="http://uri.etsi.org/01903/v1.4.1#">
+         <ns7:DocumentBundle>
+            <ns2:UBLExtensions>
+               <ns2:UBLExtension>
+                  <ID>signature</ID>
+                  <ns2:ExtensionContent>
+                     <valueElement xmlns:ns17="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns=""><![CDATA[<?xml version="1.0" encoding="UTF-8"?><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="xmldsig-89e4db41-2813-4891-9c17-3528b63cb89c">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+<ds:Reference Id="xmldsig-89e4db41-2813-4891-9c17-3528b63cb89c-ref0">
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>8LsMLbfg0nhZJkW43ovxCHRkGMWY+dxQbZC5L52/C28=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#xmldsig-89e4db41-2813-4891-9c17-3528b63cb89c-signedprops">
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>kMEV5IwONV6E/uawpA7pgaC+TAFtYSsW4jX+X0PUaZI=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue Id="xmldsig-89e4db41-2813-4891-9c17-3528b63cb89c-sigvalue">
+kMjJ2dHl2fzBt56UM6hqAkxL5aSEg3HoEJvROSlPKlAZtnW5pnxLi3yHrGipcIkTJG1z4Lh04dcg
+MFUepB0UwUCi/d0gK4BYLtO0nUtLZsMYe0JtE8OlPq3tXL5Zv6YrVyP1yocCn9vCVfxjhqzj7u4U
+RRUl7XwfUUms4H9Ak5U=
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificate>
+MIICuTCCAiKgAwIBAgIEUlfqGTANBgkqhkiG9w0BAQIFADCBoDEdMBsGCSqGSIb3DQEJARYOY2hv
+bGFrQGlhbi5jb20xCzAJBgNVBAYTAkJFMREwDwYDVQQIDAhCcnVzc2VsczEUMBIGA1UEBwwLQmVs
+bGlhcmQgMjgxHDAaBgNVBAoME0V1cm9wZWFuIENvbW1pc3Npb24xETAPBgNVBAsMCERJR0lUIEIx
+MRgwFgYDVQQDDA9Bcm1lbl9TaWduYXR1cmUwHhcNMTMxMDExMTIwOTA1WhcNMTgxMDExMTIwOTA1
+WjCBoDEdMBsGCSqGSIb3DQEJARYOY2hvbGFrQGlhbi5jb20xCzAJBgNVBAYTAkJFMREwDwYDVQQI
+DAhCcnVzc2VsczEUMBIGA1UEBwwLQmVsbGlhcmQgMjgxHDAaBgNVBAoME0V1cm9wZWFuIENvbW1p
+c3Npb24xETAPBgNVBAsMCERJR0lUIEIxMRgwFgYDVQQDDA9Bcm1lbl9TaWduYXR1cmUwgZ8wDQYJ
+KoZIhvcNAQEBBQADgY0AMIGJAoGBAJU0MiD7Tn7mUwjdA75r5tPKK8r+DlyhWHBml44gz+Tfq7D4
+f9nAZ3B4meNYKftocRxbLcc0u6HTYMhGPfchyUIPfthRj8SE64zjpKc2MX6XIE0LydHplRqBUfSe
+iW9EiFCflRlBP6Zw2jjw1AZxllLqew/tzs8DwDovv72XzM/3AgMBAAEwDQYJKoZIhvcNAQECBQAD
+gYEABFDUnv/4k2ABVwVCd3y1zIW5fgpAPdR6oT5CFa7Y4ZXaffrLekaQrEGUhUTzxthf1lZaz2t8
+71WSpHVLSJfsIgRTjy6oTLbLRvMn510wVpozu3dFfjaK9edg3z/rhJgkYEQxkBB/3W9gM9gj1WES
+qkqFat+Eahj89NEYo7G+NVI=
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+<ds:Object><xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" xmlns:xades141="http://uri.etsi.org/01903/v1.4.1#" Target="#xmldsig-89e4db41-2813-4891-9c17-3528b63cb89c"><xades:SignedProperties Id="xmldsig-89e4db41-2813-4891-9c17-3528b63cb89c-signedprops"><xades:SignedSignatureProperties><xades:SigningTime>2013-10-16T11:11:59.175+02:00</xades:SigningTime><xades:SigningCertificate><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>ldvmaLRyOg4X1o04+TTthFtDmqJFoVW06Ugo69jPkqA=</ds:DigestValue></xades:CertDigest><xades:IssuerSerial><ds:X509IssuerName>CN=Armen_Signature,OU=DIGIT B1,O=European Commission,L=Belliard 28,ST=Brussels,C=BE,1.2.840.113549.1.9.1=#160e63686f6c616b4069616e2e636f6d</ds:X509IssuerName><ds:X509SerialNumber>1381493273</ds:X509SerialNumber></xades:IssuerSerial></xades:Cert></xades:SigningCertificate></xades:SignedSignatureProperties></xades:SignedProperties></xades:QualifyingProperties></ds:Object>
+</ds:Signature>]]></valueElement>
+                  </ns2:ExtensionContent>
+               </ns2:UBLExtension>
+               <ns2:UBLExtension>
+                  <ID>signedData</ID>
+                  <ns2:ExtensionContent>
+                     <valueElement xmlns:ns17="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns=""><![CDATA[<signedBundle:signedBundle xmlns:signedBundle="urn:eu:europa:ec:etrustex:signature:v1.0" xmlns="urn:eu:europa:ec:etrustex:signature:v1.0">
+                  <document>
+                     <id>DEV-ETX-ARMEN-PARTY-EDMA-PDF0000012.pdf-958413632273236825</id>
+                     <digestMethod>SHA-512</digestMethod>
+                     <digestValue>801E2F0AABDA3E6A44BCC8BF826590A922390C4D31C010FE5398831338902559FB787B63229B4D1B05211F478A97163FFB00B9E95430B041DAFC58433FD28EC8</digestValue>
+                  </document>
+                  <document>
+                     <id>DEV-ETX-ARMEN-PARTY-payload.xml--5682455705766643925</id>
+                     <digestMethod>SHA-512</digestMethod>
+                     <digestValue>6E7644D507D5411388835BD8F94CC12658CA9D41C1B2BF8F0A0352542133C3C67F82565577A858651EB84026A013A386CB90DA16D4843FBCC441F20EA416DE3C</digestValue>
+                  </document>
+               </signedBundle:signedBundle>]]></valueElement>
+                  </ns2:ExtensionContent>
+               </ns2:UBLExtension>
+            </ns2:UBLExtensions>
+            <ProfileID>${MESSAGE_SUBJECT}</ProfileID>
+            <ID>${BUNDLE_ID}</ID>
+            <UUID>${REFERENCE_ID}</UUID>
+            <IssueDate>2014-11-25</IssueDate>
+            <IssueTime>16:50:46.182</IssueTime>
+            <Note>${MESSAGE_BODY}</Note>
+            <ns3:SenderParty>
+               <EndpointID>${PARTY_SENDER}</EndpointID>
+            </ns3:SenderParty>
+            <ns3:ReceiverParty>
+               <EndpointID>${PARTY_RECEIVER}</EndpointID>
+            </ns3:ReceiverParty>
+            <ns4:DocumentWrapperReference>
+               <ID>${ATTACHMENT_ID}</ID>
+               <DocumentTypeCode>BINARY</DocumentTypeCode>
+               <ns4:ResourceInformationReference>
+                  <Name>${ATTACHMENT_FILENAME}</Name>
+                  <ns4:DocumentSize>${ATTACHMENT_FILE_SIZE}</ns4:DocumentSize>
+                  <ns4:DocumentHashMethod>SHA-512</ns4:DocumentHashMethod>
+                  <DocumentHash>${ATTACHMENT_CHECKSUM}</DocumentHash>
+               </ns4:ResourceInformationReference>
+            </ns4:DocumentWrapperReference>
+            <ns4:DocumentWrapperReference>
+               <ID>${METADATA_ID}</ID>
+               <DocumentTypeCode>METADATA</DocumentTypeCode>
+               <ns4:ResourceInformationReference>
+                  <Name>${METADATA_FILENAME}</Name>
+                  <ns4:DocumentSize>${METADATA_FILE_SIZE}</ns4:DocumentSize>
+                  <ns4:DocumentHashMethod>SHA-512</ns4:DocumentHashMethod>
+                  <DocumentHash>${METADATA_CHECKSUM}</DocumentHash>
+               </ns4:ResourceInformationReference>
+            </ns4:DocumentWrapperReference>
+         </ns7:DocumentBundle>
+      </ns7:SubmitDocumentBundleRequest>
+   </soap:Body>
+</soap:Envelope>
+
+
+RESPONSE	
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Header>
+      <ns11:Header xmlns:ns16="http://uri.etsi.org/01903/v1.4.1#" xmlns:ns15="ec:schema:xsd:Ack-2" xmlns:ns14="ec:schema:xsd:DocumentBundle-1" xmlns:ns13="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:ns12="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns11="ec:services:wsdl:DocumentBundle-2" xmlns:ns10="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2" xmlns:ns8="http://www.w3.org/2000/09/xmldsig#" xmlns:ns7="ec:schema:xsd:CommonBasicComponents-1" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns5="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ns4="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ns3="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ns2="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns="ec:schema:xsd:CommonAggregateComponents-2">
+         <BusinessHeader>
+            <ns2:Sender>
+               <ns2:Identifier>ETX-EDMA-APP-PARTY</ns2:Identifier>
+            </ns2:Sender>
+            <ns2:Receiver>
+               <ns2:Identifier>CHOLAAR-PARTY</ns2:Identifier>
+            </ns2:Receiver>
+         </BusinessHeader>
+      </ns11:Header>
+   </S:Header>
+   <S:Body>
+      <ns11:SubmitDocumentBundleResponse xmlns:ns16="http://uri.etsi.org/01903/v1.4.1#" xmlns:ns15="ec:schema:xsd:Ack-2" xmlns:ns14="ec:schema:xsd:DocumentBundle-1" xmlns:ns13="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:ns12="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns11="ec:services:wsdl:DocumentBundle-2" xmlns:ns10="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2" xmlns:ns8="http://www.w3.org/2000/09/xmldsig#" xmlns:ns7="ec:schema:xsd:CommonBasicComponents-1" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns5="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ns4="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ns3="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ns2="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns="ec:schema:xsd:CommonAggregateComponents-2">
+         <ns11:Ack>
+            <ns7:AckIndicator>true</ns7:AckIndicator>
+         </ns11:Ack>
+      </ns11:SubmitDocumentBundleResponse>
+   </S:Body>
+</S:Envelope>

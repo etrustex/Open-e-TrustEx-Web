@@ -1,0 +1,13 @@
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\MessageHandlerTest$1.class
+eu\europa\ec\etrustex\webaccess\web\view\business\api\ConfigurationProviderTest.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\WebHandlerHelperTest.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\CommonMessageCreateHandlerTest.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\MessageListHandlerTest.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\ConfigurationImplTest.class
+eu\europa\ec\etrustex\webaccess\web\view\business\generic\webhandler\GenericDraftsHandlerTest.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\CommonMessageViewHandlerTest.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\MessageListHandlerTest$1.class
+eu\europa\ec\etrustex\webaccess\web\view\business\generic\webhandler\GenericInboxHandlerTest.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\MessageHandlerTest.class
+eu\europa\ec\etrustex\webaccess\web\view\business\generic\webhandler\GenericOutboxHandlerTest.class
+eu\europa\ec\etrustex\webaccess\web\view\business\common\webhandler\CommonMessageEditHandlerTest.class

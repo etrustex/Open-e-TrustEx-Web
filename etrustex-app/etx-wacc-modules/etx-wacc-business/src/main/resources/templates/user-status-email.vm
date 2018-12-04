@@ -1,0 +1,19 @@
+#if($messageMstStatus == "AVAILABLE")
+    #set($text = 'is available on the receiver`s <i>' + ($receiverName) + '</i> inbox')
+#elseif ($messageMstStatus == "READ")
+    #set($text = 'was read by the receiver <i>' + ($receiverName) + '</i>')
+#elseif ($messageMstStatus == "FAILED")
+    #set($text = 'is failed')
+#else
+    #set($text = 'has an unknown status <i>' + ($messageMstStatusCode) + '</i>')
+#end
+Dear <i>$userName</i>,
+<br><br>
+The message <i>$messageTitle</i> sent by <i>$createdByUser</i> from <i>$senderName</i> $text.
+<br><br>
+You can use the following link for viewing the full details of this message: <a href="$messageURL">$messageURL</a>
+<br><br>
+This message has been generated automatically by the e-TrustEx platform, please do not reply.
+<br><br>
+Best regards,<br>
+e-TrustEx Team

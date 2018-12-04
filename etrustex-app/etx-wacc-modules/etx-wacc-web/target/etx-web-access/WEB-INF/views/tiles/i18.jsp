@@ -1,0 +1,40 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+<script>
+  var messages = {
+    'message.subjectErrorMessage': '<spring:message code="message.subjectErrorMessage" htmlEscape="true" javaScriptEscape="true"/>',
+    'message.recipientErrorMessage': '<spring:message code="message.recipientErrorMessage" htmlEscape="true" javaScriptEscape="true"/>',
+    'message.countryErrorMessage': '<spring:message code="message.countryErrorMessage" htmlEscape="true" javaScriptEscape="true"/>',
+    'message.companyErrorMessage': '<spring:message code="message.companyErrorMessage" htmlEscape="true" javaScriptEscape="true"/>',
+    'message.contactPersonErrorMessage': '<spring:message code="message.contactPersonErrorMessage" htmlEscape="true" javaScriptEscape="true"/>',
+    'message.instrumentErrorMessage': '<spring:message code="message.instrumentErrorMessage" htmlEscape="true" javaScriptEscape="true"/>',
+    'message.cancelMessage': '<spring:message code="message.cancelMessage" javaScriptEscape="true"/>',
+    'message.attachmentListEmpty': '<spring:message code="message.attachmentListEmpty" htmlEscape="true" javaScriptEscape="true"/>',
+    'error.admin.wrongEmail': '<spring:message code="error.admin.wrongEmail" javaScriptEscape="true"/>',
+    'error.no.valid.ec.email': '<spring:message code="error.no.valid.ec.email" javaScriptEscape="true"/>',
+    'message.deleteDraftMessage': '<spring:message code="message.deleteDraftMessage" javaScriptEscape="true"/>',
+    'error.admin.mandatoryFields': '<spring:message code="error.admin.mandatoryFields" javaScriptEscape="true"/>',
+    'error.admin.generic': '<spring:message code="error.admin.generic" javaScriptEscape="true"/>',
+    'label.save': '<spring:message code="label.save" javaScriptEscape="true"/>',
+    'label.admin.cancel': '<spring:message code="label.admin.cancel" javaScriptEscape="true"/>',
+    'label.admin.delete': '<spring:message code="label.admin.delete" javaScriptEscape="true"/>',
+    'label.admin.edit.user.role.administrator': '<spring:message code="label.admin.edit.user.role.administrator" javaScriptEscape="true"/>',
+    'label.admin.edit.user.role.operator': '<spring:message code="label.admin.edit.user.role.operator" javaScriptEscape="true"/>',
+    'label.admin.addUserDialogTitle': '<spring:message code="label.admin.addUserDialogTitle" javaScriptEscape="true"/>',
+    'label.admin.editUserDialogTitle': '<spring:message code="label.admin.editUserDialogTitle" javaScriptEscape="true"/>',
+    'label.admin.notif.delete.mandatory': '<spring:message code="label.admin.notif.delete.mandatory" javaScriptEscape="true"/>',
+    'label.admin.notif.check.mandatory': '<spring:message code="label.admin.notif.check.mandatory" javaScriptEscape="true"/>',
+    'label.admin.editPartyNameTitle': '<spring:message code="label.admin.editPartyNameTitle" javaScriptEscape="true"/>',
+    'label.admin.parties.unavailable': '<spring:message code="label.admin.parties.unavailable" javaScriptEscape="true"/>',
+    'label.admin.close': '<spring:message code="label.admin.close" javaScriptEscape="true"/>',
+    'label.admin.certificate.dialogTitle': '<spring:message code="label.admin.certificate.dialogTitle" javaScriptEscape="true"/>',
+    'label.refresh': '<spring:message code="label.refresh" javaScriptEscape="true"/>',
+    'label.admin.ica.inactive': '<spring:message code="label.admin.ica.inactive" javaScriptEscape="true"/>',
+    'label.ica.encryption.required': '<spring:message code="label.ica.encryption.required" javaScriptEscape="true"/>',
+    'label.ica.encryption.not.required': '<spring:message code="label.ica.encryption.not.required" javaScriptEscape="true"/>',
+    'label.ica.signature.required': '<spring:message code="label.ica.signature.required" javaScriptEscape="true"/>',
+    'label.ica.signature.not.required': '<spring:message code="label.ica.signature.not.required" javaScriptEscape="true"/>',
+    'message.shouldBeSignedErrorMessage': '<spring:message code="message.shouldBeSignedErrorMessage" javaScriptEscape="true"/>',
+    'message.attachmentListTooLong': '<spring:message code="message.attachmentListTooLong" javaScriptEscape="true"/>'
+  };
+</script>

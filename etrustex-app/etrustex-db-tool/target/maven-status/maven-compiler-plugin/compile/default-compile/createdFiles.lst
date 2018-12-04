@@ -1,0 +1,5 @@
+eu\europa\ec\etrustex\tools\db\common\BatchPreparedStatements.class
+eu\europa\ec\etrustex\tools\db\MessageSignatureMigrator.class
+eu\europa\ec\etrustex\tools\db\common\DbProcessor.class
+eu\europa\ec\etrustex\tools\db\StringNormalizer.class
+eu\europa\ec\etrustex\tools\db\common\MainUtils.class

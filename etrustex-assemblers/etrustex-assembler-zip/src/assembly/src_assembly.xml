@@ -1,0 +1,108 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>src</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <directory>../../docs</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>../../etrustex-ant</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+
+            <excludes>
+                <exclude>scripts/oracle/web/environment/**</exclude>
+                <exclude>scripts/mysql/web/environment/**</exclude>
+                <exclude>scripts/weblogic/env/acc/*/**</exclude>
+                <exclude>scripts/weblogic/env/dev/*/**</exclude>
+                <exclude>scripts/weblogic/env/load/*/**</exclude>
+                <exclude>scripts/weblogic/env/local/*/**</exclude>
+                <exclude>scripts/weblogic/env/prod/*/**</exclude>
+                <exclude>scripts/weblogic/env/test/*/**</exclude>
+            </excludes>
+
+            <includes>
+                <include>config/config.public.properties</include>
+                <include>db-lib/**</include>
+                <include>scripts/**</include>
+                <include>wlstapi-dist/**</include>
+                <include>*.xml</include>
+                <include>*.properties</include>
+                <include>*.txt</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>../../etrustex-app</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+
+            <excludes>
+                <exclude>**/*.iml</exclude>
+                <exclude>**/logs/**</exclude>
+                <exclude>**/*.log</exclude>
+                <exclude>**/target</exclude>
+                <exclude>**/target/**/*</exclude>
+
+                <exclude>**/etx-wacc-applet/src/main/profiles/acc/*/**</exclude>
+                <exclude>**/etx-wacc-applet/src/main/profiles/dev/*/**</exclude>
+                <exclude>**/etx-wacc-applet/src/main/profiles/load/*/**</exclude>
+                <exclude>**/etx-wacc-applet/src/main/profiles/local/*/**</exclude>
+                <exclude>**/etx-wacc-applet/src/main/profiles/prod/*/**</exclude>
+                <exclude>**/etx-wacc-applet/src/main/profiles/test/*/**</exclude>
+                <exclude>**/etx-wacc-applet/lib/*.jks</exclude>
+
+                <exclude>**/etx-wacc-web/src/main/profiles/acc/*/**</exclude>
+                <exclude>**/etx-wacc-web/src/main/profiles/dev/*/**</exclude>
+                <exclude>**/etx-wacc-web/src/main/profiles/load/*/**</exclude>
+                <exclude>**/etx-wacc-web/src/main/profiles/local/*/**</exclude>
+                <exclude>**/etx-wacc-web/src/main/profiles/prod/*/**</exclude>
+                <exclude>**/etx-wacc-web/src/main/profiles/test/*/**</exclude>
+                <exclude>**/etx-wacc-web/src/main/resources/ecas-config-e-trustex.properties</exclude>
+
+                <exclude>**/etx-wacc-web/src/main/webapp/applet/**</exclude>
+            </excludes>
+
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>../../etrustex-assemblers</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <excludes>
+                <exclude>**/*.iml</exclude>
+                <exclude>**/target</exclude>
+                <exclude>**/target/**/*</exclude>
+            </excludes>
+        </fileSet>
+
+        <fileSet>
+            <directory>../../etrustex-translations</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>../..</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <includes>
+                <include>*.xml</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+</assembly>

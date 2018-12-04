@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>etx-wacc-view-specific</artifactId>
+        <groupId>eu.europa.ec.etrustex</groupId>
+        <version>trunk</version>
+    </parent>
+
+    <artifactId>etx-wacc-view-business-common</artifactId>
+    <name>etx-wacc-view-business-common</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>eu.europa.ec.etrustex</groupId>
+            <artifactId>etx-wacc-business</artifactId>
+            <version>${eTrustEx.version}</version>
+            <type>jar</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>eu.europa.ec.etrustex</groupId>
+                    <artifactId>etx-wacc-persistence</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-lang3</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-webmvc</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-jms</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.etrustex</groupId>
+            <artifactId>etx-wacc-model</artifactId>
+            <version>${eTrustEx.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.etrustex</groupId>
+            <artifactId>etx-wacc-utils</artifactId>
+            <version>${eTrustEx.version}</version>
+            <type>jar</type>
+        </dependency>
+        <!-- spring dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.framework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.framework.version}</version>
+        </dependency>
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>${javax.json.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+</project>

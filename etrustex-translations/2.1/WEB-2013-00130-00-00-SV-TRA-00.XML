@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>sv</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>sv</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Adress</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Sparat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Lista med filer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Företagets nationella registreringsnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Informationsreferens</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Filreferens</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Ditt utkast till meddelande har sparats</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Kunde inte spara utkastet till meddelande</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Mottaget meddelande</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Antitrust</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Företagsfusion</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Statligt stöd</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Övergripande åtgärd</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Ta bort</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Är du säker på att du vill avbryta?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Är du säker på att du vill ta bort utkastet till meddelandet?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Du måste ange ärende</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Du måste ange land när du har fyllt i organisationens namn</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Du måste ange företagets nationella registreringsnummer när du har fyllt i organisationens namn</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Du måste ange kontaktperson</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Du måste ange instrument under meddelandeinformation</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Inga kommentarer</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

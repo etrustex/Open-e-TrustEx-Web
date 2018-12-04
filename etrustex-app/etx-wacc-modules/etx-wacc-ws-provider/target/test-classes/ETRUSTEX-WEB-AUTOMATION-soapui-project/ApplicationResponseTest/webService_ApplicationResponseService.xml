@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="2b5582c8-86ee-4351-9ff8-b87550c6c507" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="webService_ApplicationResponseService" searchProperties="true" disabled="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="dca42e25-5db1-4180-912b-8e1d8b4bda69fileName">submitApplicationResponse_template</con:setting><con:setting id="2b5582c8-86ee-4351-9ff8-b87550c6c507fileName">webService_ApplicationResponseService</con:setting></con:settings><con:testStep type="request" name="submitApplicationResponse" id="690a3958-3ef3-4377-817a-51f5c9980297" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ApplicationResponsePortBinding</con:interface><con:operation>submitApplicationResponse</con:operation><con:request name="submitApplicationResponse" id="9af0f86a-8354-48a7-99c1-f18a4a5e2423"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#APPLICATION_RESPONSE_URL}</con:endpoint><con:request><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header xmlns:ec="ec:services:wsdl:ApplicationResponse-2" xmlns:ec1="ec:schema:xsd:CommonAggregateComponents-2" xmlns:stan="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader">
+      <ec:Header>
+         <ec1:BusinessHeader>
+            <stan:Sender>
+               <stan:Identifier>${#TestSuite#SENDER_PARTY}</stan:Identifier>
+            </stan:Sender>
+            <stan:Receiver>
+               <stan:Identifier>${#TestSuite#RECEIVER_PARTY}</stan:Identifier>
+            </stan:Receiver>
+         </ec1:BusinessHeader>
+      </ec:Header>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body xmlns:ec="ec:services:wsdl:ApplicationResponse-2">
+      <ec:SubmitApplicationResponseRequest xmlns:ec1="ec:schema:xsd:CommonBasicComponents-0.1">
+         <ec:ApplicationResponse xmlns:ec1="ec:schema:xsd:CommonAggregateComponents-2" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:stan="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:urn="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:urn1="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+            <urn1:ID>${#TestSuite#MESSAGE_STATUS_ID}</urn1:ID>
+            <urn1:IssueDate>2013-03-07</urn1:IssueDate>
+            <urn:DocumentResponse>
+               <urn:Response>
+                  <urn1:ReferenceID>${#TestSuite#PARENT_MESSAGE_BUNDLE_ID}</urn1:ReferenceID>
+                  <urn1:ResponseCode>${#TestSuite#RESPONSE_CODE}</urn1:ResponseCode>
+               </urn:Response>
+               <urn:DocumentReference>
+                  <urn1:ID>${#TestSuite#PARENT_MESSAGE_BUNDLE_ID}</urn1:ID>
+                  <urn1:DocumentTypeCode>BDL</urn1:DocumentTypeCode>
+               </urn:DocumentReference>
+            </urn:DocumentResponse>
+         </ec:ApplicationResponse>
+      </ec:SubmitApplicationResponseRequest>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request><con:assertion type="SOAP Response" id="c014bf54-1b5c-485f-9b50-14a781df914f"/><con:credentials><con:username>${#Project#APPLICATION_RESPONSE_USERNAME}</con:username><con:password>${#Project#APPLICATION_RESPONSE_PASSWORD}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>bg</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx екран 1</hd_short_title>
+		<hd_long_title>eTrustEx екран 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>20/12/2013</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx екран 1</ipg_title>
+			<ipg_creator>DIGIT.B.1.001</ipg_creator>
+			<ipg_language>bg</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.custom">Предприятие</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageParty">Party</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.notifications">Известия по ел. поща</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.accessRights">Списък на потребителите</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyAdmins">Party Administrators</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyOperators">Party Operators</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.addUser">Добавяне на потребител</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.administration">Администриране</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.name">Име</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.login">Потребителско име</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.email">Електронен адрес</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.addUserDialogTitle">Добавяне на потребител</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.cancel">Отмяна</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="error.admin.mandatoryFields">Не са попълнени всички задължителни полета.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.confirmDeleteText">Сигурен ли сте, че искате да премахнете тази потребителска роля?</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.delete">Премахване</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.deleteUserRoleAssignment">Премахване на потребителска роля</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.sendNotificationTo">Изпращане на известия във функционална пощенска кутия</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

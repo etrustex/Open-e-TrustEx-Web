@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>it</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>26/06/2015</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.2.001</ipg_creator>
+            <ipg_language>it</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div id="error.admin.wrongEmail" class="ETX_WEB_LABEL_TRANSLATION">Formato dell&apos;e-mail non valido</div>
+                <div id="label.admin.login" class="ETX_WEB_LABEL_TRANSLATION">ID univoco ECAS</div>
+                <div id="label.admin.notif.check.mandatory" class="ETX_WEB_LABEL_TRANSLATION">Per questa impresa è obbligatoria almeno una notifica per e-mail.</div>
+                <div id="label.admin.notif.delete.mandatory" class="ETX_WEB_LABEL_TRANSLATION">Impossibile cancellare questo ruolo perché è obbligatoria almeno una notifica per e-mail</div>
+                <div id="message.cookie.banner" class="ETX_WEB_LABEL_TRANSLATION">Il sito e-TrustEx utilizza i cookies. I cookies ci aiutano a migliorare l’esperienza dell’utente durante la navigazione sul sito.</div>
+                <div id="error.admin.generic" class="ETX_WEB_LABEL_TRANSLATION">Impossibile completare la richiesta. Contattare l’amministratore del sistema</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

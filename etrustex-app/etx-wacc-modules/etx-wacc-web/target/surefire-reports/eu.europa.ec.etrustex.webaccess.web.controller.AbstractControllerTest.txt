@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: eu.europa.ec.etrustex.webaccess.web.controller.AbstractControllerTest
+-------------------------------------------------------------------------------
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.971 sec - in eu.europa.ec.etrustex.webaccess.web.controller.AbstractControllerTest

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>hr</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx Screen 1</hd_short_title>
+		<hd_long_title>eTrustEx Screen 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>29/03/2013</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx Screen 1</ipg_title>
+			<ipg_creator>DIGIT.B.1.001</ipg_creator>
+			<ipg_language>hr</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Prijavljeni ste kao</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Informacije o poruci</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Odustani</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Od</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Poslano</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Primljeno</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Skica</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Skica</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Uspješno ste se odjavili.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Povratak na poruke</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Odjava</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Poruka je uspješno poslana!</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Dokumentacija:</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">	Poslano</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Primljeno</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Za</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Predmet</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Informacije o pošiljatelju</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Naziv organizacije</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Osoba za kontakt</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Funkcija</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefon</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">Adresa e-pošte</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Poštanski broj</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Grad</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Država</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Naziv poduzeća</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">U ime</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Komentari</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Instrument</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Nova</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Osvježi</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">od</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">Ulazna pošta</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Sve</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Nepročitane</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Poruka</div>
+				<!--<div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Metapodaci</div>-->
+				<!--<div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Prikaz</div>-->
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Službena elektronička verzija</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Prenesene datoteke</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Pošalji</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Spremi</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Datum donošenja</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Dio</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Poruka je uspješno spremljena kao skica.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Unesite predmet poruke.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Unos države obavezan je uz naziv organizacije.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Unos nacionalnog matičnog broja poduzeća obavezan je uz naziv organizacije.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Unesite osobu za kontakt.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Unesite instrument informacija o poruci.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Poruka nije poslana.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Na znanje</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Poruke</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.party">Party</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Adresa</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Spremljeno</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Popis datoteka</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Nacionalni matični broj poduzeća</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Referentna oznaka informacije</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Referentna oznaka datoteke</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Skica poruke nije spremljena.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Primljena poruka</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Protumonopolski</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Koncentracija poduzetnika</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Državna potpora</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Horizontalni</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Izbriši</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Želite li zaista otkazati ovu poruku?</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Želite li zaista izbrisati ovu skicu?</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Nema komentara</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandard">Standardni prikaz</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxGroupByDossier">Grupiranje po dokumentaciji</div>
+				<!--<div class="ETX_WEB_LABEL_TRANSLATION" id="label.Dossier">Prikaz po dokumentaciji</div>-->
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataFailure">Sustav ne može prikazati informacije o poruci. Obratite se službi za podršku.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataNotReady">Sustav trenutačno ne može učitati informacije o poruci. Pokušajte ponovno za nekoliko minuta.</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

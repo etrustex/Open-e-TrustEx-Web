@@ -1,0 +1,14 @@
+eu\europa\ec\etrustex\webaccess\security\XadesSignatureImpl.class
+eu\europa\ec\etrustex\webaccess\security\DirectCertificateValidationProvider.class
+eu\europa\ec\etrustex\webaccess\security\P2PAppletKeystoreData.class
+eu\europa\ec\etrustex\webaccess\security\KeyStoreEntry.class
+eu\europa\ec\etrustex\webaccess\security\SignatureService.class
+eu\europa\ec\etrustex\webaccess\security\MessageSignatureUtil.class
+eu\europa\ec\etrustex\webaccess\security\EtxSecurityProvider.class
+eu\europa\ec\etrustex\webaccess\security\EtxSecurityProvider$SignatureServiceLazyHolder.class
+eu\europa\ec\etrustex\webaccess\security\EtxSecurityProvider$CryptoServiceLazyHolder.class
+eu\europa\ec\etrustex\webaccess\security\BouncyCryptoImpl.class
+eu\europa\ec\etrustex\webaccess\security\CertificateServiceImpl.class
+eu\europa\ec\etrustex\webaccess\security\EtxSecurityProvider$CertificateServiceLazyHolder.class
+eu\europa\ec\etrustex\webaccess\security\CertificateService.class
+eu\europa\ec\etrustex\webaccess\security\CryptoService.class

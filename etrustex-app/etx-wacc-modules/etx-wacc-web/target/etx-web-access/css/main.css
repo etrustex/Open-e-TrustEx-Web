@@ -1,0 +1,189 @@
+@charset "utf-8";
+
+@import "reset.css?ver=trunk-19-04-2018 12:23";
+
+@import "header.css?ver=trunk-19-04-2018 12:23";
+@import "sidebar.css?ver=trunk-19-04-2018 12:23";
+@import "content.css?ver=trunk-19-04-2018 12:23";
+@import "footer.css?ver=trunk-19-04-2018 12:23";
+
+/* common */
+html, body{
+	font: 100% Arial;
+    height: 100%;
+}
+
+form{
+    display: inline;
+}
+
+b{
+	font-weight:bold;
+}
+
+i{
+    font-style: italic;
+}
+
+h1{
+	color: #074a8b;
+    font-family: Georgia;
+    font-size: 1.55em;
+}
+
+h2{
+    color: #074a8b;
+    font-family: Georgia;
+    font-size: 1em;
+    display: inline;
+}
+
+h3{
+	color:#426e99;
+	font-family: Georgia;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+h4 {
+    color: #074A8B;
+    font-family: Arial;
+    font-size: 0.8em;
+	font-weight: bold;
+}
+
+h5 {
+    color: #0086cb;
+    font-family: Arial;
+    font-size: 1em;
+	font-weight: bold;
+}
+
+h6 {
+    color: #0086cb;
+    font-family: Arial;
+    font-size: 1.1em;
+	font-weight: bold;
+}
+
+
+.right {
+    float: right;
+}
+
+.status {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto;
+}
+
+.container {
+    padding-bottom: 40px;
+    overflow-y: auto;
+}
+
+.grid {
+    display:table;
+    margin: 5px;
+}
+
+.grid-row {
+    display: table-row;
+    height: 28px;
+}
+
+.grid-cell {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.grid-cell-l {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 590px;
+    text-align: right;
+}
+
+.grid-cell-img {
+    border-style: none;
+    vertical-align: middle;
+}
+
+.grid-cell-textarea {
+    display: block;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.no-js{
+	font: 100% Arial;
+	font-size: 1.0em;
+	color: red;
+	text-align:center;
+	border:none;
+}
+
+/* singletons */
+#disabling-div {
+    /* Do not display it on entry */
+    display: none;
+
+    /* Display it on the layer with index 1001.
+       Make sure this is the highest z-index value
+       used by layers on that page */
+    z-index:1001;
+
+    /* make it cover the whole screen */
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+
+    /* make it white but fully transparent */
+    background-color: white;
+    opacity:.5;
+    filter: alpha(opacity=50);
+}
+
+#languages-script {
+    display: none;
+}
+
+#cbanner {
+    background-image: url("../images/img/bg_content.png");
+    background-repeat: repeat-x;
+    border-top: 1px solid #d0e4ff;
+    border-left: 1px solid #d0e4ff;
+    border-right: 1px solid #d0e4ff;
+    border-bottom: 1px solid #d0e4ff;
+    color: #006497;
+    padding: 5px 0px 2px 5px;
+}
+#switchVersion {
+    float:right;
+    color: orange;
+    font-weight: bold;
+    font-size: large;
+}
+#switchVersion:visited {
+    float:right;
+    color: orange;
+    font-weight: bold;
+    font-size: large;
+}
+
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+}

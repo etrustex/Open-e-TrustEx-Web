@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Tue 29/04/2008 17:34:50.73 Ack
+-->
+<!--
+Package 0.01
+Copyright EC DIGIT by PwC-->
+<!-- ===== xsd:schema Element With Namespaces Declarations ===== -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="ec:schema:xsd:Ack-2" xmlns:eccac="ec:schema:xsd:CommonAggregateComponents-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:eccbc="ec:schema:xsd:CommonBasicComponents-1" targetNamespace="ec:schema:xsd:Ack-2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+	<!-- ===== Imports ===== -->
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" schemaLocation="../common/UBL-CommonAggregateComponents-2.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" schemaLocation="../common/UBL-CommonBasicComponents-2.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" schemaLocation="../common/UBL-CommonExtensionComponents-2.0.xsd"/>
+	<xsd:import namespace="ec:schema:xsd:CommonBasicComponents-1" schemaLocation="../custom/EC-CommonBasicComponents-1.0.xsd"/>
+	<xsd:import namespace="ec:schema:xsd:CommonAggregateComponents-2" schemaLocation="../custom/EC-CommonAggregateComponents-2.0.xsd"/>
+	<!-- ===== Root Element ===== -->
+	<xsd:element name="Acknowledgment" type="AcknowledgmentType"/>
+	<xsd:complexType name="AcknowledgmentType">
+		<xsd:annotation>
+			<xsd:documentation>
+				<ccts:Component>
+					<ccts:ComponentType>ABIE</ccts:ComponentType>
+					<ccts:DictionaryEntryName>AckIndicator</ccts:DictionaryEntryName>
+					<ccts:Definition>Return after Request</ccts:Definition>
+					<ccts:ObjectClass>Ack</ccts:ObjectClass>
+				</ccts:Component>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="ext:UBLExtensions" minOccurs="0"/>
+			<xsd:element ref="cbc:UBLVersionID" minOccurs="0"/>
+			<xsd:element ref="cbc:CustomizationID" minOccurs="0"/>
+			<xsd:element ref="cbc:ProfileID" minOccurs="0"/>
+			<xsd:element ref="cbc:UUID" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>Attached Document. UUID. Identifier</ccts:DictionaryEntryName>
+							<ccts:Definition>A universally unique identifier for an instance of this ABIE.</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>Attached Document</ccts:ObjectClass>
+							<ccts:PropertyTerm>UUID</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+							<ccts:DataType>Identifier. Type</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="cbc:ID" minOccurs="0"/>
+			<xsd:element ref="cbc:IssueDate" minOccurs="0"/>
+			<xsd:element ref="eccbc:AckIndicator"/>
+			<xsd:element ref="eccac:Timestamp" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="eccac:AcknowledgedDocumentReference" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

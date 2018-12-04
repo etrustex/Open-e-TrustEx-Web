@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>ro</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>ro</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Conectat ca</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Informaţii mesaj</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Document</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Confidenţial</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Observaţii document</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Anulează</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Trimite mesajul</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Salvează ca ciornă</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Căsuţa poştală/Dosare</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">De la</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Trimis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Primit</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Filtrează mesajele</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Anulează filtrele</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Mesaj ciornă</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Căsuţa poştală/Mesaje</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Deconectare</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Aţi fost deconectat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Înapoi la mesaje</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Descarcă fişierele selectate
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Deconectare</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Mesaj trimis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Mesajul nu a fost trimis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Eroare la salvarea mesajului</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Eroare la încărcarea ataşamentului
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Eroare la salvarea mesajului</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Câmpul „Instrument”
+                    obligatoriu
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Dacă nu se completează
+                    denumirea societăţii, trebuie completat câmpul „Ţara”
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Dacă nu se completează
+                    denumirea societăţii, trebuie completat câmpul „Numărul de înregistrare”
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Câmpul „Ţara” obligatoriu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Câmpul „Persoana de
+                    contact” obligatoriu
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Câmpul „Denumirea
+                    organizaţiei” obligatoriu
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Câmpul „Subiect” obligatoriu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Selectaţi fişierul pe care
+                    doriţi să-l încărcaţi
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Fişiere ataşate</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Secţiunea ciorne</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Secţiunea mesaje trimise</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Dosarul:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Subiect mesaj</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Ataşamente</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Creat la</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Date despre mesaj</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Trimis la</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Primit la</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Textul mesajului</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Prima pagină</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Înapoi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Înainte</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Ultima pagină</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Sus</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Secţiunea mesaje</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Secţiunea dosare</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Prima pagină</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Creează mesaj</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Către</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Subiect</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Nu a fost ataşat încă niciun fişier</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Fişiere ataşate (faceţi clic pentru a le
+                    şerge)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Ataşează un fişier</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Încarcă fişier</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Conţinut</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Câmpuri (metadate)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Informaţii expeditor</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Denumirea organizaţiei</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Număr de înregistrare</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Persoana de contact</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Funcţia</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefon</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">E-mail</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Strada</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Codul poştal</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Localitatea</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Ţara</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Denumirea societăţii</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">În numele</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Observaţii</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">În atenţia</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Instrument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Nr. fişier</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Număr informare</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Data primirii din câmpul
+                    pentru filtrare nu are formatul corespunzător. Formatul corect este aaaa-LL-zz
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Data trimiterii din câmpul
+                    pentru filtrare nu are formatul corespunzător. Formatul corect este aaaa-LL-zz
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

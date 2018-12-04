@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>sv</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx sida 1</hd_short_title>
+        <hd_long_title>eTrustEx sida 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>16/04/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx sida 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>sv</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Alla mappar</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Ny</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Uppdatera</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">av</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">Inkorg</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Utkast</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.folder">Mapp</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Alla</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Olästa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Meddelande</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.download">Ladda ner</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Metadata</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Visa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Officiell elektronisk version</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outbox">Utkorg</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.created">Skapat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxDossierView">Ärende</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandardView">Standard</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload">Bilagor</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Bifogade filer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Skicka</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Spara</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Datum för antagande</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Del</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.edmaView">EDMA</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComment">Ingen kommentar</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

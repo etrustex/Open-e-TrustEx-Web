@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="2ad9104b-c29f-47b4-8f46-c910e9faec3a" isOneWay="false" action="" name="submitDocumentBundle" bindingOperationName="submitDocumentBundle" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="2ad9104b-c29f-47b4-8f46-c910e9faec3afileName">submitDocumentBundle</con:setting></con:settings></con:operation>

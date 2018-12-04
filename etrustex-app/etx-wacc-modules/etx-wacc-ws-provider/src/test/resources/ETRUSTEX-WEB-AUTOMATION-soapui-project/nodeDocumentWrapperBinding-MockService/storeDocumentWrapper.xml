@@ -1,0 +1,1650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:mockOperation name="storeDocumentWrapper" id="aae189bb-cd68-4108-99cd-bd87930d2acc" interface="documentWrapperBinding" operation="storeDocumentWrapper" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="aae189bb-cd68-4108-99cd-bd87930d2accfileName">storeDocumentWrapper</con:setting></con:settings><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="1f7c84b1-c5d1-4bdb-be9b-ec5b70e27343" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ec="ec:services:wsdl:DocumentWrapper-2" xmlns:ec1="ec:schema:xsd:CommonAggregateComponents-2" xmlns:stan="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:urn="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:urn1="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2" xmlns:urn2="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2" xmlns:xd="http://www.w3.org/2000/09/xmldsig#" xmlns:urn3="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ec2="ec:schema:xsd:CommonBasicComponents-1" xmlns:urn4="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+   <soapenv:Header>
+      <ec:Header>
+         <ec1:BusinessHeader>
+            <!--Optional:-->
+            <stan:HeaderVersion>?</stan:HeaderVersion>
+            <!--1 or more repetitions:-->
+            <stan:Sender>
+               <stan:Identifier Authority="?" schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</stan:Identifier>
+               <!--Zero or more repetitions:-->
+               <stan:ContactInformation>
+                  <stan:Contact>?</stan:Contact>
+                  <!--Optional:-->
+                  <stan:EmailAddress>?</stan:EmailAddress>
+                  <!--Optional:-->
+                  <stan:FaxNumber>?</stan:FaxNumber>
+                  <!--Optional:-->
+                  <stan:TelephoneNumber>?</stan:TelephoneNumber>
+                  <!--Optional:-->
+                  <stan:ContactTypeIdentifier>?</stan:ContactTypeIdentifier>
+               </stan:ContactInformation>
+            </stan:Sender>
+            <!--Zero or more repetitions:-->
+            <stan:Receiver>
+               <stan:Identifier Authority="?" schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</stan:Identifier>
+               <!--Zero or more repetitions:-->
+               <stan:ContactInformation>
+                  <stan:Contact>?</stan:Contact>
+                  <!--Optional:-->
+                  <stan:EmailAddress>?</stan:EmailAddress>
+                  <!--Optional:-->
+                  <stan:FaxNumber>?</stan:FaxNumber>
+                  <!--Optional:-->
+                  <stan:TelephoneNumber>?</stan:TelephoneNumber>
+                  <!--Optional:-->
+                  <stan:ContactTypeIdentifier>?</stan:ContactTypeIdentifier>
+               </stan:ContactInformation>
+            </stan:Receiver>
+            <!--Optional:-->
+            <stan:DocumentIdentification>
+               <!--Optional:-->
+               <stan:Standard>?</stan:Standard>
+               <!--Optional:-->
+               <stan:TypeVersion>?</stan:TypeVersion>
+               <stan:InstanceIdentifier>?</stan:InstanceIdentifier>
+               <stan:Type>?</stan:Type>
+               <!--Optional:-->
+               <stan:MultipleType>?</stan:MultipleType>
+               <!--Optional:-->
+               <stan:CreationDateAndTime>?</stan:CreationDateAndTime>
+            </stan:DocumentIdentification>
+            <!--Optional:-->
+            <stan:Manifest>
+               <stan:NumberOfItems>?</stan:NumberOfItems>
+               <!--1 or more repetitions:-->
+               <stan:ManifestItem>
+                  <stan:MimeTypeQualifierCode>?</stan:MimeTypeQualifierCode>
+                  <stan:UniformResourceIdentifier>?</stan:UniformResourceIdentifier>
+                  <!--Optional:-->
+                  <stan:Description>?</stan:Description>
+                  <!--Optional:-->
+                  <stan:LanguageCode>?</stan:LanguageCode>
+               </stan:ManifestItem>
+            </stan:Manifest>
+            <!--Optional:-->
+            <stan:BusinessScope>
+               <!--Zero or more repetitions:-->
+               <stan:Scope>
+                  <stan:Type>?</stan:Type>
+                  <stan:InstanceIdentifier>?</stan:InstanceIdentifier>
+                  <!--Optional:-->
+                  <stan:Identifier>?</stan:Identifier>
+                  <!--Zero or more repetitions:-->
+                  <stan:ScopeInformation>?</stan:ScopeInformation>
+               </stan:Scope>
+            </stan:BusinessScope>
+            <ec1:ValidationResult>
+               <!--You may enter ANY elements at this point-->
+            </ec1:ValidationResult>
+         </ec1:BusinessHeader>
+         <!--Optional:-->
+         <ec1:TechnicalHeader>
+            <!--Zero or more repetitions:-->
+            <urn:VersionID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:VersionID>
+            <!--Optional:-->
+            <ec1:PayloadDigestValue languageID="?">?</ec1:PayloadDigestValue>
+            <!--Optional:-->
+            <ec1:PayloadDigestMethod languageID="?">?</ec1:PayloadDigestMethod>
+            <!--Optional:-->
+            <ec1:PayloadCanonicalizationMethod languageID="?">?</ec1:PayloadCanonicalizationMethod>
+            <!--Zero or more repetitions:-->
+            <urn1:SignatureInformation>
+               <!--Optional:-->
+               <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+               <!--Optional:-->
+               <urn2:ReferencedSignatureID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn2:ReferencedSignatureID>
+               <!--Optional:-->
+               <xd:Signature Id="?">
+                  <xd:SignedInfo Id="?">
+                     <xd:CanonicalizationMethod Algorithm="?">
+                        profundum
+                        <!--You may enter ANY elements at this point-->
+                        sceptra
+                     </xd:CanonicalizationMethod>
+                     <xd:SignatureMethod Algorithm="?">
+                        et
+                        <!--Optional:-->
+                        <xd:HMACOutputLength>?</xd:HMACOutputLength>
+                        turbine
+                        <!--You may enter ANY elements at this point-->
+                        iovis
+                     </xd:SignatureMethod>
+                     <!--1 or more repetitions:-->
+                     <xd:Reference Id="?" URI="?" Type="?">
+                        <!--Optional:-->
+                        <xd:Transforms>
+                           <!--1 or more repetitions:-->
+                           <xd:Transform Algorithm="?">
+                              flammato
+                              <!--You have a CHOICE of the next 2 items at this level-->
+                              <!--You may enter ANY elements at this point-->
+                              <xd:XPath>?</xd:XPath>
+                              speluncis
+                           </xd:Transform>
+                        </xd:Transforms>
+                        <xd:DigestMethod Algorithm="?">
+                           profundum
+                           <!--You may enter ANY elements at this point-->
+                           bella
+                        </xd:DigestMethod>
+                        <xd:DigestValue>cid:7728183236</xd:DigestValue>
+                     </xd:Reference>
+                  </xd:SignedInfo>
+                  <xd:SignatureValue Id="?">cid:179910844115</xd:SignatureValue>
+                  <!--Optional:-->
+                  <xd:KeyInfo Id="?">
+                     nubibus
+                     <!--You have a CHOICE of the next 8 items at this level-->
+                     <xd:KeyName>?</xd:KeyName>
+                     <xd:KeyValue>
+                        flammas
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <xd:DSAKeyValue>
+                           <xd:P>cid:526762020530</xd:P>
+                           <xd:Q>cid:153718026968</xd:Q>
+                           <!--Optional:-->
+                           <xd:G>cid:960898134198</xd:G>
+                           <xd:Y>cid:1145001851204</xd:Y>
+                           <!--Optional:-->
+                           <xd:J>cid:1276894457013</xd:J>
+                           <xd:Seed>cid:1159615849176</xd:Seed>
+                           <xd:PgenCounter>cid:360175171147</xd:PgenCounter>
+                        </xd:DSAKeyValue>
+                        <xd:RSAKeyValue>
+                           <xd:Modulus>cid:105673077703</xd:Modulus>
+                           <xd:Exponent>cid:244557054715</xd:Exponent>
+                        </xd:RSAKeyValue>
+                        <!--You may enter ANY elements at this point-->
+                        ac
+                     </xd:KeyValue>
+                     <xd:RetrievalMethod URI="?" Type="?">
+                        <!--Optional:-->
+                        <xd:Transforms>
+                           <!--1 or more repetitions:-->
+                           <xd:Transform Algorithm="?">
+                              hoc
+                              <!--You have a CHOICE of the next 2 items at this level-->
+                              <!--You may enter ANY elements at this point-->
+                              <xd:XPath>?</xd:XPath>
+                              rapidum
+                           </xd:Transform>
+                        </xd:Transforms>
+                     </xd:RetrievalMethod>
+                     <xd:X509Data>
+                        <!--You have a CHOICE of the next 6 items at this level-->
+                        <xd:X509IssuerSerial>
+                           <xd:X509IssuerName>?</xd:X509IssuerName>
+                           <xd:X509SerialNumber>?</xd:X509SerialNumber>
+                        </xd:X509IssuerSerial>
+                        <xd:X509SKI>cid:1259590736014</xd:X509SKI>
+                        <xd:X509SubjectName>?</xd:X509SubjectName>
+                        <xd:X509Certificate>cid:1027376521961</xd:X509Certificate>
+                        <xd:X509CRL>cid:1248077522594</xd:X509CRL>
+                        <!--You may enter ANY elements at this point-->
+                     </xd:X509Data>
+                     <xd:PGPData>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <xd:PGPKeyID>cid:1343080743492</xd:PGPKeyID>
+                        <!--Optional:-->
+                        <xd:PGPKeyPacket>cid:727167008109</xd:PGPKeyPacket>
+                        <!--You may enter ANY elements at this point-->
+                        <xd:PGPKeyPacket>cid:168404900046</xd:PGPKeyPacket>
+                        <!--You may enter ANY elements at this point-->
+                     </xd:PGPData>
+                     <xd:SPKIData>
+                        <xd:SPKISexp>cid:872168875530</xd:SPKISexp>
+                        <!--You may enter ANY elements at this point-->
+                     </xd:SPKIData>
+                     <xd:MgmtData>?</xd:MgmtData>
+                     <!--You may enter ANY elements at this point-->
+                     ac
+                  </xd:KeyInfo>
+                  <!--Zero or more repetitions:-->
+                  <xd:Object Id="?" MimeType="?" Encoding="?">
+                     caelumque
+                     <!--You may enter ANY elements at this point-->
+                     speluncis
+                  </xd:Object>
+               </xd:Signature>
+            </urn1:SignatureInformation>
+         </ec1:TechnicalHeader>
+      </ec:Header>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ec:StoreDocumentWrapperResponse>
+         <ec:Ack>
+            <!--Optional:-->
+            <urn3:UBLExtensions>
+               <!--1 or more repetitions:-->
+               <urn3:UBLExtension>
+                  <!--Optional:-->
+                  <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                  <!--Optional:-->
+                  <urn:Name languageID="?">?</urn:Name>
+                  <!--Optional:-->
+                  <urn3:ExtensionAgencyID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn3:ExtensionAgencyID>
+                  <!--Optional:-->
+                  <urn3:ExtensionAgencyName languageID="?">?</urn3:ExtensionAgencyName>
+                  <!--Optional:-->
+                  <urn3:ExtensionVersionID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn3:ExtensionVersionID>
+                  <!--Optional:-->
+                  <urn3:ExtensionAgencyURI schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn3:ExtensionAgencyURI>
+                  <!--Optional:-->
+                  <urn3:ExtensionURI schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn3:ExtensionURI>
+                  <!--Optional:-->
+                  <urn3:ExtensionReasonCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn3:ExtensionReasonCode>
+                  <!--Optional:-->
+                  <urn3:ExtensionReason languageID="?">?</urn3:ExtensionReason>
+                  <urn3:ExtensionContent>
+                     <!--You may enter ANY elements at this point-->
+                  </urn3:ExtensionContent>
+               </urn3:UBLExtension>
+            </urn3:UBLExtensions>
+            <!--Optional:-->
+            <urn:UBLVersionID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:UBLVersionID>
+            <!--Optional:-->
+            <urn:CustomizationID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:CustomizationID>
+            <!--Optional:-->
+            <urn:ProfileID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ProfileID>
+            <!--Optional:-->
+            <urn:UUID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:UUID>
+            <!--Optional:-->
+            <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+            <!--Optional:-->
+            <urn:IssueDate>?</urn:IssueDate>
+            <ec2:AckIndicator>?</ec2:AckIndicator>
+            <!--Zero or more repetitions:-->
+            <ec1:Timestamp>
+               <!--You have a CHOICE of the next 2 items at this level-->
+               <xd:Signature Id="?">
+                  <xd:SignedInfo Id="?">
+                     <xd:CanonicalizationMethod Algorithm="?">
+                        e
+                        <!--You may enter ANY elements at this point-->
+                        gero
+                     </xd:CanonicalizationMethod>
+                     <xd:SignatureMethod Algorithm="?">
+                        cum
+                        <!--Optional:-->
+                        <xd:HMACOutputLength>?</xd:HMACOutputLength>
+                        sonoras
+                        <!--You may enter ANY elements at this point-->
+                        aeoliam
+                     </xd:SignatureMethod>
+                     <!--1 or more repetitions:-->
+                     <xd:Reference Id="?" URI="?" Type="?">
+                        <!--Optional:-->
+                        <xd:Transforms>
+                           <!--1 or more repetitions:-->
+                           <xd:Transform Algorithm="?">
+                              quae
+                              <!--You have a CHOICE of the next 2 items at this level-->
+                              <!--You may enter ANY elements at this point-->
+                              <xd:XPath>?</xd:XPath>
+                              ventos
+                           </xd:Transform>
+                        </xd:Transforms>
+                        <xd:DigestMethod Algorithm="?">
+                           verrantque
+                           <!--You may enter ANY elements at this point-->
+                           temperat
+                        </xd:DigestMethod>
+                        <xd:DigestValue>cid:360665449759</xd:DigestValue>
+                     </xd:Reference>
+                  </xd:SignedInfo>
+                  <xd:SignatureValue Id="?">cid:897134436063</xd:SignatureValue>
+                  <!--Optional:-->
+                  <xd:KeyInfo Id="?">
+                     per
+                     <!--You have a CHOICE of the next 8 items at this level-->
+                     <xd:KeyName>?</xd:KeyName>
+                     <xd:KeyValue>
+                        turbine
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <xd:DSAKeyValue>
+                           <xd:P>cid:1146575663615</xd:P>
+                           <xd:Q>cid:688522669169</xd:Q>
+                           <!--Optional:-->
+                           <xd:G>cid:323936970852</xd:G>
+                           <xd:Y>cid:772306264695</xd:Y>
+                           <!--Optional:-->
+                           <xd:J>cid:447603332594</xd:J>
+                           <xd:Seed>cid:798637489074</xd:Seed>
+                           <xd:PgenCounter>cid:1080895588468</xd:PgenCounter>
+                        </xd:DSAKeyValue>
+                        <xd:RSAKeyValue>
+                           <xd:Modulus>cid:558881008786</xd:Modulus>
+                           <xd:Exponent>cid:493664250285</xd:Exponent>
+                        </xd:RSAKeyValue>
+                        <!--You may enter ANY elements at this point-->
+                        circum
+                     </xd:KeyValue>
+                     <xd:RetrievalMethod URI="?" Type="?">
+                        <!--Optional:-->
+                        <xd:Transforms>
+                           <!--1 or more repetitions:-->
+                           <xd:Transform Algorithm="?">
+                              regemque
+                              <!--You have a CHOICE of the next 2 items at this level-->
+                              <!--You may enter ANY elements at this point-->
+                              <xd:XPath>?</xd:XPath>
+                              nimborum
+                           </xd:Transform>
+                        </xd:Transforms>
+                     </xd:RetrievalMethod>
+                     <xd:X509Data>
+                        <!--You have a CHOICE of the next 6 items at this level-->
+                        <xd:X509IssuerSerial>
+                           <xd:X509IssuerName>?</xd:X509IssuerName>
+                           <xd:X509SerialNumber>?</xd:X509SerialNumber>
+                        </xd:X509IssuerSerial>
+                        <xd:X509SKI>cid:903308377220</xd:X509SKI>
+                        <xd:X509SubjectName>?</xd:X509SubjectName>
+                        <xd:X509Certificate>cid:1320652432270</xd:X509Certificate>
+                        <xd:X509CRL>cid:1002833064167</xd:X509CRL>
+                        <!--You may enter ANY elements at this point-->
+                     </xd:X509Data>
+                     <xd:PGPData>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <xd:PGPKeyID>cid:628435754023</xd:PGPKeyID>
+                        <!--Optional:-->
+                        <xd:PGPKeyPacket>cid:862287734872</xd:PGPKeyPacket>
+                        <!--You may enter ANY elements at this point-->
+                        <xd:PGPKeyPacket>cid:754396997938</xd:PGPKeyPacket>
+                        <!--You may enter ANY elements at this point-->
+                     </xd:PGPData>
+                     <xd:SPKIData>
+                        <xd:SPKISexp>cid:774296360202</xd:SPKISexp>
+                        <!--You may enter ANY elements at this point-->
+                     </xd:SPKIData>
+                     <xd:MgmtData>?</xd:MgmtData>
+                     <!--You may enter ANY elements at this point-->
+                     fremunt
+                  </xd:KeyInfo>
+                  <!--Zero or more repetitions:-->
+                  <xd:Object Id="?" MimeType="?" Encoding="?">
+                     foedere
+                     <!--You may enter ANY elements at this point-->
+                     ferant
+                  </xd:Object>
+               </xd:Signature>
+               <ec1:RFC3161TimeStampToken>cid:685491134178</ec1:RFC3161TimeStampToken>
+            </ec1:Timestamp>
+            <!--Optional:-->
+            <ec1:AcknowledgedDocumentReference>
+               <urn4:DocumentReference>
+                  <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                  <!--Optional:-->
+                  <urn:CopyIndicator>?</urn:CopyIndicator>
+                  <!--Optional:-->
+                  <urn:UUID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:UUID>
+                  <!--Optional:-->
+                  <urn:IssueDate>?</urn:IssueDate>
+                  <!--Optional:-->
+                  <urn:DocumentTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:DocumentTypeCode>
+                  <!--Optional:-->
+                  <urn:DocumentType languageID="?">?</urn:DocumentType>
+                  <!--Zero or more repetitions:-->
+                  <urn:XPath languageID="?">?</urn:XPath>
+                  <!--Optional:-->
+                  <urn4:Attachment>
+                     <!--Optional:-->
+                     <urn:EmbeddedDocumentBinaryObject format="?" mimeCode="?" encodingCode="?" characterSetCode="?" uri="?" filename="?">cid:108355491222</urn:EmbeddedDocumentBinaryObject>
+                     <!--Optional:-->
+                     <urn4:ExternalReference>
+                        <!--Optional:-->
+                        <urn:URI schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:URI>
+                        <!--Optional:-->
+                        <urn:DocumentHash languageID="?">?</urn:DocumentHash>
+                        <!--Optional:-->
+                        <urn:ExpiryDate>?</urn:ExpiryDate>
+                        <!--Optional:-->
+                        <urn:ExpiryTime>?</urn:ExpiryTime>
+                     </urn4:ExternalReference>
+                  </urn4:Attachment>
+               </urn4:DocumentReference>
+               <!--Optional:-->
+               <urn4:SenderParty>
+                  <!--Optional:-->
+                  <urn:MarkCareIndicator>?</urn:MarkCareIndicator>
+                  <!--Optional:-->
+                  <urn:MarkAttentionIndicator>?</urn:MarkAttentionIndicator>
+                  <!--Optional:-->
+                  <urn:WebsiteURI schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:WebsiteURI>
+                  <!--Optional:-->
+                  <urn:LogoReferenceID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:LogoReferenceID>
+                  <!--Optional:-->
+                  <urn:EndpointID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:EndpointID>
+                  <!--Zero or more repetitions:-->
+                  <urn4:PartyIdentification>
+                     <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                  </urn4:PartyIdentification>
+                  <!--Zero or more repetitions:-->
+                  <urn4:PartyName>
+                     <urn:Name languageID="?">?</urn:Name>
+                  </urn4:PartyName>
+                  <!--Optional:-->
+                  <urn4:Language>
+                     <!--Optional:-->
+                     <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                     <!--Optional:-->
+                     <urn:Name languageID="?">?</urn:Name>
+                     <!--Optional:-->
+                     <urn:LocaleCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:LocaleCode>
+                  </urn4:Language>
+                  <!--Optional:-->
+                  <urn4:PostalAddress>
+                     <!--Optional:-->
+                     <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                     <!--Optional:-->
+                     <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                     <!--Optional:-->
+                     <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                     <!--Optional:-->
+                     <urn:Postbox languageID="?">?</urn:Postbox>
+                     <!--Optional:-->
+                     <urn:Floor languageID="?">?</urn:Floor>
+                     <!--Optional:-->
+                     <urn:Room languageID="?">?</urn:Room>
+                     <!--Optional:-->
+                     <urn:StreetName languageID="?">?</urn:StreetName>
+                     <!--Optional:-->
+                     <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                     <!--Optional:-->
+                     <urn:BlockName languageID="?">?</urn:BlockName>
+                     <!--Optional:-->
+                     <urn:BuildingName languageID="?">?</urn:BuildingName>
+                     <!--Optional:-->
+                     <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                     <!--Optional:-->
+                     <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                     <!--Optional:-->
+                     <urn:Department languageID="?">?</urn:Department>
+                     <!--Optional:-->
+                     <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                     <!--Optional:-->
+                     <urn:MarkCare languageID="?">?</urn:MarkCare>
+                     <!--Optional:-->
+                     <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                     <!--Optional:-->
+                     <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                     <!--Optional:-->
+                     <urn:CityName languageID="?">?</urn:CityName>
+                     <!--Optional:-->
+                     <urn:PostalZone languageID="?">?</urn:PostalZone>
+                     <!--Optional:-->
+                     <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                     <!--Optional:-->
+                     <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                     <!--Optional:-->
+                     <urn:Region languageID="?">?</urn:Region>
+                     <!--Optional:-->
+                     <urn:District languageID="?">?</urn:District>
+                     <!--Optional:-->
+                     <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                     <!--Zero or more repetitions:-->
+                     <urn4:AddressLine>
+                        <urn:Line languageID="?">?</urn:Line>
+                     </urn4:AddressLine>
+                     <!--Optional:-->
+                     <urn4:Country>
+                        <!--Optional:-->
+                        <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                        <!--Optional:-->
+                        <urn:Name languageID="?">?</urn:Name>
+                     </urn4:Country>
+                     <!--Optional:-->
+                     <urn4:LocationCoordinate>
+                        <!--Optional:-->
+                        <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                        <!--Optional:-->
+                        <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                        <!--Optional:-->
+                        <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                        <!--Optional:-->
+                        <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                        <!--Optional:-->
+                        <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                        <!--Optional:-->
+                        <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                        <!--Optional:-->
+                        <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                     </urn4:LocationCoordinate>
+                  </urn4:PostalAddress>
+                  <!--Optional:-->
+                  <urn4:PhysicalLocation>
+                     <!--Optional:-->
+                     <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                     <!--Optional:-->
+                     <urn:Description languageID="?">?</urn:Description>
+                     <!--Optional:-->
+                     <urn:Conditions languageID="?">?</urn:Conditions>
+                     <!--Optional:-->
+                     <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                     <!--Optional:-->
+                     <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                     <!--Zero or more repetitions:-->
+                     <urn4:ValidityPeriod>
+                        <!--Optional:-->
+                        <urn:StartDate>?</urn:StartDate>
+                        <!--Optional:-->
+                        <urn:StartTime>?</urn:StartTime>
+                        <!--Optional:-->
+                        <urn:EndDate>?</urn:EndDate>
+                        <!--Optional:-->
+                        <urn:EndTime>?</urn:EndTime>
+                        <!--Optional:-->
+                        <urn:DurationMeasure unitCode="?">?</urn:DurationMeasure>
+                        <!--Zero or more repetitions:-->
+                        <urn:DescriptionCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:DescriptionCode>
+                        <!--Zero or more repetitions:-->
+                        <urn:Description languageID="?">?</urn:Description>
+                     </urn4:ValidityPeriod>
+                     <!--Optional:-->
+                     <urn4:Address>
+                        <!--Optional:-->
+                        <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                        <!--Optional:-->
+                        <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                        <!--Optional:-->
+                        <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                        <!--Optional:-->
+                        <urn:Postbox languageID="?">?</urn:Postbox>
+                        <!--Optional:-->
+                        <urn:Floor languageID="?">?</urn:Floor>
+                        <!--Optional:-->
+                        <urn:Room languageID="?">?</urn:Room>
+                        <!--Optional:-->
+                        <urn:StreetName languageID="?">?</urn:StreetName>
+                        <!--Optional:-->
+                        <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                        <!--Optional:-->
+                        <urn:BlockName languageID="?">?</urn:BlockName>
+                        <!--Optional:-->
+                        <urn:BuildingName languageID="?">?</urn:BuildingName>
+                        <!--Optional:-->
+                        <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                        <!--Optional:-->
+                        <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                        <!--Optional:-->
+                        <urn:Department languageID="?">?</urn:Department>
+                        <!--Optional:-->
+                        <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                        <!--Optional:-->
+                        <urn:MarkCare languageID="?">?</urn:MarkCare>
+                        <!--Optional:-->
+                        <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                        <!--Optional:-->
+                        <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                        <!--Optional:-->
+                        <urn:CityName languageID="?">?</urn:CityName>
+                        <!--Optional:-->
+                        <urn:PostalZone languageID="?">?</urn:PostalZone>
+                        <!--Optional:-->
+                        <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                        <!--Optional:-->
+                        <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                        <!--Optional:-->
+                        <urn:Region languageID="?">?</urn:Region>
+                        <!--Optional:-->
+                        <urn:District languageID="?">?</urn:District>
+                        <!--Optional:-->
+                        <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                        <!--Zero or more repetitions:-->
+                        <urn4:AddressLine>
+                           <urn:Line languageID="?">?</urn:Line>
+                        </urn4:AddressLine>
+                        <!--Optional:-->
+                        <urn4:Country>
+                           <!--Optional:-->
+                           <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                           <!--Optional:-->
+                           <urn:Name languageID="?">?</urn:Name>
+                        </urn4:Country>
+                        <!--Optional:-->
+                        <urn4:LocationCoordinate>
+                           <!--Optional:-->
+                           <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                           <!--Optional:-->
+                           <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                           <!--Optional:-->
+                           <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                        </urn4:LocationCoordinate>
+                     </urn4:Address>
+                  </urn4:PhysicalLocation>
+                  <!--Zero or more repetitions:-->
+                  <urn4:PartyTaxScheme>
+                     <!--Optional:-->
+                     <urn:RegistrationName languageID="?">?</urn:RegistrationName>
+                     <!--Optional:-->
+                     <urn:CompanyID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:CompanyID>
+                     <!--Optional:-->
+                     <urn:TaxLevelCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:TaxLevelCode>
+                     <!--Optional:-->
+                     <urn:ExemptionReasonCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:ExemptionReasonCode>
+                     <!--Optional:-->
+                     <urn:ExemptionReason languageID="?">?</urn:ExemptionReason>
+                     <!--Optional:-->
+                     <urn4:RegistrationAddress>
+                        <!--Optional:-->
+                        <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                        <!--Optional:-->
+                        <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                        <!--Optional:-->
+                        <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                        <!--Optional:-->
+                        <urn:Postbox languageID="?">?</urn:Postbox>
+                        <!--Optional:-->
+                        <urn:Floor languageID="?">?</urn:Floor>
+                        <!--Optional:-->
+                        <urn:Room languageID="?">?</urn:Room>
+                        <!--Optional:-->
+                        <urn:StreetName languageID="?">?</urn:StreetName>
+                        <!--Optional:-->
+                        <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                        <!--Optional:-->
+                        <urn:BlockName languageID="?">?</urn:BlockName>
+                        <!--Optional:-->
+                        <urn:BuildingName languageID="?">?</urn:BuildingName>
+                        <!--Optional:-->
+                        <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                        <!--Optional:-->
+                        <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                        <!--Optional:-->
+                        <urn:Department languageID="?">?</urn:Department>
+                        <!--Optional:-->
+                        <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                        <!--Optional:-->
+                        <urn:MarkCare languageID="?">?</urn:MarkCare>
+                        <!--Optional:-->
+                        <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                        <!--Optional:-->
+                        <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                        <!--Optional:-->
+                        <urn:CityName languageID="?">?</urn:CityName>
+                        <!--Optional:-->
+                        <urn:PostalZone languageID="?">?</urn:PostalZone>
+                        <!--Optional:-->
+                        <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                        <!--Optional:-->
+                        <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                        <!--Optional:-->
+                        <urn:Region languageID="?">?</urn:Region>
+                        <!--Optional:-->
+                        <urn:District languageID="?">?</urn:District>
+                        <!--Optional:-->
+                        <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                        <!--Zero or more repetitions:-->
+                        <urn4:AddressLine>
+                           <urn:Line languageID="?">?</urn:Line>
+                        </urn4:AddressLine>
+                        <!--Optional:-->
+                        <urn4:Country>
+                           <!--Optional:-->
+                           <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                           <!--Optional:-->
+                           <urn:Name languageID="?">?</urn:Name>
+                        </urn4:Country>
+                        <!--Optional:-->
+                        <urn4:LocationCoordinate>
+                           <!--Optional:-->
+                           <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                           <!--Optional:-->
+                           <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                           <!--Optional:-->
+                           <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                        </urn4:LocationCoordinate>
+                     </urn4:RegistrationAddress>
+                     <urn4:TaxScheme>
+                        <!--Optional:-->
+                        <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                        <!--Optional:-->
+                        <urn:Name languageID="?">?</urn:Name>
+                        <!--Optional:-->
+                        <urn:TaxTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:TaxTypeCode>
+                        <!--Optional:-->
+                        <urn:CurrencyCode listID="ISO 4217 Alpha" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Currency" listVersionID="2001" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/cefact/CurrencyCode-2.0.gc" listSchemeURI="urn:un:unece:uncefact:codelist:specification:54217:2001">?</urn:CurrencyCode>
+                        <!--Zero or more repetitions:-->
+                        <urn4:JurisdictionRegionAddress>
+                           <!--Optional:-->
+                           <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                           <!--Optional:-->
+                           <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                           <!--Optional:-->
+                           <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                           <!--Optional:-->
+                           <urn:Postbox languageID="?">?</urn:Postbox>
+                           <!--Optional:-->
+                           <urn:Floor languageID="?">?</urn:Floor>
+                           <!--Optional:-->
+                           <urn:Room languageID="?">?</urn:Room>
+                           <!--Optional:-->
+                           <urn:StreetName languageID="?">?</urn:StreetName>
+                           <!--Optional:-->
+                           <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                           <!--Optional:-->
+                           <urn:BlockName languageID="?">?</urn:BlockName>
+                           <!--Optional:-->
+                           <urn:BuildingName languageID="?">?</urn:BuildingName>
+                           <!--Optional:-->
+                           <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                           <!--Optional:-->
+                           <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                           <!--Optional:-->
+                           <urn:Department languageID="?">?</urn:Department>
+                           <!--Optional:-->
+                           <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                           <!--Optional:-->
+                           <urn:MarkCare languageID="?">?</urn:MarkCare>
+                           <!--Optional:-->
+                           <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                           <!--Optional:-->
+                           <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                           <!--Optional:-->
+                           <urn:CityName languageID="?">?</urn:CityName>
+                           <!--Optional:-->
+                           <urn:PostalZone languageID="?">?</urn:PostalZone>
+                           <!--Optional:-->
+                           <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                           <!--Optional:-->
+                           <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                           <!--Optional:-->
+                           <urn:Region languageID="?">?</urn:Region>
+                           <!--Optional:-->
+                           <urn:District languageID="?">?</urn:District>
+                           <!--Optional:-->
+                           <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                           <!--Zero or more repetitions:-->
+                           <urn4:AddressLine>
+                              <urn:Line languageID="?">?</urn:Line>
+                           </urn4:AddressLine>
+                           <!--Optional:-->
+                           <urn4:Country>
+                              <!--Optional:-->
+                              <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                              <!--Optional:-->
+                              <urn:Name languageID="?">?</urn:Name>
+                           </urn4:Country>
+                           <!--Optional:-->
+                           <urn4:LocationCoordinate>
+                              <!--Optional:-->
+                              <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                              <!--Optional:-->
+                              <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                              <!--Optional:-->
+                              <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                              <!--Optional:-->
+                              <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                              <!--Optional:-->
+                              <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                              <!--Optional:-->
+                              <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                              <!--Optional:-->
+                              <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                           </urn4:LocationCoordinate>
+                        </urn4:JurisdictionRegionAddress>
+                     </urn4:TaxScheme>
+                  </urn4:PartyTaxScheme>
+                  <!--Zero or more repetitions:-->
+                  <urn4:PartyLegalEntity>
+                     <!--Optional:-->
+                     <urn:RegistrationName languageID="?">?</urn:RegistrationName>
+                     <!--Optional:-->
+                     <urn:CompanyID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:CompanyID>
+                     <!--Optional:-->
+                     <urn4:RegistrationAddress>
+                        <!--Optional:-->
+                        <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                        <!--Optional:-->
+                        <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                        <!--Optional:-->
+                        <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                        <!--Optional:-->
+                        <urn:Postbox languageID="?">?</urn:Postbox>
+                        <!--Optional:-->
+                        <urn:Floor languageID="?">?</urn:Floor>
+                        <!--Optional:-->
+                        <urn:Room languageID="?">?</urn:Room>
+                        <!--Optional:-->
+                        <urn:StreetName languageID="?">?</urn:StreetName>
+                        <!--Optional:-->
+                        <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                        <!--Optional:-->
+                        <urn:BlockName languageID="?">?</urn:BlockName>
+                        <!--Optional:-->
+                        <urn:BuildingName languageID="?">?</urn:BuildingName>
+                        <!--Optional:-->
+                        <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                        <!--Optional:-->
+                        <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                        <!--Optional:-->
+                        <urn:Department languageID="?">?</urn:Department>
+                        <!--Optional:-->
+                        <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                        <!--Optional:-->
+                        <urn:MarkCare languageID="?">?</urn:MarkCare>
+                        <!--Optional:-->
+                        <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                        <!--Optional:-->
+                        <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                        <!--Optional:-->
+                        <urn:CityName languageID="?">?</urn:CityName>
+                        <!--Optional:-->
+                        <urn:PostalZone languageID="?">?</urn:PostalZone>
+                        <!--Optional:-->
+                        <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                        <!--Optional:-->
+                        <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                        <!--Optional:-->
+                        <urn:Region languageID="?">?</urn:Region>
+                        <!--Optional:-->
+                        <urn:District languageID="?">?</urn:District>
+                        <!--Optional:-->
+                        <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                        <!--Zero or more repetitions:-->
+                        <urn4:AddressLine>
+                           <urn:Line languageID="?">?</urn:Line>
+                        </urn4:AddressLine>
+                        <!--Optional:-->
+                        <urn4:Country>
+                           <!--Optional:-->
+                           <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                           <!--Optional:-->
+                           <urn:Name languageID="?">?</urn:Name>
+                        </urn4:Country>
+                        <!--Optional:-->
+                        <urn4:LocationCoordinate>
+                           <!--Optional:-->
+                           <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                           <!--Optional:-->
+                           <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                           <!--Optional:-->
+                           <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                        </urn4:LocationCoordinate>
+                     </urn4:RegistrationAddress>
+                     <!--Optional:-->
+                     <urn4:CorporateRegistrationScheme>
+                        <!--Optional:-->
+                        <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                        <!--Optional:-->
+                        <urn:Name languageID="?">?</urn:Name>
+                        <!--Optional:-->
+                        <urn:CorporateRegistrationTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CorporateRegistrationTypeCode>
+                        <!--Zero or more repetitions:-->
+                        <urn4:JurisdictionRegionAddress>
+                           <!--Optional:-->
+                           <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                           <!--Optional:-->
+                           <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                           <!--Optional:-->
+                           <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                           <!--Optional:-->
+                           <urn:Postbox languageID="?">?</urn:Postbox>
+                           <!--Optional:-->
+                           <urn:Floor languageID="?">?</urn:Floor>
+                           <!--Optional:-->
+                           <urn:Room languageID="?">?</urn:Room>
+                           <!--Optional:-->
+                           <urn:StreetName languageID="?">?</urn:StreetName>
+                           <!--Optional:-->
+                           <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                           <!--Optional:-->
+                           <urn:BlockName languageID="?">?</urn:BlockName>
+                           <!--Optional:-->
+                           <urn:BuildingName languageID="?">?</urn:BuildingName>
+                           <!--Optional:-->
+                           <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                           <!--Optional:-->
+                           <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                           <!--Optional:-->
+                           <urn:Department languageID="?">?</urn:Department>
+                           <!--Optional:-->
+                           <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                           <!--Optional:-->
+                           <urn:MarkCare languageID="?">?</urn:MarkCare>
+                           <!--Optional:-->
+                           <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                           <!--Optional:-->
+                           <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                           <!--Optional:-->
+                           <urn:CityName languageID="?">?</urn:CityName>
+                           <!--Optional:-->
+                           <urn:PostalZone languageID="?">?</urn:PostalZone>
+                           <!--Optional:-->
+                           <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                           <!--Optional:-->
+                           <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                           <!--Optional:-->
+                           <urn:Region languageID="?">?</urn:Region>
+                           <!--Optional:-->
+                           <urn:District languageID="?">?</urn:District>
+                           <!--Optional:-->
+                           <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                           <!--Zero or more repetitions:-->
+                           <urn4:AddressLine>
+                              <urn:Line languageID="?">?</urn:Line>
+                           </urn4:AddressLine>
+                           <!--Optional:-->
+                           <urn4:Country>
+                              <!--Optional:-->
+                              <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                              <!--Optional:-->
+                              <urn:Name languageID="?">?</urn:Name>
+                           </urn4:Country>
+                           <!--Optional:-->
+                           <urn4:LocationCoordinate>
+                              <!--Optional:-->
+                              <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                              <!--Optional:-->
+                              <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                              <!--Optional:-->
+                              <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                              <!--Optional:-->
+                              <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                              <!--Optional:-->
+                              <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                              <!--Optional:-->
+                              <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                              <!--Optional:-->
+                              <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                           </urn4:LocationCoordinate>
+                        </urn4:JurisdictionRegionAddress>
+                     </urn4:CorporateRegistrationScheme>
+                  </urn4:PartyLegalEntity>
+                  <!--Optional:-->
+                  <urn4:Contact>
+                     <!--Optional:-->
+                     <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                     <!--Optional:-->
+                     <urn:Name languageID="?">?</urn:Name>
+                     <!--Optional:-->
+                     <urn:Telephone languageID="?">?</urn:Telephone>
+                     <!--Optional:-->
+                     <urn:Telefax languageID="?">?</urn:Telefax>
+                     <!--Optional:-->
+                     <urn:ElectronicMail languageID="?">?</urn:ElectronicMail>
+                     <!--Optional:-->
+                     <urn:Note languageID="?">?</urn:Note>
+                     <!--Zero or more repetitions:-->
+                     <urn4:OtherCommunication>
+                        <!--Optional:-->
+                        <urn:ChannelCode listID="UN/ECE 3155" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Communication Address Code Qualifier" listVersionID="D03A" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/ChannelCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:ChannelCode-2.0">?</urn:ChannelCode>
+                        <!--Optional:-->
+                        <urn:Channel languageID="?">?</urn:Channel>
+                        <!--Optional:-->
+                        <urn:Value languageID="?">?</urn:Value>
+                     </urn4:OtherCommunication>
+                  </urn4:Contact>
+                  <!--Optional:-->
+                  <urn4:Person>
+                     <!--Optional:-->
+                     <urn:FirstName languageID="?">?</urn:FirstName>
+                     <!--Optional:-->
+                     <urn:FamilyName languageID="?">?</urn:FamilyName>
+                     <!--Optional:-->
+                     <urn:Title languageID="?">?</urn:Title>
+                     <!--Optional:-->
+                     <urn:MiddleName languageID="?">?</urn:MiddleName>
+                     <!--Optional:-->
+                     <urn:NameSuffix languageID="?">?</urn:NameSuffix>
+                     <!--Optional:-->
+                     <urn:JobTitle languageID="?">?</urn:JobTitle>
+                     <!--Optional:-->
+                     <urn:OrganizationDepartment languageID="?">?</urn:OrganizationDepartment>
+                  </urn4:Person>
+                  <!--Optional:-->
+                  <urn4:AgentParty/>
+               </urn4:SenderParty>
+               <!--Zero or more repetitions:-->
+               <urn4:ReceiverParty>
+                  <!--Optional:-->
+                  <urn:MarkCareIndicator>?</urn:MarkCareIndicator>
+                  <!--Optional:-->
+                  <urn:MarkAttentionIndicator>?</urn:MarkAttentionIndicator>
+                  <!--Optional:-->
+                  <urn:WebsiteURI schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:WebsiteURI>
+                  <!--Optional:-->
+                  <urn:LogoReferenceID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:LogoReferenceID>
+                  <!--Optional:-->
+                  <urn:EndpointID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:EndpointID>
+                  <!--Zero or more repetitions:-->
+                  <urn4:PartyIdentification>
+                     <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                  </urn4:PartyIdentification>
+                  <!--Zero or more repetitions:-->
+                  <urn4:PartyName>
+                     <urn:Name languageID="?">?</urn:Name>
+                  </urn4:PartyName>
+                  <!--Optional:-->
+                  <urn4:Language>
+                     <!--Optional:-->
+                     <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                     <!--Optional:-->
+                     <urn:Name languageID="?">?</urn:Name>
+                     <!--Optional:-->
+                     <urn:LocaleCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:LocaleCode>
+                  </urn4:Language>
+                  <!--Optional:-->
+                  <urn4:PostalAddress>
+                     <!--Optional:-->
+                     <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                     <!--Optional:-->
+                     <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                     <!--Optional:-->
+                     <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                     <!--Optional:-->
+                     <urn:Postbox languageID="?">?</urn:Postbox>
+                     <!--Optional:-->
+                     <urn:Floor languageID="?">?</urn:Floor>
+                     <!--Optional:-->
+                     <urn:Room languageID="?">?</urn:Room>
+                     <!--Optional:-->
+                     <urn:StreetName languageID="?">?</urn:StreetName>
+                     <!--Optional:-->
+                     <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                     <!--Optional:-->
+                     <urn:BlockName languageID="?">?</urn:BlockName>
+                     <!--Optional:-->
+                     <urn:BuildingName languageID="?">?</urn:BuildingName>
+                     <!--Optional:-->
+                     <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                     <!--Optional:-->
+                     <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                     <!--Optional:-->
+                     <urn:Department languageID="?">?</urn:Department>
+                     <!--Optional:-->
+                     <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                     <!--Optional:-->
+                     <urn:MarkCare languageID="?">?</urn:MarkCare>
+                     <!--Optional:-->
+                     <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                     <!--Optional:-->
+                     <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                     <!--Optional:-->
+                     <urn:CityName languageID="?">?</urn:CityName>
+                     <!--Optional:-->
+                     <urn:PostalZone languageID="?">?</urn:PostalZone>
+                     <!--Optional:-->
+                     <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                     <!--Optional:-->
+                     <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                     <!--Optional:-->
+                     <urn:Region languageID="?">?</urn:Region>
+                     <!--Optional:-->
+                     <urn:District languageID="?">?</urn:District>
+                     <!--Optional:-->
+                     <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                     <!--Zero or more repetitions:-->
+                     <urn4:AddressLine>
+                        <urn:Line languageID="?">?</urn:Line>
+                     </urn4:AddressLine>
+                     <!--Optional:-->
+                     <urn4:Country>
+                        <!--Optional:-->
+                        <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                        <!--Optional:-->
+                        <urn:Name languageID="?">?</urn:Name>
+                     </urn4:Country>
+                     <!--Optional:-->
+                     <urn4:LocationCoordinate>
+                        <!--Optional:-->
+                        <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                        <!--Optional:-->
+                        <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                        <!--Optional:-->
+                        <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                        <!--Optional:-->
+                        <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                        <!--Optional:-->
+                        <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                        <!--Optional:-->
+                        <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                        <!--Optional:-->
+                        <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                     </urn4:LocationCoordinate>
+                  </urn4:PostalAddress>
+                  <!--Optional:-->
+                  <urn4:PhysicalLocation>
+                     <!--Optional:-->
+                     <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                     <!--Optional:-->
+                     <urn:Description languageID="?">?</urn:Description>
+                     <!--Optional:-->
+                     <urn:Conditions languageID="?">?</urn:Conditions>
+                     <!--Optional:-->
+                     <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                     <!--Optional:-->
+                     <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                     <!--Zero or more repetitions:-->
+                     <urn4:ValidityPeriod>
+                        <!--Optional:-->
+                        <urn:StartDate>?</urn:StartDate>
+                        <!--Optional:-->
+                        <urn:StartTime>?</urn:StartTime>
+                        <!--Optional:-->
+                        <urn:EndDate>?</urn:EndDate>
+                        <!--Optional:-->
+                        <urn:EndTime>?</urn:EndTime>
+                        <!--Optional:-->
+                        <urn:DurationMeasure unitCode="?">?</urn:DurationMeasure>
+                        <!--Zero or more repetitions:-->
+                        <urn:DescriptionCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:DescriptionCode>
+                        <!--Zero or more repetitions:-->
+                        <urn:Description languageID="?">?</urn:Description>
+                     </urn4:ValidityPeriod>
+                     <!--Optional:-->
+                     <urn4:Address>
+                        <!--Optional:-->
+                        <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                        <!--Optional:-->
+                        <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                        <!--Optional:-->
+                        <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                        <!--Optional:-->
+                        <urn:Postbox languageID="?">?</urn:Postbox>
+                        <!--Optional:-->
+                        <urn:Floor languageID="?">?</urn:Floor>
+                        <!--Optional:-->
+                        <urn:Room languageID="?">?</urn:Room>
+                        <!--Optional:-->
+                        <urn:StreetName languageID="?">?</urn:StreetName>
+                        <!--Optional:-->
+                        <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                        <!--Optional:-->
+                        <urn:BlockName languageID="?">?</urn:BlockName>
+                        <!--Optional:-->
+                        <urn:BuildingName languageID="?">?</urn:BuildingName>
+                        <!--Optional:-->
+                        <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                        <!--Optional:-->
+                        <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                        <!--Optional:-->
+                        <urn:Department languageID="?">?</urn:Department>
+                        <!--Optional:-->
+                        <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                        <!--Optional:-->
+                        <urn:MarkCare languageID="?">?</urn:MarkCare>
+                        <!--Optional:-->
+                        <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                        <!--Optional:-->
+                        <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                        <!--Optional:-->
+                        <urn:CityName languageID="?">?</urn:CityName>
+                        <!--Optional:-->
+                        <urn:PostalZone languageID="?">?</urn:PostalZone>
+                        <!--Optional:-->
+                        <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                        <!--Optional:-->
+                        <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                        <!--Optional:-->
+                        <urn:Region languageID="?">?</urn:Region>
+                        <!--Optional:-->
+                        <urn:District languageID="?">?</urn:District>
+                        <!--Optional:-->
+                        <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                        <!--Zero or more repetitions:-->
+                        <urn4:AddressLine>
+                           <urn:Line languageID="?">?</urn:Line>
+                        </urn4:AddressLine>
+                        <!--Optional:-->
+                        <urn4:Country>
+                           <!--Optional:-->
+                           <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                           <!--Optional:-->
+                           <urn:Name languageID="?">?</urn:Name>
+                        </urn4:Country>
+                        <!--Optional:-->
+                        <urn4:LocationCoordinate>
+                           <!--Optional:-->
+                           <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                           <!--Optional:-->
+                           <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                           <!--Optional:-->
+                           <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                        </urn4:LocationCoordinate>
+                     </urn4:Address>
+                  </urn4:PhysicalLocation>
+                  <!--Zero or more repetitions:-->
+                  <urn4:PartyTaxScheme>
+                     <!--Optional:-->
+                     <urn:RegistrationName languageID="?">?</urn:RegistrationName>
+                     <!--Optional:-->
+                     <urn:CompanyID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:CompanyID>
+                     <!--Optional:-->
+                     <urn:TaxLevelCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:TaxLevelCode>
+                     <!--Optional:-->
+                     <urn:ExemptionReasonCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:ExemptionReasonCode>
+                     <!--Optional:-->
+                     <urn:ExemptionReason languageID="?">?</urn:ExemptionReason>
+                     <!--Optional:-->
+                     <urn4:RegistrationAddress>
+                        <!--Optional:-->
+                        <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                        <!--Optional:-->
+                        <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                        <!--Optional:-->
+                        <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                        <!--Optional:-->
+                        <urn:Postbox languageID="?">?</urn:Postbox>
+                        <!--Optional:-->
+                        <urn:Floor languageID="?">?</urn:Floor>
+                        <!--Optional:-->
+                        <urn:Room languageID="?">?</urn:Room>
+                        <!--Optional:-->
+                        <urn:StreetName languageID="?">?</urn:StreetName>
+                        <!--Optional:-->
+                        <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                        <!--Optional:-->
+                        <urn:BlockName languageID="?">?</urn:BlockName>
+                        <!--Optional:-->
+                        <urn:BuildingName languageID="?">?</urn:BuildingName>
+                        <!--Optional:-->
+                        <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                        <!--Optional:-->
+                        <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                        <!--Optional:-->
+                        <urn:Department languageID="?">?</urn:Department>
+                        <!--Optional:-->
+                        <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                        <!--Optional:-->
+                        <urn:MarkCare languageID="?">?</urn:MarkCare>
+                        <!--Optional:-->
+                        <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                        <!--Optional:-->
+                        <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                        <!--Optional:-->
+                        <urn:CityName languageID="?">?</urn:CityName>
+                        <!--Optional:-->
+                        <urn:PostalZone languageID="?">?</urn:PostalZone>
+                        <!--Optional:-->
+                        <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                        <!--Optional:-->
+                        <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                        <!--Optional:-->
+                        <urn:Region languageID="?">?</urn:Region>
+                        <!--Optional:-->
+                        <urn:District languageID="?">?</urn:District>
+                        <!--Optional:-->
+                        <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                        <!--Zero or more repetitions:-->
+                        <urn4:AddressLine>
+                           <urn:Line languageID="?">?</urn:Line>
+                        </urn4:AddressLine>
+                        <!--Optional:-->
+                        <urn4:Country>
+                           <!--Optional:-->
+                           <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                           <!--Optional:-->
+                           <urn:Name languageID="?">?</urn:Name>
+                        </urn4:Country>
+                        <!--Optional:-->
+                        <urn4:LocationCoordinate>
+                           <!--Optional:-->
+                           <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                           <!--Optional:-->
+                           <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                           <!--Optional:-->
+                           <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                        </urn4:LocationCoordinate>
+                     </urn4:RegistrationAddress>
+                     <urn4:TaxScheme>
+                        <!--Optional:-->
+                        <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                        <!--Optional:-->
+                        <urn:Name languageID="?">?</urn:Name>
+                        <!--Optional:-->
+                        <urn:TaxTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:TaxTypeCode>
+                        <!--Optional:-->
+                        <urn:CurrencyCode listID="ISO 4217 Alpha" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Currency" listVersionID="2001" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/cefact/CurrencyCode-2.0.gc" listSchemeURI="urn:un:unece:uncefact:codelist:specification:54217:2001">?</urn:CurrencyCode>
+                        <!--Zero or more repetitions:-->
+                        <urn4:JurisdictionRegionAddress>
+                           <!--Optional:-->
+                           <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                           <!--Optional:-->
+                           <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                           <!--Optional:-->
+                           <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                           <!--Optional:-->
+                           <urn:Postbox languageID="?">?</urn:Postbox>
+                           <!--Optional:-->
+                           <urn:Floor languageID="?">?</urn:Floor>
+                           <!--Optional:-->
+                           <urn:Room languageID="?">?</urn:Room>
+                           <!--Optional:-->
+                           <urn:StreetName languageID="?">?</urn:StreetName>
+                           <!--Optional:-->
+                           <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                           <!--Optional:-->
+                           <urn:BlockName languageID="?">?</urn:BlockName>
+                           <!--Optional:-->
+                           <urn:BuildingName languageID="?">?</urn:BuildingName>
+                           <!--Optional:-->
+                           <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                           <!--Optional:-->
+                           <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                           <!--Optional:-->
+                           <urn:Department languageID="?">?</urn:Department>
+                           <!--Optional:-->
+                           <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                           <!--Optional:-->
+                           <urn:MarkCare languageID="?">?</urn:MarkCare>
+                           <!--Optional:-->
+                           <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                           <!--Optional:-->
+                           <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                           <!--Optional:-->
+                           <urn:CityName languageID="?">?</urn:CityName>
+                           <!--Optional:-->
+                           <urn:PostalZone languageID="?">?</urn:PostalZone>
+                           <!--Optional:-->
+                           <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                           <!--Optional:-->
+                           <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                           <!--Optional:-->
+                           <urn:Region languageID="?">?</urn:Region>
+                           <!--Optional:-->
+                           <urn:District languageID="?">?</urn:District>
+                           <!--Optional:-->
+                           <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                           <!--Zero or more repetitions:-->
+                           <urn4:AddressLine>
+                              <urn:Line languageID="?">?</urn:Line>
+                           </urn4:AddressLine>
+                           <!--Optional:-->
+                           <urn4:Country>
+                              <!--Optional:-->
+                              <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                              <!--Optional:-->
+                              <urn:Name languageID="?">?</urn:Name>
+                           </urn4:Country>
+                           <!--Optional:-->
+                           <urn4:LocationCoordinate>
+                              <!--Optional:-->
+                              <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                              <!--Optional:-->
+                              <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                              <!--Optional:-->
+                              <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                              <!--Optional:-->
+                              <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                              <!--Optional:-->
+                              <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                              <!--Optional:-->
+                              <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                              <!--Optional:-->
+                              <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                           </urn4:LocationCoordinate>
+                        </urn4:JurisdictionRegionAddress>
+                     </urn4:TaxScheme>
+                  </urn4:PartyTaxScheme>
+                  <!--Zero or more repetitions:-->
+                  <urn4:PartyLegalEntity>
+                     <!--Optional:-->
+                     <urn:RegistrationName languageID="?">?</urn:RegistrationName>
+                     <!--Optional:-->
+                     <urn:CompanyID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:CompanyID>
+                     <!--Optional:-->
+                     <urn4:RegistrationAddress>
+                        <!--Optional:-->
+                        <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                        <!--Optional:-->
+                        <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                        <!--Optional:-->
+                        <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                        <!--Optional:-->
+                        <urn:Postbox languageID="?">?</urn:Postbox>
+                        <!--Optional:-->
+                        <urn:Floor languageID="?">?</urn:Floor>
+                        <!--Optional:-->
+                        <urn:Room languageID="?">?</urn:Room>
+                        <!--Optional:-->
+                        <urn:StreetName languageID="?">?</urn:StreetName>
+                        <!--Optional:-->
+                        <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                        <!--Optional:-->
+                        <urn:BlockName languageID="?">?</urn:BlockName>
+                        <!--Optional:-->
+                        <urn:BuildingName languageID="?">?</urn:BuildingName>
+                        <!--Optional:-->
+                        <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                        <!--Optional:-->
+                        <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                        <!--Optional:-->
+                        <urn:Department languageID="?">?</urn:Department>
+                        <!--Optional:-->
+                        <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                        <!--Optional:-->
+                        <urn:MarkCare languageID="?">?</urn:MarkCare>
+                        <!--Optional:-->
+                        <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                        <!--Optional:-->
+                        <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                        <!--Optional:-->
+                        <urn:CityName languageID="?">?</urn:CityName>
+                        <!--Optional:-->
+                        <urn:PostalZone languageID="?">?</urn:PostalZone>
+                        <!--Optional:-->
+                        <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                        <!--Optional:-->
+                        <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                        <!--Optional:-->
+                        <urn:Region languageID="?">?</urn:Region>
+                        <!--Optional:-->
+                        <urn:District languageID="?">?</urn:District>
+                        <!--Optional:-->
+                        <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                        <!--Zero or more repetitions:-->
+                        <urn4:AddressLine>
+                           <urn:Line languageID="?">?</urn:Line>
+                        </urn4:AddressLine>
+                        <!--Optional:-->
+                        <urn4:Country>
+                           <!--Optional:-->
+                           <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                           <!--Optional:-->
+                           <urn:Name languageID="?">?</urn:Name>
+                        </urn4:Country>
+                        <!--Optional:-->
+                        <urn4:LocationCoordinate>
+                           <!--Optional:-->
+                           <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                           <!--Optional:-->
+                           <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                           <!--Optional:-->
+                           <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                           <!--Optional:-->
+                           <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                        </urn4:LocationCoordinate>
+                     </urn4:RegistrationAddress>
+                     <!--Optional:-->
+                     <urn4:CorporateRegistrationScheme>
+                        <!--Optional:-->
+                        <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                        <!--Optional:-->
+                        <urn:Name languageID="?">?</urn:Name>
+                        <!--Optional:-->
+                        <urn:CorporateRegistrationTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CorporateRegistrationTypeCode>
+                        <!--Zero or more repetitions:-->
+                        <urn4:JurisdictionRegionAddress>
+                           <!--Optional:-->
+                           <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                           <!--Optional:-->
+                           <urn:AddressTypeCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressTypeCode>
+                           <!--Optional:-->
+                           <urn:AddressFormatCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:AddressFormatCode>
+                           <!--Optional:-->
+                           <urn:Postbox languageID="?">?</urn:Postbox>
+                           <!--Optional:-->
+                           <urn:Floor languageID="?">?</urn:Floor>
+                           <!--Optional:-->
+                           <urn:Room languageID="?">?</urn:Room>
+                           <!--Optional:-->
+                           <urn:StreetName languageID="?">?</urn:StreetName>
+                           <!--Optional:-->
+                           <urn:AdditionalStreetName languageID="?">?</urn:AdditionalStreetName>
+                           <!--Optional:-->
+                           <urn:BlockName languageID="?">?</urn:BlockName>
+                           <!--Optional:-->
+                           <urn:BuildingName languageID="?">?</urn:BuildingName>
+                           <!--Optional:-->
+                           <urn:BuildingNumber languageID="?">?</urn:BuildingNumber>
+                           <!--Optional:-->
+                           <urn:InhouseMail languageID="?">?</urn:InhouseMail>
+                           <!--Optional:-->
+                           <urn:Department languageID="?">?</urn:Department>
+                           <!--Optional:-->
+                           <urn:MarkAttention languageID="?">?</urn:MarkAttention>
+                           <!--Optional:-->
+                           <urn:MarkCare languageID="?">?</urn:MarkCare>
+                           <!--Optional:-->
+                           <urn:PlotIdentification languageID="?">?</urn:PlotIdentification>
+                           <!--Optional:-->
+                           <urn:CitySubdivisionName languageID="?">?</urn:CitySubdivisionName>
+                           <!--Optional:-->
+                           <urn:CityName languageID="?">?</urn:CityName>
+                           <!--Optional:-->
+                           <urn:PostalZone languageID="?">?</urn:PostalZone>
+                           <!--Optional:-->
+                           <urn:CountrySubentity languageID="?">?</urn:CountrySubentity>
+                           <!--Optional:-->
+                           <urn:CountrySubentityCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CountrySubentityCode>
+                           <!--Optional:-->
+                           <urn:Region languageID="?">?</urn:Region>
+                           <!--Optional:-->
+                           <urn:District languageID="?">?</urn:District>
+                           <!--Optional:-->
+                           <urn:TimezoneOffset languageID="?">?</urn:TimezoneOffset>
+                           <!--Zero or more repetitions:-->
+                           <urn4:AddressLine>
+                              <urn:Line languageID="?">?</urn:Line>
+                           </urn4:AddressLine>
+                           <!--Optional:-->
+                           <urn4:Country>
+                              <!--Optional:-->
+                              <urn:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">?</urn:IdentificationCode>
+                              <!--Optional:-->
+                              <urn:Name languageID="?">?</urn:Name>
+                           </urn4:Country>
+                           <!--Optional:-->
+                           <urn4:LocationCoordinate>
+                              <!--Optional:-->
+                              <urn:CoordinateSystemCode listID="?" listAgencyID="?" listAgencyName="?" listName="?" listVersionID="?" name="?" languageID="?" listURI="?" listSchemeURI="?">?</urn:CoordinateSystemCode>
+                              <!--Optional:-->
+                              <urn:LatitudeDegreesMeasure unitCode="?">?</urn:LatitudeDegreesMeasure>
+                              <!--Optional:-->
+                              <urn:LatitudeMinutesMeasure unitCode="?">?</urn:LatitudeMinutesMeasure>
+                              <!--Optional:-->
+                              <urn:LatitudeDirectionCode listID="Latitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Latitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode-2.0">?</urn:LatitudeDirectionCode>
+                              <!--Optional:-->
+                              <urn:LongitudeDegreesMeasure unitCode="?">?</urn:LongitudeDegreesMeasure>
+                              <!--Optional:-->
+                              <urn:LongitudeMinutesMeasure unitCode="?">?</urn:LongitudeMinutesMeasure>
+                              <!--Optional:-->
+                              <urn:LongitudeDirectionCode listID="Longitude Direction" listAgencyID="UBL" listAgencyName="OASIS Universal Business Language" listName="Longitude Direction" listVersionID="2.0" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/LongitudeDirectionCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode-2.0">?</urn:LongitudeDirectionCode>
+                           </urn4:LocationCoordinate>
+                        </urn4:JurisdictionRegionAddress>
+                     </urn4:CorporateRegistrationScheme>
+                  </urn4:PartyLegalEntity>
+                  <!--Optional:-->
+                  <urn4:Contact>
+                     <!--Optional:-->
+                     <urn:ID schemeID="?" schemeName="?" schemeAgencyID="?" schemeAgencyName="?" schemeVersionID="?" schemeDataURI="?" schemeURI="?">?</urn:ID>
+                     <!--Optional:-->
+                     <urn:Name languageID="?">?</urn:Name>
+                     <!--Optional:-->
+                     <urn:Telephone languageID="?">?</urn:Telephone>
+                     <!--Optional:-->
+                     <urn:Telefax languageID="?">?</urn:Telefax>
+                     <!--Optional:-->
+                     <urn:ElectronicMail languageID="?">?</urn:ElectronicMail>
+                     <!--Optional:-->
+                     <urn:Note languageID="?">?</urn:Note>
+                     <!--Zero or more repetitions:-->
+                     <urn4:OtherCommunication>
+                        <!--Optional:-->
+                        <urn:ChannelCode listID="UN/ECE 3155" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Communication Address Code Qualifier" listVersionID="D03A" name="?" languageID="en" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/ChannelCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:ChannelCode-2.0">?</urn:ChannelCode>
+                        <!--Optional:-->
+                        <urn:Channel languageID="?">?</urn:Channel>
+                        <!--Optional:-->
+                        <urn:Value languageID="?">?</urn:Value>
+                     </urn4:OtherCommunication>
+                  </urn4:Contact>
+                  <!--Optional:-->
+                  <urn4:Person>
+                     <!--Optional:-->
+                     <urn:FirstName languageID="?">?</urn:FirstName>
+                     <!--Optional:-->
+                     <urn:FamilyName languageID="?">?</urn:FamilyName>
+                     <!--Optional:-->
+                     <urn:Title languageID="?">?</urn:Title>
+                     <!--Optional:-->
+                     <urn:MiddleName languageID="?">?</urn:MiddleName>
+                     <!--Optional:-->
+                     <urn:NameSuffix languageID="?">?</urn:NameSuffix>
+                     <!--Optional:-->
+                     <urn:JobTitle languageID="?">?</urn:JobTitle>
+                     <!--Optional:-->
+                     <urn:OrganizationDepartment languageID="?">?</urn:OrganizationDepartment>
+                  </urn4:Person>
+                  <!--Optional:-->
+                  <urn4:AgentParty/>
+               </urn4:ReceiverParty>
+               <!--Optional:-->
+               <ec1:DocumentHashMethod languageID="?">?</ec1:DocumentHashMethod>
+               <!--Optional:-->
+               <urn:DocumentHash languageID="?">?</urn:DocumentHash>
+               <!--Optional:-->
+               <ec1:DocumentCanonicalizationMethod languageID="?">?</ec1:DocumentCanonicalizationMethod>
+            </ec1:AcknowledgedDocumentReference>
+         </ec:Ack>
+      </ec:StoreDocumentWrapperResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="ec:services:wsdl:DocumentWrapper-2/documentWrapperPortType/storeDocumentWrapperResponse"/></con:response><con:dispatchConfig/></con:mockOperation>

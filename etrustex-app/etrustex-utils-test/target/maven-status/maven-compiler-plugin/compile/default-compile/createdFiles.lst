@@ -1,0 +1,14 @@
+eu\europa\ec\etrustex\test\hamcrest\matchers\GenericItemMatcher.class
+eu\europa\ec\etrustex\test\hamcrest\EtxCommonMatchers$1.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\IsBetweenDates.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\InputStreamMatcher.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\IterableMatcher.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\BaseItemMatcher.class
+eu\europa\ec\etrustex\test\support\AbstractTest.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\ItemMatcher.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\IsCloseTo.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\MapMatcher.class
+eu\europa\ec\etrustex\test\support\AbstractControllerTest.class
+eu\europa\ec\etrustex\test\hamcrest\matchers\CollectionSizeMatcher.class
+eu\europa\ec\etrustex\test\hamcrest\EtxCommonMatchers.class
+eu\europa\ec\etrustex\test\support\AbstractFileTest.class

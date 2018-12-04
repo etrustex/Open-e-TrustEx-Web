@@ -1,0 +1,778 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>eu.europa.ec.etrustex</groupId>
+    <artifactId>etrustex</artifactId>
+    <!-- run command below when upgrading to a new project version to upgrade this pom and all child pom files:-->
+    <!-- mvn versions:set -DnewVersion=2.6.0-->
+    <version>trunk</version>
+    <packaging>pom</packaging>
+    <name>etrustex</name>
+    <url>https://webgate.ec.europa.eu/CITnet/confluence/display/ETX/Home</url>
+
+    <scm>
+        <connection>scm:svn:https://webgate.ec.europa.eu/CITnet/svn/ETX/etrustex/trunk/etrustex/</connection>
+        <developerConnection>scm:svn:https://webgate.ec.europa.eu/CITnet/svn/ETX/etrustex/trunk/etrustex/
+        </developerConnection>
+        <url>https://webgate.ec.europa.eu/CITnet/fisheye/viewrep/ETX</url>
+    </scm>
+    <organization>
+        <name>European Commission</name>
+        <url>http://ec.europa.eu</url>
+    </organization>
+    <issueManagement>
+        <system>Jira</system>
+        <url>https://webgate.ec.europa.eu/CITnet/jira/browse/ETX</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Bamboo</system>
+        <url>https://webgate.ec.europa.eu/CITnet/bamboo/browse/ETX</url>
+    </ciManagement>
+
+    <developers>
+        <developer>
+            <name>Le Phu Quyen</name>
+        </developer>
+        <developer>
+            <name>Valer Micle</name>
+        </developer>
+    </developers>
+    <contributors>
+        <contributor>
+            <name>Cholakian Armen</name>
+        </contributor>
+        <contributor>
+            <name>Valer Micle</name>
+        </contributor>
+        <contributor>
+            <name>Olivier Touly</name>
+        </contributor>
+    </contributors>
+
+    <modules>
+        <module>etrustex-app</module>
+        <module>etrustex-assemblers</module>
+    </modules>
+
+    <properties>
+        <!-- ============Mobile application context root============ -->
+		<mobile.context.root>e-trustex-mobile</mobile.context.root>
+
+        <!-- ============Environment============ -->
+        <default.delim>false</default.delim>
+        <etrustex.root>${project.basedir}</etrustex.root>
+
+        <!-- =============frameworks============ -->
+        <spring.framework.version>4.3.4.RELEASE</spring.framework.version>
+		<spring.security.version>4.2.0.RELEASE</spring.security.version>
+        <hibernate.framework.version>4.2.21.Final</hibernate.framework.version>
+        <jboss-logging.version>3.3.0.Final</jboss-logging.version>
+        <hibernate.validator.version>4.3.1.Final</hibernate.validator.version>
+        <com.google.inject.version>4.1.0</com.google.inject.version>
+        <com.google.guava.version>19.0</com.google.guava.version>
+        <apache.velocity.version>1.7</apache.velocity.version>
+        <ehcache.version>2.6.11</ehcache.version>
+        <jackson.json.version>1.9.13</jackson.json.version>
+        <javax.json.version>1.0.4</javax.json.version>
+        <javax.servlet.version>3.1.0</javax.servlet.version>
+        <javaee.api.version>7.0</javaee.api.version>
+        <fasterxml.jackson.version>2.8.4</fasterxml.jackson.version>
+        <liquibase.version>3.5.3</liquibase.version>
+        <itext.version>5.5.13</itext.version>
+		<!--<commons-io.version>2.6</commons-io.version>-->
+		<commons-fileupload.version>1.3.3</commons-fileupload.version>
+
+        <!-- ==============Logging============== -->
+        <webstart.server.jetty.version>9.2.1.v20140609</webstart.server.jetty.version>
+
+        <!-- ==============Logging============== -->
+        <log4j.logger.version>1.2.17</log4j.logger.version>
+        <slf4j.logger.version>1.7.21</slf4j.logger.version>
+        <logback.version>1.2.3</logback.version>
+
+        <!-- ==============JDBC Drivers============== -->
+        <!--<oracle.jdbc.version>11.1.0.6.0</oracle.jdbc.version>-->
+		<datasource.name>EtxWebDb</datasource.name>
+
+		<!-- ==============JMS============== -->
+		<jms.connection.factory>jms/EtxWebConnectionFactory</jms.connection.factory>
+		<jms.etxWebMailQueue>jms/EtxWebMailQueue</jms.etxWebMailQueue>
+		<jms.etxWebRetrieveMetadataJMSQueue>jms/EtxWebRetrieveMetadataJMSQueue</jms.etxWebRetrieveMetadataJMSQueue>
+		<jms.etxWebRetrieveBundleJMSQueue>jms/EtxWebRetrieveBundleJMSQueue</jms.etxWebRetrieveBundleJMSQueue>
+		<jms.etxWebSendStatusJMSQueue>jms/EtxWebSendStatusJMSQueue</jms.etxWebSendStatusJMSQueue>
+		<jms.etxWebErrorQueue>jms/EtxWebErrorQueue</jms.etxWebErrorQueue>
+
+        <!-- cxf -->
+        <apache.cxf.version>3.1.10</apache.cxf.version>
+        <apache.wss4j.version>2.1.7</apache.wss4j.version>
+        <xmlschema.version>2.2.1</xmlschema.version>
+
+        <!-- ==============Web Socket============== -->
+        <javax.websocket.version>1.1</javax.websocket.version>
+        <jetty.websocket.client.version>9.2.1.v20140609</jetty.websocket.client.version>
+
+
+        <!-- Project -->
+        <project.maven.version>3.2.5</project.maven.version>
+        <project.java.version>1.7</project.java.version>
+        <project.java.debug>false</project.java.debug>
+        <project.java.optimize>true</project.java.optimize>
+        <project.java.showWarnings>false</project.java.showWarnings>
+        <project.java.showDeprecation>true</project.java.showDeprecation>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- ETX -->
+        <etx.build.version>${project.version}</etx.build.version>
+        <etx.build.date.format>yyyy-MM-dd HH:mm z</etx.build.date.format>
+        <etx.build.date>${buildnumber.date}</etx.build.date>
+        <etx.build.timestamp>${buildnumber.timestamp}</etx.build.timestamp>
+        <etx.source.status>${svn.status}</etx.source.status>
+        <etx.source.specialStatus>${svn.specialStatus}</etx.source.specialStatus>
+        <etx.source.revision>${svn.revision}</etx.source.revision>
+        <etx.source.committedRevision>${svn.committedRevision}</etx.source.committedRevision>
+        <etx.source.committedDate>${svn.committedDate}</etx.source.committedDate>
+        <!-- ==============Maven Plugins============== -->
+        <maven.processor.plugin.version>2.0.0</maven.processor.plugin.version>
+        <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
+        <maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
+        <maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
+        <maven.javadoc.plugin.version>2.10.4</maven.javadoc.plugin.version>
+        <maven.pmd.plugin.version>3.6</maven.pmd.plugin.version>
+        <maven.checkstyle.plugin.version>2.17</maven.checkstyle.plugin.version>
+        <maven.surefire.report.plugin.version>2.19.1</maven.surefire.report.plugin.version>
+        <maven.project.info.reports.plugin.version>2.9</maven.project.info.reports.plugin.version>
+        <maven.findbugs.plugin.version>2.3.2</maven.findbugs.plugin.version>
+        <maven.resources.plugin.version>3.0.1</maven.resources.plugin.version>
+        <maven.ejb.plugin.version>2.3</maven.ejb.plugin.version>
+        <maven.com.sun.tools.xjc.maven2.version>1.1.1</maven.com.sun.tools.xjc.maven2.version>
+        <maven.antrun.plugin.version>1.8</maven.antrun.plugin.version>
+        <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
+        <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
+        <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+        <maven-site-plugin.version>3.5.1</maven-site-plugin.version>
+        <maven-war-plugin.version>3.0.0</maven-war-plugin.version>
+        <build-number-plugin.version>1.4</build-number-plugin.version>
+        <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
+        <extra-enforcer-rules.version>1.0-alpha-5</extra-enforcer-rules.version>
+        <svn-revision-plugin.version>1.13</svn-revision-plugin.version>
+        <maven-assembly-plugin.version>2.6</maven-assembly-plugin.version>
+
+        <!-- ==============Apache Commons============== -->
+        <commons.lang.version>3.5</commons.lang.version>
+        <commons.beanutils.version>1.8.3</commons.beanutils.version>
+        <commons.dbcp.version>1.2.2</commons.dbcp.version>
+        <commons.logging.version>1.2</commons.logging.version>
+        <commons.collections.version>3.2.1</commons.collections.version>
+        <aopalliance.version>1.0</aopalliance.version>
+        <javax.inject.version>1</javax.inject.version>
+
+        <!-- ==============Security============== -->
+        <xmlsec.version>2.0.7</xmlsec.version>
+        <bouncycastle.version>1.55</bouncycastle.version>
+        <javax.ws.rs.api.version>2.0.1</javax.ws.rs.api.version>
+        <xades4j.version>1.3.0</xades4j.version>
+
+        <!-- ==============ECAS============== -->
+        <ecas.desktop.client.version>4.19.2</ecas.desktop.client.version>
+
+        <!-- ==============Project's Version============== -->
+        <eTrustEx.version>${project.version}</eTrustEx.version>
+
+        <!-- ==============Project's timestamp ============== -->
+        <maven.build.timestamp.format>dd-MM-yyyy HH:mm</maven.build.timestamp.format>
+        <eTrustEx.timestamp>${maven.build.timestamp}</eTrustEx.timestamp>
+
+        <!-- ==============Webstart properties============== -->
+        <applet.domain.codebase>*</applet.domain.codebase>
+        <jnlp.arguments.href>${application.base.domain}/${context.root}</jnlp.arguments.href>
+
+        <server.name>weblogic</server.name>
+
+    </properties>
+    <prerequisites>
+        <maven>${project.maven.version}</maven>
+    </prerequisites>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Spring framework -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jms</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-core</artifactId>
+				<version>${spring.security.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				<version>${spring.security.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>${spring.security.version}</version>
+			</dependency>
+
+            <!-- Persistence framework -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.framework.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.logging</groupId>
+                <artifactId>jboss-logging</artifactId>
+                <version>${jboss-logging.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>${hibernate.framework.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${com.google.inject.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-multibindings</artifactId>
+                <version>${com.google.inject.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-websocket</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-messaging</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.websocket</groupId>
+                <artifactId>javax.websocket-api</artifactId>
+                <version>${javax.websocket.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${fasterxml.jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${fasterxml.jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty.websocket</groupId>
+                <artifactId>websocket-client</artifactId>
+                <version>${webstart.server.jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty.websocket</groupId>
+                <artifactId>websocket-server</artifactId>
+                <version>${webstart.server.jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-client</artifactId>
+                <version>${webstart.server.jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-io</artifactId>
+                <version>${webstart.server.jetty.version}</version>
+            </dependency>
+			<dependency>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>${liquibase.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>junit</groupId>
+						<artifactId>junit</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${maven-enforcer-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>enforce-versions</id>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                            <configuration>
+                                <failFast>true</failFast>
+                                <rules>
+                                    <requireMavenVersion>
+                                        <version>${project.maven.version}</version>
+                                    </requireMavenVersion>
+                                    <requirePluginVersions/>
+                                    <requireJavaVersion>
+                                        <version>${project.java.version}</version>
+                                    </requireJavaVersion>
+                                    <DependencyConvergence>
+                                        <uniqueVersions>true</uniqueVersions>
+                                    </DependencyConvergence>
+                                    <banCircularDependencies/>
+                                    <requireReleaseDeps>
+                                        <searchTransitive>true</searchTransitive>
+                                        <failWhenParentIsSnapshot>false</failWhenParentIsSnapshot>
+                                        <excludes>
+                                            <exclude>${project.groupId}:*</exclude>
+                                        </excludes>
+                                    </requireReleaseDeps>
+                                    <requireProperty>
+                                        <property>etrustex.environment</property>
+                                        <message>eTrustEx environment must be specified.</message>
+                                    </requireProperty>
+                                </rules>
+                            </configuration>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>extra-enforcer-rules</artifactId>
+                            <version>${extra-enforcer-rules.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>com.google.code.maven-svn-revision-number-plugin</groupId>
+                    <artifactId>svn-revision-number-maven-plugin</artifactId>
+                    <version>${svn-revision-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.tmatesoft.svnkit</groupId>
+                            <artifactId>svnkit</artifactId>
+                            <version>1.8.5</version>
+                        </dependency>
+                    </dependencies>
+                    <executions>
+                        <execution>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>revision</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <entries>
+                            <entry>
+                                <prefix>svn</prefix>
+                            </entry>
+                        </entries>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven.surefire.plugin.version}</version>
+                    <configuration>
+                        <testFailureIgnore>false</testFailureIgnore>
+                        <!-- <systemProperties> <property> <name>RUNNING_MODE_ETX</name> <value>${env}</value>
+                                  </property> </systemProperties> -->
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${maven-clean-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${maven-install-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven-dependency-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven-deploy-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven-site-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven.jar.plugin.version}</version>
+                    <configuration>
+                        <archive>
+                            <!-- Do not include pom.xml and pom.properties
+                                in the jar archive. -->
+                            <addMavenDescriptor>false</addMavenDescriptor>
+                            <manifest>
+                                <!-- Include default specification entries
+                                    in the generated MANIFEST.MF file. -->
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                <!-- Include default implementation entries
+                                    in the generated MANIFEST.MF file. -->
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                            <manifestEntries>
+                                <!-- Include custom entries -->
+                                <Built-On>${etx.build.date}</Built-On>
+                                <Implementation-Date>${etx.source.committedDate}</Implementation-Date>
+                                <Implementation-Status>${etx.source.status}</Implementation-Status>
+                                <Implementation-Revision>${etx.source.committedRevision}</Implementation-Revision>
+                                <Implementation-Version>${etx.source.revision}</Implementation-Version>
+                                <Application-Name>e-TrustEx Web Access</Application-Name>
+                                <Permissions>all-permissions</Permissions>
+                                <Codebase>${applet.domain.codebase}</Codebase>
+                                <Caller-Allowable-Codebase>${applet.domain.codebase}</Caller-Allowable-Codebase>
+                                <Application-Library-Allowable-Codebase>${applet.domain.codebase}</Application-Library-Allowable-Codebase>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven-war-plugin.version}</version>
+                    <configuration>
+                        <archive>
+                            <!-- Do not include pom.xml and pom.properties
+                                in the War archive. -->
+                            <addMavenDescriptor>false</addMavenDescriptor>
+                            <manifest>
+                                <!-- Include default specification entries
+                                    in the generated MANIFEST.MF file. -->
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                <!-- Include default implementation entries
+                                    in the generated MANIFEST.MF file. -->
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                            <manifestEntries>
+                                <!-- Include custom entries -->
+                                <Built-On>${etx.build.date}</Built-On>
+                                <Implementation-Date>${etx.source.committedDate}</Implementation-Date>
+                                <Implementation-Status>${etx.source.status}</Implementation-Status>
+                                <Implementation-Revision>${etx.source.committedRevision}</Implementation-Revision>
+                                <Implementation-Version>${etx.source.revision}</Implementation-Version>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>buildnumber-maven-plugin</artifactId>
+                    <version>${build-number-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <source>${project.java.version}</source>
+                        <target>${project.java.version}</target>
+                        <debug>${project.java.debug}</debug>
+                        <optimize>${project.java.optimize}</optimize>
+                        <showWarnings>${project.java.showWarnings}</showWarnings>
+                        <showDeprecation>${project.java.showDeprecation}</showDeprecation>
+                        <!--<compilerArgs>-->
+                        <!-- Enable recommended compiler warnings -->
+                        <!--<arg>-Xlint</arg>-->
+                        <!--</compilerArgs>-->
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven.resources.plugin.version}</version>
+                    <configuration>
+                        <nonFilteredFileExtensions>
+                            <nonFilteredFileExtension>jks</nonFilteredFileExtension>
+                        </nonFilteredFileExtensions>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.google.code.maven-svn-revision-number-plugin</groupId>
+                <artifactId>svn-revision-number-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>build-timestamp</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create-timestamp</goal>
+                        </goals>
+                        <configuration>
+                            <timestampPropertyName>buildnumber.timestamp</timestampPropertyName>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>build-date</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create-timestamp</goal>
+                        </goals>
+                        <configuration>
+                            <timestampFormat>${etx.build.date.format}</timestampFormat>
+                            <timestampPropertyName>buildnumber.date</timestampPropertyName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <etrustex.environment>local</etrustex.environment>
+                <context.root>e-trustex</context.root>
+                <project.java.debug>true</project.java.debug>
+                <application.base.domain>http://127.0.0.1:7001</application.base.domain>
+                <database.schema>ETXWDEV</database.schema>
+            </properties>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <etrustex.environment>dev</etrustex.environment>
+                <context.root>e-trustex</context.root>
+                <application.base.domain>https://webgate.development.ec.europa.eu</application.base.domain>
+                <database.schema>ETXWDEV</database.schema>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <etrustex.environment>test</etrustex.environment>
+                <context.root>e-trustex</context.root>
+                <application.base.domain>https://webgate.test.ec.europa.eu</application.base.domain>
+                <database.schema>ETXWTEST</database.schema>
+            </properties>
+        </profile>
+        <profile>
+            <id>acc</id>
+            <properties>
+                <etrustex.environment>acc</etrustex.environment>
+                <context.root>e-trustex</context.root>
+                <application.base.domain>https://webgate.acceptance.ec.europa.eu</application.base.domain>
+                <database.schema>ETXWACC</database.schema>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <etrustex.environment>prod</etrustex.environment>
+                <context.root>e-trustex</context.root>
+                <application.base.domain>https://webgate.ec.europa.eu</application.base.domain>
+                <database.schema>ETXWPROD</database.schema>
+            </properties>
+        </profile>
+		<profile>
+			<id>wildfly</id>
+			<properties>
+				<etrustex.environment>wildfly</etrustex.environment>
+				<context.root>e-trustex</context.root>
+				<project.java.debug>true</project.java.debug>
+				<application.base.domain>http://127.0.0.1:8080</application.base.domain>
+				<database.schema>etxweb</database.schema>
+				<datasource.name>java:/jdbc/EtxWebDb</datasource.name>
+				<jms.connection.factory>java:/JmsXA/</jms.connection.factory>
+				<jms.etxWebMailQueue>java:/queue/EtxWebMailQueue</jms.etxWebMailQueue>
+				<jms.etxWebRetrieveMetadataJMSQueue>java:/queue/EtxWebRetrieveMetadataJMSQueue</jms.etxWebRetrieveMetadataJMSQueue>
+				<jms.etxWebRetrieveBundleJMSQueue>java:/queue/EtxWebRetrieveBundleJMSQueue</jms.etxWebRetrieveBundleJMSQueue>
+				<jms.etxWebSendStatusJMSQueue>java:/queue/EtxWebSendStatusJMSQueue</jms.etxWebSendStatusJMSQueue>
+				<jms.etxWebErrorQueue>java:/queue/EtxWebErrorQueue</jms.etxWebErrorQueue>
+				<server.name>jboss</server.name>
+			</properties>
+		</profile>
+        <profile>
+            <id>load</id>
+            <properties>
+                <etrustex.environment>load</etrustex.environment>
+                <context.root>e-trustex</context.root>
+                <application.base.domain>https://webgate.development.ec.europa.eu</application.base.domain>
+                <database.schema>ETXWDEV</database.schema>
+            </properties>
+        </profile>
+        <profile>
+            <id>public</id>
+            <properties>
+                <etrustex.environment>public</etrustex.environment>
+                <context.root>euceg/etrustex</context.root>
+                <application.base.domain>https://webgate.acceptance.ec.europa.eu</application.base.domain>
+                <database.schema>EUCEG_GUI</database.schema>
+            </properties>
+        </profile>
+        <profile>
+            <id>reporting</id>
+            <reporting>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven.javadoc.plugin.version}</version>
+                        <configuration>
+                            <failOnError>false</failOnError>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <version>${maven.pmd.plugin.version}</version>
+                        <configuration>
+                            <targetJdk>${project.build.target}</targetJdk>
+                            <rulesets>
+                                <ruleset>${pmd.rules.etrustex}</ruleset>
+                            </rulesets>
+                            <format>xml</format>
+                            <xrefLocation>${project.reporting.outputDirectory}/../xref</xrefLocation>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>${maven.checkstyle.plugin.version}</version>
+                        <configuration>
+                            <configLocation>${basedir}/../checkstyle/etx_checks.xml</configLocation>
+                            <xrefLocation>${project.reporting.outputDirectory}/../xref</xrefLocation>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-report-plugin</artifactId>
+                        <inherited>true</inherited>
+                        <version>${maven.surefire.report.plugin.version}</version>
+                        <configuration>
+                            <xrefLocation>${project.reporting.outputDirectory}/../xref-test</xrefLocation>
+                        </configuration>
+                        <reportSets>
+                            <reportSet>
+                                <id>unit-tests</id>
+                                <reports>
+                                    <report>report-only</report>
+                                </reports>
+                            </reportSet>
+                            <reportSet>
+                                <id>integration-tests</id>
+                                <reports>
+                                    <report>report-only</report>
+                                </reports>
+                                <configuration>
+                                    <outputName>integration-test-report</outputName>
+                                    <reportsDirectories>
+                                        <reportsDirectory>${project.build.directory}/failsafe-reports</reportsDirectory>
+                                    </reportsDirectories>
+                                </configuration>
+                            </reportSet>
+                        </reportSets>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-project-info-reports-plugin</artifactId>
+                        <version>${maven.project.info.reports.plugin.version}</version>
+                        <configuration>
+                            <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+                            <!-- Because of an unexpectedly long duration, dependency locations
+                                       have been disabled in the dependencies report -->
+                            <!-- Known maven issue: [jira] (MPIR-137) Dependency Locations should
+                                       work with an intranet repository and restricted internet access -->
+                            <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </reporting>
+        </profile>
+    </profiles>
+
+</project>

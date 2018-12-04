@@ -1,0 +1,7 @@
+eu\europa\ec\etrustex\webaccess\webservice\ica\IcaServiceImplTest.class
+eu\europa\ec\etrustex\webaccess\webservice\status\ApplicationResponseClientServiceImplTest.class
+eu\europa\ec\etrustex\webaccess\webservice\MessageBundleHandlerTest.class
+eu\europa\ec\etrustex\webaccess\webservice\status\ApplicationResponseClientServiceImplTest$1.class
+eu\europa\ec\etrustex\webaccess\webservice\converter\NodeInterchangeAgreementTypeConverterTest.class
+eu\europa\ec\etrustex\webaccess\webservice\ica\IcaServiceImplTest$PortMockInterface.class
+eu\europa\ec\etrustex\webaccess\webservice\NodeObjectBuilderTest.class

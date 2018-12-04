@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>el</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Οθόνη 1</hd_short_title>
+        <hd_long_title>eTrustEx Οθόνη 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>26/06/2015</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Οθόνη 1</ipg_title>
+            <ipg_creator>DIGIT.B.2.001</ipg_creator>
+            <ipg_language>el</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div id="error.admin.wrongEmail" class="ETX_WEB_LABEL_TRANSLATION">Μη έγκυρος μορφότυπος ηλεκτρονικής διεύθυνσης</div>
+                <div id="label.admin.login" class="ETX_WEB_LABEL_TRANSLATION">Όνομα χρήστη ECAS</div>
+                <div id="label.admin.notif.check.mandatory" class="ETX_WEB_LABEL_TRANSLATION">Τουλάχιστον μία ηλεκτρονική διεύθυνση για κοινοποιήσεις είναι υποχρεωτική</div>
+                <div id="label.admin.notif.delete.mandatory" class="ETX_WEB_LABEL_TRANSLATION">Δεν είναι δυνατή η διαγραφή αυτού του ρόλου καθώς τουλάχιστον μία ηλεκτρονική διεύθυνση για κοινοποιήσεις είναι υποχρεωτική</div>
+                <div id="message.cookie.banner" class="ETX_WEB_LABEL_TRANSLATION">Ο ιστότοπος e-TrustEx χρησιμοποιεί cookies για τη βελτίωση της πλοήγησης των χρηστών στον ιστότοπο.</div>
+                <div id="error.admin.generic" class="ETX_WEB_LABEL_TRANSLATION">Η αίτηση δεν μπορεί να ολοκληρωθεί. Επικοινωνήστε με τον διαχειριστή του συστήματος</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

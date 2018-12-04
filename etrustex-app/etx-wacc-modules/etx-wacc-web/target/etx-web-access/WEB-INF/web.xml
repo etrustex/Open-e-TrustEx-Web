@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="etrustex" version="3.0">
+
+    <display-name>etrustex</display-name>
+
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log4j.properties</param-value>
+    </context-param>
+
+    <!-- When the web app root is exposed, it is possible to set the log files in the web application context, -->
+    <!-- which will allow the logs to be accessible in a browser. -->
+    <!-- In this example we disable it for security reasons. -->
+    <context-param>
+        <param-name>log4jExposeWebAppRoot</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>spring</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>spring</servlet-name>
+        <url-pattern>*.do</url-pattern>
+        <url-pattern>/applet/*.do</url-pattern>
+        <!--websocket mapping configuration-->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CXFServlet</servlet-name>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CXFServlet</servlet-name>
+        <url-pattern>/integration/services/*</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <description>When dispatching to the error page because a LoginException occurred, should we use a redirection
+            (true) or a forward (false) ?
+        </description>
+        <param-name>eu.cec.digit.ecas.client.dispatch.useRedirect</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <description>Should all URLs specified for the error pages be considered relative to the Web app context root
+            ?
+        </description>
+        <param-name>eu.cec.digit.ecas.formAuth.contextRelativeURLs</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>defaultHtmlEscape</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+	<!--
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>etrustex</web-resource-name>
+            <description>Requires users to be authenticated but does not require them to be authorized</description>
+            <url-pattern>*.do</url-pattern>
+            <url-pattern>/</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>allow users with any role</description>
+            <role-name>*</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <description>Encryption is not required for the application in general.</description>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    -->
+
+	<!-- DO NOT REMOVE THIS COMMENT. It is used for the wildfly version with BASIC login
+	-->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>All Access</web-resource-name>
+			<url-pattern>*.do</url-pattern>
+			<url-pattern>/</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>user</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-role>
+		<role-name>user</role-name>
+	</security-role>
+	<!-- -->
+
+    <!--websocket security configuration to bypass security authentication-->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>websocket</web-resource-name>
+            <url-pattern>/wschannel/*</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+    <!--images, style and js scripts are allowed toto bypass security authentication-->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>style</web-resource-name>
+            <url-pattern>/css/*</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>javascript</web-resource-name>
+            <url-pattern>/js/*</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>javascript</web-resource-name>
+            <url-pattern>/images/*</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>WS</web-resource-name>
+            <url-pattern>/integration/services/node/*</url-pattern>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>NODE-SERVICE-ROLE</role-name>
+        </auth-constraint>
+    </security-constraint>
+	<security-role>
+		<role-name>NODE-SERVICE-ROLE</role-name>
+	</security-role>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>WS</web-resource-name>
+            <url-pattern>/integration/services/inbox/*</url-pattern>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ETX-ADAPTER-SYS-ROLE</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>WS</web-resource-name>
+            <url-pattern>/integration/services/admin/*</url-pattern>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>USER-REGISTRATION-SERVICE-ROLE</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>public resources</web-resource-name>
+            <description>Require users to authenticate</description>
+            <url-pattern>/applet/*</url-pattern>
+            <url-pattern>/integration/services/applet/rest/*</url-pattern>
+        </web-resource-collection>
+        <!-- No auth-constraint = the authentication will be done based on a token -->
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>public resources</web-resource-name>
+            <description>Require users to authenticate</description>
+            <url-pattern>/token/*</url-pattern>
+            <url-pattern>/integration/services/token/rest/*</url-pattern>
+        </web-resource-collection>
+        <!-- No auth-constraint = the authentication will be done based on a token -->
+    </security-constraint>
+
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <filter>
+        <filter-name>appletCache</filter-name>
+        <filter-class>com.samaxes.filter.CacheFilter</filter-class>
+        <init-param>
+            <param-name>expiration</param-name>
+            <param-value>7776000</param-value>
+        </init-param>
+    </filter>
+
+    <filter>
+        <filter-name>resourcesCache</filter-name>
+        <filter-class>com.samaxes.filter.CacheFilter</filter-class>
+        <init-param>
+            <param-name>expiration</param-name>
+            <param-value>15552000</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>*.do</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>appletCache</filter-name>
+        <url-pattern>/applet/*</url-pattern>
+    </filter-mapping>
+
+
+    <welcome-file-list>
+        <welcome-file>/welcome.do</welcome-file>
+    </welcome-file-list>
+
+    <!-- We forward a '403: forbidden' error to an error page that explains the error to the user. -->
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error/error403.do</location>
+    </error-page>
+
+    <!-- We forward a '404: page not found' error to an error page that explains the error to the user. -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/error404.do</location>
+    </error-page>
+
+    <!-- We forward a '500: internal server error' to an error page that explains the error to the user. -->
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error/error500.do</location>
+    </error-page>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+            <trim-directive-whitespaces>true</trim-directive-whitespaces>
+        </jsp-property-group>
+    </jsp-config>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+		<realm-name>ApplicationRealm</realm-name>
+    </login-config>
+</web-app>

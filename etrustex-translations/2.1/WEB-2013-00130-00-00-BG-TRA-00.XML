@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>bg</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx екран 1</hd_short_title>
+        <hd_long_title>eTrustEx екран 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx екран 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>bg</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Адрес</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Запазено</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Списък на файловете</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Национален регистрационен номер на дружеството</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Номер на кореспонденцията</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Номер на файла</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Успешно запазване на черновата на съобщение</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Неуспешно запазване на черновата на съобщение</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Получено съобщение</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Антитръстови мерки</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Сливания</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Държавни помощи</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Хоризонтални мерки</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Изтриване</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Сигурен ли сте, че искате да отмените това съобщение?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Сигурен ли сте, че искате да изтриете тази чернова?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Полето „Относно“ трябва да бъде попълнено</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Полето „Държава“ трябва да бъде попълнено, когато полето „Име на организацията“ е попълнено</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Полето „Национален регистрационен номер на дружеството“ трябва да бъде попълнено, когато полето „Име на организацията“ е попълнено</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Полето „Лице за контакти“ трябва да бъде попълнено</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Полето „Инструмент“ под „Информация за съобщението“ трябва да бъде попълнено</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Няма коментари</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

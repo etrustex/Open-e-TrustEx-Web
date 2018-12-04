@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>et</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx Screen 1</hd_short_title>
+		<hd_long_title>eTrustEx Screen 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>03/12/2014</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx Screen 1</ipg_title>
+			<ipg_creator>DIGIT.B.2.001</ipg_creator>
+			<ipg_language>et</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageBusiness">Business</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageSystemUsers">Süsteem</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.administrators">Haldurid</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyOperators">Operaatorid</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.editUserDialogTitle">Kasutajaandmete muutmine</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.user.role">Roll</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.administrator">Haldur</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.operator">Operaator</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired.on">Manuste kehtivus lõpeb {0}</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired">Manused on aegunud, kuna {0} nädalat on möödunud</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataFailure">Süsteemil ei ole võimalik teadet kuvada. Palun võtke ühendust kasutajatoega.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataNotReady">Süsteemil ei ole praegu võimalik teates sisalduvat teavet alla laadida. Palun proovige mõne minuti pärast uuesti.</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

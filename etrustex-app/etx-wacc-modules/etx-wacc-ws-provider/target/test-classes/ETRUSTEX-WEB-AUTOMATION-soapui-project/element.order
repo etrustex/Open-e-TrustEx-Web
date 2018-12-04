@@ -1,0 +1,9 @@
+ApplicationResponsePortBinding
+documentBundleBinding
+ECEtxUserManagementPortTypePortBinding
+documentWrapperBinding
+DocumentBundleTest
+ApplicationResponseTest
+UserRegistrationTest
+SCRIPTS
+nodeDocumentWrapperBinding-MockService

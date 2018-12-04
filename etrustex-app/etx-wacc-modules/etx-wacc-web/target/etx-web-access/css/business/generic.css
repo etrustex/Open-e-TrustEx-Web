@@ -1,0 +1,110 @@
+/*message list*/
+.business-generic-message-list .notRead{
+	font-weight: bold;
+	background-color:#e7f2ff;
+}
+
+.business-generic-message-list .read{
+}
+
+.business-generic-message-list{
+    border-top: 1px solid #d0e4ff;
+	border-left: 1px solid #d0e4ff;
+	border-right: 1px solid #d0e4ff;
+	margin: 0px 5px 0px 5px;
+	text-decoration: none;
+	min-width: 610px;
+}
+
+.messageSubject{
+    color: #0086cb;
+	text-decoration:none;
+	cursor: pointer;
+}
+
+.messageSender{
+    color: #0086cb;
+}
+
+.notIca{
+    color:#b1b2b3;
+	text-decoration:none;
+}
+
+.business-generic-message-list .style-hour, .style-sender{
+	border-bottom: 1px solid #d0e4ff;
+	height:20px;
+	vertical-align: middle;
+}
+
+.style-status{
+    height:20px;
+    font-size: 0.85em;
+    vertical-align: middle;
+    text-align: right;
+    padding-right: 4px;
+}
+
+.business-generic-message-list .style-delete{
+	border-bottom: 1px solid #d0e4ff;
+	width: 45px;
+	text-align:center;
+    cursor:pointer;
+	vertical-align: middle;
+}
+
+.business-generic-message-list .style-count{
+	border-bottom: 1px solid #d0e4ff;
+	height:20px;
+	text-align:center;
+	vertical-align: middle;
+}
+
+.business-generic-message-list .style-sender{
+	font-size: 0.7em;
+	font-style:normal;
+	font-weight:normal;
+	height:20px;
+	vertical-align: middle;
+}
+.business-generic-message-list .style-subject{
+	font-size: 0.85em;
+	height:20px;
+	vertical-align: middle;
+}
+.business-generic-message-list .style-date, .style-hour{
+	color:#b1b2b3;
+	width: 85px;
+	font-size: 0.7em;
+	font-style:normal;
+	text-align:right;
+	height:20px;
+	padding-right:4px;
+	vertical-align: middle;
+}
+.style-sent{
+    width: 85px;
+    font-style:normal;
+    text-align:right;
+    height:20px;
+    padding-right:8px;
+    padding-left: 50px;
+}
+.business-generic-message-list .style-attachment, .style-count{
+	color:#0086cb;
+	width: 25px;
+	font-size: 0.7em;
+	font-style:normal;
+	height:20px;
+	text-align:center;
+	vertical-align: middle;
+}
+.business-generic-message-list .style-blank{
+	border-bottom: 2px solid #0095FB;
+}
+.business-generic-message-list table{
+    width: 100%;
+    table-layout: fixed;
+}
+
+

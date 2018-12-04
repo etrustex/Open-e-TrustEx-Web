@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>da</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>16/04/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>da</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Alle mapper</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Ny</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Opdatér</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">af</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">Indbakke</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Udkast</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.folder">Mappe</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Alle</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Ulæst</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Besked</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.download">Download</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Metadata</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Visning</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Officiel elektronisk udgave</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outbox">Udbakke</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.created">Oprettet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxDossierView">Dossiervisning</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandardView">Standardvisning</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload">Upload</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Uploadet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Send</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Gem</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Dato for vedtagelse</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Del</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.edmaView">ECMA-visning</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComment">Ingen bemærkning</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

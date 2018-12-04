@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xsd:element name="active" type="xsd:string" />
+  <xsd:element name="staging" type="xsd:string" />
+  <xsd:element name="wip" type="xsd:string" />
+  <xsd:element name="r_object_id" type="xsd:string" />
+
+  <xsd:element name="cwcms_metadata">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="r_object_id" minOccurs="1"
+          maxOccurs="1" />
+        <xsd:element ref="rendition_url" minOccurs="1"
+          maxOccurs="1" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="rendition_url">
+    <xsd:complexType>
+      <xsd:all>
+        <xsd:element ref="wip" minOccurs="1" maxOccurs="1" />
+        <xsd:element ref="staging" minOccurs="0" maxOccurs="1" />
+        <xsd:element ref="active" minOccurs="0" maxOccurs="1" />
+      </xsd:all>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>

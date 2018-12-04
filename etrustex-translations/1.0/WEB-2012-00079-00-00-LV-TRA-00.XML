@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>lv</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>lv</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Sistēmā iegājāt kā</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Informācija par ziņojumu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Dokuments</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Konfidenciāls</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Piezīmes par dokumentu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Atcelt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Nosūtīt ziņojumu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Saglabāt uzmetumu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Iesūtnes / datņu
+                    priekšskatījums
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">No</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Nosūtīts</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Saņemts</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Filtrēt ziņojumus</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Iztīrīt filtrus</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Ziņojuma uzmetums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Iesūtnes / ziņojumu
+                    priekšskatījums
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Iziet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Esat izgājis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Atgriezties pie ziņojumiem</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Lejupielādēt atlasītās datnes
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Iziet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Ziņojums nosūtīts!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Ziņojums nav nosūtīts!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Kļūda, saglabājot ziņojumu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Kļūda, augšupielādējot pielikumu
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Kļūda, saglabājot ziņojumu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Jāaizpilda lauks
+                    “Instruments”
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Ja uzņēmuma nosaukums nav
+                    norādīts, ir jāaizpilda lauks “Valsts”
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Ja uzņēmuma nosaukums nav
+                    norādīts, ir jāaizpilda lauks “Reģistrācijas numurs valsts uzņēmumu reģistrā”
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Jāaizpilda lauks “Valsts”</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Jāaizpilda lauks
+                    “Kontaktpersona”
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Jāaizpilda lauks
+                    “Organizācijas nosaukums”
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Jāaizpilda lauks “Temats”</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Jūs esat atlasījis datni, lai
+                    to augšupielādētu
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Pievienotās datnes</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Uzmetumu priekšskatījums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Nosūtīto ziņojumu priekšskatījums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Datne:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Ziņojuma temats</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Pielikumi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Izveidots</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Informācija par ziņojumu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Nosūtīts</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Saņemts</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Ziņojuma teksts</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Pirmais</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Iepriekšējais</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Nākamais</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Pēdējais</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Uz sākumu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Ziņojumu priekšskatījums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Datņu priekšskatījums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Sākumlapa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Rakstīt ziņojumu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Kam</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Temats</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Pagaidām nav pievienota neviena datne
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Pievienotās datnes (Noklikšķiniet, lai
+                    dzēstu)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Pievienot datni</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Augšupielādēt datnes</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Saturs</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Lauki (metadati)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Informācija par sūtītāju</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Organizācijas nosaukums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Reģistrācijas numurs</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Kontaktpersona</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Amats</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Tālrunis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">E-pasts</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Iela</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Pasta indekss</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Pilsēta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Valsts</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Uzņēmuma nosaukums</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">Pilnvarotājs:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Komentāri</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Saņēmējs</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Instruments</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Datnes numurs</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Informācijas numurs</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Norādītā saņemšanas datuma
+                    formāts filtra laukā nav pareizs. Pareizais formāts ir gggg-MM-dd
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Norādītā nosūtīšanas datuma
+                    formāts filtra laukā nav pareizs. Pareizais formāts ir gggg-MM-dd
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

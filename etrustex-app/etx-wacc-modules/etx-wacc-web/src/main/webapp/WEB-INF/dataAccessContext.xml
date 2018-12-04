@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceProviderClass" value="org.hibernate.ejb.HibernatePersistence"/>
+        <property name="persistenceXmlLocation" value="classpath:META-INF/persistence-etx-webacc.xml"/>
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="hibernate.ejb.interceptor" value="eu.europa.ec.etrustex.webaccess.persistence.TrackingEntityInterceptor"/>
+                <entry key="hibernate.show_sql" value="false" />
+                <entry key="hibernate.query.factory_class" value="org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory"/>
+                <entry key="hibernate.transaction.factory_class" value="org.hibernate.engine.transaction.internal.jta.CMTTransactionFactory"/>
+                <entry key="hibernate.transaction.jta.platform" value="${application.server.transaction.platform}"/>
+                <entry key="hibernate.jdbc.batch_size" value="30"/>
+                <entry key="hibernate.current_session_context_class" value="org.hibernate.context.internal.JTASessionContext"/>
+                <!-- enable ehcache -->
+                <entry key="hibernate.cache.use_second_level_cache" value="true"/>
+                <entry key="hibernate.cache.use_query_cache" value="true"/>
+                <entry key="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- Automatically inject persistence Context annotated entity managers -->
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+
+    <!-- DataSource -->
+    <bean id="eTrustExDS" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="${datasource.name}"/>
+    </bean>
+
+    <!-- Liquibase -->
+    <!--<bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
+        <property name="dataSource" ref="eTrustExDS"/>
+        <property name="changeLog" value="classpath:liquibase/db.changelog-master.xml"/>
+        <property name="defaultSchema" value="${liquibase.default.schema}"/>
+    </bean>-->
+
+</beans>

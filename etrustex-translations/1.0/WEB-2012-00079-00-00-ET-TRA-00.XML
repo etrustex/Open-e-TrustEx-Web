@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>et</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>et</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Sisse logitud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Sõnumi teave</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Dokument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Konfidentsiaalne</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Dokumendi märkused</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Tühista</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Saada sõnum</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Salvesta mustandina</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Postkast / Kaustad</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Kellelt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Saadetud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Saadud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Filtreeri sõnumid</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Tühjenda filtrid</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Sõnumi mustand</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Postkast / Sõnumid</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Logi välja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Olete välja logitud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Tagasi sõnumite juurde</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Laadi alla valitud failid</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Väljalogimine</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Sõnum on saadetud!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Sõnumi saatmine ebaõnnestus!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Sõnumi salvestamisel ilmnes viga
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Manuse üleslaadimisel ilmnes viga
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Sõnumi salvestamisel ilmnes viga
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Väli „Instrument” on
+                    kohustuslik
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Väli „Riik” tuleks täita
+                    juhul, kui väli „Ettevõtte nimi” on tühi
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Väli „Riiklik
+                    registreerimisnumber” tuleks täita juhul, kui väli „Ettevõtte nimi” on tühi
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Väli „Riik” on kohustuslik
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Väli „Kontaktisik” on
+                    kohustuslik
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Väli „Organisatsiooni
+                    nimi” on kohustuslik
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Väli „Teema” on kohustuslik</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Peate valima faili, et see
+                    üles laadida
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Lisatud failid</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Mustandid</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Saadetud dokumendid</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Kaust:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Sõnumi teema</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Manused</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Koostatud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Sõnumi üksikasjad</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Saadetud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Saadud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Sõnumi tekst</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Esimene</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Eelmine</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Järgmine</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Viimane</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Üles</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Sõnumid</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Kaustad</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Avaleht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Koosta sõnum</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Kellele</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Teema</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Ühtegi faili ei ole veel lisatud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Failid lisatud (klõpsa, et eemaldada)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Lisa fail</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Laadi failid üles</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Sisu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Väljad (metaandmed)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Saatja teave</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Organisatsiooni nimi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Registreerimisnumber</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Kontaktisik</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Ametikoht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefon</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">E-post</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Tänav</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Postiindeks</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Linn</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Riik</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Ettevõtte nimi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">... nimel</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Märkused</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Kellele</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Instrument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Faili number</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Teabenumber</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Filtriväljal esitatud
+                    saamiskuupäev ei ole õiges vormingus. Õige vorming on aaaa-KK-pp
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Filtriväljal esitatud
+                    saatmiskuupäev ei ole õiges vormingus. Õige vorming on aaaa-KK-pp
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

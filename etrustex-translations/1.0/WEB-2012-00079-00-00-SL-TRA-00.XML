@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>sl</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>sl</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Prijavljeni uporabnik</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Podatki o sporočilu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Dokument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Zaupno</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Pripombe k dokumentu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Prekliči</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Pošlji sporočilo</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Shrani kot osnutek</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Nabiralnik/Prikaz spisov</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Od</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Poslano</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Prejeto</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Uporabi filter</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Pobriši filtre</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Osnutek sporočila</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Nabiralnik/Prikaz sporočil</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Odjava</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Odjava je uspela.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Nazaj na sporočila</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Prenos izbranih datotek</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Odjava</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Sporočilo je poslano.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Sporočilo ni poslano.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Napaka pri shranjevanju sporočila
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Napaka pri nalaganju priponke</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Napaka pri shranjevanju
+                    sporočila
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Polje Ukrep je obvezno.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Polje Država je obvezno, če
+                    je polje Ime podjetja prazno.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Polje Nacionalna matična
+                    številka je obvezno, če je polje Ime podjetja prazno.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Polje Država je obvezno.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Polje Kontaktna oseba je
+                    obvezno.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Polje Ime podjetja je
+                    obvezno.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Polje Zadeva je obvezno.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Če želite naložiti datoteko,
+                    jo morate najprej izbrati.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Priponke</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Osnutki sporočil</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Poslana sporočila</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Spis:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Zadeva</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Priponke</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Pripravljeno</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Podatki o sporočilu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Poslano</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Prejeto</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Besedilo sporočila</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Prva</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Prejšnja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Naslednja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Zadnja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Na vrh</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Prikaz sporočil</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Prikaz spisov</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Domov</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Novo sporočilo</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Za</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Zadeva</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Ni pripetih datotek.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Pripete datoteke (kliknite za
+                    odstranitev)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Pripni datoteko</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Naloži datoteke</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Vsebina</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Polja (metapodatki)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Pošiljatelj</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Ime podjetja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Matična številka</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Kontaktna oseba</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Položaj</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefon</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">e-naslov</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Ulica in hišna številka</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Poštna številka</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Kraj</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Država</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Ime podjetja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">V imenu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Pripombe</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Naslovnik</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Ukrep</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Referenca datoteke</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Referenca informacije</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Datum v polju Prejeto ni v
+                    pravilni obliki. Pravilna oblika je llll-mm-dd.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Datum v polju Poslano ni v
+                    pravilni obliki. Pravilna oblika je llll-mm-dd.
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

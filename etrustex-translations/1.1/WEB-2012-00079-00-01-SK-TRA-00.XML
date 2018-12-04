@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>sk</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>16/04/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>sk</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Všetky priečinky</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Nová správa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Aktualizovať správy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">z</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">Schránka</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Koncept</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.folder">Priečinok</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Všetky</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Neprečítané</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Správa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.download">Stiahnutie súborov</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Metaúdaje</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Zobrazenie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Oficiálna elektronická verzia</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outbox">Pošta na odoslanie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.created">Dátum vytvorenia</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxDossierView">Zobrazenie: Spisy</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandardView">Štandardné zobrazenie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload">Nahrávanie súborov</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Počet nahratých súborov</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Odoslať</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Uložiť</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Dátum prijatia</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Časť</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.edmaView">Zobrazenie: EDMA</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComment">Žiadne poznámky</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

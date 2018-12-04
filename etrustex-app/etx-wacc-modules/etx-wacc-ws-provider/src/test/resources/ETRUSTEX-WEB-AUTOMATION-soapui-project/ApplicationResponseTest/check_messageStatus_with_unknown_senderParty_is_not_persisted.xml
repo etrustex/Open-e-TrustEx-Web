@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="e72c0646-d1c1-4ec6-9356-5b9ec8484520" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="check_messageStatus_with_unknown_senderParty_is_not_persisted" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="566f4206-3ede-45d7-a8ba-8e0fb19b1aa3fileName">APPLICATION_RESPONSE</con:setting><con:setting id="961ec1cd-1053-4f31-a350-8cc1a91be6b6fileName">check_messageStatus_with_unknown_senderParty_is_not_persisted</con:setting><con:setting id="e72c0646-d1c1-4ec6-9356-5b9ec8484520fileName">check_messageStatus_with_unknown_senderParty_is_not_persisted</con:setting></con:settings><con:testStep type="groovy" name="submit_check_messageStatus_with_unknown_senderParty_is_not_persisted" id="81ac9daa-7438-40e9-8738-af8e5dec2712"><con:settings/><con:config><script>	
+	import groovy.sql.Sql
+	import java.text.SimpleDateFormat	
+
+	// initialise DB driver
+	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver("oracle.jdbc.OracleDriver")
+
+	// load methods from repository
+	scripts = testRunner.testCase.testSuite.project.testSuites["SCRIPTS"]
+	scripts.testCases["METHODS"].testSteps["METHODS"].run(testRunner, context)
+
+	log.debug "================================================================================"
+	log.info "APPLICATION RESPONSE - START CHECKING UNKNOWN SENDER PARTY IS NOT PERSISTED"
+
+	long msgId = 1000001
+	long localPartyId = 1000001
+	long businessId = 10000001
+	String partyName = "WEB_SENDER_PARTY"
+	String businessName = "test"
+	String bundleId = "ROBOT_BUNDLE_UNKNOWN_SENDER_0001"
+	String receiverPartyName = "ROBOT_APP_PARTY"	
+	String messageStatusId = "ROBOT_MESSAGE_STATUS_ID"
+	String responseCode = "BDL:7"	
+	String unknownPartyName = "UNKNOWN_WEB_SENDER_PARTY"
+
+	// open DB connection
+	context.commonDao.openDbConnection()
+	
+	try{
+		
+		// create business on business table
+		context.commonDao.createBusiness(businessId, businessName)
+	
+		// create business config on business config table
+		context.commonDao.createBusinessConfig(1000001, businessId, "etx.business.receiver.node.party.name", "ROBOT_APP_PARTY")
+		context.commonDao.createBusinessConfig(1000002, businessId, "etx.business.warn.email.notif.enabled", "0")
+	
+		// create party on party table
+		context.commonDao.createParty(localPartyId, "sysdate", partyName, businessId)
+	
+		// create message on message table
+		context.commonDao.createMessage(msgId, bundleId, localPartyId, receiverPartyName)
+
+		// reset cache
+		context.commonDao.resetCacheWeb()		
+
+		// inject values into application response request
+		testRunner.testCase.testSuite.setPropertyValue('SENDER_PARTY', receiverPartyName)
+		testRunner.testCase.testSuite.setPropertyValue('RECEIVER_PARTY', unknownPartyName)
+		testRunner.testCase.testSuite.setPropertyValue('MESSAGE_STATUS_ID', messageStatusId)
+		testRunner.testCase.testSuite.setPropertyValue('PARENT_MESSAGE_BUNDLE_ID', bundleId)		
+		testRunner.testCase.testSuite.setPropertyValue('RESPONSE_CODE', responseCode)	
+		
+		// define the webservice
+		def testCase = testRunner.testCase.testSuite.testCases["webService_ApplicationResponseService"]
+		def testStep = testCase.testSteps["submitApplicationResponse"]
+		
+		// EXECUTE SENDING REQUEST TO THE WEBSERVICE
+		testStep.run(testRunner, context)
+
+		// define the webservice response
+		context.setProperty('xmlResponse', testStep.getProperty('response'))
+	
+		// collect values from webservice response
+		def senderInResponse = context.expand( '${xmlResponse#declare namespace ns5=\'ec:schema:xsd:CommonAggregateComponents-2\'; declare namespace ns6=\'http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader\'; declare namespace ns4=\'ec:services:wsdl:ApplicationResponse-2\'; //ns4:Header[1]/ns5:BusinessHeader[1]/ns6:Sender[1]/ns6:Identifier[1]}' )
+		def receiverInResponse = context.expand( '${xmlResponse#declare namespace ns5=\'ec:schema:xsd:CommonAggregateComponents-2\'; declare namespace ns6=\'http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader\'; declare namespace ns4=\'ec:services:wsdl:ApplicationResponse-2\'; //ns4:Header[1]/ns5:BusinessHeader[1]/ns6:Receiver[1]/ns6:Identifier[1]}' )
+		def ackIndicatorInResponse = context.expand( '${xmlResponse#declare namespace ns10=\'ec:schema:xsd:CommonBasicComponents-1\'; declare namespace ns4=\'ec:services:wsdl:ApplicationResponse-2\'; //ns4:SubmitApplicationResponseResponse[1]/ns4:Ack[1]/ns10:AckIndicator[1]}' )
+		
+		// check that the webservice response contains the correct information
+		assert senderInResponse == receiverPartyName
+		assert receiverInResponse == unknownPartyName	
+		assert ackIndicatorInResponse == "true"
+	
+		// collect message status from the DB
+		messageStatusList = context.commonDao.getMessageStatuses(msgId)
+	
+		// check that no message status was generated on the DB
+		assert messageStatusList.size() == 0	
+		
+	} finally {
+		
+		// delete message from message table
+		context.commonDao.deleteMessage(bundleId)
+		
+		// delete party from party table
+		context.commonDao.deleteParty(partyName)
+
+		// delete business config from business config table
+		context.commonDao.deleteBusinessConfig(businessId)
+	
+		// delete business from business table
+		context.commonDao.deleteBusiness(businessId)
+	
+		// close DB connection
+		context.commonDao.closeDbConnection()
+
+		// reset cache
+		context.commonDao.resetCacheWeb()
+		
+	}
+
+	log.info "APPLICATION RESPONSE - FINISHED CHECKING UNKNOWN SENDER PARTY IS NOT PERSISTED"
+</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

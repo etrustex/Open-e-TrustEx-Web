@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>fi</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>fi</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Olet kirjautunut sisään nimellä</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Viestin tiedot</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Asiakirja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Luottamuksellinen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Asiakirjaa koskevat kommentit</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Peruuta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Lähetä viesti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Tallenna luonnos</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Postilaatikko / kansiot</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Lähettäjä</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Lähetetty</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Vastaanotettu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Suodata viestejä</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Poista suodattimet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Viestiluonnos</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Postilaatikko / viestit</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Kirjaudu ulos</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Olet kirjautunut ulos</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Palaa viesteihin</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Lataa valitut tiedostot</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Kirjaudu ulos</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Viesti on lähetetty</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Viestin lähetys epäonnistui</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Viestin tallentamisen yhteydessä
+                    tapahtui virhe
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Liitteen lisäämisen yhteydessä
+                    tapahtui virhe
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Viestin tallentamisen yhteydessä
+                    tapahtui virhe
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Kenttä &quot;väline&quot; on
+                    pakollinen
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Kenttä &quot;maa&quot; on
+                    täytettävä, jos &quot;yrityksen nimi&quot; -kenttä on tyhjä
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Kenttä &quot;kansallinen
+                    rekisteröintinumero&quot; on täytettävä, jos &quot;yrityksen nimi&quot; -kenttä on tyhjä
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Kenttä &quot;maa&quot; on
+                    pakollinen
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Kenttä &quot;yhteyshenkilö&quot;
+                    on pakollinen
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Kenttä &quot;organisaation
+                    nimi&quot; on pakollinen
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Kenttä &quot;asia&quot; on
+                    pakollinen
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Sinun on valittava
+                    siirrettävä tiedosto
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Liitetiedostot</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Luonnokset</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Lähetetyt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Kansio:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Asia</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Liitteet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Luotu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Viestin tiedot</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Lähetetty</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Vastaanotettu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Viestin teksti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Ensimmäinen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Edellinen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Seuraava</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Viimeinen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Alkuun</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Viestit</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Kansiot</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Etusivu</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Laadi viesti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Vastaanottaja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Asia</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Liitetiedostot puuttuvat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Liitetiedostot (poista napsauttamalla)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Liitä tiedosto</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Siirrä tiedostoja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Sisältö</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Kentät (metadata)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Lähettäjän tiedot</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Organisaation nimi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Rekisteröintinumero</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Yhteyshenkilö</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Asema</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Puhelin</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">Sähköposti</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Katuosoite</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Postinumero</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Paikkakunta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Maa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Yrityksen nimi</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">Puolesta</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Kommentit</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Vastaanottaja</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Väline</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Tiedoston numero</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Tietojen numero</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Vastaanottopäivä ei ole
+                    oikeassa muodossa. Kirjoita päiväys muodossa vvvv-kk-pp
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Lähetyspäivä ei ole oikeassa
+                    muodossa. Kirjoita päiväys muodossa vvvv-kk-pp
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

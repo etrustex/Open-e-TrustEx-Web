@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cm="http://publications.europa.eu/resource/core-metadata"
+           xmlns:cob="http://publications.europa.eu/resource/corporatebodies/"
+           xmlns:eve="http://publications.europa.eu/resource/events/"
+           xmlns:for="http://publications.europa.eu/resource/formats/"
+           xmlns:lng="http://publications.europa.eu/resource/languages/"
+           xmlns:proc="http://publications.europa.eu/resource/interinstitutionalprocedures/"
+           xmlns:res="http://publications.europa.eu/resource/resourcetypes/"
+           xmlns:rol="http://publications.europa.eu/resource/roles/"
+           xmlns:tre="http://publications.europa.eu/resource/treaties/"
+           targetNamespace="http://publications.europa.eu/resource/core-metadata" elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<!--
+      ==============================================================================================
+      == XML Schema for Core Metadata
+      == Version				: 2.10
+      == Version date		: 20121107
+      == Authors				: Dr. Holger Bagola (C1.002) - Dr. Marc Kuester (C1.003)
+      == References			: Note aux membres IMMC du 11/5/2011: https://circabc.europa.eu/d/d/workspace/SpacesStore/
+      77520532-4795-4bc5-b1cd-afc5f81bd35f/CIMM_reu-3_prep_anx1-a_not-fig_A(2011)528064.pdf
+      == History
+      == 20110620			: basic version 0.0
+      == 20110628 			: version 0.1: remarks from PS
+      == 20111110			: version 0.2: impact from testing
+      == 20111205			: version 1.00: fixed version
+      == 20120117			: version 1.01: precisions on some element models
+      == 20120125			: version 1.02: adaption of modifications agreed in meeting of 2012-01-24: number_procedure: string, 
+      ==                                        		 0   work_ref, suppression of procedure_internal
+      == 20120207			: version 1.03: restructuring following feed-back from DIGIT
+      == 20120228			: version 1.04: namespaces for authority tables
+      == 20120419			: version 1.05: externsion points
+      == 20120519			: version 1.06: test of typed extensions
+      == 20120618			: version 1.07: extension points with classified types
+      == 20120619			: version 1.08: no import of nth-layer extension
+      == 20120705			: version 2.00: fixed version
+      == 20121018			: version 2.01: experimental version with legal basis + procedure type moved from procedure to event level 
+	  ==												 and new public attribute (defaults to true)
+	  == 20121024			: version 2.01: fixed version
+	  == 20121107			: version 2.10: = 2.01 for publishing
+	  == 20121115			: version 2.11: correction of model for t_procedure_extension_base
+      ==============================================================================================
+  -->
+	<!-- 
+       *** External type definitions ***
+  -->
+	<!-- 
+       === Authority tables === 
+  -->
+	<!-- 
+       === Imported ==
+  -->
+	<!--
+      *** Authority tables
+  -->
+	<!--
+      *** Corporate bodies
+  -->
+	<xs:import namespace="http://publications.europa.eu/resource/corporatebodies/" schemaLocation="at-corporatebodies.xsd"/>
+	<!--
+      *** Countries
+  -->
+	<xs:import namespace="http://publications.europa.eu/resource/countries/" schemaLocation="at-countries.xsd"/>
+	<!--
+      *** Events
+  -->
+	<xs:import namespace="http://publications.europa.eu/resource/events/" schemaLocation="at-events.xsd"/>
+	<!--
+      *** File formats
+  -->
+	<xs:import namespace="http://publications.europa.eu/resource/formats/" schemaLocation="at-formats.xsd"/>
+	<!--
+      *** Languages
+  -->
+	<xs:import namespace="http://publications.europa.eu/resource/languages/" schemaLocation="at-languages.xsd"/>
+	<!--
+      *** Multilingual
+  -->
+	<xs:import namespace="http://publications.europa.eu/resource/multilingual/" schemaLocation="at-multilingual.xsd"/>
+	<!--
+      *** Interinstitutional procedures
+  -->
+	<xs:import namespace="http://publications.europa.eu/resource/interinstitutionalprocedures/" schemaLocation="at-interinstitutionalprocedures.xsd"/>
+	<!--
+      *** Resource types
+  -->
+	<xs:import namespace="http://publications.europa.eu/resource/resourcetypes/" schemaLocation="at-resourcetypes.xsd"/>
+	<!--
+      *** Roles
+  -->
+	<xs:import namespace="http://publications.europa.eu/resource/roles/" schemaLocation="at-roles.xsd"/>
+	<!--
+      *** Treaties
+  -->
+	<xs:import namespace="http://publications.europa.eu/resource/treaties/" schemaLocation="at-treaties.xsd"/>
+	<!--
+      === Local ===
+  -->
+	<xs:simpleType name="t_act">
+		<xs:restriction base="xs:string">
+			<xs:pattern value=".*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_author">
+		<xs:union memberTypes="cob:t_corporatebody cou:t_country"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_document_legal_data">
+		<xs:union memberTypes="tre:t_treaty cm:t_act"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_legalresourceversion">
+		<xs:restriction base="xs:string">
+			<xs:pattern value=".*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_linguisticcodes">
+		<xs:union memberTypes="lng:t_language mul:t_multilingual"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_languages">
+		<xs:list itemType="cm:t_linguisticcodes"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_year">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--
+      === Global attribute ===
+  -->
+	<xs:attribute name="public" type="xs:boolean" default="true"/>
+	<!-- 
+       === Complex types === 
+  -->
+	<xs:complexType name="t_agent_event">
+		<xs:simpleContent>
+			<xs:extension base="cm:t_author">
+				<xs:attribute name="role" type="rol:t_role" use="required"/>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_agent_work">
+		<xs:simpleContent>
+			<xs:extension base="cm:t_author">
+				<xs:attribute name="role" type="rol:t_role" use="required"/>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_document_legal">
+		<xs:simpleContent>
+			<xs:extension base="cm:t_document_legal_data">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_event_extension_base"/>
+	<xs:complexType name="t_event_legal">
+		<xs:sequence>
+			<xs:element name="type_event">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="eve:t_event">
+							<xs:attribute ref="cm:public"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="date_event">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:date">
+							<xs:attribute ref="cm:public"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="agent_event" type="cm:t_agent_event" maxOccurs="unbounded"/>
+			<xs:element name="type_interinstitutionalprocedure">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="proc:t_interinstitutionalprocedure">
+							<xs:attribute ref="cm:public"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="basis_legal_procedure" type="cm:t_legal_procedure" maxOccurs="unbounded"/>
+			<xs:element name="extension" type="cm:t_event_extension_base" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="work" type="cm:t_work"/>
+				<xs:element name="work_ref" type="cm:t_work_ref"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="t_expression">
+		<xs:sequence>
+			<xs:element name="language">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="lng:t_language">
+							<xs:attribute ref="cm:public"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="title" type="cm:t_title" maxOccurs="unbounded"/>
+			<xs:element name="extension" type="cm:t_expression_extension_base" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="manifestation" type="cm:t_manifestation" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="t_expression_extension_base"/>
+	<xs:complexType name="t_identifier_procedure">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="year_procedure">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="cm:t_year">
+								<xs:attribute ref="cm:public"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="number_procedure">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute ref="cm:public"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:element name="procId">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute ref="cm:public"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="t_legal_procedure">
+		<xs:sequence>
+			<xs:element name="document_legal" type="cm:t_document_legal"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="article" type="xs:string"/>
+				<xs:sequence minOccurs="0">
+					<xs:element name="paragraph" type="xs:string" minOccurs="0"/>
+					<xs:sequence minOccurs="0">
+						<xs:element name="alinea" type="xs:string"/>
+						<xs:choice minOccurs="0">
+							<xs:element name="point" type="xs:string"/>
+							<xs:element name="phrase" type="xs:string"/>
+						</xs:choice>
+					</xs:sequence>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="t_manifestation">
+		<xs:sequence>
+			<xs:element name="reference_manifestation" type="cm:t_reference_manifestation" maxOccurs="unbounded"/>
+			<xs:element name="extension" type="cm:t_manifestation_extension_base" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="t_manifestation_extension_base"/>
+	<xs:complexType name="t_procedure_interinstitutional">
+		<xs:sequence>
+			<xs:element name="identifier_procedure" type="cm:t_identifier_procedure"/>
+			<xs:element name="extension" type="cm:t_procedure_extension_base" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="event_legal" type="cm:t_event_legal" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="t_procedure_extension_base"/>
+	<xs:complexType name="t_reference_manifestation">
+		<xs:simpleContent>
+			<xs:extension base="xs:anyURI">
+				<xs:attribute name="format" type="for:t_format" use="required"/>
+				<xs:attribute name="sequence" type="xs:positiveInteger" default="1"/>
+				<xs:attribute name="page_count" type="xs:positiveInteger" use="optional"/>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_title">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="lang" type="cm:t_languages" use="optional"/>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_work">
+		<xs:sequence>
+			<xs:element name="type_work">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="res:t_resource-type">
+							<xs:attribute ref="cm:public"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="identifier_work">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute ref="cm:public"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="agent_work" type="cm:t_agent_work" maxOccurs="unbounded"/>
+			<xs:element name="date_work">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:date">
+							<xs:attribute ref="cm:public"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="version_work" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="cm:t_legalresourceversion">
+							<xs:attribute ref="cm:public"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="extension" type="cm:t_work_extension_base" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="expression" type="cm:t_expression" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="t_work_extension_base"/>
+	<xs:complexType name="t_work_ref">
+		<xs:attribute name="ref" type="xs:string"/>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<!-- 
+       *** Element definitions ***
+  -->
+	<!-- 
+       === Root elements ===
+  -->
+	<xs:element name="procedure_interinstitutional" type="cm:t_procedure_interinstitutional"/>
+	<xs:element name="work" type="cm:t_work"/>
+</xs:schema>

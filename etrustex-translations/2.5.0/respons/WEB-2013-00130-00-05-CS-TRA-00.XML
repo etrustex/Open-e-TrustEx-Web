@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>cs</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx Screen 1</hd_short_title>
+		<hd_long_title>eTrustEx Screen 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>03/12/2014</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx Screen 1</ipg_title>
+			<ipg_creator>DIGIT.B.2.001</ipg_creator>
+			<ipg_language>cs</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageBusiness">Business</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.manageSystemUsers">Systém</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.administrators">Administrátoři</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.partyOperators">Operátoři</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.editUserDialogTitle">Upravit uživatele</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.user.role">Role</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.administrator">Administrátor</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.admin.edit.user.role.operator">Operátor</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired.on">Platnost příloh skončí dne {0}.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.retention.expired">Po uplynutí {0}týdenní lhůty, kterou stanoví politika o uchovávání údajů, platnost příloh skončila.</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataFailure">Data zprávy nelze zobrazit. Kontaktujte asistenční službu.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.metadataNotReady">Data zprávy nelze momentálně načíst. Zkuste to znovu za několik minut.</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

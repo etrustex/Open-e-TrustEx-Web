@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>sv</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx sida 1</hd_short_title>
+        <hd_long_title>eTrustEx sida 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx sida 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>sv</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Inloggad som</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Meddelandeinformation</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Handling</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Konfidentiell</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Kommentarer till handling</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Avbryt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Skicka meddelande</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Spara som utkast</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Inkorg – mappar</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Från</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Skickat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Mottaget</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Sök meddelanden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Ta bort sökkriterier</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Utkast till meddelande</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Inkorg – meddelanden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Logga ut</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Du har loggats ut</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Tillbaka till meddelanden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Ladda ner valda filer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Logga ut</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Meddelandet har skickats!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Meddelandet kunde inte skickas!
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Det inträffade ett fel när
+                    meddelandet sparades
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Det inträffade ett fel när bilagan
+                    laddades upp
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Det inträffade ett fel när
+                    meddelandet sparades
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Du måste ange instrument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Du måste ange land om du inte
+                    har angett något företagsnamn
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Du måste ange nationellt
+                    registreringsnummer om du inte har angett något företagsnamn
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Du måste ange land</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Du måste ange
+                    kontaktperson
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Du måste ange
+                    organisationens namn
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Du måste ange ärende</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Du måste välja en fil för att
+                    kunna ladda upp den
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Bifogade filer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Utkast till meddelanden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Skickade meddelanden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Mapp:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Ärende</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Bilagor</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Skapat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Meddelandeuppgifter</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Skickat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Mottaget</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Meddelandetext</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Första</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Föregående</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Nästa</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Sista</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Till början</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Meddelanden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Mappar</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Förstasida</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Skriv meddelande</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Till</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Ärende</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Inga filer har bifogats</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Bifogade filer (klicka för att ta bort)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Bifoga fil</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Ladda upp filer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Innehåll</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Fält (metadata)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Avsändare</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Organisationens namn</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Registreringsnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Kontaktperson</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Befattning</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Tfn</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">E-postadress</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Gatuadress</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Postnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Ort</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Land</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Företagets namn</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">På vägnar av</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Kommentarer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Att.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Instrument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Filnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Informationsnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Ogiltigt datum i fältet
+                    ”Mottaget”. Korrekt datumformat är åååå-mm-dd.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Ogiltigt datum i fältet
+                    ”Skickat”. Korrekt datumformat är åååå-mm-dd.
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

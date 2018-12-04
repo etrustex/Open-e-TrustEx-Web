@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>nl</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>nl</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Ingelogd als</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Berichtinformatie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Document</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Vertrouwelijk</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Opmerkingen document</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Annuleren</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Bericht verzenden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Als concept opslaan</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Postvak IN / Dossiers</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">Van</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Verzonden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Ontvangen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Berichtenfilter</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Filters wissen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Conceptbericht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Postvak IN / Berichten</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Uitloggen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">U bent uitgelogd</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Terug naar berichten</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Geselecteerde bestanden
+                    downloaden
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Uitloggen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Het bericht is verzonden!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Verzending mislukt!</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Er is een fout opgetreden bij het
+                    opslaan van het bericht
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Er is een fout opgetreden bij het
+                    uploaden van de bijlage
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Er is een fout opgetreden bij het
+                    opslaan van het bericht
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Het veld &quot;Instrument&quot;
+                    is verplicht
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Het veld &quot;Land&quot;
+                    moet worden ingevuld als de bedrijfsnaam niet wordt ingevuld
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Het veld &quot;Nationaal
+                    registratienummer&quot; moet worden ingevuld als de bedrijfsnaam niet wordt ingevuld
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Het veld &quot;Land&quot; is
+                    verplicht
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Het veld &quot;Contactpersoon&quot;
+                    is verplicht
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Het veld &quot;Organisatienaam&quot;
+                    is verplicht
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Het veld &quot;Onderwerp&quot; is
+                    verplicht
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Selecteer het bestand dat u
+                    wilt uploaden
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Bijlagen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Concepten</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Verstuurde items</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Dossier:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Onderwerp</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Bijlagen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Aangemaakt op</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Berichtinformatie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Verzonden op</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Ontvangen op</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Tekst bericht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Eerste</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Vorige</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Volgende</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Laatste</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Naar boven</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Berichten</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Dossiers</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Home</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Bericht aanmaken</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">Aan</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Onderwerp</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Nog geen bijlagen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Bijlagen (klik om te verwijderen)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Bijlage toevoegen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Bestanden uploaden</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Inhoud</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Velden (metadata)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Informatie afzender</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Organisatienaam</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Registratienummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Contactpersoon</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Functie</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Telefoon</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">E-mail</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Straat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Postcode</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Plaats</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Land</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Firmanaam</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">Namens</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Opmerkingen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Ter attentie van</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Instrument</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Bestandsnummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Informatienummer</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Ontvangsdatum in het filter
+                    niet in het juiste formaat: jjjj-MM-dd
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Verzenddatum in het filter niet
+                    in het juiste formaat: jjjj-MM-dd
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>bg</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>01/02/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>bg</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedIn">Влезли сте като</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgInformation">Информация за съобщението</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.document">Документ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.confidential">Поверителен</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.docComments">Коментари към документа</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.cancel">Отказ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sendMsg">Изпращане на съобщението</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saveDraft">Запазване като чернова</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashDossiersView">Входяща кутия / Досиета</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.from">От</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sent">Изпратено</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.received">Получено</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.filterMsgs">Филтриране на съобщенията</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.clearFilters">Изчистване на филтрите</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftSubject">Чернова на съобщение</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxSlashMsgsView">Входяща кутия / Съобщения</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logOut">Изход</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.successLogOut">Излязохте успешно.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.back2Msgs">Назад към съобщенията</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.downloadAllAttachments">Изтегляне на избраните
+                    файлове
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.logout">Изход</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.succes">Съобщението е изпратено успешно!
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Неуспешно изпращане на
+                    съобщението!
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.error.save.message">Възникна грешка при запазването на
+                    съобщението.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload.attachment">Възникна грешка при качването на
+                    файла.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.create.draftMessage">Възникна грешка при запазването на
+                    съобщението.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.msgInstrument">Полето „Инструмент“ трябва да
+                    бъде попълнено.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfCountry">Полето „Държава“ трябва да
+                    бъде попълнено, ако полето „Име на дружеството“ е празно.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.onBehalfRegNo">Полето „Регистрационен номер“
+                    трябва да бъде попълнено, ако полето „Име на дружеството“ е празно.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderCountry">Полето „Държава“ трябва да бъде
+                    попълнено.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderContactPerson">Полето „Лице за контакти“
+                    трябва да бъде попълнено.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.senderOrganisationName">Полето „Име на
+                    организацията“ трябва да бъде попълнено.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.required.subject">Полето „Относно“ трябва да бъде
+                    попълнено.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.attachment.file.required">Трябва да изберете файл, за
+                    да го качите.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached.download">Прикачени файлове</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draftsView">Чернови</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outboxView">Изпратени съобщения</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierName">Досие:</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossierSubject">Относно</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.numberAttachments">Прикачени файлове</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.createdOn">Създадено на</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgDetails">Данни за съобщението</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.sentOn">Изпратено на</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedOn">Получено на</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.msgText">Текст на съобщението</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.first">Първа</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.previous">Предишна</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.next">Следваща</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.last">Последна</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.top">Нагоре</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.messagesView">Съобщения</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.dossiersView">Досиета</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.home">Начало</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.composeMsg">Съставяне на съобщение</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.to">До</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.subject">Относно</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.noAttachments">Няма прикачени файлове.</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.filesAttached">Прикачени файлове (Щракнете в кутийката,
+                    за да премахнете файл)
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.attachFile">Прикачване на файл</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="msg.uploadFiles">Качване на файлове</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.content">Съдържание</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadataFields">Полета (метаданни)</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.senderInfo">Информация за подателя</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.orgName">Име на организацията</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.regNumber">Регистрационен номер</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.contactPerson">Лице за контакти</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.position">Длъжност</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.phone">Телефон</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.email">Ел. адрес</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.street">Улица</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.zip">Пощенски код</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.city">Град</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.country">Държава</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.companyName">Име на дружеството</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.onBehalf">От името на</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.loggedInDummy">...</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.comments">Коментари</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">На вниманието на</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument">Инструмент</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileNo">Номер на файла</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationNo">Номер на кореспонденцията</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.receive">Форматът на посочената дата
+                    на получаване е невалиден. Датата трябва да е във формат ГГГГ-ММ-ДД.
+                </div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="filter.validation.date.sent">Форматът на посочената дата на
+                    изпращане е невалиден. Датата трябва да е във формат ГГГГ-ММ-ДД.
+                </div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

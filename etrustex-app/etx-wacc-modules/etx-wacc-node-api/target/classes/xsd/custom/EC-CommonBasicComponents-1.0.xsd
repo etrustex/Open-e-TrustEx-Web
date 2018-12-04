@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Monday 17/11/2008 17:34:50.73 CommonBasicComponents
+-->
+<!--
+Package 0.01
+Copyright EC DIGIT by PwC
+ -->
+<!-- ===== xsd:schema Element With Namespaces Declarations ===== -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="ec:schema:xsd:CommonBasicComponents-1" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" targetNamespace="ec:schema:xsd:CommonBasicComponents-1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+	<!-- ===== Imports ===== -->
+	<xsd:import namespace="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" schemaLocation="../common/UnqualifiedDataTypeSchemaModule-2.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" schemaLocation="../common/UBL-QualifiedDatatypes-2.0.xsd"/>
+	<!-- ===== Elments ===== -->
+	<xsd:element name="AckIndicator" type="AckIndicatorType"/>
+	<xsd:element name="RetrieveIndicator" type="RetrieveIndicatorType"/>
+	<xsd:element name="RetrieveExtensionsIndicator" type="RetrieveExtensionsIndicatorType"/>
+	<xsd:element name="RetrievedDocumentsIndicator" type="RetrievedDocumentsIndicatorType"/>
+	<xsd:element name="SortFieldTypeCode" type="SortFieldTypeCodeType"/>
+	<xsd:element name="RegistrationDate" type="RegistrationDateType"/>
+	<xsd:element name="AccountPayableID" type="AccountPayableIDType"/>
+	<xsd:element name="DepartmentID" type="DepartmentIDType"/>
+	<xsd:element name="FailedAssert" type="FailedAssertType"/>
+	<xsd:element name="InternalID" type="InternalIDType"/>
+	<xsd:element name="SupplierID" type="SupplierIDType"/>
+	<xsd:element name="CustomerID" type="CustomerIDType"/>
+	<xsd:element name="MimeCode" type="MimeCodeType"/>
+	<xsd:element name="AdditionalID" type="AdditionalIDType"/>
+	<xsd:element name="ConfidentialityLevelCode" type="ConfidentialityLevelCodeType"/>
+	<xsd:element name="IntegrityLevelCode" type="IntegrityLevelCodeType"/>
+	<xsd:element name="AvailabilityLevelCode" type="AvailabilityLevelCodeType"/>
+	<xsd:element name="KeyUsageCode" type="KeyUsageCodeType"/>
+	<!-- ===== Complex Types ===== -->
+	<xsd:complexType name="AckIndicatorType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IndicatorType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="RetrieveIndicatorType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IndicatorType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="RetrievedDocumentsIndicatorType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IndicatorType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="RetrieveExtensionsIndicatorType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IndicatorType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SortFieldTypeCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="RegistrationDateType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:DateType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="AccountPayableIDType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IdentifierType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DepartmentIDType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IdentifierType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FailedAssertType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:TextType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="InternalIDType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IdentifierType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SupplierIDType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IdentifierType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CustomerIDType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IdentifierType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MimeCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="AdditionalIDType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IdentifierType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!--===== e-Request Complex Types =====-->
+	<xsd:complexType name="AutomaticIndicatorType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IndicatorType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MarketProcedureNameType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:NameType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ModeCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MultipleIndicatorType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IndicatorType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OriginatorDocumentOpenDateType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:DateType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OriginatorDocumentOpenTimeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:TimeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="RequestForQuotationModeCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="ModeCodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="RequestForQuotationPropertyCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="RequestForQuotationTypeCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SummaryDescriptionCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SupplierDocumentIDType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IdentifierType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="TermsChangedIndicatorType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IndicatorType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ConfidentialityLevelCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="IntegrityLevelCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="AvailabilityLevelCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="KeyUsageCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	
+	<!-- BRIS Types and elements -->
+	
+	<xsd:complexType name="ScopeTypeType">
+		<xsd:simpleContent>
+			<xsd:restriction base="udt:CodeType">			
+				<xsd:enumeration value="DOCUMENTID"/>					
+				<xsd:enumeration value="PROCESSID"/>			
+				<xsd:enumeration value="CORRELATIONID"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ScopeInstanceIdentifierType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:IdentifierType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentIdentificationTypeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	
+	<xsd:element name="ScopeType" type="ScopeTypeType"/>
+	<xsd:element name="ScopeInstanceIdentifier" type="ScopeInstanceIdentifierType"/>
+	<xsd:element name="DocumentIdentificationType" type="DocumentIdentificationTypeType"/>
+			
+	
+	<!--===== e-Request Elements =====-->
+	<xsd:element name="AutomaticIndicator" type="AutomaticIndicatorType"/>
+	<xsd:element name="MarketProcedureName" type="MarketProcedureNameType"/>
+	<xsd:element name="ModeCode" type="ModeCodeType"/>
+	<xsd:element name="MultipleIndicator" type="MultipleIndicatorType"/>
+	<xsd:element name="OriginatorDocumentOpenDate" type="OriginatorDocumentOpenDateType"/>
+	<xsd:element name="OriginatorDocumentOpenTime" type="OriginatorDocumentOpenTimeType"/>
+	<xsd:element name="RequestForQuotationModeCode" type="RequestForQuotationModeCodeType"/>
+	<xsd:element name="RequestForQuotationPropertyCode" type="RequestForQuotationPropertyCodeType"/>
+	<xsd:element name="RequestForQuotationTypeCode" type="RequestForQuotationTypeCodeType"/>
+	<xsd:element name="SummaryDescriptionCode" type="SummaryDescriptionCodeType"/>
+	<xsd:element name="SupplierDocumentID" type="SupplierDocumentIDType"/>
+	<xsd:element name="TermsChangedIndicator" type="TermsChangedIndicatorType"/>
+</xsd:schema>

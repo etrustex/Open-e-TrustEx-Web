@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="9d3c17b2-3b54-46c5-bf4f-7c2fcab04d0d" isOneWay="false" action="" name="storeDocumentWrapper" bindingOperationName="storeDocumentWrapper" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="9d3c17b2-3b54-46c5-bf4f-7c2fcab04d0dfileName">storeDocumentWrapper</con:setting></con:settings></con:operation>

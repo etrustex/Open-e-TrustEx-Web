@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>mt</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>mt</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Indirizz</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Issejvjat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Lista tal-fajls</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Numru tar-reġistrazzjoni nazzjonali tal-kumpanija</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Referenza tal-informazzjoni</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Referenza tal-fajl</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Irnexxielek tissejvja l-abbozz ta&apos; messaġġ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Ma rnexxilekx tissejvja l-abbozz ta&apos; messaġġ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Messaġġ irċevut</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Antitrust</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Fużjonijiet</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Għajnuna mill-Istat</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Orizzontali</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Ħassar</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Ċert(a) li trid tħassar dan il-messaġġ?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Ċert(a) li trid tħassar dan l-abbozz ta&apos; messaġġ?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Trid iddaħħal Suġġett</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Meta tniżżel isem l-Organizzazzjoni, trid iddaħħal ukoll il-Pajjiż</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Meta tniżżel isem l-Organizzazzjoni, trid iddaħħal ukoll in-Numru tar-reġistrazzjoni nazzjonali tal-kumpanija</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Trid iddaħħal isem il-Persuna ta&apos; kuntatt</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Trid iddaħħal l-Istrument tal-informazzjoni tal-messaġġ</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">L-ebda kumment</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

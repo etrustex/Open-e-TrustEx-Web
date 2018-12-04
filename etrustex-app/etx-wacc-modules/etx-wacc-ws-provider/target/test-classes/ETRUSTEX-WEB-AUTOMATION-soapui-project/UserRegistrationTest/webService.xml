@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f386b135-2075-40d3-865b-9106a50d71a3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="webService_UserRegistrationService" searchProperties="true" disabled="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="95345858-8d69-4304-a973-a988b2d0ce38fileName">webService</con:setting><con:setting id="ccd9e975-0e62-4395-95c9-cab6c9d3a173fileName">webService</con:setting><con:setting id="f386b135-2075-40d3-865b-9106a50d71a3fileName">webService</con:setting></con:settings><con:testStep type="request" name="listAvailableParties" id="170d9236-9121-459a-b247-fdbb73527b0f" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ECEtxUserManagementPortTypePortBinding</con:interface><con:operation>listAvailableParties</con:operation><con:request name="listAvailableParties" id="9fb4c16e-2cac-4c26-8ef1-a98d1c7d6d59"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#USER_REGISTRATION_URL}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ec.europa.eu/etrustex/webapp/service/admin/userregistration/v1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:listAvailablePartiesReq>
+         <v1:application>${#TestSuite#APPLICATION}</v1:application>
+      </v1:listAvailablePartiesReq>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="850d9c1d-ebc8-4626-af8f-e481945332fd"/><con:credentials><con:username>${#Project#USER_REGISTRATION_USERNAME}</con:username><con:password>${#Project#USER_REGISTRATION_PASSWORD}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="assignUserParty" id="1299b705-1b4c-42d3-a8e4-64bcb11636ed" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ECEtxUserManagementPortTypePortBinding</con:interface><con:operation>assignUserParty</con:operation><con:request name="assignUserParty" id="fc5cffd1-c989-4fa4-babf-3df49159c0da"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#USER_REGISTRATION_URL}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ec.europa.eu/etrustex/webapp/service/admin/userregistration/v1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:assignUserPartyReq>
+         <v1:assignUserParty>
+            <v1:userLogin>${#TestSuite#USER_LOGIN}</v1:userLogin>
+            <v1:partyID>${#TestSuite#PARTY_ID}</v1:partyID>
+            <v1:application>${#TestSuite#APPLICATION}</v1:application>
+            <v1:userFirstName>${#TestSuite#FIRST_NAME}</v1:userFirstName>
+            <v1:userLastName>${#TestSuite#LAST_NAME}</v1:userLastName>
+            <v1:userEmail>${#TestSuite#USER_EMAIL}</v1:userEmail>
+         </v1:assignUserParty>
+      </v1:assignUserPartyReq>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d93aada4-a84c-4da8-819d-1230d15d9e66"/><con:credentials><con:username>${#Project#USER_REGISTRATION_USERNAME}</con:username><con:password>${#Project#USER_REGISTRATION_PASSWORD}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

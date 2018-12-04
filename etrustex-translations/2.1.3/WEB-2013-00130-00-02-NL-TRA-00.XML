@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+	<language_descriptor>
+		<language_reference>nl</language_reference>
+	</language_descriptor>
+	<heading>
+		<hd_short_title>eTrustEx Screen 1</hd_short_title>
+		<hd_long_title>eTrustEx Screen 1</hd_long_title>
+	</heading>
+	<content_qual>
+		<content_priority>0</content_priority>
+		<content_life_cycle>
+			<clc_creation_date>29/03/2013</clc_creation_date>
+		</content_life_cycle>
+		<content_ipg>
+			<ipg_reference>-</ipg_reference>
+			<ipg_title>eTrustEx Screen 1</ipg_title>
+			<ipg_creator>DIGIT.B.1.001</ipg_creator>
+			<ipg_language>nl</ipg_language>
+		</content_ipg>
+	</content_qual>
+	<text>
+		<content_r>
+			<xhtml_fragment>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandard">Normaal</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxGroupByDossier">Sorteer per dossier</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.Dossier">Dossier</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Bericht is succesvol opgeslapen als concept</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Geef een onderwerp in</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">U moet ook een land opgeven als u de naam van een organisatie invult</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">U moet ook een nationaal registratienummer opgeven als u de naam van een organisatie invult</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Vul een contactpersoon in</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Geef bij Berichtinformatie een instrument in</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.send.failed">Uw bericht is niet verzonden</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.inAttentionOf">Ter attentie van</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Berichten</div>
+				<div class="ETX_WEB_LABEL_TRANSLATION" id="label.party">Party</div>
+			</xhtml_fragment>
+		</content_r>
+	</text>
+</short_content>

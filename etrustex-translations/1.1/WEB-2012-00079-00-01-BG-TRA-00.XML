@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>bg</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Екран 1</hd_short_title>
+        <hd_long_title>eTrustEx Екран 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>16/04/2012</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Екран 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>bg</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.allFolders">Всички папки</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.new">Ново</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.refresh">Опресняване</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.of">от</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inbox">Входящи</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.draft">Чернови</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.folder">Папка</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.all">Всички</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.unread">Непрочетени</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message">Съобщение</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.download">Изтегляне</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.metadata">Метаданни</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.display">Показване</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.officialVersion">Официална електронна версия</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.outbox">Изходящи</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.created">Създадено</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxDossierView">Показване по досие</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.inboxStandardView">Стандартно показване</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.upload">Прилагане на файлове</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.uploaded">Приложения</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.send">Изпращане</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.save">Запазване</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.adoptionDate">Дата на приемане</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.part">Част</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.edmaView">Показване по EDMA</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComment">Няма коментар</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

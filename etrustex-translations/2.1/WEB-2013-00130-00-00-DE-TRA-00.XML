@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="http://ec.europa.eu/dgs/translation/xsl/dgt_wcms.xslt"?>
+<short_content>
+    <language_descriptor>
+        <language_reference>de</language_reference>
+    </language_descriptor>
+    <heading>
+        <hd_short_title>eTrustEx Screen 1</hd_short_title>
+        <hd_long_title>eTrustEx Screen 1</hd_long_title>
+    </heading>
+    <content_qual>
+        <content_priority>0</content_priority>
+        <content_life_cycle>
+            <clc_creation_date>14/02/2013</clc_creation_date>
+        </content_life_cycle>
+        <content_ipg>
+            <ipg_reference>-</ipg_reference>
+            <ipg_title>eTrustEx Screen 1</ipg_title>
+            <ipg_creator>DIGIT.B.1.001</ipg_creator>
+            <ipg_language>de</ipg_language>
+        </content_ipg>
+    </content_qual>
+    <text>
+        <content_r>
+            <xhtml_fragment>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.address">Anschrift</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.saved">Gespeichert</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.listOfFiles">Dateiverzeichnis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.compNatRegNumber">Nationale Registrierungsnummer des Unternehmens</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.informationReference">Informationsquelle</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.fileReference">Dateiverweis</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.success">Entwurf der Nachricht gespeichert</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.message.save.failed">Speicherung des Nachrichtenentwurfs fehlgeschlagen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.receivedMessage">Eingegangene Nachricht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.antitrust">Kartellrecht</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.merger">Fusion</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.stateAid">Staatliche Beihilfe</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.instrument.horizontal">Horizontal</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.deleteDraft">Löschen</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.cancelMessage">Möchten Sie diese Nachricht wirklich abbrechen?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.deleteDraftMessage">Möchten Sie diesen Nachrichtenentwurf wirklich löschen?</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.subjectErrorMessage">Das Feld „Betrifft“ ist ein Pflichtfeld</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.countryErrorMessage">Das Feld „Land“ ist auszufüllen, wenn ein Organisationsname eingetragen ist</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.companyErrorMessage">Das Feld „Nationale Registrierungsnummer des Unternehmens“ ist auszufüllen, wenn ein Organisationsname eingetragen ist</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.contactPersonErrorMessage">Das Feld „Kontaktperson“ ist ein Pflichtfeld</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="message.instrumentErrorMessage">Das Feld „Instrument“ unter „Informationen zur Nachricht“ ist ein Pflichtfeld</div>
+                <div class="ETX_WEB_LABEL_TRANSLATION" id="label.noComments">Keine Bemerkungen</div>
+            </xhtml_fragment>
+        </content_r>
+    </text>
+</short_content>

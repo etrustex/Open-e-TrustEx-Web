@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="template" template="/WEB-INF/views/template.jsp">
+        <put-attribute name="cssPath" value=""/>
+        <put-attribute name="cookieBanner" value="/WEB-INF/views/tiles/cookieBanner.jsp"/>
+        <put-attribute name="announcement" value="/WEB-INF/views/tiles/announcement.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp"/>
+		<put-attribute name="i18" value="/WEB-INF/views/tiles/i18.jsp"/>
+        <put-attribute name="navHeader" value="/WEB-INF/views/tiles/navHeader.jsp"/>
+        <put-attribute name="sidebar" value="/WEB-INF/views/tiles/sidebar.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp"/>
+        <put-list-attribute name="jsPaths">
+            <add-attribute value="/js/common/common.js"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="*/inbox" extends="template">
+        <put-attribute name="cssPath" value="css/business/{1}.css"/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/messageListContainer.jsp"/>
+        <put-attribute name="titleLabel" cascade="true" value="label.inbox"/>
+        <put-attribute name="messageListHeader" cascade="true" value="/WEB-INF/views/tiles/content/common/list/messageListHeaderInbox.jsp"/>
+        <put-attribute name="messageList" cascade="true" value="/WEB-INF/views/tiles/content/business/{1}/messageList.jsp"/>
+    </definition>
+
+    <definition name="*/outbox" extends="template">
+        <put-attribute name="cssPath" value="css/business/{1}.css"/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/messageListContainer.jsp"/>
+        <put-attribute name="titleLabel" cascade="true" value="label.sent"/>
+        <put-attribute name="messageListHeader" cascade="true" value="/WEB-INF/views/tiles/content/common/list/messageListHeaderOutbox.jsp"/>
+        <put-attribute name="messageList" cascade="true" value="/WEB-INF/views/tiles/content/business/{1}/messageList.jsp"/>
+    </definition>
+
+    <definition name="*/drafts" extends="template">
+        <put-attribute name="cssPath" value="css/business/{1}.css"/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/messageListContainer.jsp"/>
+        <put-attribute name="titleLabel" cascade="true" value="label.draft"/>
+        <put-attribute name="messageListHeader" cascade="true" value="/WEB-INF/views/tiles/content/common/list/messageListHeaderDrafts.jsp"/>
+        <put-attribute name="messageList" cascade="true" value="/WEB-INF/views/tiles/content/business/{1}/messageListDrafts.jsp"/>
+        <put-list-attribute name="jsPaths" inherit="true">
+            <add-attribute value="/js/common/messageListDrafts.js"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="*/messageViewReceivedWS" extends="template">
+        <put-attribute name="cssPath" value="css/business/{1}.css"/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/messageViewContainer.jsp"/>
+        <put-attribute name="titleLabel" cascade="true" value="label.receivedMessage"/>
+        <put-attribute name="messageHeader" cascade="true" value="/WEB-INF/views/tiles/content/common/message/messageHeaderReceived.jsp"/>
+        <put-attribute name="messageView" cascade="true" value="/WEB-INF/views/tiles/content/business/{1}/messageViewForm.jsp"/>
+        <put-attribute name="business" cascade="true" value="{1}"/>
+        <put-attribute name="attachmentList" cascade="true" value="/WEB-INF/views/tiles/content/common/message/attachmentListDownloadWS.jsp"/>
+        <put-list-attribute name="jsPaths" inherit="true">
+            <add-attribute value="/js/download/webstart/messageView.js"/>
+            <add-attribute value="/js/common/webstart/promptDialog.js"/>
+            <add-attribute value="/js/common/webstart/p12.js"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="*/messageViewReceived" extends="template">
+        <put-attribute name="cssPath" value="css/business/{1}.css"/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/messageViewContainer.jsp"/>
+        <put-attribute name="titleLabel" cascade="true" value="label.receivedMessage"/>
+        <put-attribute name="messageHeader" cascade="true" value="/WEB-INF/views/tiles/content/common/message/messageHeaderReceived.jsp"/>
+        <put-attribute name="messageView" cascade="true" value="/WEB-INF/views/tiles/content/business/{1}/messageViewForm.jsp"/>
+        <put-attribute name="business" cascade="true" value="{1}"/>
+        <put-attribute name="attachmentList" cascade="true" value="/WEB-INF/views/tiles/content/common/message/attachmentListDownload.jsp"/>
+    </definition>
+
+    <definition name="*/messageViewSent" extends="template">
+        <put-attribute name="cssPath" value="css/business/{1}.css"/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/messageViewContainer.jsp"/>
+        <put-attribute name="titleLabel" cascade="true" value="label.sent"/>
+        <put-attribute name="messageHeader" cascade="true" value="/WEB-INF/views/tiles/content/common/message/messageHeaderSent.jsp"/>
+        <put-attribute name="messageView" cascade="true" value="/WEB-INF/views/tiles/content/business/{1}/messageViewForm.jsp"/>
+        <put-attribute name="attachmentList"  cascade="true" value="/WEB-INF/views/tiles/content/business/{1}/attachmentListSent.jsp"/>
+    </definition>
+
+
+    <!--UPLOAD-->
+    <definition name="*/messageCreate" extends="template">
+        <put-attribute name="cssPath" value="css/business/{1}.css"/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/messageEditContainer.jsp"/>
+        <put-attribute name="messageEdit" cascade="true" value="/WEB-INF/views/tiles/content/business/{1}/messageEditForm.jsp"/>
+        <put-attribute name="business" cascade="true" value="{1}"/>
+        <put-attribute name="attachmentList"  cascade="true" value="/WEB-INF/views/tiles/content/common/message/attachmentListUpload.jsp"/>
+        <put-list-attribute name="jsPaths" inherit="true">
+            <add-attribute value="/js/dist/upload.bundle.js"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="*/messageEdit" extends="template">
+        <put-attribute name="cssPath" value="css/business/{1}.css"/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/messageEditContainer.jsp"/>
+        <put-attribute name="messageEdit" cascade="true" value="/WEB-INF/views/tiles/content/business/{1}/messageEditForm.jsp"/>
+        <put-attribute name="business" cascade="true" value="{1}"/>
+        <put-attribute name="attachmentList" cascade="true" value="/WEB-INF/views/tiles/content/common/message/attachmentListUpload.jsp"/>
+        <put-list-attribute name="jsPaths" inherit="true">
+			<add-attribute value="/js/dist/upload.bundle.js"/>
+            <add-attribute value="/js/upload/{1}/messageEdit.js"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="*/messageCreateWS" extends="template">
+        <put-attribute name="cssPath" value="css/business/{1}.css"/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/messageEditContainerWS.jsp"/>
+        <put-attribute name="messageEditWS" cascade="true" value="/WEB-INF/views/tiles/content/business/{1}/messageEditForm.jsp"/>
+        <put-attribute name="business" cascade="true" value="{1}"/>
+        <put-attribute name="attachmentList"  cascade="true" value="/WEB-INF/views/tiles/content/common/message/attachmentListUploadWS.jsp"/>
+        <put-list-attribute name="jsPaths" inherit="true">
+            <add-attribute value="/js/upload/{1}/messageEdit.js"/>
+            <add-attribute value="/js/upload/webstart/messageEdit.js"/>
+            <add-attribute value="/js/common/webstart/promptDialog.js"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="*/messageEditWS" extends="template">
+        <put-attribute name="cssPath" value="css/business/{1}.css"/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/messageEditContainerWS.jsp"/>
+        <put-attribute name="messageEditWS" cascade="true" value="/WEB-INF/views/tiles/content/business/{1}/messageEditForm.jsp"/>
+        <put-attribute name="business" cascade="true" value="{1}"/>
+        <put-attribute name="attachmentList" cascade="true" value="/WEB-INF/views/tiles/content/common/message/attachmentListUploadWS.jsp"/>
+        <put-list-attribute name="jsPaths" inherit="true">
+            <add-attribute value="/js/upload/{1}/messageEdit.js"/>
+            <add-attribute value="/js/upload/webstart/messageEdit.js"/>
+            <add-attribute value="/js/common/webstart/promptDialog.js"/>
+        </put-list-attribute>
+    </definition>
+
+
+
+    <definition name="error/*" extends="template">
+        <put-attribute name="cookieBanner" value=""/>
+        <put-attribute name="announcement" value=""/>
+        <put-attribute name="navHeader" value=""/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/error/{1}.jsp"/>
+        <put-attribute name="sidebar" value=""/>
+    </definition>
+
+    <definition name="logout" extends="template">
+        <put-attribute name="cookieBanner" value=""/>
+        <put-attribute name="announcement" value=""/>
+        <put-attribute name="navHeader" value=""/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/logout.jsp"/>
+        <put-attribute name="sidebar" value=""/>
+    </definition>
+
+    <definition name="admin" extends="template">
+        <put-attribute name="cssPath" value="css/admin.css"/>
+        <put-attribute name="content" value="/WEB-INF/views/tiles/content/admin/admin.jsp"/>
+        <put-attribute name="sidebar" value=""/>
+        <put-list-attribute name="jsPaths" inherit="true">
+            <add-attribute value="/js/admin.js"/>
+        </put-list-attribute>
+    </definition>
+
+</tiles-definitions>

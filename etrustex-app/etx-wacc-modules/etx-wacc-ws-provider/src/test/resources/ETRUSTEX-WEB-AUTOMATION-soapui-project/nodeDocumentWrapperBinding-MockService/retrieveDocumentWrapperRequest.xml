@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:mockOperation name="retrieveDocumentWrapperRequest" id="2771e829-2396-462e-b0d8-d9cfdf732f58" interface="documentWrapperBinding" operation="retrieveDocumentWrapperRequest" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="2771e829-2396-462e-b0d8-d9cfdf732f58fileName">retrieveDocumentWrapperRequest</con:setting></con:settings><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="ce7098e9-8519-4ddf-a380-4eb238a8b03c" httpResponseStatus="200" encoding="UTF-8" outgoingWss=""><con:settings><con:setting id="WsdlSettings@enable-mtom">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockResponse@disable-multipart-attachments">true</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockResponse@enable_inline_files">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockResponse@encode_attachments">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockResponse@force_mtom">false</con:setting></con:settings><con:responseContent><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header xmlns:urn="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ec1="ec:schema:xsd:CommonBasicComponents-0.1" xmlns:urn1="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ec="ec:services:wsdl:DocumentWrapper-2">
+      <ec:Header>
+         <ec1:BusinessHeader xmlns:ec1="ec:schema:xsd:CommonAggregateComponents-2">
+            <stan:Sender xmlns:stan="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader">
+               <stan:Identifier>WEB_SENDER_PARTY</stan:Identifier>
+            </stan:Sender>
+         </ec1:BusinessHeader>
+      </ec:Header>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body>
+      <ns0:RetrieveDocumentWrapperRequestResponse xmlns:ns0="ec:services:wsdl:DocumentWrapper-2" xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ns3="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ns9="ec:schema:xsd:CommonAggregateComponents-2" xmlns:ns5="ec:schema:xsd:CommonBasicComponents-1" xmlns:ns12="http://www.w3.org/2005/05/xmlmime" xmlns:ns11="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+         <ns0:DocumentWrapper>
+            <ns3:ID>MD_890123_4567890</ns3:ID>
+            <ns3:IssueDate>2015-06-19</ns3:IssueDate>
+            <ns3:DocumentTypeCode>METADATA</ns3:DocumentTypeCode>
+            <ns11:SenderParty>
+               <ns3:EndpointID>ROBOT_APP_PARTY</ns3:EndpointID>
+            </ns11:SenderParty>
+            <ns9:ResourceInformationReference>
+               <ns9:DocumentSize>5387</ns9:DocumentSize>
+               <ns9:LargeAttachment>
+                  <ns9:StreamBase64Binary mimeCode="text/xml" ns12:contentType="application/octet-stream">
+                     <xop:Include href="cid:payload.xml" xmlns:xop="http://www.w3.org/2004/08/xop/include"/>
+                  </ns9:StreamBase64Binary>
+               </ns9:LargeAttachment>
+            </ns9:ResourceInformationReference>
+         </ns0:DocumentWrapper>
+      </ns0:RetrieveDocumentWrapperRequestResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:responseContent><con:attachment><con:name>payload.xml</con:name><con:contentType>text/xml</con:contentType><con:size>411</con:size><con:contentId>payload.xml</con:contentId><con:data>UEsDBBQACAgIAEV/G0cAAAAAAAAAAAAAAAALAAAAcGF5bG9hZC54bWxlkMFOhEAMhu88xWTu7rAuGkOGWY3iDTyA8TxAWXChs5npKL69KCG62vTSv1/7p5X7aRzYG1jXG0z4dhNyBlibpsdDwp/Lx4sbzhxpbPRgEBL+AY7vVSDT0npH6ZQ2o84aNm9Bl3BvMQY/pzUnHUMd12Y8xUBfLExcBWwO6Xz1CjWplw4ssMaAY9QBKxaZHYwUK7IMtP0AuR8rsCoMt5fR7jqKdldS/NIXsMc7IkCaj3lqVWbZfefrI8uNtb2T4ry9jlTGY5MB6QdNelG/O2Q1uhZsQZq8U0Wal1L8EX9oyHQ/KI9HNO+4gXGubtdq/oIUC7CYin+uUpx/VAWfUEsHCIiP1yP9AAAAmwEAAFBLAQIUABQACAgIAEV/G0eIj9cj/QAAAJsBAAALAAAAAAAAAAAAAAAAAAAAAABwYXlsb2FkLnhtbFBLBQYAAAAAAQABADkAAAA2AQAAAAA=</con:data><con:id>886942fd-1e5d-435f-8a0b-22ead6393d85</con:id></con:attachment><con:wsaConfig mustUnderstand="NONE" version="200508" action="ec:services:wsdl:DocumentWrapper-2/documentWrapperPortType/retrieveDocumentWrapperRequestResponse"/></con:response><con:dispatchConfig/></con:mockOperation>

@@ -1,0 +1,15 @@
+eu\europa\ec\etrustex\webaccess\persistence\jpa\PartyIcaDAOTest.class
+eu\europa\ec\etrustex\webaccess\persistence\util\MessageUtilTest.class
+eu\europa\ec\etrustex\webaccess\persistence\jpa\UserDAOTest.class
+eu\europa\ec\etrustex\webaccess\persistence\jpa\ConfigurationDAOTest.class
+eu\europa\ec\etrustex\webaccess\persistence\jpa\DAOTest.class
+eu\europa\ec\etrustex\webaccess\persistence\jpa\AttachmentDAOTest.class
+eu\europa\ec\etrustex\webaccess\persistence\jpa\BusinessDAOImplTest.class
+eu\europa\ec\etrustex\webaccess\persistence\jpa\UserRoleDAOImplTest.class
+eu\europa\ec\etrustex\webaccess\persistence\jpa\MessageStatusDAOImplTest.class
+eu\europa\ec\etrustex\webaccess\persistence\util\CollectionUtilTest.class
+eu\europa\ec\etrustex\webaccess\persistence\jpa\BusinessUserConfigDAOTest.class
+eu\europa\ec\etrustex\webaccess\persistence\jpa\MessageReadStatusDAOTest.class
+eu\europa\ec\etrustex\webaccess\persistence\jpa\MessageDAOImplTest.class
+eu\europa\ec\etrustex\webaccess\persistence\support\UserAccessorTest.class
+eu\europa\ec\etrustex\webaccess\persistence\jpa\PartyDAOTest.class
