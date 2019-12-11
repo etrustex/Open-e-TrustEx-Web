@@ -64,7 +64,7 @@
         <etrustex.root>${project.basedir}</etrustex.root>
 
         <!-- =============frameworks============ -->
-        <spring.framework.version>4.3.4.RELEASE</spring.framework.version>
+        <spring.framework.version>5.2.2.RELEASE</spring.framework.version>
 		<spring.security.version>4.2.0.RELEASE</spring.security.version>
         <hibernate.framework.version>4.2.21.Final</hibernate.framework.version>
         <jboss-logging.version>3.3.0.Final</jboss-logging.version>
