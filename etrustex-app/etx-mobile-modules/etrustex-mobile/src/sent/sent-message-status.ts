@@ -1,7 +1,0 @@
-export enum SentMessageStatus {
-  FILTER_ALL,
-  FILTER_READ,
-  FILTER_DELIVERED,
-  FILTER_FAILED,
-  FILTER_NONE
-}

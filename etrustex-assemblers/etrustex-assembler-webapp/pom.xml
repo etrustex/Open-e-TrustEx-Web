@@ -154,15 +154,6 @@
 				</property>
 			</activation>
 
-			<dependencies>
-				<dependency>
-					<groupId>eu.europa.ec.etrustex</groupId>
-					<artifactId>etrustex-mobile-services</artifactId>
-					<version>${eTrustEx.version}</version>
-					<type>war</type>
-				</dependency>
-			</dependencies>
-
 			<build>
 				<plugins>
 					<plugin>
@@ -176,11 +167,6 @@
 									<groupId>eu.europa.ec.etrustex</groupId>
 									<artifactId>etx-web-access</artifactId>
 									<contextRoot>/${context.root}</contextRoot>
-								</webModule>
-								<webModule>
-									<groupId>eu.europa.ec.etrustex</groupId>
-									<artifactId>etrustex-mobile-services</artifactId>
-									<contextRoot>/${mobile.context.root}</contextRoot>
 								</webModule>
 							</modules>
 							<archive>

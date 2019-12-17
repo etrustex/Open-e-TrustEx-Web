@@ -56,9 +56,6 @@
     </modules>
 
     <properties>
-        <!-- ============Mobile application context root============ -->
-		<!--<mobile.context.root>e-trustex-mobile</mobile.context.root>-->
-
         <!-- ============Environment============ -->
         <default.delim>false</default.delim>
         <etrustex.root>${project.basedir}</etrustex.root>
