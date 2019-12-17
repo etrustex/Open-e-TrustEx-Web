@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://java.sun.com/xml/ns/javaee"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd"
+             version="5">
+
+    <description>eTrustEx Web User Interface</description>
+    <display-name>etrustex-assembler-webapp</display-name>
+    <module>
+        <web>
+            <web-uri>etx-web-access.war</web-uri>
+            <context-root>/${context.root}</context-root>
+        </web>
+    </module>
+	<module>
+		<web>
+			<web-uri>etrustex-mobile-services.war</web-uri>
+			<context-root>/${mobile.context.root}</context-root>
+		</web>
+	</module>
+
+    <security-role>
+        <role-name>ETX-WEB-ACCESS-ROLE</role-name>
+    </security-role>
+    <security-role>
+        <role-name>ETX-ADAPTER-SYS-ROLE</role-name>
+    </security-role>
+    <security-role>
+        <role-name>USER-REGISTRATION-SERVICE-ROLE</role-name>
+    </security-role>
+    <security-role>
+        <role-name>NODE-SERVICE-ROLE</role-name>
+    </security-role>
+
+
+    <library-directory>lib</library-directory>
+
+</application>

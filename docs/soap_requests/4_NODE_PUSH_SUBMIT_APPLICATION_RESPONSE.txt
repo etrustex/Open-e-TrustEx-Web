@@ -1,0 +1,61 @@
+URL			.../e-trustex/integration/services/node/ApplicationResponseService/v2.0
+
+REQUEST		
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header xmlns:ec="ec:services:wsdl:ApplicationResponse-2" xmlns:ec1="ec:schema:xsd:CommonAggregateComponents-2" xmlns:stan="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader">
+      <ec:Header>
+         <ec1:BusinessHeader>
+            <stan:Sender>
+               <stan:Identifier>${PARTY_SENDER}</stan:Identifier>
+            </stan:Sender>
+            <stan:Receiver>
+               <stan:Identifier>${PARTY_RECEIVER}</stan:Identifier>
+            </stan:Receiver>
+         </ec1:BusinessHeader>
+      </ec:Header>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body xmlns:ec="ec:services:wsdl:ApplicationResponse-2">
+      <ec:SubmitApplicationResponseRequest xmlns:ec1="ec:schema:xsd:CommonBasicComponents-0.1">
+         <ec:ApplicationResponse xmlns:ec1="ec:schema:xsd:CommonAggregateComponents-2" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:stan="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:urn="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:urn1="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+            <urn1:ID>${MESSAGE_STATUS_ID}</urn1:ID>
+            <urn1:IssueDate>2013-03-07</urn1:IssueDate>
+            <urn:DocumentResponse>
+               <urn:Response>
+                  <urn1:ReferenceID>${MESSAGE_STATUS_ID}</urn1:ReferenceID>
+                  <urn1:ResponseCode>BDL:7</urn1:ResponseCode>
+               </urn:Response>
+               <urn:DocumentReference>
+                  <urn1:ID>${MESSAGE_BUNDLE_ID_FOR_WHICH_THIS_STATUS_IS_BEING_USED_FOR}</urn1:ID>
+                  <urn1:DocumentTypeCode>BDL</urn1:DocumentTypeCode>
+               </urn:DocumentReference>
+            </urn:DocumentResponse>
+         </ec:ApplicationResponse>
+      </ec:SubmitApplicationResponseRequest>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+RESPONSE	
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Header>
+      <ns4:Header xmlns:ns16="ec:schema:xsd:Ack-2" xmlns:ns15="http://uri.etsi.org/01903/v1.4.1#" xmlns:ns14="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2" xmlns:ns13="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:ns12="http://uri.etsi.org/01903/v1.3.2#" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns10="ec:schema:xsd:CommonBasicComponents-1" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2" xmlns:ns8="http://www.w3.org/2000/09/xmldsig#" xmlns:ns7="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2" xmlns:ns6="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:ns5="ec:schema:xsd:CommonAggregateComponents-2" xmlns:ns4="ec:services:wsdl:ApplicationResponse-2" xmlns:ns3="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+         <ns5:BusinessHeader>
+            <ns6:Sender>
+               <ns6:Identifier>TRUSTCUSTPARTY1</ns6:Identifier>
+            </ns6:Sender>
+            <ns6:Receiver>
+               <ns6:Identifier>TRUSTSUPPARTY1</ns6:Identifier>
+            </ns6:Receiver>
+         </ns5:BusinessHeader>
+      </ns4:Header>
+   </soap:Header>
+   <soap:Body>
+      <ns4:SubmitApplicationResponseResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ns3="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ns4="ec:services:wsdl:ApplicationResponse-2" xmlns:ns5="ec:schema:xsd:CommonAggregateComponents-2" xmlns:ns6="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:ns7="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2" xmlns:ns8="http://www.w3.org/2000/09/xmldsig#" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2" xmlns:ns10="ec:schema:xsd:CommonBasicComponents-1" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns12="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns13="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:ns14="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2" xmlns:ns15="http://uri.etsi.org/01903/v1.4.1#" xmlns:ns16="ec:schema:xsd:Ack-2">
+         <ns4:Ack>
+            <ns10:AckIndicator>true</ns10:AckIndicator>
+         </ns4:Ack>
+      </ns4:SubmitApplicationResponseResponse>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,32 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="etrust" transaction-type="JTA">
+
+		<jta-data-source>${datasource.name}</jta-data-source>
+
+		<class>eu.europa.ec.etrustex.webaccess.model.User</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.Party</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.Message</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.MessageRead</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.Attachment</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.Language</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.Config</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.LabelTranslation</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.Metadata</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.Business</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.BusinessConfig</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.BusinessUserConfig</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.UserRole</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.Role</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.Privilege</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.Notification</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.MessageStatus</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.MessageSignature</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.PartyIca</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.CompatibleBrowser</class>
+
+	</persistence-unit>
+</persistence>

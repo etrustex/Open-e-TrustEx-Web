@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:mockService id="7996e0e1-0f84-4442-bbd6-91cdf946b726" port="8801" path="/mockdocumentWrapperBinding" host="D02DI1505644DIT" name="nodeDocumentWrapperBinding MockService" bindToHostOnly="false" docroot="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting><con:setting id="7996e0e1-0f84-4442-bbd6-91cdf946b726fileName">nodeDocumentWrapperBinding-MockService</con:setting></con:settings><con:properties/><con:onRequestScript>
+	import javax.xml.xpath.*
+	import javax.xml.parsers.DocumentBuilderFactory
+	import com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner
+
+	def xpath = XPathFactory.newInstance().newXPath()
+	String xml = mockRequest.getRequestContent()
+	def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+	def holder = groovyUtils.getXmlHolder(xml)
+
+	// xpath get business header sender
+	def mockServiceWebServiceResponseBusinessHeaderSender = holder['//ns5:Header/ns4:BusinessHeader/ns6:Sender/ns6:Identifier']
+
+	// xpath get sender party
+	def mockServiceWebServiceResponseSenderParty = holder['//ns5:RetrieveDocumentWrapperRequestRequest/ns5:DocumentWrapperRequest/ns3:SenderParty/ns1:EndpointID']
+
+	// xpath get document ID
+	def mockServiceWebServiceResponseDocumentId = holder['//ns5:RetrieveDocumentWrapperRequestRequest/ns5:DocumentWrapperRequest/ns4:DocumentReferenceRequest/ns1:ID']
+
+	// xpath get document type ID
+	def mockServiceWebServiceResponseDocumentTypeCode = holder['//ns5:RetrieveDocumentWrapperRequestRequest/ns5:DocumentWrapperRequest/ns4:DocumentReferenceRequest/ns1:DocumentTypeCode']
+
+	// send data to project properties to compare with the input data
+	context.mockService.project.setPropertyValue("MOCK_SERVICE_WS_RESPONSE_BUSINESS_HEADER_SENDER", "${mockServiceWebServiceResponseBusinessHeaderSender}")
+	context.mockService.project.setPropertyValue("MOCK_SERVICE_WS_RESPONSE_SENDERPARTY", "${mockServiceWebServiceResponseSenderParty}")
+	context.mockService.project.setPropertyValue("MOCK_SERVICE_WS_RESPONSE_DOCUMENT_ID", "${mockServiceWebServiceResponseDocumentId}")
+	context.mockService.project.setPropertyValue("MOCK_SERVICE_WS_RESPONSE_DOCUMENT_TYPE_CODE", "${mockServiceWebServiceResponseDocumentTypeCode}")
+
+	// check the attachment ID of the payload to make sure it is the expected payload
+	if (mockServiceWebServiceResponseDocumentId == "MD_890123_4567890") {
+
+		// if the payload is correct then set the project level value to 1 - this will stop the mock service after the request is completed
+		context.mockService.project.setPropertyValue("MOCK_SERVICE_STOPPER", "1")
+	
+	}
+
+
+
+
+</con:onRequestScript></con:mockService>

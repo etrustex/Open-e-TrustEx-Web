@@ -1,0 +1,274 @@
+.admin-container{
+	padding-left: 10px;
+	margin: 30px;
+}
+
+.row-element{
+	padding-left: 10px;
+}
+
+.row-element-bus-lbl{
+    padding-left: 40px;
+}
+
+.row-element-business-system {
+    width: 745px;
+    text-align: right;
+}
+
+.userrole-grid {
+    display:table;
+    margin: 15px;
+}
+
+.userrole-grid-row-header {
+    display: table-header-group;
+}
+
+.userrole-grid-row {
+    display: table-row;
+}
+
+.userrole-grid-cell {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: #c0c0c0 solid 1px;
+}
+
+.userrole-grid-cell-cert {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: #c0c0c0 solid 1px;
+    white-space: pre-wrap;
+}
+
+.text-value {
+    font-size: 0.75em;
+    text-align: left;
+    width: 140px;
+}
+
+.text-value-login {
+    font-size: 0.75em;
+    text-align: left;
+    width: 140px;
+}
+
+.text-value-login.nosnotification {
+    width: 200px;
+}
+
+.text-value.nosnotification {
+    width: 250px;
+}
+
+.text-value-business-system {
+    font-size: 0.75em;
+    text-align: left;
+    width: 350px;
+}
+
+.text-value-party {
+    font-size: 0.75em;
+    text-align: left;
+    width: 350px;
+}
+
+.inactive-ica {
+	padding: 3px 5px;
+	border: 1px solid #ABC5DE;
+	background-color: #ff0000;
+	background: linear-gradient(#ff6666, #ff0000);
+	border-radius: 5px;
+}
+
+.text-header {
+    font-weight:bold;
+    font-size: 0.75em;
+    text-align: left;
+    width: 140px;
+}
+
+.text-header-login {
+    font-weight:bold;
+    font-size: 0.75em;
+    text-align: left;
+    width: 140px;
+}
+
+.text-header-login.nosnotification {
+    width: 200px;
+}
+
+.text-header.nosnotification {
+    width: 250px;
+}
+
+.text-header-business-system {
+    font-weight:bold;
+    font-size: 0.75em;
+    text-align: left;
+    width: 350px;
+}
+
+.text-header-party {
+    font-weight:bold;
+    font-size: 0.75em;
+    text-align: left;
+    width: 250px;
+}
+
+.control {
+    text-align: left;
+    width: 30px;
+    cursor: pointer;
+}
+
+.text-value-notification {
+    width: 350px;
+}
+
+.info-icon {
+    vertical-align: top;
+}
+
+/* DIALOG */
+.userrole-dialog{
+	text-align: left;
+}
+
+.party-certificate-dialog{
+	text-align: left;
+}
+
+.validateTips {
+    margin: 10px;
+    border: 1px solid transparent;
+	color: red;
+	font-size: 0.8em;
+}
+
+.add-user {
+    font-size: 0.8em;
+}
+
+.save-button {
+    position: absolute;
+    left: 646px;
+}
+
+.save-button img {
+    vertical-align: middle;
+}
+
+.userrole-grid-email-cell-value {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 0.75em;
+    text-align: left;
+    width: 210px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: #c0c0c0 solid 1px;
+}
+
+.userrole-grid-email-cell-value.nosnotification {
+    width: 250px;
+}
+
+.userrole-grid-email-cell-header {
+    display: table-cell;
+    vertical-align: middle;
+    font-weight:bold;
+    font-size: 0.75em;
+    text-align: left;
+    width: 210px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: #c0c0c0 solid 1px;
+}
+
+.userrole-grid-email-cell-header.nosnotification {
+    width: 250px;
+}
+
+.edit-header-value{
+    font-size: 0.8em;
+    width: 230px;
+}
+
+.edit-header-value-near-cb{
+    font-size: 0.8em;
+    min-width: 198px;
+   	width:100%;
+}
+
+.edit-header-value-usr-mgmt{
+    font-size: 0.8em;
+    width: 215px;
+}
+
+.edit-header-value-email{
+    width: 228px;
+    height: 13px;
+}
+
+.certificate-icon {
+    padding-right: 6px;
+}
+
+.highlight-ica {
+    background-color: #FFFF66;
+}
+
+.highlight-ica-loaded-ok {
+    background-color: #66FF66;
+}
+
+.highlight-ica-loded-failed {
+    background-color: #F98B93;
+}
+
+.ui-dialog-title {
+    font-size: 0.8em;
+}
+
+.ica-list-icon {
+    margin: 20px;
+    font-size: 12px;
+    padding-left: 25px;
+    background-size: 15px 15px;
+    text-shadow: 0 0 black;
+}
+
+.party-detail-icon {
+    margin: 0;
+    padding-left: 25px;
+    background-size: 17px 17px;
+    background-image: url(../images/icons/party_details.png);
+    background-repeat: no-repeat;
+    text-shadow: 0 0 black;
+}
+
+.party-detail-tooltip {
+    top: -10px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    opacity: 0;
+    position: absolute;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    z-index: 20;
+}
+
+.party-detail-tooltip:hover {
+    opacity: 1;
+}

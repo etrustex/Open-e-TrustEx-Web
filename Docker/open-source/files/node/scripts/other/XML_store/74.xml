@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:CodeList xmlns:n="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ C:/DOCUME~1/danielsm/Desktop/codelists/genericode.xsd">
+   <Identification xmlns="">
+      <ShortName>DocumentTypeCode</ShortName>
+      <LongName>Document Type Code</LongName>
+      <LongName Identifier="listID">UN/ECE 1001 Subset</LongName>
+      <Version>D08B</Version>
+      <CanonicalUri>Placeholder</CanonicalUri>
+      <CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.0/cl/gc/default/DocumentTypeCode-2.0.gc</LocationUri>
+      <Agency>
+         <LongName>United Nations Economic Commission for Europe</LongName>
+         <Identifier>6</Identifier>
+      </Agency>
+   </Identification>
+   <ColumnSet xmlns="">
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString"/>
+      </Column>
+      <Column Id="name" Use="optional">
+         <ShortName>Name</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="examples" Use="optional">
+         <ShortName>Examples</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList xmlns="">
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Query</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Response to query</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>251</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Inquiry</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>23</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Status information</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>220</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Order</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>231</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Purchase order response</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>301</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Response to registration</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>380</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Commercial invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>916</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Related document</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>81</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Credit note related to goods or services </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>311</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Request for quote</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>312</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Acknowledgement message</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>310</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Offer / quotation</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>9</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Price/sales catalogue</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>230</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Purchase order change request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>320</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Acknowledgement of order</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>406</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Notification to supplier of contract termination</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>120</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Stores requisition</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>149</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Basic agreement</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>632</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Good Receipt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>351</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Despatch Advice </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>71</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Request for payment</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>443</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CallForTenders</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ATR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Acknowledgement Tender Receipt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ITT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Invitation to Tender</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TQR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tender Qualification Response</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</n:CodeList>

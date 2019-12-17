@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="65408793-8d4b-4d50-a938-a759befec97c" name="SCRIPTS" disabled="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="65408793-8d4b-4d50-a938-a759befec97cfileName">SCRIPTS</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+           targetNamespace="http://publications.europa.eu/resource/core-metadata/nth"
+           xmlns:nth="http://publications.europa.eu/resource/core-metadata/nth"
+           xmlns:cm="http://publications.europa.eu/resource/core-metadata"
+           xmlns:rol="http://publications.europa.eu/resource/roles/">
+<!--
+Extension of Core Metadata
+
+Versions:
+2.11: 2012-11-15
+-->
+<!--
+*** import Core Metadata schema for re-use of types
+-->
+	<xs:import namespace="http://publications.europa.eu/resource/core-metadata" schemaLocation="CM-02.11-2012-11-15.xsd"/>
+<!--
+*** Corporate bodies
+-->
+	<xs:import namespace="http://publications.europa.eu/resource/corporatebodies/" schemaLocation="at-corporatebodies.xsd"/>
+	<!--
+*** Countries
+-->
+	<xs:import namespace="http://publications.europa.eu/resource/countries/" schemaLocation="at-countries.xsd"/>
+	<!--
+*** Events
+-->
+	<xs:import namespace="http://publications.europa.eu/resource/events/" schemaLocation="at-events.xsd"/>
+	<!--
+*** File formats
+-->
+	<xs:import namespace="http://publications.europa.eu/resource/formats/" schemaLocation="at-formats.xsd"/>
+	<!--
+*** Interinstitutional procedures
+-->
+	<xs:import namespace="http://publications.europa.eu/resource/interinstitutionalprocedures/" schemaLocation="at-interinstitutionalprocedures.xsd"/>
+	<!--
+*** Languages
+-->
+	<xs:import namespace="http://publications.europa.eu/resource/languages/" schemaLocation="at-languages.xsd"/>
+	<!--
+*** Multilingual
+-->
+	<xs:import namespace="http://publications.europa.eu/resource/multilingual/" schemaLocation="at-multilingual.xsd"/>
+	<!--
+*** Resource types
+-->
+	<xs:import namespace="http://publications.europa.eu/resource/resourcetypes/" schemaLocation="at-resourcetypes.xsd"/>
+	<!--
+*** Roles
+-->
+	<xs:import namespace="http://publications.europa.eu/resource/roles/" schemaLocation="at-roles.xsd"/>
+	<!--
+*** Treaties
+-->
+	<xs:import namespace="http://publications.europa.eu/resource/treaties/" schemaLocation="at-treaties.xsd"/>
+<!--
+=== Complex type definitions
+-->
+<!--
+=== Extension bases
+-->
+<!--
+=== Extensions
+-->
+<!--
+=== Event extensions
+-->
+	<xs:complexType name="t_event_extension">
+		<xs:complexContent>
+			<xs:extension base="cm:t_event_extension_base">
+				<xs:sequence>
+					<xs:element name="decision" type="nth:t_decision"/>
+					<xs:element name="mode_decision" type="nth:t_mode_decision"/>
+				</xs:sequence>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+<!--
+=== Expression extensions
+-->
+	<xs:complexType name="t_expression_legis_sum">
+		<xs:complexContent>
+			<xs:extension base="cm:t_expression_extension_base">
+				<xs:sequence>
+					<xs:element name="description.summary" type="nth:t_description_summary"/>
+				</xs:sequence>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+<!--
+=== Work extensions
+-->
+	<xs:complexType name="t_work_cc">
+		<xs:complexContent>
+			<xs:extension base="cm:t_work_extension_base">
+				<xs:sequence>
+					<xs:element name="place_adoption" type="nth:t_place_adoption"/>
+					<xs:element name="language_authentic" type="cm:t_languages"/>
+					<xs:element name="identifier_egreffe" type="nth:t_identifier_egreffe"/>
+					<xs:element name="relevance_EEA" type="nth:t_yesno"/>
+					<xs:element name="language_expected" type="cm:t_languages"/>
+					<xs:element name="language_original" type="cm:t_languages"/>
+					<xs:element name="number_procedure_internal" type="nth:t_number_procedure_internal" minOccurs="0"/>
+					<xs:element name="date_transmission_addressee" type="xs:date"/>
+					<xs:element name="identifier_COM_document_related" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="identifier_SWD_document_related" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="corrigendum" type="nth:t_yesno"/>
+				</xs:sequence>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_work_layer0">
+		<xs:complexContent>
+			<xs:extension base="cm:t_work_extension_base">
+				<xs:sequence>
+					<xs:element name="part_of_work" type="nth:t_part_of_work" minOccurs="0"/>
+					<xs:element name="sequence_part" type="nth:t_sequence_part" minOccurs="0"/>
+					<xs:element name="contains_work" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="number_parts" type="nth:t_number_parts"/>
+				</xs:sequence>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_work_opi_cor">
+		<xs:complexContent>
+			<xs:extension base="cm:t_work_extension_base">
+				<xs:sequence>
+					<xs:element name="agent_person" type="nth:t_agent_person"/>
+				</xs:sequence>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_work_prop_reg">
+		<xs:complexContent>
+			<xs:extension base="cm:t_work_extension_base">
+				<xs:sequence>
+					<xs:element name="place_adoption" type="nth:t_place_adoption"/>
+					<xs:element name="version_codified" type="nth:t_yesno"/>
+					<xs:element name="language_authentic" type="cm:t_languages"/>
+					<xs:element name="durability" type="nth:t_durability"/>
+					<xs:element name="identifier_egreffe" type="nth:t_identifier_egreffe"/>
+					<xs:element name="relevance_EEA" type="nth:t_yesno"/>
+					<xs:element name="language_expected" type="cm:t_languages"/>
+					<xs:element name="language_original" type="cm:t_languages"/>
+					<xs:element name="number_procedure_internal" type="nth:t_number_procedure_internal"/>
+					<xs:element name="basis_legal" type="cm:t_legal_procedure" maxOccurs="unbounded"/>
+					<xs:element name="date_transmission_addressee" type="xs:date"/>
+					<xs:element name="identifier_COM_document_related" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="identifier_SWD_document_related" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="initiating" type="nth:t_yesno"/>
+					<xs:element name="corrigendum" type="nth:t_yesno"/>
+				</xs:sequence>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_agent_person" mixed="true">
+		<xs:attribute name="role" type="rol:t_role"/>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="t_work_legis_sum">
+		<xs:complexContent>
+			<xs:extension base="cm:t_work_extension_base">
+				<xs:sequence>
+					<xs:element name="identifier_work_alternative" type="nth:t_identifier_work_alternative" minOccurs="0"/>
+					<xs:element name="id_act_summarized" type="nth:t_id_act_basic_summarized" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="id_act_summarized_celex" type="nth:t_id_act_basic_summarized_celex" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="id_act_consolidated_summarized_celex" type="nth:t_id_act_consolidated_summarized_celex" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="date_initial" type="nth:t_date_initial"/>
+					<xs:element name="language_draft" type="nth:t_language_draft" minOccurs="0"/>
+					<xs:element name="obsolete" type="nth:t_obsolete"/>
+					<xs:element name="id_doc_related" type="nth:t_id_doc_related" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="classifications_summary" type="nth:t_classifications_summary" minOccurs="0"/>
+					<xs:element name="descriptors_ev" type="nth:t_descriptors_ev" minOccurs="0"/>
+					<xs:element name="classifications_directory" type="nth:t_classifications_directory" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_classifications_summary">
+		<xs:sequence>
+			<xs:element name="classification_summary" type="nth:t_classification_summary" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="t_classifications_directory">
+		<xs:sequence>
+			<xs:element name="classification_directory" type="nth:t_classification_directory" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="t_descriptors_ev">
+		<xs:sequence>
+			<xs:element name="descriptor_ev" type="nth:t_descriptor_ev" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+<!--
+=== Complex (simple) type definitions
+-->
+	<xs:complexType name="t_classification_summary" >
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="master" type="nth:t_yesno_cnt" use="required"/>
+				<xs:attribute name="anchor" type="xs:string" use="required"/>
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_classification_directory">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_date_initial">
+		<xs:simpleContent>
+			<xs:extension base="xs:date">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_descriptor_ev">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="t_decision_cnt">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Adopted"/>
+			<xs:enumeration value="Transmission"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="t_decision">
+		<xs:simpleContent>
+			<xs:extension base="nth:t_decision_cnt">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_description_summary">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="t_durability_cnt">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="D"/>
+			<xs:enumeration value="E"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="t_durability">
+		<xs:simpleContent>
+			<xs:extension base="nth:t_durability_cnt">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_id_act_basic_summarized" >
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_id_act_basic_summarized_celex" >
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_id_act_consolidated_summarized_celex" >
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_id_doc_related">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_id_act_modifier_summarized" >
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_id_act_modifier_summarized_celex" >
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_identifier_egreffe">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_identifier_work_alternative">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_language_draft">
+		<xs:simpleContent>
+			<xs:extension base="cm:t_languages">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="t_mode_decision_cnt">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Written procedure"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="t_mode_decision">
+		<xs:simpleContent>
+			<xs:extension base="nth:t_mode_decision_cnt">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_number_parts">
+		<xs:simpleContent>
+			<xs:extension base="xs:nonNegativeInteger">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_number_procedure_internal">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_obsolete">
+		<xs:simpleContent>
+			<xs:extension base="nth:t_yesno_cnt">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_part_of_work">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_place_adoption">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="t_sequence_part">
+		<xs:simpleContent>
+			<xs:extension base="xs:positiveInteger">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="t_yesno_cnt">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="n"/>
+			<xs:enumeration value="y"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="t_yesno">
+		<xs:simpleContent>
+			<xs:extension base="nth:t_yesno_cnt">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

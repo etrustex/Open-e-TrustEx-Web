@@ -1,0 +1,150 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:      #004494, // used for menu background (dark blue), main labels, titles...
+  secondary:    #ffd417, // accented colour on some components
+  primary_bg:   #ffffff, // main background colour (behind cards, toolbars ...)
+  secondary_bg: #f8f9fb,
+  shadow_bg:    #f7f7f7,
+
+  // ui elements
+  menu_selected:   #0151af,
+  menu_bg:         #ebf4fd, // background for components with light blue background (dropdowns, ...)
+  navbar_bg:       #ffffff, // background for navigation bar in all sub-pages (details, search)
+  element_border:  #d4d4d4,
+  table_odd_row_bg: #ffffff,
+  table_even_row_bg: #f7f7f7,
+
+  // background for message types
+  new_message:      #ebf4fd,
+  read_message:     #ffffff,
+  selected_message: #ffd417,
+  error_message:    #e74946,
+
+  // message status
+  status:   #3283d4,
+  expired:  #e74946,
+  warning:  #c5680f,
+
+  // text
+  text_primary:   #333333, // titles
+  text_secondary: #555555, // body, date
+  text_terciary:  #002651, // for labels
+  text_buttons:   #004494,  // navigation buttons
+  text_inverse:   #ffffff
+);
+
+
+// App global Variables (all platforms)
+// --------------------------------------------------
+
+$font-sizes: (
+  normal: 1em,     //14px
+  smaller: 0.85em, //12px
+  larger: 1.15em,  //16px
+  large: 1.4em     //20px
+);
+
+$button-round-padding-end: 1.2rem;
+$button-round-border-radius: 10px;
+
+//TODO define radius for all platforms
+$chip-button-border-radius: 10px;
+$chip-md-border-radius: 10px;
+
+$screen-border: 16px;
+$screen-padding: 16px;
+$element-padding: 8px;
+
+$screen-tablet-border: 32px;
+
+ion-toast.alert-toast-error {
+  .toast-wrapper {
+    background: color($colors, error_message);
+  }
+}
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+$menu-small-width: 220px; //added with a fixed width - side menu on a smaller devices
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+/*@import "../assets/fonts/SourceSansPro";
+
+$font-family-base: 'SourceSansPro';
+$font-family-md-base: 'SourceSansPro';
+$font-family-ios-base: 'SourceSansPro';
+$font-family-wp-base: 'SourceSansPro';*/

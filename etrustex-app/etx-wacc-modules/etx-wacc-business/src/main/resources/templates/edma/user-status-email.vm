@@ -1,0 +1,49 @@
+#if($messageMstStatus == "AVAILABLE")
+Dear <i>$userName</i>,
+<br><br>
+Your message sent to DG Competition has reached the European Commission's servers on $statusDate at $statusTime.<br>
+Please find here the details of your message:<br>
+- Subject: <i>$messageTitle</i><br>
+- Number of files transmitted: <i>$numFiles</i>
+<br><br>
+- Submission completed on: $sentOnDate at $sentOnTime
+<br><br>
+You can consult complete details of your message in the following link:<br>
+<a href="$messageURL">$messageURL</a>
+<br><br>
+Please do not reply to this email!
+<br><br>
+Should you have any questions please contact <a href="mailto:COMP-ETRUSTEX@ec.europa.eu">COMP-ETRUSTEX@ec.europa.eu</a>.
+<br><br>
+Best regards,<br>
+eTrustEx team
+#elseif ($messageMstStatus == "FAILED")
+Dear <i>$userName</i>,
+<br><br>
+Your message sent to DG Competition has failed to reach the European Commission's servers.<br>
+HPlease find here the details of your message:<br>
+- Subject: <i>$messageTitle</i>
+<br><br>
+Please do not reply to this email!
+<br><br>
+Should you have any questions please contact <a href="mailto:COMP-ETRUSTEX@ec.europa.eu">COMP-ETRUSTEX@ec.europa.eu</a>.
+<br><br>
+Best regards,<br>
+eTrustEx team
+#else
+    #if($messageMstStatus == "READ")
+        #set($text = 'was read by the receiver <i>' + ($receiverName) + '</i>')
+    #else
+        #set($text = 'has an unknown status <i>' + ($messageMstStatusCode) + '</i>')
+    #end
+Dear <i>$userName</i>,
+<br><br>
+The message <i>$messageTitle</i> sent by <i>$createdByUser</i> from <i>$senderName</i> $text.
+<br><br>
+You can use the following link for viewing the full details of this message: <a href="$messageURL">$messageURL</a>
+<br><br>
+This message has been generated automatically by the e-TrustEx platform, please do not reply.
+<br><br>
+Best regards,<br>
+eTrustEx Team
+#end

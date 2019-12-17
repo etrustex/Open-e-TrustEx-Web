@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Identification>
+		<ShortName>ResponseCode</ShortName>
+		<LongName>Response Code</LongName>
+		<Version>0.1</Version>
+		<CanonicalUri>Placeholder</CanonicalUri>
+		<CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+		<LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.0/cl/gc/default/ResponseCode-2.0.gc</LocationUri>
+		<AgencyLongName>European Commision</AgencyLongName>
+		<Locale>en</Locale>
+	</Identification>
+	<ValuesSet>
+		<ValueSet>
+			<Code>1</Code>
+			<Value>Undefined incoming message</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>2</Code>
+			<Value>Undefined operation</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>3</Code>
+			<Value>Undefined header block</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>4</Code>
+			<Value>Access unauthorised </Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>81:1</Code>
+			<Value>Credit Note approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>81:2</Code>
+			<Value>Credit Note rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>81:3</Code>
+			<Value>Credit Note ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>81:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>380:1</Code>
+			<Value>Invoice approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>380:2</Code>
+			<Value>Invoice rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>380:3</Code>
+			<Value>Invoice ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>380:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>916:1</Code>
+			<Value>Attachment added</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>916:2</Code>
+			<Value>Attachment rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>916:3</Code>
+			<Value>Attachment ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>916:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>916:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>916:6</Code>
+			<Value>Missing Attachment binary data</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT1:1</Code>
+			<Value>Willingness approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT1:2</Code>
+			<Value>Willingness rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT1:3</Code>
+			<Value>Willingness ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT1:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT1:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>311:1</Code>
+			<Value>RequestForQuotation approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>311:7</Code>
+			<Value>RequestForQuotation cancelled</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>311:2</Code>
+			<Value>RequestForQuotation rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>311:3</Code>
+			<Value>RequestForQuotation ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>311:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>231:3</Code>
+			<Value>Order Response ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>231:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>231:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>231:6</Code>
+			<Value>Order state is wrong</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>312:1</Code>
+			<Value>Acknowledgement approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>312:2</Code>
+			<Value>Acknowledgement rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>312:3</Code>
+			<Value>Acknowledgement ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>312:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>312:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT3:1</Code>
+			<Value>Proposal approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT3:2</Code>
+			<Value>Proposal rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT3:3</Code>
+			<Value>Proposal ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT3:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT3:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT2:1</Code>
+			<Value>Proposal Request approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT2:2</Code>
+			<Value>Proposal Request rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT2:3</Code>
+			<Value>Proposal Request ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT2:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT2:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>9:1</Code>
+			<Value>Catalogue approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>9:2</Code>
+			<Value>Catalogue rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>9:3</Code>
+			<Value>Catalogue ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>9:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT4:1</Code>
+			<Value>QuotationRequest approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT4:2</Code>
+			<Value>QuotationRequest rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT4:3</Code>
+			<Value>QuotationRequest ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT4:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT4:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT5:1</Code>
+			<Value>AdhocS2C approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT5:2</Code>
+			<Value>AdhocS2C rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT5:3</Code>
+			<Value>AdhocS2C ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT5:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT5:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>310:1</Code>
+			<Value>Quotation approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>310:2</Code>
+			<Value>Quotation rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>310:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>310:3</Code>
+			<Value>Quotation ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>310:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT6:3</Code>
+			<Value>AdhocC2S ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT6:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ADT6:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>320:3</Code>
+			<Value>Order Acknowledgement ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>320:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>320:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>320:6</Code>
+			<Value>Order state is wrong</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>230:3</Code>
+			<Value>Order Change ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>230:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>230:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>230:6</Code>
+			<Value>Order state is wrong</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>220:1</Code>
+			<Value>Order approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>220:2</Code>
+			<Value>Order rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>220:3</Code>
+			<Value>Order ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>220:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>406:3</Code>
+			<Value>Order Cancellation ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>406:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>406:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>406:6</Code>
+			<Value>Order state is wrong</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>632:3</Code>
+			<Value>ReceiptAdvice ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>632:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>71:1</Code>
+			<Value>PaymentReminder approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>71:2</Code>
+			<Value>PaymentReminder rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>71:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>71:3</Code>
+			<Value>Reminder ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>71:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>71:6</Code>
+			<Value>A Reminder ID has already been sent for the current invoice on this IssueDate</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>443:1</Code>
+			<Value>Call for tender approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>443:2</Code>
+			<Value>Call for tender rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>443:3</Code>
+			<Value>CallForTenders ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>443:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ITT:1</Code>
+			<Value>Invitation to tender approved</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ITT:2</Code>
+			<Value>Invitation to tender rejected</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ITT:3</Code>
+			<Value>Invitation to tender already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ITT:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ITT:5</Code>
+			<Value>CallForTendersDocumentReference ID does not exist in the system</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ATR:3</Code>
+			<Value>Tender Receipt ID already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ATR:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ATR:5</Code>
+			<Value>Parent document ID does not exist</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>TQR:3</Code>
+			<Value>Tenderer Qualification Response already exists</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>TQR:4</Code>
+			<Value>Hard business rule violated</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>TQR:5</Code>
+			<Value>TendererQualification.Response.ResolutionDocumentReference.ID does not exist in the system</Value>
+		</ValueSet>
+	</ValuesSet>
+</CodeList>

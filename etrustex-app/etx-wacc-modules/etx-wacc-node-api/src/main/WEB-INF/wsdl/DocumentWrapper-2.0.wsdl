@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="ec:services:wsdl:DocumentWrapper-2" xmlns:dwp="ec:schema:xsd:DocumentWrapper-1" xmlns:dwr="ec:schema:xsd:DocumentWrapperRequest-1" xmlns:ack="ec:schema:xsd:Ack-2" xmlns:eccac="ec:schema:xsd:CommonAggregateComponents-2" xmlns:fault="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="DocumentWrapper" targetNamespace="ec:services:wsdl:DocumentWrapper-2">
+	<wsdl:types>
+		<xsd:schema targetNamespace="ec:services:wsdl:DocumentWrapper-2" elementFormDefault="qualified">
+			<xsd:import namespace="ec:schema:xsd:DocumentWrapper-1" schemaLocation="../xsd/maindoc/EC-DocumentWrapper-1.0.xsd"/>
+			<xsd:import namespace="ec:schema:xsd:DocumentWrapperRequest-1" schemaLocation="../xsd/maindoc/EC-DocumentWrapperRequest-1.0.xsd"/>
+			<xsd:import namespace="ec:schema:xsd:Ack-2" schemaLocation="../xsd/maindoc/EC-Ack-2.0.xsd"/>
+			<xsd:import namespace="ec:schema:xsd:CommonAggregateComponents-2" schemaLocation="../xsd/custom/EC-CommonAggregateComponents-2.0.xsd"/>
+			<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" schemaLocation="../xsd/maindoc/EC-Fault-1.0.xsd"/>
+			<xsd:element name="StoreDocumentWrapperRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DocumentWrapper" type="dwp:DocumentWrapperType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="StoreDocumentWrapperResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Ack" type="ack:AcknowledgmentType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="RetrieveDocumentWrapperRequestRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DocumentWrapperRequest" type="dwr:DocumentWrapperRequestType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="RetrieveDocumentWrapperRequestResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DocumentWrapper" type="dwp:DocumentWrapperType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DeleteDocumentWrapperRequestRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DocumentWrapperRequest" type="dwr:DocumentWrapperRequestType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DeleteDocumentWrapperRequestResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Ack" type="ack:AcknowledgmentType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Header" type="eccac:HeaderType"/>
+			<xsd:element name="Fault" type="fault:FaultType"/>
+		</xsd:schema>
+	</wsdl:types>
+	<message name="storeDocumentWrapperRequest">
+		<part name="StoreDocumentWrapperRequest" element="tns:StoreDocumentWrapperRequest"/>
+		<part name="Header" element="tns:Header"/>
+	</message>
+	<message name="storeDocumentWrapperResponse">
+		<part name="StoreDocumentWrapperResponse" element="tns:StoreDocumentWrapperResponse"/>
+		<part name="Header" element="tns:Header"/>
+	</message>
+	<message name="retrieveDocumentWrapperRequestRequest">
+		<part name="RetrieveDocumentWrapperRequestRequest" element="tns:RetrieveDocumentWrapperRequestRequest"/>
+		<part name="Header" element="tns:Header"/>
+	</message>
+	<message name="retrieveDocumentWrapperRequestResponse">
+		<part name="RetrieveDocumentWrapperRequestResponse" element="tns:RetrieveDocumentWrapperRequestResponse"/>
+		<part name="Header" element="tns:Header"/>
+	</message>
+	<message name="deleteDocumentWrapperRequestRequest">
+		<part name="DeleteDocumentWrapperRequestRequest" element="tns:DeleteDocumentWrapperRequestRequest"/>
+		<part name="Header" element="tns:Header"/>
+	</message>
+	<message name="deleteDocumentWrapperRequestResponse">
+		<part name="DeleteDocumentWrapperRequestResponse" element="tns:DeleteDocumentWrapperRequestResponse"/>
+		<part name="Header" element="tns:Header"/>
+	</message>
+	<message name="FaultResponse">
+		<part name="FaultResponse" element="tns:Fault"/>
+	</message>
+	<portType name="documentWrapperPortType">
+		<operation name="storeDocumentWrapper">
+			<input message="tns:storeDocumentWrapperRequest"/>
+			<output message="tns:storeDocumentWrapperResponse"/>
+			<fault name="FaultResponse" message="tns:FaultResponse"/>
+		</operation>
+		<operation name="retrieveDocumentWrapperRequest">
+			<input message="tns:retrieveDocumentWrapperRequestRequest"/>
+			<output message="tns:retrieveDocumentWrapperRequestResponse"/>
+			<fault name="FaultResponse" message="tns:FaultResponse"/>
+		</operation>
+		<operation name="deleteDocumentWrapperRequest">
+			<input message="tns:deleteDocumentWrapperRequestRequest"/>
+			<output message="tns:deleteDocumentWrapperRequestResponse"/>
+			<fault name="FaultResponse" message="tns:FaultResponse"/>
+		</operation>
+	</portType>
+	<binding name="documentWrapperBinding" type="tns:documentWrapperPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="storeDocumentWrapper">
+			<input>
+				<soap:body parts="StoreDocumentWrapperRequest" use="literal"/>
+				<soap:header message="tns:storeDocumentWrapperRequest" part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse" part="FaultResponse" use="literal"/>
+				</soap:header>
+			</input>
+			<output>
+				<soap:body parts="StoreDocumentWrapperResponse" use="literal"/>
+				<soap:header message="tns:storeDocumentWrapperResponse" part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse" part="FaultResponse" use="literal"/>
+				</soap:header>
+			</output>
+			<fault name="FaultResponse">
+				<soap:fault name="FaultResponse" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="retrieveDocumentWrapperRequest">
+			<input>
+				<soap:body parts="RetrieveDocumentWrapperRequestRequest" use="literal"/>
+				<soap:header message="tns:retrieveDocumentWrapperRequestRequest" part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse" part="FaultResponse" use="literal"/>
+				</soap:header>
+			</input>
+			<output>
+				<soap:body parts="RetrieveDocumentWrapperRequestResponse" use="literal"/>
+				<soap:header message="tns:retrieveDocumentWrapperRequestResponse" part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse" part="FaultResponse" use="literal"/>
+				</soap:header>
+			</output>
+			<fault name="FaultResponse">
+				<soap:fault name="FaultResponse" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="deleteDocumentWrapperRequest">
+			<input>
+				<soap:body parts="DeleteDocumentWrapperRequestRequest" use="literal"/>
+				<soap:header message="tns:deleteDocumentWrapperRequestRequest" part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse" part="FaultResponse" use="literal"/>
+				</soap:header>
+			</input>
+			<output>
+				<soap:body parts="DeleteDocumentWrapperRequestResponse" use="literal"/>
+				<soap:header message="tns:deleteDocumentWrapperRequestResponse" part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse" part="FaultResponse" use="literal"/>
+				</soap:header>
+			</output>
+			<fault name="FaultResponse">
+				<soap:fault name="FaultResponse" use="literal"/>
+			</fault>
+		</operation>
+	</binding>
+	<service name="documentWrapperService">
+		<port name="documentWrapperPort" binding="tns:documentWrapperBinding">
+			<soap:address location="http://d02di1010873.net1.cec.eu.int:7001/etrustex/external/DocumentWrapper-0.1"/>
+		</port>
+	</service>
+</definitions>

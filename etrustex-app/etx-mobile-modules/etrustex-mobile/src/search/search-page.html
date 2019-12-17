@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar></ion-navbar>
+  <div id="searchbar">
+    <ion-searchbar #searchField focusable autofocus placeholder="{{'SEARCH_SUBJECT' | translate}}" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)" style="padding: 0;"></ion-searchbar>
+  </div>
+</ion-header>
+
+<ion-content>
+
+    <div [class.tablet]='tabletMode'>
+      <message-list [messages]='messagesList' [isInbox]='isInbox()' (onMessageSelected)="onMessageSelected($event)"></message-list>
+    </div>
+
+    <!-- info.view display mode -->
+    <info-view [message]='infoMessage' padding-top></info-view>
+    <!-- -->
+
+    <ion-infinite-scroll (ionInfinite)="getNextPage($event)" [enabled]='hasMoreMessages'>
+      <ion-infinite-scroll-content loadingSpinner="circles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

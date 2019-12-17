@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:CodeList xmlns:n="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ C:/DOCUME~1/danielsm/Desktop/codelists/genericode.xsd">
+   <Identification xmlns="">
+      <ShortName>ErrorCode</ShortName>
+      <LongName>Error Code</LongName>
+      <Version>0.1</Version>
+      <CanonicalUri>Placeholder</CanonicalUri>
+      <CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+      <Agency>
+         <LongName>European Commision</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet xmlns="">
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString"/>
+      </Column>
+      <Column Id="name" Use="optional">
+         <ShortName>Name</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="examples" Use="optional">
+         <ShortName>Examples</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList xmlns="">
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.address_check_cityname</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element PostalAddress misses child element CityName</SimpleValue>
+         </Value>
+      </Row>
+     
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_seller</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Seller</SimpleValue>
+         </Value>
+      </Row>    
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_supplier_contact</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Supplier Contact</SimpleValue>
+         </Value>
+      </Row>    
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_buyer_contact</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Buyer Contact</SimpleValue>
+         </Value>
+      </Row>    
+         <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_buyer</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Buyer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_received_date</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Received Date</SimpleValue>
+         </Value>
+      </Row>    
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_registration_date</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Registration Date</SimpleValue>
+         </Value>
+        </Row>
+        <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_additional_reference</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Additional Reference</SimpleValue>
+         </Value>
+      </Row> 
+      
+        <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_issue_date</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Issue Date</SimpleValue>
+         </Value>
+      </Row> 
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_customer_id</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Customer ID</SimpleValue>
+         </Value>
+      </Row> 
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_supplier_id</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Supplier ID</SimpleValue>
+         </Value>
+      </Row> 
+      
+        <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_department_id</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Department ID</SimpleValue>
+         </Value>
+      </Row> 
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_account_payable_id</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Account Payable ID</SimpleValue>
+         </Value>
+      </Row>
+	  <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_internal_id</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Internal ID</SimpleValue>
+         </Value>
+      </Row>  
+        <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_order_number</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Order Number</SimpleValue>
+         </Value>
+      </Row> 
+       <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_order_reference</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Order Reference</SimpleValue>
+         </Value>
+      </Row>      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_tel</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>TEL:</SimpleValue>
+         </Value>
+      </Row>  
+        <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_fax</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>FAX:</SimpleValue>
+         </Value>
+      </Row>
+        <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>label_email</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Email:</SimpleValue>
+         </Value>
+      </Row>
+  
+  
+    
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.address_check_country</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element PostalAddress misses child element Country</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.address_check_postalzone</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element PostalAddress misses child element PostalZone</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.address_check_streetname</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element PostalAddress misses child element StreetName</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.allowance_charge_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The amount of an AllowanceCharge should not be negative</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.allowancetotalamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Allowance Total Amount must be equal to the total of all allowances at document level</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.chargetotalamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Charge Total Amount must be equal to the total of all charges at document level</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.creditnotelinelineextensionamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The total line amount plus charges minus discounts exclusive of taxes must be equal to the LineExtensionAmount at line level</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_creditnotelinelineextensionamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in CreditNoteLine/LineExtensionAmount differs from DocumentCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_invoicelinelineextensionamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in InvoiceLine/LineExtensionAmount differs from DocumentCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_legalmonetarytotallineextensionamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in LegalMonetaryTotal/LineExtensionAmount differs from DocumentCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_payableamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in LegalMonetaryTotal/PayableAmount differs from DocumentCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_taxamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in TaxAmount differs from TaxCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.delivery_or_invoice_date_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>No Invoice period or delivery date is present</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ID of the message cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.id_length_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ID of the message cannot be larger than 30 characters</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_accounttypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist AccountTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_addressformatcode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist AddressFormatCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_allowancechargereasoncode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist AllowanceChargeReasonCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_binaryobjectmimecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist BinaryObjectMimeCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_countryidentificationcode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist CountryIdentificationCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_currencycode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist CurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_deliverytermsid</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist DeliveryTermsID</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_discrepancyresponsecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist DiscrepancyResponseCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_documenttypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist DocumentTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_invoicetypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist InvoiceTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_parentdocumenttypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist ParentDocumentTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_paymentchannelcode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist PaymentChannelCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_paymentmeanscode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist PaymentMeansCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_taxcategoryid</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist TaxCategoryID</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_taxexemptionreasoncode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist TaxExemptionReasonCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_taxschemeid</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist TaxSchemeID</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_taxtypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist TaxTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_unitofmeasurecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist UnitOfMeasureCode</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_date_range</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Period startdate is later than enddate</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invoicedocumentreference_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Invoice document reference missing</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invoicelinelineextensionamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The total line amount plus charges minus discounts exclusive of taxes must be equal to the LineExtensionAmount at line level</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.item_check_classifiedtaxcategory</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Item misses child element ClassifiedTaxCategory</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.large_date_range</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The difference between startdate and enddate is larger than one year</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.lineextensionamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The LineExtensionAmount at document level must be equal to the sum of all LineExtensionAmounts at line level</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.parent_document_id_length_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ParentDocumentID cannot be larger than 30 characters</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.party_check_partytaxscheme</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Party misses child element PartyTaxScheme</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.party_check_postaladdress</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Party misses child element PostalAddress</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.party_tax_scheme_check_companyid</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element PartyTaxScheme misses child element CompanyID</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.payableamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Payable Amount must be equal to the tax inclusive amount minus the pre-paid amount</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.period_check_enddate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Period misses child element EndDate</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.period_check_startdate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Period misses child element StartDate</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.prepaidamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Prepaid Amount must be equal to the total of all Prepaid Payments at document level</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tax_category_check_percentperunitamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element (Classified)TaxCategory should include one of following child elements: Percent or PerUnitAmount</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxexchangerate_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>DocumentCurrencyCode differs from TaxCurrencyCode, but there is no TaxExchangeRate defined</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxexclusiveamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Tax Exclusive Amount must be equal to the total line amount plus charges minus discounts exclusive of taxes</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxinclusiveamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Tax Inclusive Amount must be equal to Tax Exclusive Amount plus sum of the total tax amounts</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxschemeid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Within one TaxTotal the TaxScheme ID of all TaxSubtotals must be the same</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxtotal_check_taxsubtotal</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element TaxTotal misses child element TaxSubtotal</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxtotals_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Tax Total must be equal to the sum of its Tax Subtotals</SimpleValue>
+         </Value>
+      </Row>
+      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.total_amount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The total amount of the invoice cannot be negative</SimpleValue>
+         </Value>
+      </Row>
+      
+   </SimpleCodeList>
+</n:CodeList>

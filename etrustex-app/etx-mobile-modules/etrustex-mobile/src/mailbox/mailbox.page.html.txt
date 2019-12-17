@@ -1,0 +1,23 @@
+<ion-header>
+  <navbar-title></navbar-title>
+
+  <div width="100%">
+
+  <!--<party-menu [parties]='getParties()' *ngIf='isPartyMenuEnabled()'></party-menu>-->
+
+    <div class="action-toolbar">
+      <ion-row>
+        <ion-col no-padding text-left>
+          <!--<folders-menu [folderCounters]='getMailboxCounters()'></folders-menu>-->
+        </ion-col>
+        <ion-col no-padding text-right>
+          <!--<search-menu></search-menu>-->
+        </ion-col>
+      </ion-row>
+    </div>
+
+  </div>
+
+</ion-header>
+
+<!--<page-inbox *ngIf='isInboxSelected()'></page-inbox>-->

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:component-scan base-package="eu.europa.ec.etrustex.webaccess.web.controller"/>
+    <context:component-scan base-package="eu.europa.ec.etrustex.webaccess.web.model"/>
+    <!--<context:component-scan base-package="eu.europa.ec.etrustex.webaccess.web.websocket"/>-->
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+	<util:properties id="propertyConfigurer" location="classpath:application.properties"/>
+	<context:property-placeholder properties-ref="propertyConfigurer" />
+
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="location">
+            <value>/WEB-INF/views.xml</value>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"/>
+
+    <bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/tiles.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="messageSource" class="eu.europa.ec.etrustex.webaccess.web.i18n.DataSourceMessageSource">
+        <property name="defaultLocale" value="EN"/>
+        <property name="timeToLiveSeconds" value="900"/>
+        <property name="useCodeAsDefaultMessage" value="true"/>
+    </bean>
+
+    <mvc:interceptors>
+        <bean id="localeChangeInterceptor"
+              class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang">
+            </property>
+        </bean>
+        <mvc:interceptor>
+            <mvc:mapping path="/welcome.do"/>
+            <mvc:mapping path="/inbox.do"/>
+            <mvc:mapping path="/outbox.do"/>
+            <mvc:mapping path="/statusFilter.do"/>
+            <mvc:mapping path="/drafts.do"/>
+            <mvc:mapping path="/messageViewReceived.do"/>
+            <mvc:mapping path="/messageViewSent.do"/>
+            <mvc:mapping path="/messageDelete.do"/>
+            <mvc:mapping path="/messageEdit.do"/>
+            <mvc:mapping path="/messageCreate.do"/>
+            <mvc:mapping path="/logout.do"/>
+            <mvc:mapping path="/ping.do"/>
+            <mvc:mapping path="/error/error403.do"/>
+            <mvc:mapping path="/error/error404.do"/>
+            <mvc:mapping path="/error/error500.do"/>
+            <mvc:mapping path="/admin.do"/>
+            <mvc:mapping path="/addPartyScopeUserRole.do"/>
+            <mvc:mapping path="/addBusinessScopeUserRole.do"/>
+            <mvc:mapping path="/addSystemScopeUserRole.do"/>
+            <mvc:mapping path="/deleteUserRole.do"/>
+            <mvc:mapping path="/getPartyScopeUserRoles.do"/>
+            <mvc:mapping path="/getBusinessScopeUserRoles.do"/>
+            <mvc:mapping path="/getBusinessScopeParties.do"/>
+            <mvc:mapping path="/getSystemScopeUserRoles.do"/>
+            <mvc:mapping path="/loadPartyDetails.do"/>
+            <mvc:mapping path="/savePartyDetails.do"/>
+            <mvc:mapping path="/savePartyDisplayName.do"/>
+            <mvc:mapping path="/getPartiesToAdmin.do"/>
+            <mvc:mapping path="/editUser.do"/>
+            <mvc:mapping path="/resetCache.do"/>
+            <mvc:mapping path="/attachment/**"/>
+            <mvc:mapping path="/zip/**"/>
+            <mvc:mapping path="/downloadAttachment.do"/>
+            <mvc:mapping path="/exportMessage.do"/>
+            <mvc:mapping path="/uploadFile.do"/>
+            <mvc:mapping path="/getConfigMailDistribution.do"/>
+            <mvc:mapping path="/exportPartyUsers.do"/>
+            <ref bean="userAuthenticationInterceptor" />
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/welcome.do"/>
+            <mvc:mapping path="/inbox.do"/>
+            <mvc:mapping path="/outbox.do"/>
+            <mvc:mapping path="/statusFilter.do"/>
+            <mvc:mapping path="/drafts.do"/>
+            <mvc:mapping path="/messageViewReceived.do"/>
+            <mvc:mapping path="/messageViewSent.do"/>
+            <mvc:mapping path="/messageDelete.do"/>
+            <mvc:mapping path="/messageEdit.do"/>
+            <mvc:mapping path="/messageCreate.do"/>
+            <mvc:mapping path="/logout.do"/>
+            <mvc:mapping path="/ping.do"/>
+            <mvc:mapping path="/error/error403.do"/>
+            <mvc:mapping path="/error/error404.do"/>
+            <mvc:mapping path="/error/error500.do"/>
+            <mvc:mapping path="/admin.do"/>
+            <mvc:mapping path="/addPartyScopeUserRole.do"/>
+            <mvc:mapping path="/addBusinessScopeUserRole.do"/>
+            <mvc:mapping path="/addSystemScopeUserRole.do"/>
+            <mvc:mapping path="/deleteUserRole.do"/>
+            <mvc:mapping path="/getPartyScopeUserRoles.do"/>
+            <mvc:mapping path="/getBusinessScopeUserRoles.do"/>
+            <mvc:mapping path="/getBusinessScopeParties.do"/>
+            <mvc:mapping path="/getSystemScopeUserRoles.do"/>
+            <mvc:mapping path="/loadPartyDetails.do"/>
+            <mvc:mapping path="/savePartyDetails.do"/>
+            <mvc:mapping path="/savePartyDisplayName.do"/>
+            <mvc:mapping path="/getPartiesToAdmin.do"/>
+            <mvc:mapping path="/editUser.do"/>
+            <mvc:mapping path="/attachment/**"/>
+            <mvc:mapping path="/zip/**"/>
+            <mvc:mapping path="/token/**"/>
+            <mvc:mapping path="/downloadAttachment.do"/>
+            <mvc:mapping path="/exportMessage.do"/>
+            <mvc:mapping path="/uploadFile.do"/>
+            <mvc:mapping path="/getConfigMailDistribution.do"/>
+            <mvc:mapping path="/exportPartyUsers.do"/>
+            <bean class="eu.europa.ec.etrustex.webaccess.web.helper.NoCacheInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <bean id="localeResolver" class="eu.europa.ec.etrustex.webaccess.web.i18n.EtxCookieLocaleResolver">
+        <property name="defaultLocale" value="en"/>
+    </bean>
+
+    <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+        <property name="maxUploadSize" value="524288000"/>
+    </bean>
+
+    <bean id="handlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+    </bean>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver">
+        <property name="order" value="1"/>
+    </bean>
+
+    <bean class="eu.europa.ec.etrustex.webaccess.web.view.business.api.ConfigurationProvider">
+        <property name="configurations">
+            <map>
+                <entry key="generic">
+                    <bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.ConfigurationImpl">
+                        <property name="actionHandlerMap">
+                            <map>
+                                <entry key="inbox"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.generic.webhandler.GenericInboxHandler"/></entry>
+                                <entry key="outbox"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.generic.webhandler.GenericOutboxHandler"/></entry>
+                                <entry key="drafts"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.generic.webhandler.GenericDraftsHandler"/></entry>
+                                <entry key="messageViewReceivedWS"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.webhandler.CommonMessageViewHandler"/></entry>
+                                <entry key="messageViewReceived"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.webhandler.CommonMessageViewHandler"/></entry>
+                                <entry key="messageViewSent"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.webhandler.CommonMessageViewHandler"/></entry>
+                                <entry key="messageCreate"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.webhandler.CommonMessageCreateHandler"/></entry>
+                                <entry key="messageCreateWS"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.webhandler.CommonMessageCreateHandler"/></entry>
+                                <entry key="messageEdit"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.webhandler.CommonMessageEditHandler"/></entry>
+                                <entry key="messageEditWS"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.webhandler.CommonMessageEditHandler"/></entry>
+                            </map>
+                        </property>
+                        <property name="messageListPageSize" value="10"/>
+                    </bean>
+                </entry>
+                <entry key="edma">
+                    <bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.ConfigurationImpl">
+                        <property name="genericViews">
+                            <list>
+                                <value>inbox</value>
+                                <value>outbox</value>
+                                <value>drafts</value>
+                            </list>
+                        </property>
+                        <property name="actionHandlerMap">
+                            <map>
+                                <entry key="messageViewReceived"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.edma.webhandler.MessageViewReceivedHandler"/></entry>
+                                <entry key="messageViewReceivedWS"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.edma.webhandler.MessageViewReceivedHandler"/></entry>
+                                <entry key="messageViewSent"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.edma.webhandler.MessageViewSentHandler"/></entry>
+                                <entry key="messageCreate"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.webhandler.CommonMessageCreateHandler"/></entry>
+                                <entry key="messageCreateWS"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.webhandler.CommonMessageCreateHandler"/></entry>
+                                <entry key="messageEdit"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.edma.webhandler.MessageEditHandler"/></entry>
+                                <entry key="messageEditWS"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.edma.webhandler.MessageEditHandler"/></entry>
+                            </map>
+                        </property>
+                        <property name="messageListPageSize" value="10"/>
+                    </bean>
+                </entry>
+                <entry key="egreffe">
+                    <bean class="eu.europa.ec.etrustex.webaccess.web.view.business.common.ConfigurationImpl">
+                        <property name="genericViews">
+                            <list>
+                                <value>inbox</value>
+                                <value>outbox</value>
+                                <value>drafts</value>
+                                <value>messageCreate</value>
+                                <value>messageCreateWS</value>
+                                <value>messageViewSent</value>
+                                <value>messageEdit</value>
+                                <value>messageEditWS</value>
+                            </list>
+                        </property>
+                        <property name="customViewLabels">
+                            <map>
+                                <entry key="inbox" value="label.inboxGroupByDossier"/>
+                            </map>
+                        </property>
+                        <property name="actionHandlerMap">
+                            <map>
+                                <entry key="inbox"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.egreffe.webhandler.InboxHandler"/></entry>
+                                <entry key="messageViewReceived"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.egreffe.webhandler.MessageViewHandler"/></entry>
+                                <entry key="messageViewReceivedWS"><bean class="eu.europa.ec.etrustex.webaccess.web.view.business.egreffe.webhandler.MessageViewHandler"/></entry>
+                            </map>
+                        </property>
+                        <property name="messageListPageSize" value="5"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="ec:services:wsdl:RetrieveRequest-2" xmlns:req="ec:schema:xsd:RetrieveRequest-2" xmlns:res="ec:schema:xsd:RetrieveResponse-2.1" xmlns:eccac="ec:schema:xsd:CommonAggregateComponents-2" xmlns:fault="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="RetrieveRequest" targetNamespace="ec:services:wsdl:RetrieveRequest-2">
+	<wsdl:types>
+		<xsd:schema targetNamespace="ec:services:wsdl:RetrieveRequest-2" elementFormDefault="qualified">
+			<xsd:import namespace="ec:schema:xsd:RetrieveRequest-2" schemaLocation="../xsd/maindoc/EC-RetrieveRequest-2.0.xsd"/>
+			<xsd:import namespace="ec:schema:xsd:RetrieveResponse-2.1" schemaLocation="../xsd/maindoc/EC-RetrieveResponse-2.1.xsd"/>
+			<xsd:import namespace="ec:schema:xsd:CommonAggregateComponents-2" schemaLocation="../xsd/custom/EC-CommonAggregateComponents-2.0.xsd"/>
+			<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" schemaLocation="../xsd/maindoc/EC-Fault-1.0.xsd"/>
+			<xsd:element name="SubmitRetrieveRequestRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="RetrieveRequest" type="req:RetrieveRequestType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SubmitRetrieveRequestResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="RetrieveResponse" type="res:RetrieveResponseType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Header" type="eccac:HeaderType"/>
+			<xsd:element name="Fault" type="fault:FaultType"/>
+		</xsd:schema>
+	</wsdl:types>
+	<message name="retrieveRequestRequest">
+		<part name="RetrieveRequestRequest" element="tns:SubmitRetrieveRequestRequest"/>
+		<part name="Header" element="tns:Header"/>
+	</message>
+	<message name="retrieveRequestResponse">
+		<part name="RetrieveRequestResponse" element="tns:SubmitRetrieveRequestResponse"/>
+		<part name="Header" element="tns:Header"/>
+	</message>
+	<message name="FaultResponse">
+		<part name="FaultResponse" element="tns:Fault"/>
+	</message>
+	<portType name="retrieveRequestPortType">
+		<operation name="submitRetrieveRequest">
+			<input message="tns:retrieveRequestRequest"/>
+			<output message="tns:retrieveRequestResponse"/>
+			<fault name="FaultResponse" message="tns:FaultResponse"/>
+		</operation>
+	</portType>
+	<binding name="retrieveRequestBinding" type="tns:retrieveRequestPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="submitRetrieveRequest">
+			<soap:operation style="document"/>
+			<input>
+				<soap:body parts="RetrieveRequestRequest" use="literal"/>
+				<soap:header message="tns:retrieveRequestRequest" part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse" part="FaultResponse" use="literal"/>
+				</soap:header>
+			</input>
+			<output>
+				<soap:body parts="RetrieveRequestResponse" use="literal"/>
+				<soap:header message="tns:retrieveRequestResponse" part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse" part="FaultResponse" use="literal"/>
+				</soap:header>
+			</output>
+			<fault name="FaultResponse">
+				<soap:fault name="FaultResponse" use="literal"/>
+			</fault>
+		</operation>
+	</binding>
+	<service name="retrieveRequestService">
+		<port name="retrieveRequestPort" binding="tns:retrieveRequestBinding">
+			<soap:address location="http://localhost:18181/retrieveRequestService/retrieveRequestPort"/>
+		</port>
+	</service>
+</definitions>

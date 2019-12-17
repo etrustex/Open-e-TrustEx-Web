@@ -1,0 +1,2394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:CodeList xmlns:n="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ https://webgate.ec.europa.eu/CITnet/svn/EPROCUREMENT/trunk/04-Source%20Code/tools/schematron_generation/utility/genericode.xsd">
+	<Identification xmlns="">
+		<ShortName>ProfileValueCode</ShortName>
+		<LongName>Profile Value Code</LongName>
+		<Version>0.1</Version>
+		<CanonicalUri>Placeholder</CanonicalUri>
+		<CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+		<Agency>
+			<LongName>European Commission</LongName>
+		</Agency>
+	</Identification>
+	<ColumnSet xmlns="">
+		<Column Id="code" Use="required">
+			<ShortName>Code</ShortName>
+			<Data Type="normalizedString"/>
+		</Column>
+		<Column Id="name" Use="optional">
+			<ShortName>Name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="examples" Use="optional">
+			<ShortName>Examples</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="code"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList xmlns="">
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Application Architect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Analyst</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Analyst-Programmer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Architect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Coordinator</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Consultant</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ID</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Interface Designer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Project Manager</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Programmer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Analyst-Programmer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SAR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Architect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SCO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Senior Consultant</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SUA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Senior User Assistance</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Tester</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TW</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Writer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>UA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS User Assistance</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Webmaster</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AAOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Application Architect Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ANOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Analyst Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>APOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Analyst-Programmer Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AROF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Architect Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CDOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Coordinator Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>COOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Consultant Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>IDOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Interface Designer Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PMOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Project Manager Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PRGOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Programmer Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SAPOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Analyst-Programmer Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SAROF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Architect Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SCOOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Senior Consultant Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SUAOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Senior User Assistance Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TEOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Tester Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TWOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Writer Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>UAOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS User Assistance Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WMOF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Webmaster Off-Site</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>LOPL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Logistics Operator Local Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>LOCAL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Logistics Coordinator / Administrator Local Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>USAL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>User Support Agent Local Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WSAL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Workstation Administrator Local Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SAL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>System Administrator Local Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DBAL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Database Administrator Local Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WAL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Web Administrator Local Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AAL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Application Administrator Local Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SCL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Security Consultant Local Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TTCL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Team Coordinator Local Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SADWC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>System Administrator Windows Corporate Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SADUC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>System Administrator UNIX Corporate Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SINFADC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>System Infrastructure Administrator Corporate Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CRADC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Computer Room HW Administrator Corporate Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DBAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Database Administrator Corporate Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WEBADC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Web Administrator Corporate Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>APADC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Application Administrator Corporate Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SECSC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Security Specialist Corporate Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TTCC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Team Coordinator Corporate Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SMTAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>SMT Administrator</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SMTAR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>SMT Architect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SMTDEV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>SMT Developer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SMTCO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>SMT Coach</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TCESL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Consultancy / Engineering / Specialist Local Support (TCES)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TCESC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Consultancy / Engineering / Specialist Corporate Support (TCES)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TCESSMT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Consultancy / Engineering / Specialist SMT (TCES)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Business Analyst (BAN)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TMA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Test Manager (TMA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>STA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Tester Test Analyst (STA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TRA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Trainer (TRA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Administrator (AD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SDM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Service Delivery Manager (SDM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Operation Coordinator (OC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Project Manager Coordinator (PC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>RC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Request Coordinator (RC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SPS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Security Policies Specialist (SPS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SSE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Supporting Service Engineer (SSE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TDE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Test and Design Engineer (TDE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>JSNE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Junior and Senior Network Engineer (JSNE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>JSSE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Junior and Senior Security Engineer (JSSE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BDC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>BCP and DRP Coordinator (BDC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Support Engineer (SE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Script Developer (SD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>System Integrator (SI)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OAE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Office Automation Expert (OAE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Office Automation Consultant (OAC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>IPM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Infrastructure Project Manager (IPM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TECEXP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technology Expert (TEX)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Software Architect (SA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ISE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Infrastructure Software Engineer (ISE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ITR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Infrastructure Tester (ITR)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Analyst Consultant (SAC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Analyst Consultant (AC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TECED</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Editor (TECED)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TECAS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Assistant (TECAS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>FSSAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fame Senior Statistical Analyst Programmer (FSSAP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>FSAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fame Statistical Analyst Programmer (FSAP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OSSAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Oracle Olap Senior Statistical_Analyst Programmer (OSSAP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OSAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Oracle Olap Statistical Analyst Programmer (OSAP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>JSSAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Java Senior Statistical Analyst Programmer (JSSAP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>JSAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Java Statistical Analyst Programmer (JSAP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>JP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Java Programmer (JP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SSAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sas Senior Analyst Programmer (SSAP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SANP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sas Analyst Programmer (SAP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sas Programmer (SP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>IAR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Architect (AR)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>JSTAT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Junior Statistician (JSTAT)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SSTAT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Statistician (SSTAT)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AADS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Application Architect/Designer (AAD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ADV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Application Developer (ADV)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DBDV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Database Developer (DBD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>FEDV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Front-end Developer (FED)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BIAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Business Intelligence Analyste (BIA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>GISDV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>GIS Developer (GID)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CDMA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Configuration/Deployment Manager (CDM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>QCO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Quality Consultant (QC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>EAR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Enterprise Architect (EA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SECCO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Security Consultant (SC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SUPMA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Support Manager (SPM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>USUP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS User Support person (USP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>UDT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>User Documentation and Training person (UDT)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DBAAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Database Application Administrator (DAA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WOMA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Web Operation Manager (WOM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OPMA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Operation Manager (OM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TAS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Assistance Person (TAS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Developer (DV)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>IDSDV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Interface Designer/Developer (IDD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SANDV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Analyst Developer (SAD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TECOA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Coach (TECOA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SDMB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Service Desk Member (SDMB)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PMAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Project Management Action Coordinator (PMAC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>STKMOP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Stock Management Operator (STKMOP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TEC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technician (TEC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>STEC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Technician (STEC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DRFTR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Drafter (DRFTR)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>LOGAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Logistics Administrator (LogAd)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SUPAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Support Agent/Analyst (SupAA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WSAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Workstation administrator (WSAd)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SYSAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>System Administrator (SysAd)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SECC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Security Consultant (SecC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TTC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Team Coordinator (TTC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TCES</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Consultancy Engineering Specialist (TCES)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PGM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Program Manager (PGM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PSO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Project Support Officer (PSO)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>EXPER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Expert (EX)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>LAR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Lead Architect (LAR)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SCD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Security Coordinator (SCD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SSAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Security Administrator (SSAD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PDM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Process Designer/Manager (PDM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OPTL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Operational Team Leader (OPTL)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>JTAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Junior Technical Administrator (JTAD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>STAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Technical Administrator (STAD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>QM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Quality Manager (QM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>JCON</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Junior Consultant (JCON)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SCON</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Consultant/Senior Consultant (SCON)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>JENG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Junior Engineer (JENG)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SENG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Engineer (SENG)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PMDE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ICT Project Manager - Domain Expert (PMDE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AREA1</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Area 1 Development</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AREA2</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Area 2 Operations and Infrastructure</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AREA3</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Area 3 Design, deployment, Auditing, operation and testing of IT security systems</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Test Analyst (TAN)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TTAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Test Analyst (TTAN)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AMSS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Application Maintenance/Support Specialist (AMSS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BAJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Business Analyst Junior (BAJ)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BAS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Business Analyst Senior (BAS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BCO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Business Consultant (BCO)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BIA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Business Information Architect (BIA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BID</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Business Information Developper (BID)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>EBA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Enterprise Business Architect (EBA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SDJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Software Developer Junior (SDJ)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SDS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Software Developer Senior (SDS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ISA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IT Security Architect (ISA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>QC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Quality Controller (QC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SECS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Security Specialist (SECS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SAJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Solution Architect Junior (SAJ)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SAS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Solution Architect Senior (SAS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TSTD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Test Designer (TSTD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TSTR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Tester (TSTR)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WCMSE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Webmaster Content Management System Expert (WCMSE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DBARC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Database Architect (DBARC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DBAJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Database Administrator Junior (DBAJ)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DBAS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Database Administrator Senior (DBAS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DSO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Desktop Services Operator (DSO)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>HSO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Helpdesk Services Operator (HSO)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>IFA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Infrastructure Architect (IFA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>IFPA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Infrastructure Product Architect (IFPA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>IFPSS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Infrastructure Product Specialist Senior (IFPSS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>IFPSJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Infrastructure_Product_Specialist Junior (IFPSJ)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>NETA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Network Architect (NETA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>NETEJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Network Engineer Junior (NETEJ)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>NETES</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Network Engineer Senior (NETES)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OSA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>OS Architect (OSA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OSSJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>OS Specialist Junior (OSSJ)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OSSS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>OS Specialist Senior (OSSS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TENVS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Test Environment Specialist (TENVS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PRCDSG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Process Designer (PRCDSG)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PRCMNG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Process Manager(PRCMNG)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SFTDEV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Software Developer (SFTDEV)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SERMNG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Service Manager (SERMNG)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SERMNA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Service Manager Assistant (SERMNA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TEMLDR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Team Leader (TEMLDR)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TSAENG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Test Automation Engineer (TSAENG)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PTSMNG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Project Test Manager (PTSMNG)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>FOANA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Front Office Analyst (FOANA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>FOSYAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Front Office System Administrator (FOSYAD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PMITSM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Project Manager IT Service Management (PMITSM)</SimpleValue>
+			</Value>
+		</Row>		
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AVTEC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>AudioVisual Technician (AVTEC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DBADM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Database Administrator (DBADM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SHPTAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sharepoint Administrator (SHPTAD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>NTWKAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Network Administrator (NTWKAD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ITSCAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IT Security Administrator (ITSCAD)</SimpleValue>
+			</Value>
+		</Row>
+				<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>STTAAR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Statistical Application Architect(STTAAR)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SSTTAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Statistical Analyst Programmer (SSTTAP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>STTAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Statistical Analyst Programmer (STTAP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>STTPR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Statistical Programmer (STTPR)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>STASTA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Statistician (STASTA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PRORE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Proof-reader (PRORE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SOEAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Socio-economic Analyst (SOEAN)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BUSEN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Business Engineer (BUSEN)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SURVDM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Surveillance Data Manager (SURVDM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SURVDMA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Surveillance Data Manager and Analyst (SURVDMA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>GISDA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>GIS Data Analyst (GISDA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BIOSTAT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Biostatistician (BIOSTAT)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SBIOSTAT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Biostatistician (SBIOSTAT)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SBIOTSTS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Biostatistician Time Series Analysis (SBIOTSTS)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BIOINF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Bioinformatician (BIOINF)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ELECMAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Electronic Content Manager (ELECMAN)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ELECANA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Electronic Content Analyst (ELECANA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>GISSC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>GIS Consultant (GIC)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>APAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Application Analyst (AA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DTMOD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Data Modeller (DTMOD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>FIATE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Financial Applications Technology Expert (FINATE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ITPFM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IT Portfolio Manager (PFM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SECAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Security Analyst (SECAN)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SEMIKE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Semantic Interoperability and Knowledge Engineer (SEMIKE)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>INCMAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Incident Manager (IM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ISECMAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Information Security Manager (ISECM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SVCONMAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Service Continuity Manager (SCM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CONFMA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Configuration Manager (CM)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SSTADATSCI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Statistician-Data Scientist</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>STADATAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Statistician-Data Analyst</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ACADRES</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Academic Researcher</SimpleValue>
+			</Value>
+		</Row>
+		
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SDI_ADMINISTRATOR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>SDI Administrator</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CONSULTANT_CABLING</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Consultant Cabling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TEHNICIAN_CABLING</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technician Cabling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CONTENT_MANAGEMENT_EXPERT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Content Management Expert</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>INFORMATION_ARCHITECT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Information Architect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>KNOWLEDGE_SHARING_SPECIALIST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Knowledge Sharing Specialist</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WEB_CONSULTANT_TECHNICAL_SP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Web Consultant Technical Specialist</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WEB_EDITORIAL_CONSULTANT_SP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Web Editorial Consultant Specialist</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WEB_EDITORIAL_PROJECT_SP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Web Editorial Project Specialist</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>WEB_TECHNICAL_SPECIALIST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Web Technical Specialist</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DEVELOPMENT_SPECIALIST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Development Specialist</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TESTING_SPECIALIST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Testing Specialist</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TEST_TOOL_SPECIALIST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Test Tool Specialist</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>LEADER_SYSTEM_ENGINEER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Leader System Engineer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SYSTEM_ENGINEER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>System Engineer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TECHNICAL_PROJECT_MANAGER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Project Manager</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BUSINESS_ARCHITECT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Business Architect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>BUSINESS_DESIGNER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Business Designer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DEVELOPMENT_ENGINEER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Development Engineer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ENGINEER_METHODOLOGY_QUALITY</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Engineer Methodology and Quality</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TELECOM_DATA_CENTRE_CONS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Telecom and Data Centre Consultant</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OPERATIONS_ENGINEER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Operations Engineer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>LEADER_SECURITY_CONSULTANT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Leader Security Consultant</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CONSULTANT_ACCOUNTING</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Consultant in accounting</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CONSULTANT_ACCOUNTING_FIN_INSTR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Consultant in accounting for financial instruments</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>AUDITOR_ACCOUNTING</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Auditor in accounting</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PROGRAM_PORTFOLIO_ADVISOR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Program Portfolio Advisor</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PROJECT_MANAGER_FIN_INF_SYS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Project Manager Fin. Inform. Systems</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DATA_INFORMATION_ANALYST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Data and Information Analyst</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>FUNCTIONAL_ANALYST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Functional Analyst</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ACCESS_AUTHORISATION_MANAGER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Access and Authorization Manager</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TESTING_EXPERT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Testing Expert</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>INFORMATION_SYS_ARCH_EXP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Expert in Information Systems Architecture</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>IT_OPS_EXPERT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Expert in IT Operations (IT Ops)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>FIN_ACCOUNTING_REPORTING_PROGR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Financial and Accounting Reporting Programmer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SOFTWARE_CONSULTANT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Software Consultant</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>END_USER_SUPPORT_AGENT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>End-user Support Agent</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>IS_SUPPORT_AGENT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>IS Support Agent</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>COORDINATOR_SUPPORTING_SER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Coordinator for Supporting Services</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CONSULTANT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Consultant</SimpleValue>
+			</Value>
+		</Row>		
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>INFRASTRUCTURE_SYSTEM_ENGINEER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Infrastructure System Engineer (ISE)</SimpleValue>
+			</Value>
+		</Row>		
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>QUALITY_ASSURANCE_MANAGER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Quality Assurance Manager (QAM)</SimpleValue>
+			</Value>
+		</Row>		
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>UX_UI_SPECIALIST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>UX UI Specialist (UIS)</SimpleValue>
+			</Value>
+		</Row>		
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ICT_SECURITY_MANAGER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ICT Security Manager (SCM)</SimpleValue>
+			</Value>
+		</Row>		
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SERVICE_DESK_AGENT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Service Desk Agent (SDA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ERCC_DUTY_AGENT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ERCC Duty Agent</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ERCC_DUTY_AGENT_SENIOR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ERCC Duty Agent Senior</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ANALYTICAL_SECTOR_PRGM_MAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Analytical Sector Programme Manager</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ANALYTICAL_SECTOR_ANALYST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Analytical Sector Analyst</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TRAINING_EXERCISE_PROJECT_AS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Training and Exercise Project Assistant</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>APP_ARCHITECT_ANALYST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Application Architect/Analyst (AA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SENIOR_DEVELOPER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Developer (SDV)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ITF_ANALYST_DESIGNER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Interface Analyst/Designer (IAD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SENIOR_CONSULTANT_SCO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senior Consultant (SCO)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SERVICE_ADMINISTRATOR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Service Administrator (SAD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>USER_ASSISTANCE_PERS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>User Assistance person (UA)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>SOFTWARE_ENGINEER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Software Engineer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TEST_ENGINEER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Test Engineer</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</n:CodeList>

@@ -1,0 +1,34 @@
+import { NgModule } from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
+import {Header} from "../header/header";
+import {SentCountersMenu} from "../sent/sent-counters-menu/sent-counters-menu";
+import {FoldersMenu} from "../header/folders/folders-menu";
+import {SearchMenu} from "../header/search/search-menu";
+import {PartyMenu} from "../header/party/party-menu";
+import {Title} from "../header/title/title";
+import {SharedModule} from "../common/shared.module";
+import {MailboxPage} from "./mailbox.page";
+import {InboxOrdering} from "../inbox/inbox-ordering/inbox-ordering";
+import {InboxCountersMenu} from "../inbox/inbox-counters-menu/inbox-counters-menu";
+
+@NgModule({
+  declarations: [
+    MailboxPage,
+
+    Header,
+    Title,
+    FoldersMenu,
+    SearchMenu,
+
+    PartyMenu,
+
+    InboxOrdering,
+    InboxCountersMenu,
+    SentCountersMenu
+  ],
+  imports: [
+    SharedModule,
+    IonicPageModule.forChild(MailboxPage)
+  ]
+})
+export class MailboxPageModule {}

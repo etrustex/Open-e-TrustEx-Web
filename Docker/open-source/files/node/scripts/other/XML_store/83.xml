@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Identification>
+		<ShortName>ProcedureType</ShortName>
+		<ListID>PROC / PR_PROC / SECTION IV.1.1</ListID>
+		<Version>1.0</Version>
+		<CanonicalUri>Placeholder</CanonicalUri>
+		<CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+		<AgencyLongName>OJEU</AgencyLongName>
+		<Locale>en</Locale>
+	</Identification>
+	<ValuesSet>
+		<ValueSet>
+			<Code>1</Code>
+			<Value>Open procedure</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>2</Code>
+			<Value>Restricted procedure</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>3</Code>
+			<Value>Accelerated restricted procedure</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>C</Code>
+			<Value>Competitive dialogue</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>4</Code>
+			<Value>Negotiated procedure</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>6</Code>
+			<Value>Accelerated negotiated procedure</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>T</Code>
+			<Value>Negotiated without a call for competition</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>V</Code>
+			<Value>Award of contract without prior publication of a contract notice</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>A</Code>
+			<Value>Direct Award</Value>
+		</ValueSet>
+	</ValuesSet>
+</CodeList>

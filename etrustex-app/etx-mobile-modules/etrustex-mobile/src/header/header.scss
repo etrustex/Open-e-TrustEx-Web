@@ -1,0 +1,35 @@
+header {
+
+  .action-toolbar {
+    border:0;
+    background-color: color($colors, primary);
+    margin:0;
+    padding:4px;
+  }
+
+/*  img#user-avatar-normal {
+    content : url("../assets/icon/user.svg");
+    height: 34px;
+    width: 34px;
+    vertical-align: middle;
+    display:inline-block;
+    align: right;
+    max-height:100%;
+  }
+
+  img#user-avatar-selected {
+    content : url("../assets/icon/user-selected.svg");
+    height: 34px;
+    width: 34px;
+    vertical-align: middle;
+    display:inline-block;
+    align: right;
+    max-height:100%;
+  }*/
+
+  .action-nav-button {
+    margin:0;
+    color: white;
+  }
+
+}

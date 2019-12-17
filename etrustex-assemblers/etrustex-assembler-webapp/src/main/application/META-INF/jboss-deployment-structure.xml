@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+    <deployment>
+		<dependencies>
+			<!--<module name="com.sun.org.apache.xml.internal.security" services="export" />-->
+			<module name="org.infinispan" />
+			<module name="org.jboss.remote-naming" />
+			<module name="org.wildfly.extension.messaging-activemq"/>
+			<module name="org.apache.santuario.xmlsec" services="export" />
+			<module name="javax.servlet.jstl.api"/>
+			<module name="org.dom4j" />
+		</dependencies>
+
+		<exclusions>
+			<module name="com.sun.xml" />
+			<module name="javax.xml.xquery" />
+			<module name="javax.xml.bind" />
+			<module name="javax.namespace.xml" />
+			<module name="org.apache.log4j:main" />
+			<module name="com.sun.xml.wss" />
+			<module name="antlr" />
+			<module name="org.springframework" />
+			<module name="org.slf4j" />
+			<module name="org.hibernate" />
+		</exclusions>
+        <exclude-subsystems>
+            <subsystem name="webservices" />
+        </exclude-subsystems>
+    </deployment>
+</jboss-deployment-structure>

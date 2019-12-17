@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="53c6f6be-b804-43b1-8884-26e097004805" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="webService_DocumentBundleService" searchProperties="true" disabled="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="53c6f6be-b804-43b1-8884-26e097004805fileName">webService_DocumentBundleService</con:setting></con:settings><con:testStep type="request" name="submitDocumentBundle" id="3f890854-5b2a-4117-89ed-a352dcd70c0b" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>documentBundleBinding</con:interface><con:operation>submitDocumentBundle</con:operation><con:request name="submitDocumentBundle" id="5b238907-1862-486d-b2aa-a861b737aa9e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#DOCUMENT_BUNDLE_URL}</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Header>
+      <ns7:Header xmlns:ns16="http://uri.etsi.org/01903/v1.4.1#" xmlns:ns15="ec:schema:xsd:DocumentBundle-1" xmlns:ns14="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:ns13="ec:schema:xsd:Ack-2" xmlns:ns12="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns11="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2" xmlns:ns10="http://www.w3.org/2000/09/xmldsig#" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2" xmlns:ns8="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:ns7="ec:services:wsdl:DocumentBundle-2" xmlns:ns6="ec:schema:xsd:CommonBasicComponents-1" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns4="ec:schema:xsd:CommonAggregateComponents-2" xmlns:ns3="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+         <ns4:BusinessHeader>
+            <ns8:Sender>
+               <ns8:Identifier>${#TestSuite#SENDER_PARTY}</ns8:Identifier>
+            </ns8:Sender>
+            <ns8:Receiver>
+               <ns8:Identifier>${#TestSuite#RECEIVER_PARTY}</ns8:Identifier>
+            </ns8:Receiver>
+         </ns4:BusinessHeader>
+      </ns7:Header>
+   </soap:Header>
+   <soap:Body>
+      <ns7:SubmitDocumentBundleRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ns3="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ns4="ec:schema:xsd:CommonAggregateComponents-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns6="ec:schema:xsd:CommonBasicComponents-1" xmlns:ns7="ec:services:wsdl:DocumentBundle-2" xmlns:ns8="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2" xmlns:ns10="http://www.w3.org/2000/09/xmldsig#" xmlns:ns11="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2" xmlns:ns12="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns13="ec:schema:xsd:Ack-2" xmlns:ns14="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:ns15="ec:schema:xsd:DocumentBundle-1" xmlns:ns16="http://uri.etsi.org/01903/v1.4.1#">
+         <ns7:DocumentBundle>
+            <ns2:UBLExtensions>
+               <ns2:UBLExtension>
+                  <ID>signature</ID>
+                  <ns2:ExtensionContent>
+                     <valueElement xmlns:ns17="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="">${#TestSuite#SIGNATURE}</valueElement>
+                  </ns2:ExtensionContent>
+               </ns2:UBLExtension>
+               <ns2:UBLExtension>
+                  <ID>signedData</ID>
+                  <ns2:ExtensionContent>
+                     <valueElement xmlns:ns17="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="">${#TestSuite#SIGNED_DATA}</valueElement>
+                  </ns2:ExtensionContent>
+               </ns2:UBLExtension>
+            </ns2:UBLExtensions>
+            <ProfileID>${#TestSuite#MESSAGE_SUBJECT}</ProfileID>
+            <ID>${#TestSuite#BUNDLE_ID}</ID>
+            <UUID>${#TestSuite#REFERENCE_ID}</UUID>
+            <IssueDate>${#TestSuite#ISSUE_DATE}</IssueDate>
+            <IssueTime>${#TestSuite#ISSUE_TIME}</IssueTime>
+            <Note>${#TestSuite#MESSAGE_CONTENT}</Note>
+            <ns3:SenderParty>
+               <EndpointID>${#TestSuite#SENDER_PARTY}</EndpointID>
+            </ns3:SenderParty>
+            <ns3:ReceiverParty>
+               <EndpointID>${#TestSuite#RECEIVER_PARTY}</EndpointID>
+            </ns3:ReceiverParty>
+            <ns4:DocumentWrapperReference>
+               <ID>${#TestSuite#ATTACHMENT_ID}</ID>
+               <DocumentTypeCode>BINARY</DocumentTypeCode>
+               <ns4:ResourceInformationReference>
+                  <Name>${#TestSuite#ATTACHMENT_FILENAME}</Name>
+                  <ns4:DocumentSize>${#TestSuite#ATTACHMENT_FILESIZE}</ns4:DocumentSize>
+                  <ns4:DocumentHashMethod>SHA-512</ns4:DocumentHashMethod>
+                  <DocumentHash>${#TestSuite#ATTACHMENT_CHECKSUM}</DocumentHash>
+               </ns4:ResourceInformationReference>
+            </ns4:DocumentWrapperReference>
+            <ns4:DocumentWrapperReference>
+               <ID>${#TestSuite#METADATA_ID}</ID>
+               <DocumentTypeCode>METADATA</DocumentTypeCode>
+               <ns4:ResourceInformationReference>
+                  <Name>${#TestSuite#METADATA_FILENAME}</Name>
+                  <ns4:DocumentSize>${#TestSuite#METADATA_FILESIZE}</ns4:DocumentSize>
+                  <ns4:DocumentHashMethod>SHA-512</ns4:DocumentHashMethod>
+                  <DocumentHash>${#TestSuite#METADATA_CHECKSUM}</DocumentHash>
+               </ns4:ResourceInformationReference>
+            </ns4:DocumentWrapperReference>
+         </ns7:DocumentBundle>
+      </ns7:SubmitDocumentBundleRequest>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2f9bf1f1-b88c-4d33-b193-c89cc8fe7ad5"/><con:credentials><con:username>${#Project#DOCUMENT_BUNDLE_USERNAME}</con:username><con:password>${#Project#DOCUMENT_BUNDLE_PASSWORD}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="submitDocumentBundle_without_payload" id="07327cad-9697-4ac6-80ec-2352af658bd3" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>documentBundleBinding</con:interface><con:operation>submitDocumentBundle</con:operation><con:request name="submitDocumentBundle_without_payload" id="5b238907-1862-486d-b2aa-a861b737aa9e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#DOCUMENT_BUNDLE_URL}</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soap:Header>\r
+      <ns7:Header xmlns:ns16="http://uri.etsi.org/01903/v1.4.1#" xmlns:ns15="ec:schema:xsd:DocumentBundle-1" xmlns:ns14="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:ns13="ec:schema:xsd:Ack-2" xmlns:ns12="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns11="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2" xmlns:ns10="http://www.w3.org/2000/09/xmldsig#" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2" xmlns:ns8="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:ns7="ec:services:wsdl:DocumentBundle-2" xmlns:ns6="ec:schema:xsd:CommonBasicComponents-1" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns4="ec:schema:xsd:CommonAggregateComponents-2" xmlns:ns3="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">\r
+         <ns4:BusinessHeader>\r
+            <ns8:Sender>\r
+               <ns8:Identifier>${#TestSuite#SENDER_PARTY}</ns8:Identifier>\r
+            </ns8:Sender>\r
+            <ns8:Receiver>\r
+               <ns8:Identifier>${#TestSuite#RECEIVER_PARTY}</ns8:Identifier>\r
+            </ns8:Receiver>\r
+         </ns4:BusinessHeader>\r
+      </ns7:Header>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <ns7:SubmitDocumentBundleRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ns3="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ns4="ec:schema:xsd:CommonAggregateComponents-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns6="ec:schema:xsd:CommonBasicComponents-1" xmlns:ns7="ec:services:wsdl:DocumentBundle-2" xmlns:ns8="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2" xmlns:ns10="http://www.w3.org/2000/09/xmldsig#" xmlns:ns11="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2" xmlns:ns12="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns13="ec:schema:xsd:Ack-2" xmlns:ns14="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:ns15="ec:schema:xsd:DocumentBundle-1" xmlns:ns16="http://uri.etsi.org/01903/v1.4.1#">\r
+         <ns7:DocumentBundle>\r
+            <ns2:UBLExtensions>\r
+               <ns2:UBLExtension>\r
+                  <ID>signature</ID>\r
+                  <ns2:ExtensionContent>\r
+                     <valueElement xmlns:ns17="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="">${#TestSuite#SIGNATURE}</valueElement>\r
+                  </ns2:ExtensionContent>\r
+               </ns2:UBLExtension>\r
+               <ns2:UBLExtension>\r
+                  <ID>signedData</ID>\r
+                  <ns2:ExtensionContent>\r
+                     <valueElement xmlns:ns17="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="">${#TestSuite#SIGNED_DATA}</valueElement>\r
+                  </ns2:ExtensionContent>\r
+               </ns2:UBLExtension>\r
+            </ns2:UBLExtensions>\r
+            <ProfileID>${#TestSuite#MESSAGE_SUBJECT}</ProfileID>\r
+            <ID>${#TestSuite#BUNDLE_ID}</ID>\r
+            <UUID>${#TestSuite#REFERENCE_ID}</UUID>\r
+            <IssueDate>${#TestSuite#ISSUE_DATE}</IssueDate>\r
+            <IssueTime>${#TestSuite#ISSUE_TIME}</IssueTime>\r
+            <Note>${#TestSuite#MESSAGE_CONTENT}</Note>\r
+            <ns3:SenderParty>\r
+               <EndpointID>${#TestSuite#SENDER_PARTY}</EndpointID>\r
+            </ns3:SenderParty>\r
+            <ns3:ReceiverParty>\r
+               <EndpointID>${#TestSuite#RECEIVER_PARTY}</EndpointID>\r
+            </ns3:ReceiverParty>\r
+            <ns4:DocumentWrapperReference>\r
+               <ID>${#TestSuite#ATTACHMENT_ID}</ID>\r
+               <DocumentTypeCode>BINARY</DocumentTypeCode>\r
+               <ns4:ResourceInformationReference>\r
+                  <Name>${#TestSuite#ATTACHMENT_FILENAME}</Name>\r
+                  <ns4:DocumentSize>${#TestSuite#ATTACHMENT_FILESIZE}</ns4:DocumentSize>\r
+                  <ns4:DocumentHashMethod>SHA-512</ns4:DocumentHashMethod>\r
+                  <DocumentHash>${#TestSuite#ATTACHMENT_CHECKSUM}</DocumentHash>\r
+               </ns4:ResourceInformationReference>\r
+            </ns4:DocumentWrapperReference>\r
+         </ns7:DocumentBundle>\r
+      </ns7:SubmitDocumentBundleRequest>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2f9bf1f1-b88c-4d33-b193-c89cc8fe7ad5"/><con:credentials><con:username>${#Project#DOCUMENT_BUNDLE_USERNAME}</con:username><con:password>${#Project#DOCUMENT_BUNDLE_PASSWORD}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

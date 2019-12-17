@@ -1,0 +1,5 @@
+insert into ETX_WEB_MESSAGE_SIG (MSG_ID, MSG_SIGNATURE, MSG_SIGNED_DATA, MSG_CERTIFICATE)
+  select MSG_ID, MSG_SIGNATURE, MSG_SIGNED_DATA, '{}' from ETX_WEB_MESSAGE
+  where
+    (MSG_SIGNATURE is not null or MSG_SIGNED_DATA is not null)
+    and MSG_ID not in (select MSG_ID from ETX_WEB_MESSAGE_SIG);

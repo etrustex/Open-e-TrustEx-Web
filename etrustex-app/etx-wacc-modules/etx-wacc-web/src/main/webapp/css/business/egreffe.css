@@ -1,0 +1,171 @@
+/*message list*/
+.business-egreffe-message-list .notRead{
+	font-weight: bold;
+	background-color:#e7f2ff;
+}
+
+.business-egreffe-message-list .read{
+}
+
+.business-egreffe-message-list{
+    border-top: 1px solid #d0e4ff;
+	border-left: 1px solid #d0e4ff;
+	border-right: 1px solid #d0e4ff;
+	margin: 0px 5px 0px 5px;
+	text-decoration: none;
+	min-width: 610px;
+}
+
+.business-egreffe-message-list a:visited{
+	color: #0086cb;
+	text-decoration:none;
+}
+
+.messageSubject{
+    color: #0086cb;
+	text-decoration:none;
+	cursor: pointer;
+}
+
+.messageSender{
+    color: #0086cb;
+}
+
+.notIca{
+    color:#b1b2b3;
+	text-decoration:none;
+}
+
+.business-egreffe-message-list a:link{
+	color: #0086cb;
+	text-decoration:none;
+}
+
+.business-egreffe-message-list .style-hour, .style-sender{
+	border-bottom: 1px solid #d0e4ff;
+	height:20px;
+	vertical-align: middle;
+}
+
+.business-egreffe-message-list .style-delete{
+	border-bottom: 1px solid #d0e4ff;
+	width: 45px;
+	text-align:center;
+    cursor:pointer;
+	vertical-align: middle;
+}
+
+.business-egreffe-message-list .style-count{
+	border-bottom: 1px solid #d0e4ff;
+	height:20px;
+	text-align:center;
+	vertical-align: middle;
+}
+
+.business-egreffe-message-list .style-sender{
+	font-size: 0.7em;
+	font-style:normal;
+	font-weight:normal;
+	height:20px;
+	vertical-align: middle;
+}
+.business-egreffe-message-list .style-subject{
+	font-size: 0.85em;
+	height:20px;
+	vertical-align: middle;
+}
+.business-egreffe-message-list .style-date, .style-hour{
+	color:#b1b2b3;
+	width: 85px;
+	font-size: 0.7em;
+	font-style:normal;
+	text-align:right;
+	height:20px;
+	padding-right:4px;
+	vertical-align: middle;
+}
+.business-egreffe-message-list .style-attachment, .style-count{
+	color:#0086cb;
+	width: 25px;
+	font-size: 0.7em;
+	font-style:normal;
+	height:20px;
+	text-align:center;
+	vertical-align: middle;
+}
+.business-egreffe-message-list .style-blank{
+	border-bottom: 2px solid #0095FB;
+}
+.business-egreffe-message-list .style-dossier{
+	font-family: Arial;
+	font-size: 0.9em;
+	color: #006497;
+	border-bottom: 2px solid #0095FB;
+	height:35px;
+	padding-left: 10px;
+	vertical-align: middle;
+}
+.business-egreffe-message-list table{
+    width: 100%;
+    table-layout: fixed;
+}
+.business-egreffe-message-list .dossier{
+	font-weight: bold;
+	padding: 5px 0px 2px 0px;
+}
+
+
+/*message details*/
+
+.business-egreffe-metadata-table{
+	overflow-x: hidden;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
+.business-egreffe-metadata-table tr{
+	border: 1px solid #CCC;
+	width: 100%;
+}
+
+.business-egreffe-metadata-table .lang-cell {
+	border: 1px solid #CCC;
+	padding: 2px;
+	width: 20px;
+	min-width: 20px;
+}
+
+.business-egreffe-metadata-table .lang-cell img {
+    margin: 2px;
+}
+
+.business-egreffe-metadata-table .filename-cell {
+	border: 1px solid #CCC;
+	padding: 2px;
+	width: 300px;
+	min-width: 300px;
+	vertical-align: middle;
+    padding-left: 5px;
+}
+
+.business-egreffe-document-title{
+	color:#074A8B;
+	font-size: 0.8em;
+	margin-top: 20px;
+}
+
+.business-egreffe-metadata-table th{
+	background-color:#cfdfec;
+	color:#2b5580;
+	font-size: 0.7em;
+	text-align:center;
+}
+
+.business-egreffe-metadata-label-values{
+	color:#074A8B;
+	font-family: Arial;
+	font-size: 1em;
+	font-weight:normal;
+	text-align: left;
+}

@@ -1,0 +1,288 @@
+@charset "utf-8";
+
+@import "reset.css?ver=${eTrustEx.version}-${eTrustEx.timestamp}";
+
+@import "header.css?ver=${eTrustEx.version}-${eTrustEx.timestamp}";
+@import "sidebar.css?ver=${eTrustEx.version}-${eTrustEx.timestamp}";
+@import "content.css?ver=${eTrustEx.version}-${eTrustEx.timestamp}";
+@import "footer.css?ver=${eTrustEx.version}-${eTrustEx.timestamp}";
+
+/* common */
+html, body{
+	font: 100% Arial;
+    height: 100%;
+}
+
+form{
+    display: inline;
+}
+
+b{
+	font-weight:bold;
+}
+
+i{
+    font-style: italic;
+}
+
+h1{
+	color: #074a8b;
+    font-family: Georgia;
+    font-size: 1.55em;
+}
+
+h2{
+    color: #074a8b;
+    font-family: Georgia;
+    font-size: 1em;
+    display: inline;
+}
+
+h3{
+	color:#426e99;
+	font-family: Georgia;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+h4 {
+    color: #074A8B;
+    font-family: Arial;
+    font-size: 0.8em;
+	font-weight: bold;
+}
+
+h5 {
+    color: #0086cb;
+    font-family: Arial;
+    font-size: 1em;
+	font-weight: bold;
+}
+
+h6 {
+    color: #0086cb;
+    font-family: Arial;
+    font-size: 1.1em;
+	font-weight: bold;
+}
+
+
+.right {
+    float: right;
+}
+
+.status {
+    float: right;
+}
+
+.left {
+    float: left;
+    padding-left: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto;
+}
+
+.container {
+    padding-bottom: 40px;
+    overflow-y: auto;
+}
+
+.grid {
+    display:table;
+    margin: 5px;
+}
+
+.grid-row {
+    display: table-row;
+    height: 28px;
+}
+
+.grid-cell {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.grid-cell-l {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 590px;
+    text-align: right;
+}
+
+.grid-cell-img {
+    border-style: none;
+    vertical-align: middle;
+}
+
+.grid-cell-textarea {
+    display: block;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.no-js{
+	font: 100% Arial;
+	font-size: 1.0em;
+	color: red;
+	text-align:center;
+	border:none;
+}
+
+/* singletons */
+#disabling-div {
+    /* Do not display it on entry */
+    display: none;
+
+    /* Display it on the layer with index 1001.
+       Make sure this is the highest z-index value
+       used by layers on that page */
+    z-index:1001;
+
+    /* make it cover the whole screen */
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+
+    /* make it white but fully transparent */
+    background-color: white;
+    opacity:.5;
+    filter: alpha(opacity=50);
+}
+
+/*#languages-script {*/
+    /*display: none;*/
+/*}*/
+
+#cbanner {
+    background-image: url("../images/img/bg_content.png");
+    background-repeat: repeat-x;
+    border-top: 1px solid #d0e4ff;
+    border-left: 1px solid #d0e4ff;
+    border-right: 1px solid #d0e4ff;
+    border-bottom: 1px solid #d0e4ff;
+    color: #006497;
+    padding: 5px 0px 2px 5px;
+}
+
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+}
+
+.compatible-browsers-content {
+    margin-left: 50px;
+}
+
+.compatible-version-table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: 30px;
+    width:50%;
+}
+
+.compatible-version-table tr {
+    border: 1px solid black;
+}
+
+.compatible-version-table th {
+    border: 1px solid black;
+    font-weight: bold;
+    background-color: #d4d4d4;
+}
+
+.compatible-version-table td {
+    border: 1px solid black;
+    vertical-align: middle !important;
+    padding: 10px;
+}
+
+.compatible-version-table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+.compatible-version-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.image-browser-displayed {
+    display: block;
+    margin: 5px;
+    float: left;
+}
+
+span.image-browser-displayed {
+    margin-top: 10px;
+}
+
+
+.identity-invalid {
+    color: #dc3545 !important;
+}
+table.row-selectable-table {
+    font-size: small;
+    border-collapse: collapse;
+}
+.row-selectable-table th {
+    font-weight: bold;
+    border-top: 1pt solid gray;
+    border-bottom: 1pt solid gray;
+    background-color: white;
+}
+.row-selectable-table th {
+    padding: 5px;
+}
+.row-selectable-table td {
+    padding: 5px;
+}
+.row-selectable-table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+.row-selectable-table tr.selected-identity {
+    background-color: #9acfea ! important;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #074a8b;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}

@@ -1,0 +1,17 @@
+.business-edma-metadata {
+ display: flex;
+}
+
+.business-edma-metadata-column-left {
+    margin-right: 30px;
+    min-height: 560px;
+}
+
+.business-edma-metadata-column-right {
+    margin-left: 30px;
+}
+
+.business-edma-metadata h5{
+    padding-left: 5px;
+    padding-top: 20px;
+}

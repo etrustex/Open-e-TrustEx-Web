@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:CodeList xmlns:n="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Identification xmlns="">
+      <ShortName>NoWarnings</ShortName>
+      <LongName>No Warnings in HR specific by Customer</LongName>
+      <Version>0.1</Version>
+      <CanonicalUri>Placeholder</CanonicalUri>
+      <CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+      <Agency>
+         <LongName>European Commission</LongName>
+      </Agency>
+   </Identification>
+   <!--
+		List of Customers that don't want Warnings displayed.
+		To display again simply remove the wanted Row element.
+		The Value represents the "eccac:ECDocumentReceivedData/eccbc:CustomerID"
+	-->
+   <SimpleCodeList xmlns="">
+      <Row>
+         <Value>NAL#CONSIL</Value>
+      </Row>
+      <Row>
+         <Value>NAL#CURIA</Value>
+      </Row>
+      <Row>
+         <Value>NAL#ECA</Value>
+      </Row>
+    </SimpleCodeList>
+</n:CodeList>

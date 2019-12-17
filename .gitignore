@@ -1,0 +1,17 @@
+.vscode
+.idea
+*.iml
+node_modules
+target
+build
+dist
+swagger
+rebel-remote.xml
+rebel.xml
+.project
+.settings
+/etrustex-app/etx-wacc-modules/etx-wacc-web/logs
+/etrustex-app/etx-wacc-modules/etx-wacc-web/src/main/profiles/**/*
+!/etrustex-app/etx-wacc-modules/etx-wacc-web/src/main/profiles/wildfly
+/Docker/**/*
+!/Docker/open-source

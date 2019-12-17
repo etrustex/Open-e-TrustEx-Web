@@ -1,0 +1,52 @@
+.ui-widget-header .ui-state-focus {
+    border: 1px solid #79b7e7;
+    background: #d0e5f5 url("images/ui-bg_glass_75_d0e5f5_1x400.png") 50% 50% repeat-x;
+    color: #1d5987;
+}
+
+.ui-menu-item {
+    font-size: 0.8em;
+    line-height: 0.6em;
+}
+
+.ui-selectmenu-button span.ui-selectmenu-text {
+    line-height: 0.6;
+    font-weight:normal;
+    color: black;
+    font-size: 0.8em;
+}
+
+.ui-menu .ui-menu-item {
+    padding: 0.4em 2.1em 0.4em 1em;
+}
+
+.ui-selectmenu-button {
+    height: 19px;
+}
+
+.ui-autocomplete {
+    max-height: 255px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    margin-right: 20px;
+}
+
+/* auto-complete combobox */
+.custom-combobox {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-combobox-toggle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: -1px;
+    padding: 0;
+}
+
+.custom-combobox-input {
+    margin: 0;
+    padding: 5px 10px;
+}

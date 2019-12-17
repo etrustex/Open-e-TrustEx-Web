@@ -1,0 +1,15 @@
+{
+  "name": "etrustext-mobile",
+  "app_id": "",
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/e-trustex",
+      "proxyUrl": "http://localhost:7001/e-trustex"
+    }
+  ],
+  "integrations": {
+    "gulp": {}
+  },
+  "watchPatterns": []
+}

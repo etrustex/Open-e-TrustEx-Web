@@ -1,0 +1,48 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="etrust" transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>eu.europa.ec.etrustex.webaccess.model.User</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.Party</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.Message</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.MessageRead</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.Attachment</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.Language</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.Config</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.Business</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.BusinessConfig</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.BusinessUserConfig</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.UserRole</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.Role</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.Privilege</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.Notification</class>
+        <class>eu.europa.ec.etrustex.webaccess.model.MessageStatus</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.MessageSignature</class>
+		<class>eu.europa.ec.etrustex.webaccess.model.PartyIca</class>
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:testdb" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.query.factory_class"
+				value="org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory" />
+
+			<property name="connection.pool_size" value="2"/>
+            <!-- enable ehcache -->
+            <property name="hibernate.cache.use_query_cache" value="false"/>
+            <property name="hibernate.cache.use_second_level_cache" value="false"/>
+            <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory"/>
+		</properties>
+
+
+	</persistence-unit>
+
+</persistence>
+

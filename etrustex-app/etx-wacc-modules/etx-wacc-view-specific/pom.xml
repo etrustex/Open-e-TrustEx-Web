@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>etx-wacc-modules</artifactId>
+        <groupId>eu.europa.ec.etrustex</groupId>
+        <version>trunk</version>
+    </parent>
+
+    <artifactId>etx-wacc-view-specific</artifactId>
+    <packaging>pom</packaging>
+    <description>Business View specific container</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>eu.europa.ec.etrustex</groupId>
+            <artifactId>etrustex-utils-test</artifactId>
+            <version>${eTrustEx.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>etx-wacc-view-business-common</module>
+        <module>etx-wacc-view-business-edma</module>
+        <module>etx-wacc-view-business-egreffe</module>
+    </modules>
+</project>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="896233ac-46f8-4f48-924d-121aa2ba8b63" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="check_assign_user_operation_schema_validation" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="583ec887-eefe-48a6-b604-47287b67e9bdfileName">check_standard_incoming_message_is_correctly_persisted</con:setting><con:setting id="51a63d03-2822-40b6-9f58-eb6899d5dbf0fileName">check_signed_message_one_attachment_one_payload_is_correctly_persisted</con:setting><con:setting id="2c021a08-9d90-4ccd-9403-82b8176e7994fileName">check_READ_messageStatus_is_correctly_persisted</con:setting><con:setting id="4bdd89ac-d9d1-48e2-9d45-dbd301f205a5fileName">check_assign_a_party_to_one_user</con:setting><con:setting id="7bdc3f72-ae10-4851-848d-5a79c0fda2f4fileName">check_party_already_assigned_user</con:setting><con:setting id="896233ac-46f8-4f48-924d-121aa2ba8b63fileName">check_assign_user_operation_schema_validation</con:setting></con:settings><con:testStep type="groovy" name="submit_check_assign_user_operation_schema_validation" id="ab78bdf5-1add-4f11-8b9d-9e1c1f97da63"><con:settings/><con:config><script><![CDATA[	
+	import groovy.sql.Sql
+	import java.text.SimpleDateFormat
+
+	// initialise DB driver
+	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver("oracle.jdbc.OracleDriver")
+
+	// load methods from repository
+	scripts = testRunner.testCase.testSuite.project.testSuites["SCRIPTS"]
+	scripts.testCases["METHODS"].testSteps["METHODS"].run(testRunner, context)
+
+	log.debug "================================================================================"
+	log.info "USER REGISTRATION - ASSIGN USER - START CHECKING ASSIGN USER SCHEMA VALIDATION"
+
+	long businessId = 10000001	
+	String receiverPartyName = "ROBOT_APP_PARTY"	
+	String businessName = "TEST"
+	String application = "TEST"
+	String partyName = "WEB_SENDER_PARTY1"
+
+	def userLoginList = ["cholaarX", "miclevaX"]
+	def firstNameList = ["Armen", "Valer"]
+	def lastNameList = ["Cholakian", "Micle"]
+	def userEmailList = ["armo@chocko.com", "valer@micle.com"]	
+	
+	// open DB connection
+	context.commonDao.openDbConnection()
+	
+	try{
+		
+		// create business on business table
+		context.commonDao.createBusiness(businessId, businessName)
+	
+		// create business config on business config table
+		context.commonDao.createBusinessConfig(1000001, businessId, "etx.business.receiver.node.party.name", "ROBOT_APP_PARTY")
+		context.commonDao.createBusinessConfig(1000002, businessId, "etx.business.warn.email.notif.enabled", "0")
+		context.commonDao.createBusinessConfig(1000003, businessId, "etx.business.custom.view.name", "edma")	
+		
+		// create party on party table
+		context.commonDao.createParty(1000001, "sysdate", partyName, businessId)
+	
+		// reset cache
+		context.commonDao.resetCacheWeb()
+
+		// inject values into first assign user request
+		testRunner.testCase.testSuite.setPropertyValue('USER_LOGIN', null)
+		testRunner.testCase.testSuite.setPropertyValue('PARTY_ID', partyName)
+		testRunner.testCase.testSuite.setPropertyValue('APPLICATION', application)
+		testRunner.testCase.testSuite.setPropertyValue('FIRST_NAME', firstNameList[0])
+		testRunner.testCase.testSuite.setPropertyValue('LAST_NAME', lastNameList[0])
+		testRunner.testCase.testSuite.setPropertyValue('USER_EMAIL', userEmailList[0])
+
+		// define the webservice - assign user
+		def testCase = testRunner.testCase.testSuite.testCases["webService_UserRegistrationService"]
+		def testStep = testCase.testSteps["assignUserParty"]
+		
+		// EXECUTE SENDING REQUEST TO THE ASSIGN USER WEBSERVICE
+		testStep.run(testRunner, context)
+
+		// define the webservice response for assign user
+		context.setProperty('xmlResponse', testStep.getProperty('response'))
+	
+		// parse the response code from the webservice response
+		def assignUserActualResponse = context.expand( '${xmlResponse#declare namespace soap=\'http://schemas.xmlsoap.org/soap/envelope/\'; //soap:Envelope[1]}' ).replaceAll(/>\s+</, '><')
+
+		// define the expected response from the webservice
+		def assignUserExpectedResponse = """
+		<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+		   <soap:Body>
+		      <soap:Fault>
+		         <faultcode>soap:Server</faultcode>
+		         <faultstring>javax.persistence.PersistenceException: org.hibernate.exception.ConstraintViolationException: could not execute batch</faultstring>
+		      </soap:Fault>
+		   </soap:Body>
+		</soap:Envelope>
+		""".trim().replaceAll(/>\s*</, '><')
+
+		// check that the actual response from the webservice matches the expected response
+		assert assignUserActualResponse == assignUserExpectedResponse	
+	
+	} finally {
+
+		// delete user roles from the web user role table
+		context.commonDao.deleteUserRole(1000001)
+
+		// delete users from the business user config table
+		context.commonDao.deleteBusinessUserConfig(businessId)
+
+		// delete users from the web user table
+		context.commonDao.deleteUser(userLoginList[0])
+
+		// delete parties from party table
+		context.commonDao.deleteParty(partyName)
+
+		// delete business config from business config table
+		context.commonDao.deleteBusinessConfig(businessId)
+	
+		// delete business from business table
+		context.commonDao.deleteBusiness(businessId)
+
+		// close DB connection
+		context.commonDao.closeDbConnection()
+
+		// reset cache
+		context.commonDao.resetCacheWeb()
+	
+	}
+
+	log.info "USER REGISTRATION - ASSIGN USER - FINISHED CHECKING ASSIGN USER SCHEMA VALIDATION"
+]]></script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

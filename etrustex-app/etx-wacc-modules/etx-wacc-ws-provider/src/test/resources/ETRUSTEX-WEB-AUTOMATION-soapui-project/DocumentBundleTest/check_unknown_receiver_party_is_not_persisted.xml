@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="64d68c61-71dc-4d9c-bb1f-f2b399125f6e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="check_unknown_receiver_party_is_not_persisted" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="5aebfffb-4108-4cc2-b787-0997cb46a3d1fileName">check_signed_message_one_attachment_one_payload_is_correctly_persisted</con:setting><con:setting id="64d68c61-71dc-4d9c-bb1f-f2b399125f6efileName">check_unknown_receiver_party_is_not_persisted</con:setting></con:settings><con:testStep type="groovy" name="submit_check_unknown_receiver_party_is_not_persisted" id="65d7899f-22d2-4a42-a364-cc27deadfe27"><con:settings/><con:config><script><![CDATA[	
+	import groovy.sql.Sql
+	import java.text.SimpleDateFormat
+	import com.eviware.soapui.model.mock.MockService
+	import com.eviware.soapui.model.mock.MockRunner
+
+	// initialise DB driver
+	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver("oracle.jdbc.OracleDriver")
+
+	// load methods from repository
+	scripts = testRunner.testCase.testSuite.project.testSuites["SCRIPTS"]
+	scripts.testCases["METHODS"].testSteps["METHODS"].run(testRunner, context)
+
+	log.debug "================================================================================"
+	log.info "DOCUMENT BUNDLE - START CHECKING UNKNOWN RECEIVER PARTY IS NOT PERSISTED"
+
+	long localPartyId = 1000001
+	long businessId = 10000001
+	String partyName = "WEB_SENDER_PARTY"
+	String businessName = "test"
+	String bundleId = "ROBOT_BUNDLE_0003"
+	String referenceId = "REFERENCE COM(134)2015"	
+	String receiverPartyName = "ROBOT_APP_PARTY"	
+	String issueDateTime = "2015-07-01T14:44:39.000"
+	String issueDate = "2015-07-01"
+	String issueTime = "14:44:39.000"	
+	String messageSubject = "THE SUBJECT IS SUBJECTIVE"
+	String messageContent = "THE CONTENT IS CONTENTIOUS"	
+	String attachmentId = "ATT_1234567_8901234"
+	String attachmentFileName = "EDMA_PDF00001.pdf"
+	String attachmentFileSize = 41523
+	String attachmentChecksum = "D5CE4474F5DE9AE959EC444BE6013E52DD8F314718EA9A06149E22139C4E01A170AC9887925C209E2C85F64FB5218FC55C716FF5481D3D53499B6BBBC0D7C516"
+	String metadataId = "MD_890123_4567890"
+	String metadataFileName = "payload.xml"
+	String metadataFileSize = 1756
+	String metadataChecksum = "BF121E052559469A23FCD8E6E047CD65A608F97479CA0E973FB8BFF644885AF68170C48B6E5ACB76775D69730C411AE28CFF60017D51582020FD5A8A9B8DB142"
+	String signature = "<![CDATA[<signature>THIS IS A SIGNATURE</signature>]]]]>><![CDATA[" 
+	String signedData = "<![CDATA[<signature>THIS IS THE SIGNED DATA</signature>]]]]>><![CDATA["
+		
+	// open DB connection
+	context.commonDao.openDbConnection()
+	
+	def msgId = null
+	
+	try{
+		
+		// create business on business table
+		context.commonDao.createBusiness(businessId, businessName)
+	
+		// create business config on business config table
+		context.commonDao.createBusinessConfig(1000001, businessId, "etx.business.receiver.node.party.name", "ROBOT_APP_PARTY")
+		context.commonDao.createBusinessConfig(1000002, businessId, "etx.business.warn.email.notif.enabled", "0")
+		context.commonDao.createBusinessConfig(1000003, businessId, "etx.business.custom.view.name", "edma")	
+		
+		// create party on party table
+		context.commonDao.createParty(localPartyId, "sysdate", partyName, businessId)
+
+		// reset cache
+		context.commonDao.resetCacheWeb()
+
+		// inject values into inbox notification request
+		testRunner.testCase.testSuite.setPropertyValue('BUNDLE_ID', bundleId)
+		testRunner.testCase.testSuite.setPropertyValue('REFERENCE_ID', referenceId)
+		testRunner.testCase.testSuite.setPropertyValue('ISSUE_DATETIME', issueDateTime)
+		testRunner.testCase.testSuite.setPropertyValue('ISSUE_DATE', issueDate)
+		testRunner.testCase.testSuite.setPropertyValue('ISSUE_TIME', issueTime)
+		testRunner.testCase.testSuite.setPropertyValue('MESSAGE_SUBJECT', messageSubject)
+		testRunner.testCase.testSuite.setPropertyValue('MESSAGE_CONTENT', messageContent)	
+		testRunner.testCase.testSuite.setPropertyValue('SENDER_PARTY', receiverPartyName)
+		testRunner.testCase.testSuite.setPropertyValue('RECEIVER_PARTY', "UNKNOWN_PARTY")
+		testRunner.testCase.testSuite.setPropertyValue('ATTACHMENT_ID', attachmentId)
+		testRunner.testCase.testSuite.setPropertyValue('ATTACHMENT_FILENAME', attachmentFileName)
+		testRunner.testCase.testSuite.setPropertyValue('ATTACHMENT_FILESIZE', attachmentFileSize)
+		testRunner.testCase.testSuite.setPropertyValue('ATTACHMENT_CHECKSUM', attachmentChecksum)
+		testRunner.testCase.testSuite.setPropertyValue('METADATA_ID', metadataId)
+		testRunner.testCase.testSuite.setPropertyValue('METADATA_FILENAME', metadataFileName)
+		testRunner.testCase.testSuite.setPropertyValue('METADATA_FILESIZE', metadataFileSize)
+		testRunner.testCase.testSuite.setPropertyValue('METADATA_CHECKSUM', metadataChecksum)
+		testRunner.testCase.testSuite.setPropertyValue('SIGNATURE', signature)
+		testRunner.testCase.testSuite.setPropertyValue('SIGNED_DATA', signedData)		
+
+		// define the webservice
+		def testCase = testRunner.testCase.testSuite.testCases["webService_DocumentBundleService"]
+		def testStep = testCase.testSteps["submitDocumentBundle"]
+		
+		// EXECUTE SENDING REQUEST TO THE WEBSERVICE
+		testStep.run(testRunner, context)
+
+		// define the webservice response
+		context.setProperty('xmlResponse', testStep.getProperty('response'))
+
+		// parse the actual response from the webservice
+		def submitBundleActualResponse = context.expand( '${xmlResponse#declare namespace soap=\'http://schemas.xmlsoap.org/soap/envelope/\'; //soap:Envelope[1]}' ).replaceAll(/>\s+</, '><')
+
+		// define the expected response from the webservice
+		def submitBundleExpectedResponse = """
+		<ns4:BusinessHeader>
+		  <ns8:Sender>
+		     <ns8:Identifier>ROBOT_APP_PARTY</ns8:Identifier>
+		  </ns8:Sender>
+		  <ns8:Receiver>
+		     <ns8:Identifier>UNKNOWN_PARTY</ns8:Identifier>
+		  </ns8:Receiver>
+		</ns4:BusinessHeader>
+		""".trim().replaceAll(/>\s*</, '><')
+
+		// check that the actual response from the webservice matches the expected response
+		assert submitBundleActualResponse.contains(submitBundleExpectedResponse)
+		
+		log.error "ETX-1785 THIS TEST SHOULD FAIL - AN UNKNOWN RECEIVER PARTY SHOULD BE REJECTED AT THE WEB SERVICE LEVEL"
+
+	} finally {
+
+		// delete party from party table
+		context.commonDao.deleteParty(partyName)
+
+		// delete business config from business config table
+		context.commonDao.deleteBusinessConfig(businessId)
+	
+		// delete business from business table
+		context.commonDao.deleteBusiness(businessId)
+	
+		// close DB connection
+		context.commonDao.closeDbConnection()
+		
+		// reset cache
+		context.commonDao.resetCacheWeb()
+			
+	}
+
+	log.info "DOCUMENT BUNDLE - FINISHED CHECKING UNKNOWN RECEIVER PARTY IS NOT PERSISTED"
+]]></script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="9ba3fdc4-7da5-4fae-bd3c-b9540011a235" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="check_list_of_available_parties_schema_validation" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="583ec887-eefe-48a6-b604-47287b67e9bdfileName">check_standard_incoming_message_is_correctly_persisted</con:setting><con:setting id="51a63d03-2822-40b6-9f58-eb6899d5dbf0fileName">check_signed_message_one_attachment_one_payload_is_correctly_persisted</con:setting><con:setting id="2c021a08-9d90-4ccd-9403-82b8176e7994fileName">check_READ_messageStatus_is_correctly_persisted</con:setting><con:setting id="9ba3fdc4-7da5-4fae-bd3c-b9540011a235fileName">check_list_of_available_parties_schema_validation</con:setting></con:settings><con:testStep type="groovy" name="submit_check_list_of_available_parties_schema_validation" id="66e6424b-416a-49ad-9d8a-3e74b230f3d6"><con:settings/><con:config><script>	
+	import groovy.sql.Sql
+	import java.text.SimpleDateFormat
+
+	// initialise DB driver
+	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver("oracle.jdbc.OracleDriver")
+
+	// load methods from repository
+	scripts = testRunner.testCase.testSuite.project.testSuites["SCRIPTS"]
+	scripts.testCases["METHODS"].testSteps["METHODS"].run(testRunner, context)
+
+	log.debug "================================================================================"
+	log.info "USER REGISTRATION - LIST AVAILABLE PARTIES - START CHECKING SUBMIT LIST OF AVAILABLE PARTIES SCHEMA VALIDATION"
+
+	long businessId = 10000001	
+	String receiverPartyName = "ROBOT_APP_PARTY"	
+	String businessName = "TEST"
+	String application = "TEST"
+
+	def partyList = ["WEB_SENDER_PARTY1", "WEB_SENDER_PARTY2", "WEB_SENDER_PARTY3", "WEB_SENDER_PARTY4", "WEB_SENDER_PARTY5"]
+
+	// open DB connection
+	context.commonDao.openDbConnection()
+
+	try{
+		
+		// create business on business table
+		context.commonDao.createBusiness(businessId, businessName)
+	
+		// create business config on business config table
+		context.commonDao.createBusinessConfig(1000001, businessId, "etx.business.receiver.node.party.name", "ROBOT_APP_PARTY")
+		context.commonDao.createBusinessConfig(1000002, businessId, "etx.business.warn.email.notif.enabled", "0")
+		context.commonDao.createBusinessConfig(1000003, businessId, "etx.business.custom.view.name", "edma")	
+		
+		// create parties on party table
+		context.commonDao.createParty(1000001, "sysdate", partyList[0], businessId)
+		context.commonDao.createParty(1000002, "sysdate", partyList[1], businessId)
+		context.commonDao.createParty(1000003, "sysdate", partyList[2], businessId)
+		context.commonDao.createParty(1000004, "sysdate", partyList[3], businessId)
+		context.commonDao.createParty(1000005, "sysdate", partyList[4], businessId)
+	
+		// reset cache
+		context.commonDao.resetCacheWeb()
+
+		// inject null value into list of available parties request
+		testRunner.testCase.testSuite.setPropertyValue('APPLICATION', null)
+
+		// define the webservice
+		def testCase = testRunner.testCase.testSuite.testCases["webService_UserRegistrationService"]
+		def testStep = testCase.testSteps["listAvailableParties"]
+		
+		// EXECUTE SENDING REQUEST TO THE WEBSERVICE
+		testStep.run(testRunner, context)
+
+		// define the webservice response
+		context.setProperty('xmlResponse', testStep.getProperty('response'))
+
+		// check that five parties are returned by the webservice
+		def numberOfParties = context.expand( '${xmlResponse#count(//ns1:partyID)}' ).toInteger()
+		assert numberOfParties == 0
+
+		log.error "THIS SCRIPT IS INCOMPLETE BECAUSE IT IS CURRENTLY NOT POSSIBLE TO CAUSE A SCHEMA ERROR FOR THIS OPERATION!!!"
+
+	} finally {
+
+		// delete parties from party table
+		context.commonDao.deleteParty(partyList[0])
+		context.commonDao.deleteParty(partyList[1])
+		context.commonDao.deleteParty(partyList[2])		
+		context.commonDao.deleteParty(partyList[3])
+		context.commonDao.deleteParty(partyList[4])
+		
+		// delete business config from business config table
+		context.commonDao.deleteBusinessConfig(businessId)
+	
+		// delete business from business table
+		context.commonDao.deleteBusiness(businessId)
+
+		// close DB connection
+		context.commonDao.closeDbConnection()
+
+		// reset cache
+		context.commonDao.resetCacheWeb()
+	
+	}
+
+	log.info "USER REGISTRATION - LIST AVAILABLE PARTIES - FINISHED CHECKING SUBMIT LIST OF AVAILABLE PARTIES SCHEMA VALIDATION"
+</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

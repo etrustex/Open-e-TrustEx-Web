@@ -1,0 +1,11 @@
+export TEST environment:
+user=ETXWTEST password=sdfgb#74FSsv host=olrdev3.cc.cec.eu.int port=1597 service=EX1UDIGT_TAF.cc.cec.eu.int out=d:/etrustex incremental=y update-checksums=y
+
+export DEV environment:
+user=ETXWDEV password=wgdh#764Dds host=olrdev3.cc.cec.eu.int port=1597 service=EX1UDIGD_TAF.cc.cec.eu.int out=e:/etrustex incremental=y update-checksums=y
+
+import DEV environment:
+user=ETXWDEV password=wgdh#764Dds host=olrdev3.cc.cec.eu.int port=1597 service=EX1UDIGD_TAF.cc.cec.eu.int in=e:\Projects\E-Trust-Ex\web\etrustex-ant\scripts\oracle\web\2.5.0\translations\respons\ recursive=y update-checksums=y
+
+import TEST environment:
+user=ETXWTEST password=sdfgb#74FSsv host=olrdev3.cc.cec.eu.int port=1597 service=EX1UDIGT_TAF.cc.cec.eu.int in=e:\Projects\E-Trust-Ex\web\etrustex-ant\scripts\oracle\web\2.5.0\translations\respons\ recursive=y update-checksums=y

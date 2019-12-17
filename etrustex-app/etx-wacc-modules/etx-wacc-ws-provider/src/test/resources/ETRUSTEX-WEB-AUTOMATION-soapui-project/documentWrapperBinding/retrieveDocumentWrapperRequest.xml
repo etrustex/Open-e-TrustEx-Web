@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="9cd6bd26-1a56-41aa-9ce0-38816d19f92a" isOneWay="false" action="" name="retrieveDocumentWrapperRequest" bindingOperationName="retrieveDocumentWrapperRequest" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="9cd6bd26-1a56-41aa-9ce0-38816d19f92afileName">retrieveDocumentWrapperRequest</con:setting></con:settings></con:operation>

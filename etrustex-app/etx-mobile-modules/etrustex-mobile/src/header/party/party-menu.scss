@@ -1,0 +1,51 @@
+
+party-menu {
+
+  .header {
+    font-size: map-get($font-sizes, larger);
+    background-color: color($colors, menu_bg);
+    color: color($colors, primary);
+    margin:0;
+  }
+
+  .popover {
+    height: auto !important;
+
+    .ion-header-bar {
+      position: relative;
+    }
+
+    .ion-content {
+      top: 0;
+      position: relative;
+    }
+  }
+
+
+  ion-popover .popover-content {
+    width: 100%;
+    min-width: 100%;
+    left: 0;
+    border-radius: 0;
+  }
+
+/*
+  ion-popover-view.fit {
+    height: auto;
+  }
+
+  ion-popover-view.fit ion-content {
+    position: relative;
+  }
+
+  .platform-android ion-popover-view.fit {
+    margin-top: 10px;
+  }
+
+  .platform-ios ion-popover-view.fit {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  */
+}
+

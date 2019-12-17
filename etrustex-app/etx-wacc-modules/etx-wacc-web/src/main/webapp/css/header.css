@@ -1,0 +1,67 @@
+.header-top {
+	background-color: transparent;
+	z-index: 1;
+	float: right;
+	padding: 5px;
+}
+
+.header-middle {
+	height: 136px;
+	padding-top: 17px;
+	padding-left: 22px;
+	background-image: url("../images/img/title_en.png");
+}
+
+.header-bottom {
+	margin: 0; /* zeroing the margin of the last element in the .header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	background:#074a8b;
+	font: 70% Verdana;
+	color:#FFF;
+	padding: 5px;
+	height: 13px;
+    min-width: 600px;
+}
+.header-bottom a:link{
+	text-decoration:none;
+	color:#FFF;
+}
+.header-bottom a:visited{
+	text-decoration:none;
+	color: #FFF;
+}
+.header-bottom a:hover{
+	text-decoration:underline;
+}
+.header-bottom a:active{
+	text-decoration:none;
+}
+.header-bottom ul,
+.header-bottom li{
+    display:inline;
+}
+
+.header-navigation{
+	height: 34px;
+	background-image: url("../images/img/banner_repeat.png");
+	background-repeat: repeat-x;
+	text-align: right;
+	padding-right: 5px;
+    min-width: 600px;
+}
+
+.username{
+	color:#0b77e0;
+	font-style:italic;
+	font-size: 0.75em;
+	text-align: right;
+}
+
+.partyname{
+	color:#0b77e0;
+	font-size: 0.75em;
+	padding-right:1cm;
+	text-align: right;
+}
+.partyname select{
+    min-width: 250px;
+}

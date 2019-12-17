@@ -1,0 +1,92 @@
+version: '2.3'
+
+networks:
+  opensource-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: open-etxweb-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: etx_web
+      MYSQL_USER: ETXWEB
+      MYSQL_PASSWORD: ETXWEB
+    security_opt:
+      - seccomp:unconfined
+    healthcheck:
+      test: mysqladmin ping -h localhost -pmysql && test '0' -eq $$(ps aux | awk '{print $$11}' | grep -c -e '^mysql$$')
+      timeout: 2s
+      retries: 30
+    networks:
+      opensource-net:
+        ipv4_address: 10.5.0.2
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]
+  wildfly:
+    build:
+      context: .
+      dockerfile: Dockerfile_wildfly
+    image: open-etxweb/wildfly
+    container_name: open-etxweb-wildfly
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "5005:5005"
+      - "9990:9990"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ${AUTODEPLOY_DIR}:/opt/jboss/wildfly/standalone/deployments/
+    networks:
+      opensource-net:
+        ipv4_address: 10.5.0.3
+
+
+  mysql-node:
+    image: mysql:5.7
+    container_name: mysql-node
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: etrustex
+      MYSQL_USER: etrustex
+      MYSQL_PASSWORD: etrustex01!
+    security_opt:
+      - seccomp:unconfined
+    healthcheck:
+      test: mysqladmin ping -h localhost -pmysql && test '0' -eq $$(ps aux | awk '{print $$11}' | grep -c -e '^mysql$$')
+      timeout: 2s
+      retries: 30
+    volumes:
+      - ${MAPPED_VOLUME_ROOT}/files/node/scripts/other:/opt
+      - ${MAPPED_VOLUME_ROOT}/files/node/scripts/initdb:/docker-entrypoint-initdb.d
+    networks:
+      opensource-net:
+        ipv4_address: 10.5.0.4
+
+  node:
+      build:
+        context: .
+        dockerfile: Dockerfile_node
+      image: open-etxnode/wildfly
+      container_name: open-etxnode-wildfly
+      ports:
+        - "8081:8080"
+        - "8444:8443"
+        - "5006:5005"
+        - "9991:9990"
+      depends_on:
+        mysql-node:
+          condition: service_healthy
+      networks:
+        opensource-net:
+          ipv4_address: 10.5.0.5

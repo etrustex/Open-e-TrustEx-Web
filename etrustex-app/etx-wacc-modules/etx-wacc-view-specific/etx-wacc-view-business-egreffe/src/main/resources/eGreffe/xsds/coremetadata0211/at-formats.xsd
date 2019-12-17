@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://publications.europa.eu/resource/formats/"><xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:documentation>Version: CM-02.11-2012-11-22</xs:documentation>
+</xs:annotation>
+<xs:simpleType xmlns:xs="http://www.w3.org/2001/XMLSchema" name="t_format">
+   <xs:restriction base="xs:string">
+      <xs:enumeration value="DOC"><!--Word DOC--></xs:enumeration>
+      <xs:enumeration value="DOCX"><!--Word DOCX--></xs:enumeration>
+      <xs:enumeration value="PDF"><!--PDF--></xs:enumeration>
+      <xs:enumeration value="PDFA1A"><!--PDF/A-1a--></xs:enumeration>
+      <xs:enumeration value="PDFA1B"><!--PDF/A-1b--></xs:enumeration>
+      <xs:enumeration value="PDFX"><!--PDF/X--></xs:enumeration>
+      <xs:enumeration value="PPSX"><!--PowerPoint PPSX--></xs:enumeration>
+      <xs:enumeration value="PPT"><!--PowerPoint PPT--></xs:enumeration>
+      <xs:enumeration value="PPTX"><!--PowerPoint PPTX--></xs:enumeration>
+      <xs:enumeration value="XLS"><!--Excel XLS--></xs:enumeration>
+      <xs:enumeration value="XLSX"><!--Excel XLSX--></xs:enumeration>
+      <xs:enumeration value="XML"><!--XML--></xs:enumeration>
+      <xs:enumeration value="ZIP"><!--ZIP--></xs:enumeration>
+   </xs:restriction>
+</xs:simpleType></xs:schema>

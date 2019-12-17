@@ -1,0 +1,8 @@
+folders-menu{
+
+  .folder {
+    color: color($colors, text_inverse);
+    font-size: map-get($font-sizes, larger);
+  }
+
+}

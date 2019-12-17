@@ -1,0 +1,11 @@
+<ion-split-pane>
+
+  <div id="tabletSideMenu" style="width:180px; height:100%; background-color: #004494; color: white; padding-top: 150px;">
+    <!--<div style="width:180px; height:56px; background-color: white"></div>-->
+      <folders-menu-tablet *ngIf="tabletMode"></folders-menu-tablet>
+  </div>
+
+    <drawer-menu [content]='content' [user]='user' *ngIf="user"></drawer-menu>
+    <ion-nav id="nav" #content [root]='rootPage' main></ion-nav>
+
+</ion-split-pane>

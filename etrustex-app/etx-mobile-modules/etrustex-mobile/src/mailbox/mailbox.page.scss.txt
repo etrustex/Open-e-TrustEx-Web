@@ -1,0 +1,41 @@
+page-mailbox {
+
+  padding: 0;
+  margin: 0;
+
+  .toolbar {
+    padding: 0px 16px;
+    background-color: white;
+    border-width: 0 0 0;
+    //min-height: 3em;
+  }
+
+  .action-toolbar {
+    border:0;
+    background-color: color($colors, primary);
+    margin:0;
+    padding:4px;
+  }
+
+  .action-nav-button {
+    margin:0;
+    color: white;
+  }
+
+  ion-header {
+    .toolbar-background {
+      background-color: color($colors, primary_bg);
+    }
+
+    img#app-logo {
+      //content : url("/mobimeet/assets/icon/ec-logo.png");
+      height: 32px;
+      width: 62px;
+      vertical-align: middle;
+      align: left;
+      display:inline-block;
+      max-height:100%;
+      margin-right: 16px;
+    }
+  }
+}

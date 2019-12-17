@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:CodeList xmlns:n="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ https://webgate.ec.europa.eu/CITnet/svn/EPROCUREMENT/trunk/04-Source%20Code/tools/schematron_generation/utility/genericode.xsd">
+	<Identification xmlns="">
+		<ShortName>ActivityValueCode</ShortName>
+		<LongName>Activity Value Code</LongName>
+		<Version>0.1</Version>
+		<CanonicalUri>Placeholder</CanonicalUri>
+		<CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+		<Agency>
+			<LongName>European Commission</LongName>
+		</Agency>
+	</Identification>
+	<ColumnSet xmlns="">
+		<Column Id="code" Use="required">
+			<ShortName>Code</ShortName>
+			<Data Type="normalizedString"/>
+		</Column>
+		<Column Id="name" Use="optional">
+			<ShortName>Name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="examples" Use="optional">
+			<ShortName>Examples</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="code"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList xmlns="">
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ANDSG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Analysis and Design</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DVLPM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Development</SimpleValue>
+			</Value>
+		</Row>
+				<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DPYCF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Deployment Configuration</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CMAIN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Corrective Maintenance</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>HANDO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Hand Over</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TAKEO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Take Over</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PROTO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Prototyping</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ATEST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Acceptance Testing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TSUPP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Support</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TDOCT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical Documentation and Training</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PREPA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Preparation</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ANIMA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Animation</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CONSLT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Consultancy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DAYALW</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Daily Allowances</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TRVEXP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Travel Expenses</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TEACNS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Teaching Consultancy for Blended Learning</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>MULCNS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Multimedia Consultancy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>FTFTRA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Standard face to face training</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ELEARN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>eLearning Accesses</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OTHACT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Other Activity</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</n:CodeList>

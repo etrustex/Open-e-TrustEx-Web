@@ -1,0 +1,2108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:CodeList xmlns:n="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ C:/DOCUME~1/danielsm/Desktop/codelists/genericode.xsd">
+   <Identification xmlns="">
+      <ShortName>ErrorCode</ShortName>
+      <LongName>Error Code</LongName>
+      <Version>0.1</Version>
+      <CanonicalUri>Placeholder</CanonicalUri>
+      <CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+      <Agency>
+         <LongName>European Commision</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet xmlns="">
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString"/>
+      </Column>
+      <Column Id="name" Use="optional">
+         <ShortName>Name</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="examples" Use="optional">
+         <ShortName>Examples</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList xmlns="">
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.accepted_indicator_check_ack</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>There AcceptedIndicator must be true in an Order Acknowledgement</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.accepted_indicator_check_false</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>There must be a RejectionNote element when AcceptedIndicator equals false</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.accepted_indicator_check_true</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>RejectionNote element should be excluded when AcceptedIndicator equals true</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.accountingcustomerparty_endpointid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>EnpointID in AccountingCustomerParty/Party must be present and cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.accountingcustomerparty_name_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Name in AccountingCustomerParty/Party/PartyName must be present and cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.accountingsupplierparty_endpointid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>EnpointID in AccountingSupplierParty/Party must be present and cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.accountingsupplierparty_name_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Name in AccountingSupplierParty/Party/PartyName must be present and cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.additional_document_reference_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element AdditionalDocumentReference should include one of following child elements: DocumentType or DocumentTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.additional_document_reference_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/AdditionalDocumentReference/DocumentType exists and is not empty the corresponding CallForTenders/AdditionalDocumentReference/ID cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.additional_document_reference_notificationplatform_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Exactly one AdditionalDocumentReference with DocumentType "URL::notification platform" must exist</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.additional_document_reference_notificationplatform_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ID of the AdditionalDocumentReference with DocumentType "URL::notification platform" cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.additional_document_reference_submissionplatform_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Exactly one AdditionalDocumentReference with DocumentType "URL::submission platform" must exist</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.additional_document_reference_submissionplatform_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ID of the AdditionalDocumentReference with DocumentType "URL::submission platform" cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.additional_documenttypecode_reference_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/AdditionalDocumentReference/DocumentTypeCode exists and it's not empty the corresponding CallForTenders/AdditionalDocumentReference/ID cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.address_check_cityname</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element PostalAddress misses child element CityName</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.address_check_country</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element PostalAddress misses child element Country</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.address_check_postalzone</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element PostalAddress misses child element PostalZone</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.address_check_streetname</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element PostalAddress misses child element StreetName</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.admissioncode_false_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When Tenderer Qualification Response.CustomizationID = "urn:www.cenbii.eu:transaction:BiiTrns042:ver1.0:ec:icd2", for each existing Qualification Resolution,  the admission code  MUST be equal with "false"</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.admissioncode_true_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When Tenderer Qualification Response.CustomizationID = "urn:www.cenbii.eu:transaction:BiiTrns043:ver1.0:ec:icd2", for each existing Qualification Resolution,  the admission code  MUST be equal with "true"</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.allowance_charge_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The amount of an AllowanceCharge should not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.allowance_charge_hard_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Amount in AllowanceCharge must not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.allowancecharge_check_baseamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>BaseAmount should be present when MultiplierFactorNumeric is used in an AllowanceCharge</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.allowancecharge_check_multiplierfactornumeric</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The MultiplierFactorNumeric in an AllowanceCharge should not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.allowancecharge_check_sequencenumeric</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The SequenceNumeric in an AllowanceCharge should not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.allowancecharge_check_vat</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>If the VAT total amount in a document exists then an Allowances Charges amount on document level should have Tax category for VAT</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.allowancetotalamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Allowance Total Amount must be equal to the total of all allowances at document level</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.approvaldate_occurrencedate_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/ProfileExecutionID = "Q" the CallForTenders/TenderingProcess/OpenTenderEvent/OccurrenceDate must be equal to the CallForTenders/ApprovalDate</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.attachment_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Attachment should not be present in this document</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.attachment_content_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Attachment is mandatory, but should not have any content in this document</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.cdr_id_length_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The combination ID::CallForTendersDocumentReference/ID of the message cannot be larger than 250 characters</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.cdr_invalid_char</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The CallForTendersDocumentReference/ID of the message contains an invalid character</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.chargetotalamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Charge Total Amount must be equal to the total of all charges at document level</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.commodityclassification_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Both ItemClassificationCode and ItemClassificationCode/@listID must be present and not empty in CommodityClassification</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contract_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Exactly one Contract class should be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contract_document_reference_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element ContractDocumentReference should include one of following child elements: DocumentType or DocumentTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contract_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ID of the contract should not be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contract_id_hard_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ID of the contract must not be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contract_reference_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ID of the contract should not be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contractdocumentreference_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ContractDocumentReference should be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contractingparty_check_identificationcode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>IdentificationCode in ContractingParty/Party/PartyLegalEntity/RegistrationAddress/Country must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contractingparty_typecode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ContractingParty ContractingPartyTypeCode of the message must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contractingparty_endpointid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ContractingParty EndPointID of the message must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contractingparty_endpointid_invalid_char</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ContractingParty EndPointID of the message contains an invalid character</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contractingparty_endpointid_length_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ContractingParty EndPointID of the message cannot be larger than 250 characters</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.contractingparty_name_identificationcode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Name in ContractingParty/Party/PartyName must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.copyindicator_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element CopyIndicator is not allowed in this document</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.creditnotedocumentreference_documenttypecode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Reminder/ReminderLine/BillingReference/CreditNoteDocumentReference/DocumentTypeCode must be a valid code</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.creditnotelinelineextensionamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The total line amount plus charges minus discounts exclusive of taxes must be equal to the LineExtensionAmount at line level</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>All attributes currencyID throughout the message must be equal to the element DocumentCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_creditnotelinelineextensionamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in CreditNoteLine/LineExtensionAmount differs from DocumentCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_invoicelinelineextensionamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in InvoiceLine/LineExtensionAmount differs from DocumentCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_legalmonetarytotallineextensionamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in LegalMonetaryTotal/LineExtensionAmount differs from DocumentCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_orderlinelineextensionamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in OrderLine/LineItem/LineExtensionAmount differs from DocumentCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_payableamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in LegalMonetaryTotal/PayableAmount differs from DocumentCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_priceamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in PriceAmount differs from PricingCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.currency_id_taxamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CurrencyID in TaxAmount differs from TaxCurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.customizationid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The CustomizationID of the message must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.delivery_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>No more than one Delivery class should be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.delivery_date_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Delivery should not contain child element ActualDeliveryDate in this document</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.document_receiverparty_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The EndpointID withing the element DocumentReceiverParty must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.document_receiverparty_occurence_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Query Request must have less than 1000 occurrences of the element DocumentReceiverParty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.document_reference_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element DocumentReference should include one of following child elements: DocumentType or DocumentTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.document_senderparty_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The EndpointID withing the element DocumentSenderParty must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.document_senderparty_occurence_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Query Request must have less than 1000 occurrences of the element DocumentSenderParty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.estimateddeliveryperiod_end_date_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>EndDate must be present in EstimatedDeliveryPeriod</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.estimateddeliveryperiod_invalid_date_range</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>StartDate must be smaller or equal to EndDate in EstimatedDeliveryPeriod</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.estimateddeliveryperiod_start_date_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>StartDate must be present in EstimatedDeliveryPeriod</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.financialevaluationcriteria_description_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Description in TenderingTerms/TendererQualificationRequest/FinancialEvaluationCriteria must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ID of the message cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.id_invalid_char</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ID of the message contains an invalid character</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.id_length_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ID of the message cannot be larger than 250 characters</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.consignment_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>A despatch advice shall identify the nature of delivery at line level</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.usability_period_check_startdate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>If Consignment ID is 4=Services, DespatchLine shall have a DespatchAdvice/DespatchLine/Item/AdditionalItemProperty/UsabilityPeriod/StartDate shall exist and have a value</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.usability_period_check_enddate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>If Consignment ID is 4=Services, DespatchLine shall have a DespatchAdvice/DespatchLine/Item/AdditionalItemProperty/UsabilityPeriod/EndDate shall exist and have a value</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.item_property_check_name</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>If Consignment ID is 4=Services, DespatchLine shall have a DespatchAdvice/DespatchLine/Item/AdditionalItemProperty/Name = "Type"</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.item_property_check_value</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>If Consignment ID is 4=Services, DespatchLine shall have a DespatchAdvice/DespatchLine/Item/AdditionalItemProperty/Value = "QTY" or "AMT"</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.document_reference_check_attachment_type</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>If Consignment ID is 4=Services, DespatchLine shall have at least one DocumentReference with DocumentTypeCode = 916</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_accounttypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist AccountTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_actioncode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist ActionCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_activitytypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist ActivityTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_addressformatcode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist AddressFormatCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_allowancechargereasoncode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist AllowanceChargeReasonCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_awardcriterionspecification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist AwardCriterionSpecification</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_binaryobjectmimecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist BinaryObjectMimeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_cataloguelifecyclestatuscode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist CatalogueLifeCycleStatusCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_commoditycode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist CommodityCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_contractingbodytype</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist ContractingBodyType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_contracttype</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist ContractType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_countryidentificationcode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist CountryIdentificationCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_currencycode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist CurrencyCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_deliverytermsid</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist DeliveryTermsID</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_despatchadvicetypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist DespatchAdviceTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_despatchadviceprojecttypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist DespatchAdviceProjectTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_dimensionattributeid</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist DimensionAttributeID</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_discrepancyresponsecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist DiscrepancyResponseCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_documentstatuscode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist DocumentStatusCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_documenttypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist DocumentTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_invoicetypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist InvoiceTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_itemrelationshiptypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist ItemRelationshipTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_languagecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist LanguageCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_languagecodeeu</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist LanguageCodeEU</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_lifecyclestatuscode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist LifeCycleStatusCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_linestatuscode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist LineStatusCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_operatorcode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist OperatorCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_parentdocumenttypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist ParentDocumentTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_paymentchannelcode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist PaymentChannelCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_paymentmeanscode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist PaymentMeansCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_proceduretype</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist ProcedureType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_projecttype</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist ProjectType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_remindertypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist ReminderTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_taxcategoryid</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist TaxCategoryID</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_taxexemptionreasoncode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist TaxExemptionReasonCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_taxschemeid</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist TaxSchemeID</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_taxtypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist TaxTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_tendersubmissiontypecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist TenderSubmissionTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_unitofmeasurecode</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist UnitOfMeasureCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_date_range</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Period startdate is later than enddate</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invoicedocumentreference_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Invoice document reference missing</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invoicedocumentreference_documenttypecode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Reminder/ReminderLine/BillingReference/InvoiceDocumentReference/DocumentTypeCode must be a valid code</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invoicelinelineextensionamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The total line amount plus charges minus discounts exclusive of taxes must be equal to the LineExtensionAmount at line level</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.issuedate_future</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The element IssueDate should not contain a date from the future</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.issuetime_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The IssueTime must be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.item_check_classifiedtaxcategory</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Item misses child element ClassifiedTaxCategory</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.item_check_name_or_description</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>An item should contain a Name or a Description which is not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.item_check_sellersitemidentification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>SellersItemIdentification should be present for an Item</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.item_check_sellersitemidentification_catalogue</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>SellersItemIdentification must be present for an Item in the Catalogue document</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.itemclassificationcodecriterion_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When ItemClassificationCodeCriterion is provided then the attribute listID must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.large_date_range</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The difference between startdate and enddate is larger than one year</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.lineextensionamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The LineExtensionAmount at document level must be equal to the sum of all LineExtensionAmounts at line level</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.lineitem_check_totaltaxamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element LineItem misses child element TotalTaxAmount</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.lineitemid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>LineItem ID should not be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.lineitemlineextensionamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The total line amount plus charges minus discounts exclusive of taxes must be equal to the LineExtensionAmount at line level</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.lineitemlineextensionamount_negative_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>LineExtensionAmount in LineItem must not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.lineitemquantity_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Quantity in LineItem must not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.linevalidityperiod_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The LineValidityPeriod should fall within the range of the ValidityPeriod defined at document level</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.note_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Note of the message must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.order_document_reference_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element OrderDocumentReference should include one of following child elements: DocumentType or DocumentTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.order_reference_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>No more than one OrderReference class should be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.orderableunitfactorrate_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The OrderableUnitFactorRate should be larger than 0</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.orderdocumentreference_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>OrderReference should be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.orderreference_single_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Exactly one OrderReference class must be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.originalitemlocationquantity_check_maximumquantity</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The amount of a MaximumQuantity should not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.originalitemlocationquantity_check_minimumquantity</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The amount of a MinimumQuantity should not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.originator_document_reference_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element OriginatorDocumentReference should include one of following child elements: DocumentType or DocumentTypeCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.originator_document_reference_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>OriginatorDocumentReference ID must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.parent_document_id_length_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ParentDocumentID cannot be larger than 250 characters</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.parent_document_type_code_check_attached_document</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>An AttachedDocument must not refer to an AttachedDocument in the ParentDocumentTypeCode element </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.participationrequestreceptionperiod_enddate_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/ProfileExecutionID equals "Q" or "Q2T (step 1)" then EndDate in TenderingProcess/ParticipationRequestReceptionPeriod must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.participationrequestreceptionperiod_endtime_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/ProfileExecutionID equals "Q" or "Q2T (step 1)" then EndTime in TenderingProcess/ParticipationRequestReceptionPeriod must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.party_check_partytaxscheme</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Party misses child element PartyTaxScheme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.party_check_postaladdress</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Party misses child element PostalAddress</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.party_tax_scheme_check_companyid</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element PartyTaxScheme misses child element CompanyID</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxscheme_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element TaxScheme misses child element ID</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.payableamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Payable Amount must be equal to the tax inclusive amount minus the pre-paid amount</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.payeeparty_name_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Name in PayeeParty/Party/PartyName must be present and cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.payeeparty_partyidentification_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ID in PayeeParty/PartyIdentification must be present and cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.paymentterms_amount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Amount in PaymentTerms must not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.period_check_enddate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Period misses child element EndDate</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.period_check_startdate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element Period misses child element StartDate</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.prepaidamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Prepaid Amount must be equal to the total of all Prepaid Payments at document level</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.priceamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element PriceAmount should not contain a negative value</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.priceamount_hard_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>PriceAmount must not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.procurementproject_description_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Description in ProcurementProject must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.procurementproject_procurementtypecode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ProcurementTypeCode in ProcurementProject must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.profileexecutionid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ProfileExecutionID must exists and should have one of the values "T" or "QT" or "Q2T" or "Q"</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.profileid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The ProfileID of the message must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.qualificationresolution_exclusionreason_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>For each Qualification Resolution, the exclusion reason is mandatory in case the response is negative, describing a reason for the exclusion from the tendering process.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.quantity_negativity_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>A Quantity should not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.quantity_range_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The MaximumQuantity should be greater or equal to the MinimumQuantity within the same parent element</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.quantity_unitcode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Quantities must have a unitCode attribute</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.receiverparty_endpointid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The EndpointID withing the element ReceiverParty must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.receiverparty_partyidentification_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The PartyIdentification inside ReceiverParty must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.referencedcontract_check_id</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ReferencedContract ID should be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.referencedcontract_check_number_error</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>A ReferencedContract class must be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.referencedcontract_check_number_warning</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Not more than one ReferencedContract class should be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.relateditemcriterion_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The attribute ItemRelationshipType is mandatory in the element RelatedItemCriterion</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.reminder_line_billingreference_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>If  there is more than one Reminder/ReminderLine/BillingReference reference then the Reminder/ReminderLine/BillingReference/InvoiceDocumentReference/ID must be the same in all the references</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.reminder_line_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>No more than one ReminderLine must be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.reminder_line_creditnotedocumentreference_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ID in CreditNoteDocumentReference must be present and cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.reminder_line_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ID in ReminderLine must be present and cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.reminder_line_invoicedocumentreference_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ID in ReminderLine/BillingReference/InvoiceDocumentReference must be present and cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.reminder_period_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>No more than one ReminderPeriod must be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.requesteddeliveryperiod_end_date_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>EndDate must be present in RequestedDeliveryPeriod</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.requesteddeliveryperiod_invalid_date_range</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>StartDate must be smaller or equal to EndDate in RequestedDeliveryPeriod</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.requesteddeliveryperiod_start_date_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>StartDate must be present in RequestedDeliveryPeriod</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.resolutiondocumentreference_443_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>There can be maximum one instance of TendererQualificationResponse/ResolutionDocumentReference/ID with DocumentTypeCode "443"</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.resolutiondocumentreference_bdl_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>There can be maximum one instance of TendererQualificationResponse/ResolutionDocumentReference/ID with DocumentTypeCode "BDL"</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.resolutiondocumentreference_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>At least one TendererQualificationResponse/ResolutionDocumentReference element must be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.resolutiondocumentreference_doctypecode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Qualification Bundle reference  in element TendererQualificationResponse/ResolutionDocumentReference/ID MUST exists and the corresponding DocumentTypeCode must be "BDL" or "443"</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.salesorderid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>SalesOrderID should be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.search_parameter_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>At least one optional search parameter must be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.sellersitemidentificationid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The SellersItemIdentification ID of the message cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.sellersitemidentificationid_invalid_char</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The SellersItemIdentification ID of the message contains an invalid character</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.sellersitemidentificationid_length_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The SellersItemIdentification ID of the message cannot be larger than 250 characters</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.senderparty_endpointid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The EndpointID withing the element SenderParty must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.senderparty_partyidentification_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The PartyIdentification inside SenderParty must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.senderparty_partyname_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The PartyName inside SenderParty must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.shortlistedparty_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>At least one instance of EconomicOperatorShorlist/ShortlistedParty must be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.shortlistedparty_forwardedparty_endpointid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The EndpointID for each EconomicOperatorShortlist/ShortlistedParty/ForwardedParty must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.shortlistedparty_preselectedparty_endpointid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The EndpointID for each EconomicOperatorShortlist/ShortlistedParty/PreselectedParty must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.specifictendererrequirement_description_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Description in TenderingTerms/TendererQualificationRequest/SpecificTendererRequirement must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.standarditemidentification_check_schemeid</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Attribute schemeID should be provided for a StandardItemIdentification/ID element</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tax_category_check_id_percent</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>For each tax subcategory except in Reverse Charge VAT the category ID and the applicable tax percentage should be provided</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tax_category_check_percentperunitamount</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element (Classified)TaxCategory should include one of following child elements: Percent or PerUnitAmount</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxexchangerate_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>DocumentCurrencyCode differs from TaxCurrencyCode, but there is no TaxExchangeRate defined</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxexclusiveamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Tax Exclusive Amount must be equal to the total line amount plus charges minus discounts exclusive of taxes</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxexclusiveamount_presence_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The document should specify the total amount without taxes</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxinclusiveamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Tax Inclusive Amount must be equal to Tax Exclusive Amount plus sum of the total tax amounts</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxinclusiveamount_negative_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Tax inclusive amount should not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxinclusiveamount_presence_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The document should specify the total amount with taxes included</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxschemeid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Within one TaxTotal the TaxScheme ID of all TaxSubtotals must be the same</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxtotal_check_number</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Maximum 1 Tax Total should be present at document level</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxtotal_check_taxsubtotal</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Element TaxTotal misses child element TaxSubtotal</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxtotal_taxamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>TaxAmount in TaxTotal must not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.taxtotals_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The Tax Total must be equal to the sum of its Tax Subtotals</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.technicalevaluationcriteria_description_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Description in TenderingTerms/TendererQualificationRequest/TechnicalEvaluationCriteria must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderdocumentreference_documenttypecode_bundle_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>One and only one TenderDocumentReference should refer to a document type code of value BUNDLE</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderdocumentreference_documenttypecode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The TenderDocumentReference must contain a document type code</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderdocumentreference_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The TenderDocumentReference must contain an identifier</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_contractingsystemcode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ContractingSystemCode in TenderingProcess must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_description_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Description in TenderingProcess must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_opentenderevent_occurrencedate_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>OpenTenderEvent/OccurrenceDate in TenderingProcess must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_opentenderevent_occurrencetime_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>OpenTenderEvent/OccurrenceTime in TenderingProcess must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_partpresentationcode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>PartPresentationCode in TenderingProcess must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_procedurecode_profileexecutionid_q2t_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/TenderingProcess/ProcedureCode is equal to 2, 3, 4, 6, C, G, B, CallForTenders/ProfileExecutionID must be equal to 'Q2T'</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_procedurecode_profileexecutionid_qt_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/TenderingProcess/ProcedureCode is equal to 1 or 7, CallForTenders/ProfileExecutionID must be equal to 'QT'</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_procedurecode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ProcedureCode in TenderingProcess must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_procurementprojectlot_not_present</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/TenderingProcess/PartPresentationCode is equal to 9 then ProcurementProjectLot node should not exist</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_procurementprojectlot_id_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/TenderingProcess/PartPresentationCode is equal to 1,2 or 3, ProcurementProjectLot/ID must exist and must not be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_procurementprojectlot_present_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/TenderingProcess/PartPresentationCode is equal to 1,2 or 3 then at least one ProcurementProjectLot node should exist</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingprocess_procurementprojectlot_name_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/TenderingProcess/PartPresentationCode is equal to 1,2 or 3, ProcurementProjectLot/ProcurementProject/Name must exist and must not be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingterms_awardingmethodtypecode_lot_additional_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CFT has lots(CallForTenders/TenderingProcess/PartPresentationCode=1,2 or 3), CallForTenders/cac:TenderingTerms/cbc:AwardingMethodTypeCode may NOT exist</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingterms_awardingmethodtypecode_lot_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CFT has lots(CallForTenders/TenderingProcess/PartPresentationCode=1,2 or 3), for each ProcurementProjectLot, TenderingTerms/AwardingMethodTypeCode must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingterms_awardingmethodtypecode_nolot_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CFT has no lots, AwardingMethodTypeCode in TenderingTerms must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingterms_awardingmethodtypecode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>AwardingMethodTypeCode in TenderingTerms must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingterms_language_localecode_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>LocaleCode in TenderingTerms/Language must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingterms_tenderrecipientparty_endpointid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>TenderingTerms/TenderRecipientParty/EndpointID must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingterms_tenderrecipientparty_endpointid_length_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>TenderingTerms/TenderRecipientParty/EndpointID cannot be longer than 250 characters</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingterms_tenderrecipientparty_endpointid_content_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>TenderingTerms/TenderRecipientParty/EndpointID contains an invalid character</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingterms_documentproviderparty_endpointid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>TenderingTerms/DocumentProviderParty/EndpointID must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingterms_documentproviderparty_endpointid_length_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>TenderingTerms/DocumentProviderParty/EndpointID cannot be longer than 250 characters</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tenderingterms_documentproviderparty_endpointid_content_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>TenderingTerms/DocumentProviderParty/EndpointID contains an invalid character</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tendersubmissiondeadlineperiod_enddate_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/ProfileExecutionID equals "QT", "T" or "Q2T (step 2)" then EndDate in TenderingProcess/TenderSubmissionDeadlinePeriod must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tendersubmissiondeadlineperiod_endtime_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/ProfileExecutionID equals "QT", "T" or "Q2T (step 2)" then EndTime in TenderingProcess/TenderSubmissionDeadlinePeriod must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.tendersubmissiondeadlineperiod_participationrequestreceptionperiod_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>When CallForTenders/ProfileExecutionID equals "Q2T" then either TenderingProcess/TenderSubmissionDeadlinePeriod or TenderingProcess/ParticipationRequestReceptionPeriod should exist</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.total_amount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The total amount of the invoice cannot be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.totaltaxamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>TotalTaxAmount should not be negative</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.ublversionid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The UBLVersionID of the message must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.uuid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The UUID of the message must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.uuid_id_length_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The combination UUID::ID of the message cannot be larger than 250 characters</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.uuid_invalid_char</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The UUID of the message contains an invalid character</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.validity_period_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>No more than one ValidityPeriod class should be present</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.vattotalamount_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>If the VAT total amount exists in the document then the sum of taxable amount in sub categories should equal the sum of document tax exclusive amount</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.versionid_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The VersionID of the message must be present and cannot be empty</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.versionid_invalid_char</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The VersionID of the message contains an invalid character</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.versionid_length_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The VersionID of the message cannot be larger than 5 characters</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.invalid_codetable_value_tenderer_requirement_type_code</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value supplied is unacceptable for an element controlled by codelist SpecificTendererRequirementCode</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>error.specifictendererrequirement_tenderer_requirement_type_code_check</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The TendererRequirementTypeCode in TenderingTerms/TendererQualificationRequest/SpecificTendererRequirement must be present and not empty</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</n:CodeList>

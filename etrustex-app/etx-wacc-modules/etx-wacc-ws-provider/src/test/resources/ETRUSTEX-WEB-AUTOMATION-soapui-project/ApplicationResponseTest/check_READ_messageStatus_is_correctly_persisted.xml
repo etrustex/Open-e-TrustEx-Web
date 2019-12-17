@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="d2721f11-d6f0-4a18-96ac-52f38c2aca92" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="check_READ_messageStatus_is_correctly_persisted" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="566f4206-3ede-45d7-a8ba-8e0fb19b1aa3fileName">APPLICATION_RESPONSE</con:setting><con:setting id="d2721f11-d6f0-4a18-96ac-52f38c2aca92fileName">check_READ_messageStatus_is_correctly_persisted</con:setting></con:settings><con:testStep type="groovy" name="submit_check_READ_messageStatus_is_correctly_persisted" id="747af73b-f433-4913-be1a-6082baa0c443"><con:settings/><con:config><script>	
+	import groovy.sql.Sql
+	import java.text.SimpleDateFormat	
+
+	// initialise DB driver
+	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver("oracle.jdbc.OracleDriver")
+
+	// load methods from repository
+	scripts = testRunner.testCase.testSuite.project.testSuites["SCRIPTS"]
+	scripts.testCases["METHODS"].testSteps["METHODS"].run(testRunner, context)
+
+	log.debug "================================================================================"
+	log.info "APPLICATION RESPONSE - START CHECKING READ MESSAGE STATUS IS CORRECTLY PERSISTED"
+
+	long msgId = 1000001
+	long localPartyId = 1000001
+	long businessId = 10000001
+	String partyName = "WEB_SENDER_PARTY"
+	String businessName = "test"
+	String bundleId = "ROBOT_BUNDLE_0002"
+	String receiverPartyName = "ROBOT_APP_PARTY"	
+	String messageStatusId = "ROBOT_MESSAGE_STATUS_ID"
+	String responseCode = "BDL:7"
+	
+	// open DB connection
+	context.commonDao.openDbConnection()
+	
+	try{
+		
+		// create business on business table
+		context.commonDao.createBusiness(businessId, businessName)
+	
+		// create business config on business config table
+		context.commonDao.createBusinessConfig(1000001, businessId, "etx.business.receiver.node.party.name", "ROBOT_APP_PARTY")
+		context.commonDao.createBusinessConfig(1000002, businessId, "etx.business.warn.email.notif.enabled", "0")
+		
+		// create party on party table
+		context.commonDao.createParty(localPartyId, "sysdate", partyName, businessId)
+	
+		// create message on message table
+		context.commonDao.createMessage(msgId, bundleId, localPartyId, receiverPartyName)
+
+		// reset cache
+		context.commonDao.resetCacheWeb()
+
+		// inject values into application response request
+		testRunner.testCase.testSuite.setPropertyValue('SENDER_PARTY', receiverPartyName)
+		testRunner.testCase.testSuite.setPropertyValue('RECEIVER_PARTY', partyName)
+		testRunner.testCase.testSuite.setPropertyValue('MESSAGE_STATUS_ID', messageStatusId)
+		testRunner.testCase.testSuite.setPropertyValue('PARENT_MESSAGE_BUNDLE_ID', bundleId)		
+		testRunner.testCase.testSuite.setPropertyValue('RESPONSE_CODE', responseCode)	
+		
+		// define the webservice
+		def testCase = testRunner.testCase.testSuite.testCases["webService_ApplicationResponseService"]
+		def testStep = testCase.testSteps["submitApplicationResponse"]
+		
+		// EXECUTE SENDING REQUEST TO THE WEBSERVICE
+		testStep.run(testRunner, context)
+
+		// define the webservice response
+		context.setProperty('xmlResponse', testStep.getProperty('response'))
+
+		// collect values from webservice response
+		def senderInResponse = context.expand( '${xmlResponse#declare namespace ns5=\'ec:schema:xsd:CommonAggregateComponents-2\'; declare namespace ns6=\'http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader\'; declare namespace ns4=\'ec:services:wsdl:ApplicationResponse-2\'; //ns4:Header[1]/ns5:BusinessHeader[1]/ns6:Sender[1]/ns6:Identifier[1]}' )
+		def receiverInResponse = context.expand( '${xmlResponse#declare namespace ns5=\'ec:schema:xsd:CommonAggregateComponents-2\'; declare namespace ns6=\'http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader\'; declare namespace ns4=\'ec:services:wsdl:ApplicationResponse-2\'; //ns4:Header[1]/ns5:BusinessHeader[1]/ns6:Receiver[1]/ns6:Identifier[1]}' )
+		def ackIndicatorInResponse = context.expand( '${xmlResponse#declare namespace ns10=\'ec:schema:xsd:CommonBasicComponents-1\'; declare namespace ns4=\'ec:services:wsdl:ApplicationResponse-2\'; //ns4:SubmitApplicationResponseResponse[1]/ns4:Ack[1]/ns10:AckIndicator[1]}' )
+		
+		// check that the webservice response contains the correct information
+		assert senderInResponse == receiverPartyName
+		assert receiverInResponse == partyName	
+		assert ackIndicatorInResponse == "true"
+	
+		// collect message status from the DB
+		messageStatusList = context.commonDao.getMessageStatuses(msgId)
+	
+		// check that one message status was generated on the DB
+		assert messageStatusList.size() == 1
+	
+		// check that the values of the message status are correct on the DB
+		assert messageStatusList.MSG_ID[0] == msgId
+		assert messageStatusList.MST_STATE[0] == "INCOMING"
+		assert messageStatusList.MST_STATUS[0] == "READ"
+		assert messageStatusList.MST_STATUS_CODE[0] == "BDL:7"	
+		assert messageStatusList.MST_LOGIN[0] == "DEV-ETX-NODE-SERVICE-USER"
+		
+	} finally {
+		
+		// delete message status from the message status table
+		context.commonDao.deleteMessageStatus(msgId)
+	
+		// delete message from message table
+		context.commonDao.deleteMessage(bundleId)
+		
+		// delete party from party table
+		context.commonDao.deleteParty(partyName)
+
+		// delete business config from business config table
+		context.commonDao.deleteBusinessConfig(businessId)
+	
+		// delete business from business table
+		context.commonDao.deleteBusiness(businessId)
+	
+		// close DB connection
+		context.commonDao.closeDbConnection()
+
+		// reset cache
+		context.commonDao.resetCacheWeb()
+				
+	}
+
+	log.info "APPLICATION RESPONSE - FINISHED CHECKING READ MESSAGE STATUS IS CORRECTLY PERSISTED"
+</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

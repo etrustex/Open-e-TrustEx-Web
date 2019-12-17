@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://publications.europa.eu/resource/treaties/"><xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:documentation>Version: CM-02.11-2012-09-13</xs:documentation>
+</xs:annotation>
+<xs:simpleType xmlns:xs="http://www.w3.org/2001/XMLSchema" name="t_treaty">
+   <xs:restriction base="xs:string">
+      <xs:enumeration value="ACC_1972"><!--Treaty of Accession of Denmark, Ireland and the United Kingdom (1972)--></xs:enumeration>
+      <xs:enumeration value="ACC_1973"><!--Treaty of Accession of Denmark, Ireland and the United Kingdom (Adaptation decision 1973)--></xs:enumeration>
+      <xs:enumeration value="ACC_1979"><!--Treaty of Accession of Greece (1979)--></xs:enumeration>
+      <xs:enumeration value="ACC_1985"><!--Treaty of Accession of Spain and Portugal (1985)--></xs:enumeration>
+      <xs:enumeration value="ACC_1994"><!--Treaty of Accession of Austria, Finland and Sweden (1994)--></xs:enumeration>
+      <xs:enumeration value="ACC_1995"><!--Treaty of Accession of Austria, Finland and Sweden (Adaptation decision 1995)--></xs:enumeration>
+      <xs:enumeration value="ACC_2003"><!--Treaty of Accession of the Czech Republic, Estonia, Cyprus, Latvia, Lithuania, Hungary, Malta, Poland, Slovenia and Slovakia (2003)--></xs:enumeration>
+      <xs:enumeration value="ACC_2005"><!--Treaty of Accession of the Republic of Bulgaria and Romania (2005)--></xs:enumeration>
+      <xs:enumeration value="ACC_2012"><!--Treaty of Accession of Croatia (2012)--></xs:enumeration>
+      <xs:enumeration value="AMS"><!--Treaty of Amsterdam (1997)--></xs:enumeration>
+      <xs:enumeration value="BUDG_1970"><!--Treaty amending certain budgetary provisions (1970)--></xs:enumeration>
+      <xs:enumeration value="CECA_1951"><!--Treaty establishing the European Coal and Steel Community (1951)--></xs:enumeration>
+      <xs:enumeration value="CHAR_2007"><!--Charter of Fundamental Rights of the European Union (2007)--></xs:enumeration>
+      <xs:enumeration value="CHAR_2010"><!--Charter of Fundamental Rights of the European Union (2010)--></xs:enumeration>
+      <xs:enumeration value="EEA"><!--Agreement on the European Economic Area (1993)--></xs:enumeration>
+      <xs:enumeration value="EURATOM_1957"><!--Treaty establishing the European Atomic Energy Community (1957)--></xs:enumeration>
+      <xs:enumeration value="EURATOM_2010"><!--Treaty establishing the European Atomic Energy Community ( Consolidated version 2010)--></xs:enumeration>
+      <xs:enumeration value="FINAN_1975"><!--Treaty amending certain financial provisions (1975)--></xs:enumeration>
+      <xs:enumeration value="FUSION"><!--Merger Treaty (1965)--></xs:enumeration>
+      <xs:enumeration value="LIS"><!--Treaty of Lisbon (2007)--></xs:enumeration>
+      <xs:enumeration value="LIS_CORR"><!--Corrigenda - Procès-verbal of rectification to the Treaty of Lisbon (2007)--></xs:enumeration>
+      <xs:enumeration value="NICE"><!--Treaty of Nice (2001)--></xs:enumeration>
+      <xs:enumeration value="PRO_ANT"><!--Protocol on the Netherlands Antilles (1962)--></xs:enumeration>
+      <xs:enumeration value="SCHENGEN"><!--Schengen Convention (1985)--></xs:enumeration>
+      <xs:enumeration value="SEA"><!--Single European Act (1986)--></xs:enumeration>
+      <xs:enumeration value="TCONS_2004"><!--Treaty establishing a Constitution for Europe (2004)--></xs:enumeration>
+      <xs:enumeration value="TEC_1992"><!--Treaty establishing the European Community (Consolidated version 1992)--></xs:enumeration>
+      <xs:enumeration value="TEC_1997"><!--Treaty establishing the European Community (Consolidated version 1997)--></xs:enumeration>
+      <xs:enumeration value="TEC_2002"><!--Treaty establishing the European Community (Consolidated version 2002)--></xs:enumeration>
+      <xs:enumeration value="TEC_2006"><!--Treaty establishing the European Community (Consolidated version 2006)--></xs:enumeration>
+      <xs:enumeration value="TEEC_1957"><!--Treaty establishing European Economic Community (1957)--></xs:enumeration>
+      <xs:enumeration value="TEU_1992"><!--Treaty on European Union (1992)--></xs:enumeration>
+      <xs:enumeration value="TEU_1997"><!--Treaty on European Union (Consolidated version 1997)--></xs:enumeration>
+      <xs:enumeration value="TEU_2002"><!--Treaty on European Union (Consolidated version 2002)--></xs:enumeration>
+      <xs:enumeration value="TEU_2006"><!--Treaty on European Union (Consolidated version 2006)--></xs:enumeration>
+      <xs:enumeration value="TEU_2008"><!--Treaty on European Union (Consolidated version 2008)--></xs:enumeration>
+      <xs:enumeration value="TEU_2010"><!--Treaty on European Union (Consolidated version 2010) --></xs:enumeration>
+      <xs:enumeration value="TFEU_2008"><!--Treaty on the Functioning of the European Union (consolidated version 2008)--></xs:enumeration>
+      <xs:enumeration value="TFEU_2010"><!--Treaty on the Functioning of the European Union (Consolidated version 2010)--></xs:enumeration>
+      <xs:enumeration value="TGREENL"><!--Treaty of Greenland (1984)--></xs:enumeration>
+   </xs:restriction>
+</xs:simpleType></xs:schema>

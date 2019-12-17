@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://ec.europa.eu/etrustex/webapp/service/admin/userregistration/v1.0"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  name="ECEtxService"
+                  targetNamespace="http://ec.europa.eu/etrustex/webapp/service/admin/userregistration/v1.0">
+    <wsdl:types>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://ec.europa.eu/etrustex/webapp/service/admin/userregistration/v1.0"
+                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                   xmlns:tns="http://ec.europa.eu/etrustex/webapp/service/admin/userregistration/v1.0"
+                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:element name="listAvailablePartiesReq" type="tns:listAvailablePartiesReq"/>
+            <xs:element name="listAvailablePartiesResp" type="tns:listAvailablePartiesResp"/>
+            <xs:element name="assignUserPartyReq" type="tns:assignUserPartyReq"/>
+            <xs:element name="assignUserPartyResp" type="tns:assignUserPartyResp"/>
+            <xs:complexType name="listAvailablePartiesReq">
+                <xs:sequence>
+                    <xs:element name="application" type="tns:NonEmptyString"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="listAvailablePartiesResp">
+                <xs:sequence>
+                    <xs:element name="listAvailableParties" type="tns:listAvailableParties" minOccurs="0"
+                                maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="listAvailableParties">
+                <xs:sequence>
+                    <xs:element name="partyID" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="assignUserPartyReq">
+                <xs:sequence>
+                    <xs:element name="assignUserParty" type="tns:AssignUserParty"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="assignUserPartyResp">
+                <xs:sequence>
+                    <xs:element name="status" type="tns:AssignUserPartyStatus"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="AssignUserPartyStatus">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="SUCCESS"/>
+                    <xs:enumeration value="PARTY_NOT_AVAILABLE"/>
+                    <xs:enumeration value="PARTY_DOES_NOT_EXIST"/>
+                    <xs:enumeration value="USER_ALREADY_ASSIGNED"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="AssignUserParty">
+                <xs:sequence>
+                    <xs:element name="userLogin" type="tns:NonEmptyString"/>
+                    <xs:element name="partyID" type="tns:NonEmptyString"/>
+                    <xs:element name="newPartyDisplayName" type="tns:NonEmptyString" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="application" type="tns:NonEmptyString"/>
+                    <xs:element name="userFirstName" type="tns:NonEmptyString"/>
+                    <xs:element name="userLastName" type="tns:NonEmptyString"/>
+                    <xs:element name="userEmail" type="tns:EmailAddress"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="NonEmptyString">
+                <xs:restriction base="xs:string">
+                    <xs:pattern value=".*[^\s].*" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="EmailAddress">
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="(\s)*[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*(\s)*" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="listAvailablePartiesReq">
+        <wsdl:part name="parameters" element="tns:listAvailablePartiesReq"/>
+    </wsdl:message>
+    <wsdl:message name="listAvailablePartiesResp">
+        <wsdl:part name="parameters" element="tns:listAvailablePartiesResp"/>
+    </wsdl:message>
+    <wsdl:message name="assignUserPartyReq">
+        <wsdl:part name="parameters" element="tns:assignUserPartyReq"/>
+    </wsdl:message>
+    <wsdl:message name="assignUserPartyResp">
+        <wsdl:part name="parameters" element="tns:assignUserPartyResp"/>
+    </wsdl:message>
+    <wsdl:portType name="ECEtxUserManagementServicePortType">
+        <wsdl:operation name="listAvailableParties">
+            <wsdl:documentation>Provide the list of available party for a given application.</wsdl:documentation>
+            <wsdl:input message="tns:listAvailablePartiesReq"/>
+            <wsdl:output message="tns:listAvailablePartiesResp"/>
+        </wsdl:operation>
+        <wsdl:operation name="assignUserParty">
+            <wsdl:documentation>Assign a user to a party for a given application</wsdl:documentation>
+            <wsdl:input message="tns:assignUserPartyReq"/>
+            <wsdl:output message="tns:assignUserPartyResp"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ECEtxUserManagementPortTypePortBinding" type="tns:ECEtxUserManagementServicePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="listAvailableParties">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="assignUserParty">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="UserRegistrationService-1.0">
+        <wsdl:port name="ECEtxUserManagementServicePortTypePort" binding="tns:ECEtxUserManagementPortTypePortBinding">
+            <soap:address
+                    location="http://ec.europa.eu/e-trustex/integration/services/inbox/UserRegistrationService/v1.0"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

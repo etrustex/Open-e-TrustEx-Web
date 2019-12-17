@@ -1,0 +1,4 @@
+<button ion-button icon-right clear tappable (click)="openFilterDialog($event)">
+  <ion-label><span class="counter-header">{{getNameForSelectedOption() | translate}} ({{getCounterForSelectedOption()}})</span></ion-label>
+  <img src="{{ctx}}/assets/icon/dropdown-small.svg" align="left"/>
+</button>

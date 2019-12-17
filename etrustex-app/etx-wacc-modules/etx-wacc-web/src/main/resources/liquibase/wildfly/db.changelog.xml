@@ -1,0 +1,663 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="pablo (generated)" id="1575036921652-1">
+        <createTable tableName="ETX_WEB_ATTACHMENT">
+            <column autoIncrement="true" name="ATT_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="ATT_CONTENT_CHK" type="TINYBLOB"/>
+            <column name="ATT_CONTENT_CHK_METHOD" type="VARCHAR(255)"/>
+            <column name="ATT_FILE_NAME" type="VARCHAR(255)"/>
+            <column name="ATT_FILE_PATH" type="VARCHAR(255)"/>
+            <column name="ATT_FILE_SIZE" type="BIGINT"/>
+            <column name="ATT_MIME_TYPE" type="VARCHAR(255)"/>
+            <column name="ATT_TRANSMISSION_CHK" type="TINYBLOB"/>
+            <column name="ATT_TRANSMISSION_CHK_METHOD" type="VARCHAR(255)"/>
+            <column name="ATT_TYPE" type="VARCHAR(255)"/>
+            <column name="ATT_WRAPPER_ID" type="VARCHAR(255)"/>
+            <column name="MSG_ID" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-2">
+        <createTable tableName="ETX_WEB_BUSINESS">
+            <column autoIncrement="true" name="BUS_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="BUS_ACTIVE_STATE" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BUS_CREATED_ON" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BUS_UPDATED_ON" type="datetime(6)"/>
+            <column name="BUS_DESCRIPTION" type="VARCHAR(255)"/>
+            <column name="BUS_NAME" type="VARCHAR(255)"/>
+            <column name="BUS_CREATED_BY" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BUS_UPDATED_BY" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-3">
+        <createTable tableName="ETX_WEB_BUSINESS_CONFIG">
+            <column autoIncrement="true" name="BCG_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="BUS_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BCG_PROPERTY_NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BCG_PROPERTY_VALUE" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-4">
+        <createTable tableName="ETX_WEB_BUSINESS_USER_CONFIG">
+            <column autoIncrement="true" name="BUC_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="BUC_ACTIVE_STATE" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BUC_CREATED_ON" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BUC_UPDATED_ON" type="datetime(6)"/>
+            <column name="BUC_EMAIL" type="VARCHAR(255)"/>
+            <column name="BUC_NAME" type="VARCHAR(255)"/>
+            <column name="BUC_NOTIFICATIONS_ENABLED" type="BIT(1)"/>
+            <column name="BUC_STS_NOTIF_EMAIL" type="VARCHAR(255)"/>
+            <column name="BUC_STS_NOTIF_ENABLED" type="BIT(1)"/>
+            <column name="BUC_CREATED_BY" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BUC_UPDATED_BY" type="BIGINT"/>
+            <column name="BUS_ID" type="BIGINT"/>
+            <column name="USR_ID" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-5">
+        <createTable tableName="ETX_WEB_COMPATIBLE_BROWSER">
+            <column name="CBR_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CBR_COMMENT" type="VARCHAR(255)"/>
+            <column name="CBR_IS_COMPATIBLE" type="BIT(1)"/>
+            <column name="CBR_NAME" type="VARCHAR(255)"/>
+            <column name="CBR_ICON_PATH" type="VARCHAR(255)"/>
+            <column name="CBR_VERSION" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-6">
+        <createTable tableName="ETX_WEB_CONFIG">
+            <column name="CFG_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CFG_PROP_NAME" type="VARCHAR(255)"/>
+            <column name="CFG_PROP_VALUE" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-7">
+        <createTable tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LTR_KEY" type="VARCHAR(255)"/>
+            <column name="LTR_MESSAGE" type="LONGTEXT"/>
+            <column name="LTR_SCREEN_ID" type="BIGINT"/>
+            <column name="LTR_SCREEN_POSITION_X" type="INT"/>
+            <column name="LTR_SCREEN_POSITION_Y" type="INT"/>
+            <column name="LNG_ID" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-8">
+        <createTable tableName="ETX_WEB_LANG">
+            <column autoIncrement="true" name="LNG_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="LNG_CODE" type="VARCHAR(255)"/>
+            <column name="LNG_NAME" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-9">
+        <createTable tableName="ETX_WEB_MESSAGE">
+            <column autoIncrement="true" name="MSG_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="MSG_ACTIVE_STATE" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MSG_CREATED_ON" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MSG_UPDATED_ON" type="datetime(6)"/>
+            <column name="MSG_BUNDLE_ID" type="VARCHAR(255)"/>
+            <column name="MSG_CONTENT" type="VARCHAR(4000)"/>
+            <column name="MSG_ISSUE_DATE" type="datetime(6)"/>
+            <column name="MSG_STATE" type="VARCHAR(255)"/>
+            <column name="MSG_REF_ID" type="VARCHAR(255)"/>
+            <column name="MSG_SEARCHABLE_CONTENT" type="VARCHAR(255)"/>
+            <column name="MSG_SENT_ON" type="datetime(6)"/>
+            <column name="MSG_SUBJECT" type="VARCHAR(255)"/>
+            <column name="MSG_CREATED_BY" type="BIGINT"/>
+            <column name="MSG_UPDATED_BY" type="BIGINT"/>
+            <column name="LAST_MST_ID" type="BIGINT"/>
+            <column name="MSG_LOCAL_PARTY_ID" type="BIGINT"/>
+            <column name="MSG_REMOTE_PARTY_ID" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-10">
+        <createTable tableName="ETX_WEB_MESSAGE_READ">
+            <column autoIncrement="true" name="MSR_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="MSG_ID" type="BIGINT"/>
+            <column name="USR_ID" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-11">
+        <createTable tableName="ETX_WEB_MESSAGE_SIG">
+            <column autoIncrement="true" name="MSS_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="MSG_CERTIFICATE" type="LONGTEXT"/>
+            <column name="MSG_SIGNATURE" type="LONGTEXT"/>
+            <column name="MSG_SIGNATURE_VALID" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MSG_SIGNED_DATA" type="LONGTEXT"/>
+            <column name="MSG_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-12">
+        <createTable tableName="ETX_WEB_MESSAGE_STATUS">
+            <column autoIncrement="true" name="MST_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="MST_CREATED_ON" type="datetime(6)"/>
+            <column name="MST_LOGIN" type="VARCHAR(255)"/>
+            <column name="MST_STATE" type="VARCHAR(255)"/>
+            <column name="MST_STATUS" type="VARCHAR(255)"/>
+            <column name="MST_STATUS_CODE" type="VARCHAR(255)"/>
+            <column name="MST_UUID" type="VARCHAR(255)"/>
+            <column name="MST_UPDATED_ON" type="datetime(6)"/>
+            <column name="MSG_ID" type="BIGINT"/>
+            <column name="MST_PARENT_ID" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-13">
+        <createTable tableName="ETX_WEB_NOTIFICATION">
+            <column autoIncrement="true" name="NTF_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="BUC_ID" type="BIGINT"/>
+            <column name="NTF_CREATED_ON" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NTF_EMAIL" type="VARCHAR(255)"/>
+            <column name="NTF_STATE" type="VARCHAR(255)"/>
+            <column name="NTF_TYPE" type="VARCHAR(255)"/>
+            <column name="PAR_ID" type="BIGINT"/>
+            <column name="NTF_UPDATED_ON" type="datetime(6)"/>
+            <column name="MSG_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MST_ID" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-14">
+        <createTable tableName="ETX_WEB_PARTY">
+            <column autoIncrement="true" name="PAR_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="PAR_ACTIVE_STATE" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PAR_CREATED_ON" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PAR_UPDATED_ON" type="datetime(6)"/>
+            <column name="PAR_CONSUME_NODE_MSG" type="BIT(1)"/>
+            <column name="PAR_DISPLAY_NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PAR_EMAIL" type="VARCHAR(255)"/>
+            <column name="PAR_NODE_NAME" type="VARCHAR(255)"/>
+            <column name="PAR_NODE_USR" type="VARCHAR(255)"/>
+            <column name="PAR_NODE_PASS" type="VARCHAR(255)"/>
+            <column name="PAR_NOTIFICATIONS_ENABLED" type="BIT(1)"/>
+            <column name="PAR_STS_NOTIF_EMAIL" type="VARCHAR(255)"/>
+            <column name="PAR_STS_NOTIF_ENABLED" type="BIT(1)"/>
+            <column name="PAR_WEB_MANAGED" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PAR_CREATED_BY" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PAR_UPDATED_BY" type="BIGINT"/>
+            <column name="BUS_ID" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-15">
+        <createTable tableName="ETX_WEB_PARTY_ICA">
+            <column autoIncrement="true" name="PCA_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="PCA_STATE" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PCA_CREATED_ON" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PCA_UPDATED_ON" type="datetime(6)"/>
+            <column name="PCA_CERTIFICATE" type="LONGTEXT"/>
+            <column name="PCA_CONFIDENTIALITY" type="INT"/>
+            <column name="PCA_INTEGRITY" type="INT"/>
+            <column name="PCA_LOADED_ON" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PCA_CREATED_BY" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PCA_UPDATED_BY" type="BIGINT"/>
+            <column name="PAR_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REMOTE_PAR_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-16">
+        <createTable tableName="ETX_WEB_PRIVILEGE">
+            <column name="PRV_TYPE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRV_NAME" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-17">
+        <createTable tableName="ETX_WEB_ROLE">
+            <column name="ROL_TYPE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROL_NAME" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-18">
+        <createTable tableName="ETX_WEB_ROLE_PRIVILEGE">
+            <column name="ROL_TYPE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRV_TYPE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-19">
+        <createTable tableName="ETX_WEB_USER">
+            <column autoIncrement="true" name="USR_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="USR_ACTIVE_STATE" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USR_CREATED_ON" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USR_UPDATED_ON" type="datetime(6)"/>
+            <column name="USR_LOGIN" type="VARCHAR(255)"/>
+            <column name="USR_NAME" type="VARCHAR(255)"/>
+            <column name="USR_CREATED_BY" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USR_UPDATED_BY" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-20">
+        <createTable tableName="ETX_WEB_USER_ROLE">
+            <column autoIncrement="true" name="URO_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="URO_ACTIVE_STATE" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="URO_CREATED_ON" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="URO_UPDATED_ON" type="datetime(6)"/>
+            <column name="URO_CREATED_BY" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="URO_UPDATED_BY" type="BIGINT"/>
+            <column name="BUS_ID" type="BIGINT"/>
+            <column name="PAR_ID" type="BIGINT"/>
+            <column name="ROL_TYPE" type="VARCHAR(255)"/>
+            <column name="USR_ID" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-21">
+        <addPrimaryKey columnNames="CBR_ID" constraintName="PRIMARY" tableName="ETX_WEB_COMPATIBLE_BROWSER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-22">
+        <addPrimaryKey columnNames="CFG_ID" constraintName="PRIMARY" tableName="ETX_WEB_CONFIG"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-23">
+        <addPrimaryKey columnNames="LTR_ID" constraintName="PRIMARY" tableName="ETX_WEB_LABEL_TRANSLATION"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-24">
+        <addPrimaryKey columnNames="PRV_TYPE" constraintName="PRIMARY" tableName="ETX_WEB_PRIVILEGE"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-25">
+        <addPrimaryKey columnNames="ROL_TYPE" constraintName="PRIMARY" tableName="ETX_WEB_ROLE"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-26">
+        <addPrimaryKey columnNames="ROL_TYPE, PRV_TYPE" constraintName="PRIMARY" tableName="ETX_WEB_ROLE_PRIVILEGE"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-27">
+        <createIndex indexName="FK_29mw6oxc41nbpwjtlppt16xue" tableName="ETX_WEB_PARTY">
+            <column name="PAR_CREATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-28">
+        <createIndex indexName="FK_4g5lb20oab63e4g2f728k04dw" tableName="ETX_WEB_PARTY">
+            <column name="PAR_UPDATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-29">
+        <createIndex indexName="FK_4lja92xfar1qc110ab6bxs496" tableName="ETX_WEB_MESSAGE">
+            <column name="MSG_REMOTE_PARTY_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-30">
+        <createIndex indexName="FK_5ivu4by5vgxyj4wvdx7d7oefr" tableName="ETX_WEB_MESSAGE">
+            <column name="LAST_MST_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-31">
+        <createIndex indexName="FK_5r8yj9v17gmwts4y4ueru4lm" tableName="ETX_WEB_NOTIFICATION">
+            <column name="MST_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-32">
+        <createIndex indexName="FK_757lhqx0ujo6i0weg18ynqxr7" tableName="ETX_WEB_USER">
+            <column name="USR_UPDATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-33">
+        <createIndex indexName="FK_8j3gi9liwbi73x746onis33y1" tableName="ETX_WEB_USER_ROLE">
+            <column name="URO_UPDATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-34">
+        <createIndex indexName="FK_8xme3lawfaxdai9y0j4orqlyx" tableName="ETX_WEB_MESSAGE_STATUS">
+            <column name="MSG_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-35">
+        <createIndex indexName="FK_ajof8b9dd6byhqwwny5yjho61" tableName="ETX_WEB_USER_ROLE">
+            <column name="USR_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-36">
+        <createIndex indexName="FK_am7bajvmly0wuwfmvxs7by8u1" tableName="ETX_WEB_PARTY_ICA">
+            <column name="PAR_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-37">
+        <createIndex indexName="FK_dtp6q31tapw5lngg9kd41nywa" tableName="ETX_WEB_MESSAGE_SIG">
+            <column name="MSG_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-38">
+        <createIndex indexName="FK_fdxynemakabkcm3f3sjrw75eb" tableName="ETX_WEB_USER_ROLE">
+            <column name="BUS_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-39">
+        <createIndex indexName="FK_ftaup797duc7cw5o7iq9vkyj7" tableName="ETX_WEB_USER_ROLE">
+            <column name="ROL_TYPE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-40">
+        <createIndex indexName="FK_fv14d5fj3rd853qw1d1s0j7hq" tableName="ETX_WEB_BUSINESS">
+            <column name="BUS_UPDATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-41">
+        <createIndex indexName="FK_gqqygs7ykj99stafp02d4irid" tableName="ETX_WEB_MESSAGE">
+            <column name="MSG_CREATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-42">
+        <createIndex indexName="FK_hcbsngxlossp4851qkbinr2g8" tableName="ETX_WEB_ATTACHMENT">
+            <column name="MSG_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-43">
+        <createIndex indexName="FK_hy05s30x5y4ac57qlurark9r4" tableName="ETX_WEB_PARTY">
+            <column name="BUS_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-44">
+        <createIndex indexName="FK_i06oylbnneh0bawc2f8gqfery" tableName="ETX_WEB_BUSINESS_USER_CONFIG">
+            <column name="USR_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-45">
+        <createIndex indexName="FK_jrss331bca1hflsprjy5ciumi" tableName="ETX_WEB_ROLE_PRIVILEGE">
+            <column name="PRV_TYPE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-46">
+        <createIndex indexName="FK_l0dp0ghjk1npwrxdp7m8qvyp5" tableName="ETX_WEB_USER_ROLE">
+            <column name="URO_CREATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-47">
+        <createIndex indexName="FK_lvfmtbhu5mpyy3xn8mlb7i46m" tableName="ETX_WEB_MESSAGE_STATUS">
+            <column name="MST_PARENT_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-48">
+        <createIndex indexName="FK_mx09xlkbtk1adqa098qucwsev" tableName="ETX_WEB_BUSINESS_USER_CONFIG">
+            <column name="BUC_UPDATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-49">
+        <createIndex indexName="FK_nfw24oakx0vxqoqa07e5c4iub" tableName="ETX_WEB_PARTY_ICA">
+            <column name="REMOTE_PAR_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-50">
+        <createIndex indexName="FK_njw2hsaddvopl1ebiljckk92i" tableName="ETX_WEB_ROLE_PRIVILEGE">
+            <column name="ROL_TYPE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-51">
+        <createIndex indexName="FK_obyyvl53v8cbbvyeyfanmfckt" tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LNG_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-52">
+        <createIndex indexName="FK_oqvqsy4tmyibtqwbasbcau8wc" tableName="ETX_WEB_BUSINESS">
+            <column name="BUS_CREATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-53">
+        <createIndex indexName="FK_pi9pxs61f3yjewehbhkjeao1c" tableName="ETX_WEB_NOTIFICATION">
+            <column name="MSG_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-54">
+        <createIndex indexName="FK_pnxu8n34if9ej7tjkufewmmg9" tableName="ETX_WEB_MESSAGE">
+            <column name="MSG_LOCAL_PARTY_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-55">
+        <createIndex indexName="FK_qlmawq3ygbww8d2l6eiol0jr3" tableName="ETX_WEB_BUSINESS_CONFIG">
+            <column name="BUS_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-56">
+        <createIndex indexName="FK_r4b95r3e13oj2am1854wnf48c" tableName="ETX_WEB_USER_ROLE">
+            <column name="PAR_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-57">
+        <createIndex indexName="FK_res7bg7q4yr9wjhg5m3gfhhxh" tableName="ETX_WEB_BUSINESS_USER_CONFIG">
+            <column name="BUC_CREATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-58">
+        <createIndex indexName="FK_rr7j9divpb3i4mfwblk077j7y" tableName="ETX_WEB_USER">
+            <column name="USR_CREATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-59">
+        <createIndex indexName="FK_s6t9xuk7xxc00ry42vf3ajtn0" tableName="ETX_WEB_PARTY_ICA">
+            <column name="PCA_UPDATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-60">
+        <createIndex indexName="FK_sdim4ct19q5ys2wcxes8wt2qb" tableName="ETX_WEB_PARTY_ICA">
+            <column name="PCA_CREATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-61">
+        <createIndex indexName="FK_sdtfk326it720bmrcbu60jlhy" tableName="ETX_WEB_MESSAGE">
+            <column name="MSG_UPDATED_BY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-62">
+        <createIndex indexName="FK_tdysh1o1ohkejspvxek3bbc57" tableName="ETX_WEB_BUSINESS_USER_CONFIG">
+            <column name="BUS_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-63">
+        <addForeignKeyConstraint baseColumnNames="PAR_CREATED_BY" baseTableName="ETX_WEB_PARTY" constraintName="FK_29mw6oxc41nbpwjtlppt16xue" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-64">
+        <addForeignKeyConstraint baseColumnNames="PAR_UPDATED_BY" baseTableName="ETX_WEB_PARTY" constraintName="FK_4g5lb20oab63e4g2f728k04dw" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-65">
+        <addForeignKeyConstraint baseColumnNames="MSG_REMOTE_PARTY_ID" baseTableName="ETX_WEB_MESSAGE" constraintName="FK_4lja92xfar1qc110ab6bxs496" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="PAR_ID" referencedTableName="ETX_WEB_PARTY"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-66">
+        <addForeignKeyConstraint baseColumnNames="LAST_MST_ID" baseTableName="ETX_WEB_MESSAGE" constraintName="FK_5ivu4by5vgxyj4wvdx7d7oefr" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="MST_ID" referencedTableName="ETX_WEB_MESSAGE_STATUS"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-67">
+        <addForeignKeyConstraint baseColumnNames="MST_ID" baseTableName="ETX_WEB_NOTIFICATION" constraintName="FK_5r8yj9v17gmwts4y4ueru4lm" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="MST_ID" referencedTableName="ETX_WEB_MESSAGE_STATUS"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-68">
+        <addForeignKeyConstraint baseColumnNames="USR_UPDATED_BY" baseTableName="ETX_WEB_USER" constraintName="FK_757lhqx0ujo6i0weg18ynqxr7" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-69">
+        <addForeignKeyConstraint baseColumnNames="URO_UPDATED_BY" baseTableName="ETX_WEB_USER_ROLE" constraintName="FK_8j3gi9liwbi73x746onis33y1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-70">
+        <addForeignKeyConstraint baseColumnNames="MSG_ID" baseTableName="ETX_WEB_MESSAGE_STATUS" constraintName="FK_8xme3lawfaxdai9y0j4orqlyx" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="MSG_ID" referencedTableName="ETX_WEB_MESSAGE"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-71">
+        <addForeignKeyConstraint baseColumnNames="USR_ID" baseTableName="ETX_WEB_USER_ROLE" constraintName="FK_ajof8b9dd6byhqwwny5yjho61" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-72">
+        <addForeignKeyConstraint baseColumnNames="PAR_ID" baseTableName="ETX_WEB_PARTY_ICA" constraintName="FK_am7bajvmly0wuwfmvxs7by8u1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="PAR_ID" referencedTableName="ETX_WEB_PARTY"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-73">
+        <addForeignKeyConstraint baseColumnNames="MSG_ID" baseTableName="ETX_WEB_MESSAGE_SIG" constraintName="FK_dtp6q31tapw5lngg9kd41nywa" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="MSG_ID" referencedTableName="ETX_WEB_MESSAGE"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-74">
+        <addForeignKeyConstraint baseColumnNames="BUS_ID" baseTableName="ETX_WEB_USER_ROLE" constraintName="FK_fdxynemakabkcm3f3sjrw75eb" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="BUS_ID" referencedTableName="ETX_WEB_BUSINESS"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-75">
+        <addForeignKeyConstraint baseColumnNames="ROL_TYPE" baseTableName="ETX_WEB_USER_ROLE" constraintName="FK_ftaup797duc7cw5o7iq9vkyj7" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ROL_TYPE" referencedTableName="ETX_WEB_ROLE"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-76">
+        <addForeignKeyConstraint baseColumnNames="BUS_UPDATED_BY" baseTableName="ETX_WEB_BUSINESS" constraintName="FK_fv14d5fj3rd853qw1d1s0j7hq" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-77">
+        <addForeignKeyConstraint baseColumnNames="MSG_CREATED_BY" baseTableName="ETX_WEB_MESSAGE" constraintName="FK_gqqygs7ykj99stafp02d4irid" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-78">
+        <addForeignKeyConstraint baseColumnNames="MSG_ID" baseTableName="ETX_WEB_ATTACHMENT" constraintName="FK_hcbsngxlossp4851qkbinr2g8" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="MSG_ID" referencedTableName="ETX_WEB_MESSAGE"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-79">
+        <addForeignKeyConstraint baseColumnNames="BUS_ID" baseTableName="ETX_WEB_PARTY" constraintName="FK_hy05s30x5y4ac57qlurark9r4" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="BUS_ID" referencedTableName="ETX_WEB_BUSINESS"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-80">
+        <addForeignKeyConstraint baseColumnNames="USR_ID" baseTableName="ETX_WEB_BUSINESS_USER_CONFIG" constraintName="FK_i06oylbnneh0bawc2f8gqfery" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-81">
+        <addForeignKeyConstraint baseColumnNames="PRV_TYPE" baseTableName="ETX_WEB_ROLE_PRIVILEGE" constraintName="FK_jrss331bca1hflsprjy5ciumi" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="PRV_TYPE" referencedTableName="ETX_WEB_PRIVILEGE"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-82">
+        <addForeignKeyConstraint baseColumnNames="URO_CREATED_BY" baseTableName="ETX_WEB_USER_ROLE" constraintName="FK_l0dp0ghjk1npwrxdp7m8qvyp5" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+<!--    <changeSet author="pablo (generated)" id="1575036921652-83">
+        <addForeignKeyConstraint baseColumnNames="URO_ID" baseTableName="ETX_WEB_USER_ROLE" constraintName="FK_lj7e4chjnwp12ycbekg57m4cs" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="URO_ID" referencedTableName="ETX_WEB_USER_ROLE"/>
+    </changeSet>-->
+    <changeSet author="pablo (generated)" id="1575036921652-84">
+        <addForeignKeyConstraint baseColumnNames="MST_PARENT_ID" baseTableName="ETX_WEB_MESSAGE_STATUS" constraintName="FK_lvfmtbhu5mpyy3xn8mlb7i46m" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="MST_ID" referencedTableName="ETX_WEB_MESSAGE_STATUS"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-85">
+        <addForeignKeyConstraint baseColumnNames="BUC_UPDATED_BY" baseTableName="ETX_WEB_BUSINESS_USER_CONFIG" constraintName="FK_mx09xlkbtk1adqa098qucwsev" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-86">
+        <addForeignKeyConstraint baseColumnNames="REMOTE_PAR_ID" baseTableName="ETX_WEB_PARTY_ICA" constraintName="FK_nfw24oakx0vxqoqa07e5c4iub" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="PAR_ID" referencedTableName="ETX_WEB_PARTY"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-87">
+        <addForeignKeyConstraint baseColumnNames="ROL_TYPE" baseTableName="ETX_WEB_ROLE_PRIVILEGE" constraintName="FK_njw2hsaddvopl1ebiljckk92i" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ROL_TYPE" referencedTableName="ETX_WEB_ROLE"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-88">
+        <addForeignKeyConstraint baseColumnNames="LNG_ID" baseTableName="ETX_WEB_LABEL_TRANSLATION" constraintName="FK_obyyvl53v8cbbvyeyfanmfckt" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="LNG_ID" referencedTableName="ETX_WEB_LANG"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-89">
+        <addForeignKeyConstraint baseColumnNames="BUS_CREATED_BY" baseTableName="ETX_WEB_BUSINESS" constraintName="FK_oqvqsy4tmyibtqwbasbcau8wc" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-90">
+        <addForeignKeyConstraint baseColumnNames="MSG_ID" baseTableName="ETX_WEB_NOTIFICATION" constraintName="FK_pi9pxs61f3yjewehbhkjeao1c" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="MSG_ID" referencedTableName="ETX_WEB_MESSAGE"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-91">
+        <addForeignKeyConstraint baseColumnNames="MSG_LOCAL_PARTY_ID" baseTableName="ETX_WEB_MESSAGE" constraintName="FK_pnxu8n34if9ej7tjkufewmmg9" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="PAR_ID" referencedTableName="ETX_WEB_PARTY"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-92">
+        <addForeignKeyConstraint baseColumnNames="BUS_ID" baseTableName="ETX_WEB_BUSINESS_CONFIG" constraintName="FK_qlmawq3ygbww8d2l6eiol0jr3" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="BUS_ID" referencedTableName="ETX_WEB_BUSINESS"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-93">
+        <addForeignKeyConstraint baseColumnNames="PAR_ID" baseTableName="ETX_WEB_USER_ROLE" constraintName="FK_r4b95r3e13oj2am1854wnf48c" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="PAR_ID" referencedTableName="ETX_WEB_PARTY"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-94">
+        <addForeignKeyConstraint baseColumnNames="BUC_CREATED_BY" baseTableName="ETX_WEB_BUSINESS_USER_CONFIG" constraintName="FK_res7bg7q4yr9wjhg5m3gfhhxh" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-95">
+        <addForeignKeyConstraint baseColumnNames="USR_CREATED_BY" baseTableName="ETX_WEB_USER" constraintName="FK_rr7j9divpb3i4mfwblk077j7y" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-96">
+        <addForeignKeyConstraint baseColumnNames="PCA_UPDATED_BY" baseTableName="ETX_WEB_PARTY_ICA" constraintName="FK_s6t9xuk7xxc00ry42vf3ajtn0" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-97">
+        <addForeignKeyConstraint baseColumnNames="PCA_CREATED_BY" baseTableName="ETX_WEB_PARTY_ICA" constraintName="FK_sdim4ct19q5ys2wcxes8wt2qb" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-98">
+        <addForeignKeyConstraint baseColumnNames="MSG_UPDATED_BY" baseTableName="ETX_WEB_MESSAGE" constraintName="FK_sdtfk326it720bmrcbu60jlhy" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USR_ID" referencedTableName="ETX_WEB_USER"/>
+    </changeSet>
+    <changeSet author="pablo (generated)" id="1575036921652-99">
+        <addForeignKeyConstraint baseColumnNames="BUS_ID" baseTableName="ETX_WEB_BUSINESS_USER_CONFIG" constraintName="FK_tdysh1o1ohkejspvxek3bbc57" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="BUS_ID" referencedTableName="ETX_WEB_BUSINESS"/>
+    </changeSet>
+    <changeSet author="fuscoem " id="ETRUSTEX-5631">
+        <sqlFile dbms="mysql"
+                 path="scripts/translations.sql"
+                 relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="pablo" id="1575036921652-100">
+        <sqlFile dbms="mysql"
+                 path="scripts/reference_data.sql"
+                 relativeToChangelogFile="true"/>
+    </changeSet>
+</databaseChangeLog>

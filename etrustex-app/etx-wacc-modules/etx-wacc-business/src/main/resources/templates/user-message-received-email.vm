@@ -1,0 +1,13 @@
+Dear <i>$userName</i>,
+<br><br>
+A new message has been posted for you on e-TrustEx, you can read it by clicking on the link below.
+<br><br>
+Message title: <i>$messageTitle</i><br>
+Message URL: <a href="$messageURL">$messageURL</a>
+<br><br>
+This message has been generated automatically by the e-TrustEx platform, please do not reply.
+<br><br>
+Best regards,<br>
+e-TrustEx Team
+
+

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:CodeList xmlns:n="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ https://webgate.ec.europa.eu/CITnet/svn/EPROCUREMENT/trunk/04-Source%20Code/tools/schematron_generation/utility/genericode.xsd">
+   <Identification xmlns="">
+      <ShortName>SummaryDescriptionCode</ShortName>
+      <LongName>Summary Description Code</LongName>
+      <Version>0.1</Version>
+      <CanonicalUri>Placeholder</CanonicalUri>
+      <CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+      <Agency>
+         <LongName>European Commission</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet xmlns="">
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString"/>
+      </Column>
+      <Column Id="name" Use="optional">
+         <ShortName>Name</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="examples" Use="optional">
+         <ShortName>Examples</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList xmlns="">
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ACY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Willingness Receipt Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>APR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Proposal Acceptance Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CAN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cancel Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CCD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Change Contact Details Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CLD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Close Document Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CLR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Close Request Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Extend Delay Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Expire Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Demand for Delay Extension Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CINF</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Customer Additional Information Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CINR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Customer Information Request Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NOF</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Change Offer Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>REJ</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Refuse Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WDW</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Withdraw Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SINF</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Supplier Additional Information Form</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SINR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Supplier Information Request Form</SimpleValue>
+         </Value>
+      </Row>	  
+	  <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ASWR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Answer</SimpleValue>
+         </Value>
+      </Row>
+	  <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CORR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Corrigendum</SimpleValue>
+         </Value>
+      </Row>
+	  <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>QUST</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Supplier Question</SimpleValue>
+         </Value>
+      </Row>
+      	  <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>REPN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Replacement Notification</SimpleValue>
+         </Value>
+      </Row>		  
+   </SimpleCodeList>
+</n:CodeList>

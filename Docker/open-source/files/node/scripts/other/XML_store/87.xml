@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:CodeList xmlns:n="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ C:/DOCUME~1/danielsm/Desktop/codelists/genericode.xsd">
+	<Identification xmlns="">
+		<ShortName>RequestForQuotationTypeCode</ShortName>
+		<LongName>Request For Quotation Type Code</LongName>
+		<Version>0.1</Version>
+		<CanonicalUri>Placeholder</CanonicalUri>
+		<CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+		<Agency>
+			<LongName>European Commission</LongName>
+		</Agency>
+	</Identification>
+	<ColumnSet xmlns="">
+		<Column Id="code" Use="required">
+			<ShortName>Code</ShortName>
+			<Data Type="normalizedString"/>
+		</Column>
+		<Column Id="name" Use="optional">
+			<ShortName>Name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="examples" Use="optional">
+			<ShortName>Examples</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="code"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList xmlns="">
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Order Form</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>FP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fixed Price</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>QTM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Quoted Time &amp; Means</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>TM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Time &amp; Means</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PTM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Proximity Time &amp; Means (Off-site)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+	         <Value ColumnRef="code">
+	            <SimpleValue>BOOKS</SimpleValue>
+	         </Value>
+	         <Value ColumnRef="name">
+	            <SimpleValue>Books</SimpleValue>
+	         </Value>
+      	</Row>
+      	<Row>
+	         <Value ColumnRef="code">
+	            <SimpleValue>TRANS</SimpleValue>
+	         </Value>
+	         <Value ColumnRef="name">
+	            <SimpleValue>Translation</SimpleValue>
+	         </Value>
+      	</Row>
+      	<Row>
+	         <Value ColumnRef="code">
+	            <SimpleValue>REV</SimpleValue>
+	         </Value>
+	         <Value ColumnRef="name">
+	            <SimpleValue>Linguistic Revision</SimpleValue>
+	         </Value>
+      	</Row>
+      	<Row>
+	         <Value ColumnRef="code">
+	            <SimpleValue>RVT</SimpleValue>
+	         </Value>
+	         <Value ColumnRef="name">
+	            <SimpleValue>Translation Revision</SimpleValue>
+	         </Value>
+      	</Row>
+      	<Row>
+	         <Value ColumnRef="code">
+	            <SimpleValue>PER</SimpleValue>
+	         </Value>
+	         <Value ColumnRef="name">
+	            <SimpleValue>Post Edition Rapid</SimpleValue>
+	         </Value>
+      	</Row>
+      	<Row>
+	         <Value ColumnRef="code">
+	            <SimpleValue>PES</SimpleValue>
+	         </Value>
+	         <Value ColumnRef="name">
+	            <SimpleValue>Provision for Extra Services</SimpleValue>
+	         </Value>
+      	</Row>
+      	<Row>
+	         <Value ColumnRef="code">
+	            <SimpleValue>RFO</SimpleValue>
+	         </Value>
+	         <Value ColumnRef="name">
+	            <SimpleValue>Request for Offer</SimpleValue>
+	         </Value>
+      	</Row>
+		    <Row>
+			   <Value ColumnRef="code">
+				    <SimpleValue>FPM</SimpleValue>
+			   </Value>
+			   <Value ColumnRef="name">
+				    <SimpleValue>Fixed Price (with maximum amount)</SimpleValue>
+			   </Value>
+		  </Row>
+	</SimpleCodeList>
+</n:CodeList>

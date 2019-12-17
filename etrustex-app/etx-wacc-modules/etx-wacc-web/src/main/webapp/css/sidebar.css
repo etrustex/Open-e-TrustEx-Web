@@ -1,0 +1,60 @@
+/* Tips for sidebar:
+1. since we are working in percentages, it's best not to use padding on the sidebar. It will be added to the width for standards compliant browsers creating an unknown actual width.
+2. Space between the side of the div and the elements within it can be created by placing a left and right margin on those elements as seen in the ".twoColLiqLtHdr #sidebar p" rule.
+3. Since Explorer calculates widths after the parent element is rendered, you may occasionally run into unexplained bugs with percentage-based columns. If you need more predictable results, you may choose to change to pixel sized columns.
+*/
+.sidebar {
+	float: left;
+    bottom:0;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-top: 1px solid #d0e4ff;
+	border-right: 1px solid #d0e4ff;
+	border-bottom: 1px solid #d0e4ff;
+	border-left: 1px solid #d0e4ff;
+	display: none;
+	min-width: 150px;
+}
+.sidebar-title-container{
+	height: 45px;
+	background-image: url("../images/img/bg_titleleft.png");
+	background-repeat: repeat-x;
+	text-align: center;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.sidebar ul{
+	text-align:left;
+	list-style:none;
+	list-style-position:inside;
+    padding-left: 3px;
+    padding-right: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.sidebar li{
+	font-size: 0.75em;
+	text-align: left;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.sidebar li a:link{
+	color: #0086cb;
+	text-decoration:none;
+}
+.sidebar li a:visited{
+	color: #0086cb;
+	text-decoration:none;
+}
+.sidebar li a:hover{
+	color: #0086cb;
+	text-decoration:none;
+}
+.sidebar li a:active{
+	color: #0086cb;
+	text-decoration:none;
+}
+.sidebar li img{
+    vertical-align: middle;
+}

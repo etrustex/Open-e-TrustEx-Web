@@ -1,0 +1,453 @@
+swagger: '2.0'
+info:
+  description: >-
+    This document describes the API of the RESTful services to be consumed by
+    the e-TrustEx Mobile application.
+  version: '1.0'
+  title: e-TrustEx Mobile Application
+host: webgate.acceptance.ec.europa.eu
+basePath: /e-trustex/mobile/services
+tags:
+  - name: user
+    description: Retrieve information about the logged user
+  - name: parties
+    description: Retrieve party and message information
+  - name: messages
+    description: Retrieve message attachments
+  - name: clienterror
+    description: Report a client error
+schemes:
+  - http
+paths:
+  /user:
+    get:
+      tags:
+        - user
+      summary: Get logged user information
+      description: ''
+      operationId: getUserByName
+      produces:
+        - application/xml
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/User'
+        '500':
+          description: internal server error
+          schema:
+            $ref: '#/definitions/ServerError'
+  /parties:
+    get:
+      tags:
+        - parties
+      summary: Get parties for logged user
+      description: ''
+      operationId: getPartiesByUsername
+      produces:
+        - application/xml
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Parties'
+        '500':
+          description: internal server error
+          schema:
+            $ref: '#/definitions/ServerError'
+  '/parties/{partyId}/inboxcounters':
+    get:
+      tags:
+        - parties
+      summary: Get count of all and read messages in inbox
+      description: ''
+      operationId: getInboxCountersByParty
+      produces:
+        - application/xml
+        - application/json
+      parameters:
+        - name: partyId
+          in: path
+          description: ID of party
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/InboxCounters'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Party not found
+        '500':
+          description: internal server error
+          schema:
+            $ref: '#/definitions/ServerError'
+  '/parties/{partyId}/sentcounters':
+    get:
+      tags:
+        - parties
+      summary: Get count of all and read messages in inbox
+      description: ''
+      operationId: getSentCountersByParty
+      produces:
+        - application/xml
+        - application/json
+      parameters:
+        - name: partyId
+          in: path
+          description: ID of party
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/SentCounters'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Party not found
+        '500':
+          description: internal server error
+          schema:
+            $ref: '#/definitions/ServerError'
+  '/parties/{partyId}/inbox':
+    get:
+      tags:
+        - parties
+      summary: Get inbox messages
+      description: ''
+      operationId: getInboxMessages
+      produces:
+        - application/xml
+        - application/json
+      parameters:
+        - name: partyId
+          in: path
+          description: ID of party
+          required: true
+          type: string
+        - name: startfrom
+          in: query
+          description: the index of the messages in the full list
+          required: true
+          type: string
+        - name: resultsize
+          in: query
+          description: the number of messages fetched from the server
+          required: true
+          type: string
+        - name: status
+          in: query
+          description: status filter option
+          type: string
+        - name: subject
+          in: query
+          description: subject filter option
+          type: string
+        - name: sortorder
+          in: query
+          description: sorting order option (asc or desc)
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Messages'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Party not found
+        '500':
+          description: internal server error
+          schema:
+            $ref: '#/definitions/ServerError'
+  '/parties/{partyId}/sent':
+    get:
+      tags:
+        - parties
+      summary: Get sent messages
+      description: ''
+      operationId: getSentMessages
+      produces:
+        - application/xml
+        - application/json
+      parameters:
+        - name: partyId
+          in: path
+          description: ID of party
+          required: true
+          type: string
+        - name: startfrom
+          in: query
+          description: the index of the messages in the full list
+          required: true
+          type: string
+        - name: resultsize
+          in: query
+          description: the number of messages fetched from the server
+          required: true
+          type: string
+        - name: status
+          in: query
+          description: status filter option
+          type: string
+        - name: subject
+          in: query
+          description: subject filter option
+          type: string
+        - name: sortorder
+          in: query
+          description: sorting order option (asc or desc)
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Messages'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Party not found
+        '500':
+          description: internal server error
+          schema:
+            $ref: '#/definitions/ServerError'
+  '/messages/{messageId}/attachments':
+    get:
+      tags:
+        - messages
+      summary: Get message attachments metadata
+      description: ''
+      operationId: getAttachmentsByMessageId
+      produces:
+        - application/xml
+        - application/json
+      parameters:
+        - name: messageId
+          in: path
+          description: ID of the message
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Attachments'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Message not found
+        '500':
+          description: internal server error
+          schema:
+            $ref: '#/definitions/ServerError'
+  /clienterror:
+    post:
+      tags:
+        - clienterror
+      summary: Report client side errors
+      description: ''
+      operationId: reportClientError
+      consumes:
+        - application/json
+        - application/xml
+      produces:
+        - application/xml
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Details of the error generated on the client side
+          required: true
+          schema:
+            $ref: '#/definitions/ClientError'
+      responses:
+        '200':
+          description: successful operation
+        '500':
+          description: internal server error
+          schema:
+            $ref: '#/definitions/ServerError'
+  '/messages/{messageId}/read':
+    post:
+      tags:
+        - messages
+      summary: Report that a message was read
+      description: >-
+        This service can be called with an empty HTTP request body. An HTTP
+        header "Content-Length" with value 0 should be present in the request.
+      operationId: reportMessageRead
+      parameters:
+        - name: messageId
+          in: path
+          description: ID of the message
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Message not found
+        '500':
+          description: internal server error
+          schema:
+            $ref: '#/definitions/ServerError'
+definitions:
+  User:
+    type: object
+    properties:
+      userId:
+        type: string
+      fullName:
+        type: string
+    xml:
+      name: User
+  Parties:
+    type: object
+    properties:
+      partyList:
+        type: array
+        items:
+          $ref: '#/definitions/Party'
+    xml:
+      name: Parties
+  Party:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    xml:
+      name: Party
+  Messages:
+    type: object
+    properties:
+      messageList:
+        type: array
+        items:
+          $ref: '#/definitions/Message'
+      messageCount:
+        type: string
+      hasMoreMessages:
+        type: boolean
+    xml:
+      name: Messages
+  Message:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Message technical ID
+      sender:
+        type: string
+      recipient:
+        type: string
+      receiptDate:
+        type: string
+        format: date-time
+        description: Reception date of an inbox message
+      subject:
+        type: string
+      content:
+        type: string
+      attachmentCount:
+        type: string
+      totalAttachmentSize:
+        type: string
+      expirationWarning:
+        type: string
+        description: Expiration warning message to be displayed for inbox messages
+      status:
+        type: string
+        description: >-
+          Possible values are read/unread for Inbox, read/delivered/failed/none
+          for Sent
+      expired:
+        type: string
+        description: Flag that marks an inbox message as expired
+      contentEncrypted:
+        type: string
+        description: Encrypted flag for Inbox messages
+      signed:
+        type: string
+        description: Signed flag for Inbox messages
+      sentDate:
+        type: string
+        format: date-time
+        description: Message sending date for sent messages
+      statusReceiptDate:
+        type: string
+        format: date-time
+        description: >-
+          Reception date of the status of a sent message (Status received on
+          <statusReceiptDate>)
+    xml:
+      name: Message
+  InboxCounters:
+    type: object
+    properties:
+      all:
+        type: string
+      read:
+        type: string
+    xml:
+      name: InboxCounters
+  SentCounters:
+    type: object
+    properties:
+      all:
+        type: string
+      read:
+        type: string
+      failed:
+        type: string
+      delivered:
+        type: string
+      none:
+        type: string
+    xml:
+      name: SentCounters
+  Attachment:
+    type: object
+    properties:
+      id:
+        type: string
+      messageId:
+        type: string
+      name:
+        type: string
+      mimeType:
+        type: string
+    xml:
+      name: Attachment
+  Attachments:
+    type: object
+    properties:
+      attachmentList:
+        type: array
+        items:
+          $ref: '#/definitions/Attachment'
+    xml:
+      name: Attachments
+  ServerError:
+    type: object
+    properties:
+      type:
+        type: string
+      message:
+        type: string
+  ClientError:
+    type: object
+    properties:
+      location:
+        type: string
+      details:
+        type: string

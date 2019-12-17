@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>etrustex-app</artifactId>
+        <groupId>eu.europa.ec.etrustex</groupId>
+        <version>trunk</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>etrustex-db-tool</artifactId>
+    <packaging>jar</packaging>
+
+    <name>etrustex-db-tool</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>eu.europa.ec.etrustex</groupId>
+            <artifactId>etx-wacc-persistence</artifactId>
+            <version>${eTrustEx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.etrustex</groupId>
+            <artifactId>etx-wacc-security</artifactId>
+            <version>${eTrustEx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.logger.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.logger.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>${javax.json.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.etrustex</groupId>
+            <artifactId>etx-wacc-node-api</artifactId>
+            <version>trunk</version>
+        </dependency>
+    </dependencies>
+</project>

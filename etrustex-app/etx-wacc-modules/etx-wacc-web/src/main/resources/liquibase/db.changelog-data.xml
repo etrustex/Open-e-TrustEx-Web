@@ -1,0 +1,2089 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="40" author="cabalen">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM ETX_WEB_USER WHERE USR_ID = 0</sqlCheck>
+        </preConditions>
+        <comment>ETX-2278: Create system user</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_USER
+            (USR_ID,USR_LOGIN,USR_NAME,USR_CREATED_BY,USR_CREATED_ON,USR_UPDATED_BY,USR_UPDATED_ON,USR_ACTIVE_STATE)
+            values (0,'system','System User',0,SYSDATE,null,null,1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_USER
+            (USR_ID,USR_LOGIN,USR_NAME,USR_CREATED_BY,USR_CREATED_ON,USR_UPDATED_BY,USR_UPDATED_ON,USR_ACTIVE_STATE)
+            values (0,'system','System User',0,SYSDATE,null,null,1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="3" author="cabalen">
+        <comment>Migrate config hardcoded remote party into ETX_WEB_PARTY_ICA</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT
+            INTO ETX_WEB_PARTY_ICA (PCA_ID, PAR_ID, PCA_NODE_NAME, PCA_DISPLAY_NAME, PCA_CREATED_BY, PCA_LOADED_ON,
+            PCA_INTEGRITY, PCA_CONFIDENTIALITY,
+            PCA_CERTIFICATE, PCA_CREATED_ON, PCA_UPDATED_ON, PCA_UPDATED_BY, PCA_STATE)
+            SELECT ETX_WEB_PARTYICASEQ.nextval, p.PAR_ID, bc.BCG_PROPERTY_VALUE, bc.BCG_PROPERTY_VALUE, 0, SYSDATE,
+            null, null, null, SYSDATE, null, null, 1
+            FROM ETX_WEB_PARTY p JOIN ETX_WEB_BUSINESS_CONFIG bc
+            ON p.BUS_ID = bc.BUS_ID
+            WHERE bc.BCG_PROPERTY_NAME = 'etx.business.receiver.node.party.name';
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT
+            INTO ETX_WEB_PARTY_ICA (PCA_ID, PAR_ID, PCA_NODE_NAME, PCA_DISPLAY_NAME, PCA_CREATED_BY, PCA_LOADED_ON,
+            PCA_INTEGRITY, PCA_CONFIDENTIALITY,
+            PCA_CERTIFICATE, PCA_CREATED_ON, PCA_UPDATED_ON, PCA_UPDATED_BY, PCA_STATE)
+            SELECT ETX_WEB_PARTYICASEQ.nextval, p.PAR_ID, bc.BCG_PROPERTY_VALUE, bc.BCG_PROPERTY_VALUE, 0, SYSDATE(),
+            null, null, null, SYSDATE(), null, null, 1
+            FROM ETX_WEB_PARTY p JOIN ETX_WEB_BUSINESS_CONFIG bc
+            ON p.BUS_ID = bc.BUS_ID
+            WHERE bc.BCG_PROPERTY_NAME = 'etx.business.receiver.node.party.name';
+        </sql>
+    </changeSet>
+
+    <changeSet id="4" author="cabalen">
+        <comment>Delete config property etx.business.receiver.node.party.name</comment>
+        <sql dbms="oracle" splitStatements="true">
+            DELETE FROM ETX_WEB_BUSINESS_CONFIG WHERE BCG_PROPERTY_NAME = 'etx.business.receiver.node.party.name';
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            DELETE FROM ETX_WEB_BUSINESS_CONFIG WHERE BCG_PROPERTY_NAME = 'etx.business.receiver.node.party.name';
+        </sql>
+    </changeSet>
+
+    <changeSet id="5" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1 from ETX_WEB_LABEL_TRANSLATION), 'message.recipientErrorMessage', 'Please
+            enter a Recipient', 1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('message.recipientErrorMessage', 'Please enter a Recipient', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="6" author="cabalen">
+        <comment>Alter ETX_WEB_PARTY table</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY ADD (PAR_WEB_MANAGED NUMBER(1) NULL);
+            UPDATE ETX_WEB_PARTY SET PAR_WEB_MANAGED = 1;
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_WEB_MANAGED NOT NULL);
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_NODE_USR NULL);
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_NODE_PASS NULL);
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_NOTIFICATIONS_ENABLED NULL);
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_CONSUME_NODE_MSG NULL);
+            ALTER TABLE ETX_WEB_PARTY MODIFY (PAR_STS_NOTIF_ENABLED NULL);
+            ALTER TABLE ETX_WEB_PARTY DROP UNIQUE (PAR_NODE_NAME);
+            ALTER TABLE ETX_WEB_PARTY ADD CONSTRAINT UNIQUE_NODE_NAME_BUS_ID UNIQUE(PAR_NODE_NAME, BUS_ID);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY ADD PAR_WEB_MANAGED TINYINT(1) NULL;
+            UPDATE ETX_WEB_PARTY SET PAR_WEB_MANAGED = 1;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_WEB_MANAGED TINYINT(1) NOT NULL;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_NODE_USR varchar(255) NULL;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_NODE_PASS varchar(255) NULL;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_NOTIFICATIONS_ENABLED TINYINT(1) NULL;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_CONSUME_NODE_MSG TINYINT(1) NULL;
+            ALTER TABLE ETX_WEB_PARTY MODIFY PAR_STS_NOTIF_ENABLED TINYINT(1) NULL;
+            ALTER TABLE ETX_WEB_PARTY DROP UNIQUE (PAR_NODE_NAME);
+            ALTER TABLE ETX_WEB_PARTY ADD CONSTRAINT UNIQUE_NODE_NAME_BUS_ID UNIQUE(PAR_NODE_NAME, BUS_ID);
+        </sql>
+    </changeSet>
+
+    <changeSet id="7" author="cabalen">
+        <comment>Alter ETX_WEB_PARTY_ICA table</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY_ICA ADD (REMOTE_PAR_ID NUMBER(19));
+            ALTER TABLE ETX_WEB_PARTY_ICA ADD CONSTRAINT FK_PCA_REMOTE_PAR_ID FOREIGN KEY (REMOTE_PAR_ID) REFERENCES
+            ETX_WEB_PARTY (PAR_ID);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY_ICA ADD REMOTE_PAR_ID DECIMAL(19,0);
+            ALTER TABLE ETX_WEB_PARTY_ICA ADD CONSTRAINT FK_PCA_REMOTE_PAR_ID FOREIGN KEY (REMOTE_PAR_ID) REFERENCES
+            ETX_WEB_PARTY (PAR_ID);
+        </sql>
+    </changeSet>
+
+    <changeSet id="8" author="cabalen">
+        <comment>Migrate hardcoded remote party in ICA to ETX_WEB_PARTY</comment>
+        <sql dbms="oracle" endDelimiter="/">
+            DECLARE
+            CURSOR icas_cursor IS
+            SELECT pi.PCA_ID id, pi.PCA_NODE_NAME node_name, pi.PCA_DISPLAY_NAME display_name, p.BUS_ID bus_id,
+            pi.PCA_STATE active_state
+            FROM ETX_WEB_PARTY_ICA pi JOIN ETX_WEB_PARTY p
+            ON pi.PAR_ID = p.PAR_ID
+            WHERE pi.PCA_STATE = 1;
+
+            row_ica icas_cursor%ROWTYPE;
+            remote_party_id NUMBER(19);
+            BEGIN
+            FOR row_ica IN icas_cursor
+            LOOP
+            BEGIN
+            SELECT par_id into remote_party_id from ETX_WEB_PARTY where PAR_NODE_NAME = row_ica.node_name and BUS_ID =
+            row_ica.bus_id;
+            EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+            remote_party_id := ETX_WEB_PRTSEQ.nextval;
+            INSERT INTO ETX_WEB_PARTY (PAR_ID, PAR_NODE_NAME, PAR_DISPLAY_NAME, BUS_ID, PAR_CREATED_BY,
+            PAR_ACTIVE_STATE, PAR_WEB_MANAGED)
+            VALUES (remote_party_id, row_ica.node_name, row_ica.display_name, row_ica.bus_id, 0, 1, 0);
+            END;
+            UPDATE ETX_WEB_PARTY_ICA SET REMOTE_PAR_ID = remote_party_id WHERE PCA_ID = row_ica.id;
+            END LOOP;
+            END;
+            /
+        </sql>
+        <sql dbms="mysql" endDelimiter="/">
+            DROP PROCEDURE IF EXISTS MIGRATE_REMOTE_PARTIES;
+
+            CREATE PROCEDURE MIGRATE_REMOTE_PARTIES()
+            BEGIN
+            DECLARE remote_party_id DECIMAL(19,0);
+            DECLARE icas_id DECIMAL(19, 0);
+            DECLARE icas_node_name VARCHAR(64);
+            DECLARE icas_display_name VARCHAR(75);
+            DECLARE icas_bus_id DECIMAL(19, 0);
+            DECLARE icas_active_state TINYINT;
+
+            DECLARE icas_cursor CURSOR FOR
+            SELECT pi.PCA_ID id, pi.PCA_NODE_NAME node_name, pi.PCA_DISPLAY_NAME display_name, p.BUS_ID bus_id,
+            pi.PCA_STATE active_state
+            FROM ETX_WEB_PARTY_ICA pi JOIN ETX_WEB_PARTY p
+            ON pi.PAR_ID = p.PAR_ID
+            WHERE pi.PCA_STATE = 1;
+            DECLARE CONTINUE HANDLER FOR NOT FOUND SET end_of_tables = 1;
+
+            open icas_cursor;
+            icas_loop: LOOP
+            FETCH icas_cursor INTO icas_id, icas_node_name, icas_display_name, icas_bus_id, icas_active_state;
+
+            IF end_of_tables = 1 THEN
+            close icas_cursor;
+            LEAVE icas_loop;
+            END IF;
+
+            SET remote_party_id = (SELECT PAR_ID FROM ETX_WEB_PARTY WHERE PAR_NODE_NAME = icas_node_name AND BUS_ID =
+            icas_bus_id);
+            IF remote_party_id IS NULL THEN
+            SET remote_party_id = (SELECT MAX(PAR_ID) + 1 FROM ETX_WEB_PARTY);
+            INSERT INTO ETX_WEB_PARTY (PAR_ID, PAR_NODE_NAME, PAR_DISPLAY_NAME, BUS_ID, PAR_CREATED_BY,
+            PAR_ACTIVE_STATE, PAR_WEB_MANAGED)
+            VALUES (remote_party_id, icas_node_name, icas_display_name, icas_bus_id, 0, icas_active_state, 0);
+            END IF
+            UPDATE ETX_WEB_PARTY_ICA SET REMOTE_PAR_ID = remote_party_id WHERE PCA_ID = icas_id;
+            END LOOP icas_loop;
+            END;
+
+            CALL MIGRATE_REMOTE_PARTIES();
+            DROP PROCEDURE MIGRATE_REMOTE_PARTIES;
+            /
+        </sql>
+    </changeSet>
+
+    <changeSet id="9" author="cabalen">
+        <comment>Alter ETX_WEB_PARTY_ICA table</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY_ICA MODIFY (REMOTE_PAR_ID NOT NULL);
+            ALTER TABLE ETX_WEB_PARTY_ICA DROP COLUMN PCA_NODE_NAME;
+            ALTER TABLE ETX_WEB_PARTY_ICA DROP COLUMN PCA_DISPLAY_NAME;
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_PARTY_ICA MODIFY REMOTE_PAR_ID DECIMAL(19,0) NOT NULL;
+            ALTER TABLE ETX_WEB_PARTY_ICA DROP COLUMN PCA_NODE_NAME;
+            ALTER TABLE ETX_WEB_PARTY_ICA DROP COLUMN PCA_DISPLAY_NAME;
+        </sql>
+    </changeSet>
+
+    <changeSet id="10" author="cabalen">
+        <comment>Label translations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.admin.ica.inactive', 'Inactive', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.signature.not.required', 'optional signature', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.signature.required', 'mandatory signature', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.encryption.not.required', 'no encryption', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.encryption.required', 'encrypted transmission', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'error.ica.not.loaded', 'Interchange Agreement was not successfully loaded.
+            Please contact the System Administrator', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.close', 'Close', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.openDownloadWebstart', 'Download files', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.openUploadWebstart', 'Upload files', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.downloadedMessage', 'Open the downloaded file to load the
+            attachments of the message', 1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('label.admin.ica.inactive', 'Inactive', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.signature.not.required', 'optional signature', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.signature.required', 'mandatory signature', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.encryption.not.required', 'no encryption', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.ica.encryption.required', 'encrypted transmission', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.close', 'Close', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.openDownloadWebstart', 'Download files', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.openUploadWebstart', 'Upload files', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.webstart.downloadedMessage', 'Open the downloaded file to load the
+            attachments of the message', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="11" author="cabalen">
+        <comment>Alter ETX_WEB_MESSAGE table</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_MESSAGE ADD (MSG_REMOTE_PARTY_NAME_BACK VARCHAR2(64));
+            UPDATE ETX_WEB_MESSAGE SET MSG_REMOTE_PARTY_NAME_BACK = MSG_REMOTE_PARTY_NAME;
+            ALTER TABLE ETX_WEB_MESSAGE ADD (MSG_REMOTE_PARTY_ID NUMBER(19));
+            ALTER TABLE ETX_WEB_MESSAGE ADD CONSTRAINT ETX_WEB_MESSAGE_FK_REM_PARTY FOREIGN KEY (MSG_REMOTE_PARTY_ID)
+            REFERENCES ETX_WEB_PARTY(PAR_ID);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_MESSAGE ADD MSG_REMOTE_PARTY_NAME_BACK VARCHAR(64) NULL;
+            UPDATE ETX_WEB_MESSAGE SET MSG_REMOTE_PARTY_NAME_BACK = MSG_REMOTE_PARTY_NAME;
+            ALTER TABLE ETX_WEB_MESSAGE ADD MSG_REMOTE_PARTY_ID DECIMAL(19, 0) NULL;
+            ALTER TABLE ETX_WEB_MESSAGE ADD CONSTRAINT ETX_WEB_MESSAGE_FK_REM_PARTY FOREIGN KEY (MSG_REMOTE_PARTY_ID)
+            REFERENCES ETX_WEB_PARTY (PAR_ID);
+        </sql>
+    </changeSet>
+
+    <changeSet id="12" author="cabalen">
+        <comment>Migrate hardcoded remote party from ETX_WEB_MESSAGE to ETX_WEB_PARTY</comment>
+        <sql dbms="oracle" endDelimiter="/">
+            DECLARE
+            CURSOR messages_cursor IS
+            SELECT m.MSG_ID message_id, m.MSG_LOCAL_PARTY_ID local_party_id, m.MSG_REMOTE_PARTY_NAME_BACK
+            remote_party_node_name, p.BUS_ID bus_id
+            FROM ETX_WEB_MESSAGE m JOIN ETX_WEB_PARTY p
+            ON m.MSG_LOCAL_PARTY_ID = p.PAR_ID;
+
+            row_message messages_cursor%ROWTYPE;
+            remote_party_id NUMBER(19);
+            BEGIN
+            FOR row_message IN messages_cursor
+            LOOP
+
+            BEGIN
+            SELECT PAR_ID into remote_party_id from ETX_WEB_PARTY where PAR_NODE_NAME =
+            row_message.remote_party_node_name and BUS_ID = row_message.bus_id;
+            EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+            -- Insert new remote party if it doesn't exist already
+            remote_party_id := ETX_WEB_PRTSEQ.nextval;
+            INSERT INTO ETX_WEB_PARTY (PAR_ID, PAR_NODE_NAME, PAR_DISPLAY_NAME, BUS_ID, PAR_CREATED_BY,
+            PAR_ACTIVE_STATE, PAR_WEB_MANAGED)
+            VALUES (remote_party_id, row_message.remote_party_node_name, row_message.remote_party_node_name,
+            row_message.bus_id, 0, 1, 0);
+            END;
+
+            UPDATE ETX_WEB_MESSAGE SET MSG_REMOTE_PARTY_ID = remote_party_id WHERE MSG_ID = row_message.message_id;
+
+            END LOOP;
+            END;
+            /
+        </sql>
+        <sql dbms="mysql" endDelimiter="/">
+            DROP PROCEDURE IF EXISTS MIGRATE_MESSAGE_REMOTE_PARTIES;
+
+            CREATE PROCEDURE MIGRATE_MESSAGE_REMOTE_PARTIES()
+            BEGIN
+            DECLARE remote_party_id DECIMAL(19, 0);
+            DECLARE remote_party_ica DECIMAL(19, 0);
+            DECLARE message_id DECIMAL(19, 0);
+            DECLARE message_local_party_id DECIMAL(19, 0);
+            DECLARE message_remote_party_node_name VARCHAR(64);
+            DECLARE message_bus_id DECIMAL(19, 0);
+
+            DECLARE messages_cursor CURSOR FOR
+            SELECT m.MSG_ID message_id, m.MSG_LOCAL_PARTY_ID local_party_id, m.MSG_REMOTE_PARTY_NAME_BACK
+            remote_party_node_name, p.BUS_ID bus_id
+            FROM ETX_WEB_MESSAGE m JOIN ETX_WEB_PARTY p
+            ON m.MSG_LOCAL_PARTY_ID = p.PAR_ID;
+            DECLARE CONTINUE HANDLER FOR NOT FOUND SET end_of_messages = 1;
+
+            OPEN messages_cursor;
+            messages_loop: LOOP
+            FETCH messages_cursor INTO message_id, message_local_party_id, message_remote_party_node_name,
+            message_bus_id;
+
+            IF end_of_messages = 1 THEN
+            close messages_cursor;
+            LEAVE messages_loop;
+            END IF;
+
+            SET remote_party_id = (SELECT PAR_ID from ETX_WEB_PARTY where PAR_NODE_NAME = message_remote_party_node_name
+            and BUS_ID = message_bus_id);
+
+            IF remote_party_id IS NULL THEN
+            -- Insert new remote party if it doesn't exist already
+            SET remote_party_id = (SELECT MAX(PAR_ID) + 1 FROM ETX_WEB_PARTY);
+            INSERT INTO ETX_WEB_PARTY (PAR_ID, PAR_NODE_NAME, PAR_DISPLAY_NAME, BUS_ID, PAR_CREATED_BY,
+            PAR_ACTIVE_STATE, PAR_WEB_MANAGED)
+            VALUES (remote_party_id, message_remote_party_node_name, message_remote_party_node_name, message_bus_id, 0,
+            1, 0);
+            END IF;
+
+            UPDATE ETX_WEB_MESSAGE SET MSG_REMOTE_PARTY_ID = remote_party_id WHERE MSG_ID = message_id;
+            END LOOP messages_loop;
+            END;
+
+            CALL MIGRATE_MESSAGE_REMOTE_PARTIES();
+            DROP PROCEDURE MIGRATE_MESSAGE_REMOTE_PARTIES;
+            /
+        </sql>
+    </changeSet>
+
+    <changeSet id="13" author="cabalen">
+        <comment>Alter ETX_WEB_MESSAGE table</comment>
+        <sql dbms="oracle" splitStatements="true">
+            ALTER TABLE ETX_WEB_MESSAGE MODIFY (MSG_REMOTE_PARTY_ID NUMBER(19) NOT NULL);
+            ALTER TABLE ETX_WEB_MESSAGE DROP COLUMN MSG_REMOTE_PARTY_NAME;
+            ALTER TABLE ETX_WEB_MESSAGE DROP COLUMN MSG_REMOTE_PARTY_NAME_BACK;
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            ALTER TABLE ETX_WEB_MESSAGE CHANGE MSG_REMOTE_PARTY_ID MSG_REMOTE_PARTY_ID DECIMAL(19, 0) NOT NULL;
+            ALTER TABLE ETX_WEB_MESSAGE DROP COLUMN MSG_REMOTE_PARTY_NAME;
+            ALTER TABLE ETX_WEB_MESSAGE DROP COLUMN MSG_REMOTE_PARTY_NAME_BACK;
+        </sql>
+    </changeSet>
+
+    <changeSet id="14" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'message.attachmentListEmpty', 'Please select at least one file to upload',
+            1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('message.attachmentListEmpty', 'Please select at least one file to upload', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="15" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.message.send.error', 'An error occurred while trying to send the
+            message. Please try again or save as draft.',
+            1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('label.message.send.error', 'An error occurred while trying to send the message. Please try again or
+            save as draft.', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="16" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'uploadPanel.confidentialToolTip.text', 'Confidential',
+            1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'uploadPanel.nonConfidentToolTip.text', 'Non confidential',
+            1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('uploadPanel.confidentialToolTip.text', 'Confidential', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('uploadPanel.nonConfidentToolTip.text', 'Non confidential', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="17" author="canofcr">
+        <comment>Update label translations for FR</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_fr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_fr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="18" author="canofcr">
+        <comment>Update label translations for PT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_pt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_pt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="19" author="canofcr">
+        <comment>Update label translations for EL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_el.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_el.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="20" author="canofcr">
+        <comment>Update label translations for DE</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_de.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_de.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="21" author="canofcr">
+        <comment>Update label translations for ES</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_es.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_es.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="22" author="canofcr">
+        <comment>Update label translations for MT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_mt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_mt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="23" author="canofcr">
+        <comment>Update label translations for DA</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_da.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_da.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="24" author="canofcr">
+        <comment>Update label translations for SL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_sl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_sl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="25" author="canofcr">
+        <comment>Update label translations for IT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_it.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_it.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="26" author="canofcr">
+        <comment>Update label translations for PL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_pl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_pl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="27" author="canofcr">
+        <comment>Update label translations for SV</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_sv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_sv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="28" author="canofcr">
+        <comment>Update label translations for NL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_nl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_nl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="29" author="canofcr">
+        <comment>Update label translations for ET</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_et.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_et.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="30" author="canofcr">
+        <comment>Update label translations for CS</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_cs.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_cs.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="31" author="canofcr">
+        <comment>Update label translations for HR</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_hr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_hr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="32" author="canofcr">
+        <comment>Update label translations for SK</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_sk.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_sk.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="33" author="canofcr">
+        <comment>Update label transations for LV</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_lv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_lv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="34" author="canofcr">
+        <comment>Update label translations for BG</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_bg.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_bg.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="35" author="canofcr">
+        <comment>Update label translations for RO</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_ro.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_ro.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="36" author="canofcr">
+        <comment>Update label translations for FI</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_fi.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_fi.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="37" author="canofcr">
+        <comment>Update label translations for HU</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_hu.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_hu.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="38" author="canofcr">
+        <comment>Update label translations for LT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/oracle/messages_lt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/041217/mysql/messages_lt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="41" author="canofcr">
+        <comment>Update label translations for BG</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_bg.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_bg.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="42" author="canofcr">
+        <comment>Update label translations for CS</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_cs.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_cs.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="43" author="canofcr">
+        <comment>Update label translations for DA</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_da.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_da.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="44" author="canofcr">
+        <comment>Update label translations for DE</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_de.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_de.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="45" author="canofcr">
+        <comment>Update label translations for EL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_el.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_el.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="46" author="canofcr">
+        <comment>Update label translations for EN</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_en.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_en.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="47" author="canofcr">
+        <comment>Update label translations for ES</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_es.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_es.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="48" author="canofcr">
+        <comment>Update label translations for ET</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_et.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_et.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="49" author="canofcr">
+        <comment>Update label translations for FI</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_fi.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_fi.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="50" author="canofcr">
+        <comment>Update label translations for HR</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_hr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_hr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="51" author="canofcr">
+        <comment>Update label translations for HU</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_hu.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_hu.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="52" author="canofcr">
+        <comment>Update label translations for IT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_it.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_it.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="53" author="canofcr">
+        <comment>Update label translations for LT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_lt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_lt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="54" author="canofcr">
+        <comment>Update label translations for LV</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_lv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_lv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="55" author="canofcr">
+        <comment>Update label translations for MT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_mt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_mt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="56" author="canofcr">
+        <comment>Update label translations for NL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_nl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_nl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="57" author="canofcr">
+        <comment>Update label translations for PL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_pl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_pl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="58" author="canofcr">
+        <comment>Update label translations for PT</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_pt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_pt.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="59" author="canofcr">
+        <comment>Update label translations for RO</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_ro.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_ro.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="60" author="canofcr">
+        <comment>Update label translations for SK</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_sk.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_sk.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="61" author="canofcr">
+        <comment>Update label translations for SL</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_sl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_sl.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="62" author="canofcr">
+        <comment>Update label translations for SV</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_sv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_sv.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="63" author="canofcr">
+        <comment>Update label translations for FR</comment>
+        <sqlFile dbms="oracle"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/oracle/messages_fr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+        <sqlFile dbms="mysql"
+                 encoding="utf8"
+                 path="../translations/3.0.0/051217/mysql/messages_fr.sql"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="65" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'admin.messageNotificationToolTip.text', 'You can add up to ten email
+            addresses separated by a comma or semicolon',
+            1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('admin.messageNotificationToolTip.text', 'You can add up to ten email addresses separated by a comma
+            or semicolon', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="66" author="lambept">
+        <comment>Add etx.business.folder.structure.enabled property to ETX_WEB_BUSINESS_CONFIG
+            , true for edma business
+        </comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_BUSINESS_CONFIG (BCG_ID, BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+            SELECT ETX_WEB_BCGSEQ.nextval, BUS_ID,'etx.business.folder.structure.enabled','true'
+            FROM ETX_WEB_BUSINESS_CONFIG
+            WHERE BCG_PROPERTY_NAME = 'etx.business.custom.view.name' and BCG_PROPERTY_VALUE = 'edma';
+            INSERT INTO ETX_WEB_BUSINESS_CONFIG (BCG_ID, BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+            SELECT ETX_WEB_BCGSEQ.nextval, BUS_ID,'etx.business.folder.structure.enabled','false'
+            FROM ETX_WEB_BUSINESS_CONFIG
+            WHERE BCG_PROPERTY_NAME = 'etx.business.custom.view.name' and BCG_PROPERTY_VALUE != 'edma';
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_BUSINESS_CONFIG (BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+            SELECT BUS_ID,'etx.business.folder.structure.enabled','true'
+            FROM ETX_WEB_BUSINESS_CONFIG
+            WHERE BCG_PROPERTY_NAME = 'etx.business.custom.view.name' and BCG_PROPERTY_VALUE = 'edma';
+            INSERT INTO ETX_WEB_BUSINESS_CONFIG (BCG_ID, BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+            SELECT BUS_ID,'etx.business.folder.structure.enabled','false'
+            FROM ETX_WEB_BUSINESS_CONFIG
+            WHERE BCG_PROPERTY_NAME = 'etx.business.custom.view.name' and BCG_PROPERTY_VALUE != 'edma';
+        </sql>
+    </changeSet>
+
+    <changeSet id="68" author="lambept">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.distribution', 'For distribution',
+            1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'label.distributionToolTip.text', 'You can add email addresses separated by
+            a comma or semicolon, they need to end with @ec.europa.eu',
+            1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1
+            FROM ETX_WEB_LABEL_TRANSLATION), 'error.no.valid.ec.email', 'The email address should be a valid email
+            ending with @ec.europa.eu',
+            1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('label.distribution', 'For distribution', 1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('label.distributionToolTip.text', 'You can add email addresses separated by a comma or semicolon',
+            1, 1, 1, 1);
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('error.no.valid.ec.email', 'The email address should be a valid email ending with @ec.europa.eu', 1,
+            1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="69" author="cabalen">
+        <comment>Label transations</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION (LTR_ID, LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ((SELECT MAX(LTR_ID) + 1 FROM ETX_WEB_LABEL_TRANSLATION), 'message.export.pdf', 'Export message in
+            PDF format', 1, 1, 1, 1);
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_LABEL_TRANSLATION(LTR_KEY, LTR_MESSAGE, LTR_SCREEN_ID, LTR_SCREEN_POSITION_X,
+            LTR_SCREEN_POSITION_Y, LNG_ID)
+            VALUES ('message.export.pdf', 'Export message in PDF format', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="71" author="brighab">
+        <comment>ETRUSTEX-4479</comment>
+        <insert tableName="ETX_WEB_CONFIG">
+            <column name="CFG_ID" value="15" />
+            <column name="CFG_PROP_NAME" value="etrustex.mail.distribution" />
+            <column name="CFG_PROP_VALUE" value="@ec.europa.eu;@ext.ec.europa.eu" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="74" author="brighab">
+        <comment>ETRUSTEX-4508</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('message.shouldBeSignedErrorMessage', 'The signature preference cannot be saved as draft', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.attachmentListTooLong', 'Please attach at most 500 files', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+
+   <changeSet id="75" author="fuscoem">
+        <comment>ETRUSTEX-4521</comment>
+        <insert tableName="ETX_WEB_CONFIG">
+            <column name="CFG_ID" value="16" />
+            <column name="CFG_PROP_NAME" value="etx.web.zip.split_size" />
+            <column name="CFG_PROP_VALUE" value="1073741824" /> <!-- 1 GigaByte -->
+        </insert>
+    </changeSet>
+
+    <changeSet id="76" author="brighab">
+        <comment>ETRUSTEX-4526</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('message.insert.password.and.provide.certificate.before.decoding', 'Please insert password and provide the p12 file for decoding', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.select.et.least.one.file', 'Please select at least one file to download!', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.cancel.edit.message', 'Are you sure you want to leave without saving ?', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.cancel.message', 'Cancel message', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.no.file.selected', 'No file selected', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.decryption.needed', 'Decryption needed!', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.upload.not.finished', 'Upload not finished!', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.wrong.certificate', 'Wrong certificate!', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.wrong.password', 'Wrong password!', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.upload.files.before.saving.message', 'Some files were added but not uploaded. \r\n Please upload the remaining files before saving the message.', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.upload.at.least.one.file', 'upload at least one file', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="77" author="fuscoem">
+        <comment>ETRUSTEX-4508</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.totalSize', 'Total size:', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="78" author="fuscoem">
+        <comment>ETRUSTEX-4508</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.hideUploaded', 'Hide uploaded:', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+	<changeSet id="79" author="guerrpa">
+		<comment>ETRUSTEX-4520</comment>
+		<sql>
+			CALL ADD_LABEL_TRANSLATION('message.certificatePassword', 'Please, enter a certificate file for signing', 1, 1, 1, 1);
+			CALL ADD_LABEL_TRANSLATION('message.certificateInput', 'Certificate password is mandatory for signing', 1, 1, 1, 1);
+			CALL ADD_LABEL_TRANSLATION('message.pkcs12.generic', 'Wrong password or invalid PKCS 12 file!', 1, 1, 1, 1);
+		</sql>
+	</changeSet>
+    
+    <changeSet id="80" author="brighab">
+        <comment>ETRUSTEX-4553 </comment>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Please, enter a certificate file."/>
+            <where>LTR_KEY = 'message.certificatePassword' and LNG_ID = 1</where>
+        </update>
+
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Certificate password is mandatory."/>
+            <where>LTR_KEY = 'message.certificateInput' and LNG_ID = 1</where>
+        </update>
+    </changeSet>
+
+	<changeSet id="81" author="guerrpa">
+		<comment>ETRUSTEX-4520</comment>
+		<sql>
+			CALL ADD_LABEL_TRANSLATION('message.certificate.expired', 'The certificate is expired', 1, 1, 1, 1);
+		</sql>
+	</changeSet>
+
+	<changeSet id="82" author="guerrpa">
+		<comment>ETRUSTEX-4520 fix</comment>
+		<update tableName="ETX_WEB_LABEL_TRANSLATION">
+			<column name="LTR_MESSAGE" value="Certificate password is mandatory."/>
+			<where>LTR_KEY = 'message.certificatePassword' and LNG_ID = 1</where>
+		</update>
+
+		<update tableName="ETX_WEB_LABEL_TRANSLATION">
+			<column name="LTR_MESSAGE" value="Please, enter a certificate file."/>
+			<where>LTR_KEY = 'message.certificateInput' and LNG_ID = 1</where>
+		</update>
+	</changeSet>
+
+	<changeSet id="84" author="guerrpa">
+		<comment>ETRUSTEX-4520</comment>
+		<sql>
+			CALL ADD_LABEL_TRANSLATION('message.certificate.file.max.size', 'The selected certificate file is larger than 100 KB', 1, 1, 1, 1);
+			CALL ADD_LABEL_TRANSLATION('message.certificate.file.not.valid', 'The selected certificate file is not a valid x509 certificate', 1, 1, 1, 1);
+		</sql>
+	</changeSet>
+
+    <changeSet id="85" author="fuscoem">
+        <comment>ETRUSTEX-4569</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.1', 'Take me to the previous version', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2', 'Take me to the new version (beta)', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+	<changeSet id="86" author="guerrpa">
+		<comment>ETRUSTEX-4520</comment>
+
+		<update tableName="ETX_WEB_LABEL_TRANSLATION">
+			<column name="LTR_MESSAGE" value="Wrong password or invalid certificate!"/>
+			<where>LTR_KEY = 'message.pkcs12.generic' and LNG_ID = 1</where>
+		</update>
+	</changeSet>
+
+    <changeSet id="87" author="brighab">
+        <comment>ETRUSTEX-4522</comment>
+        <insert tableName="ETX_WEB_COMPATIBLE_BROWSER">
+            <column name="CBR_ID" valueNumeric="1"/>
+            <column name="CBR_NAME" value="Chrome"/>
+            <column name="CBR_VERSION" valueNumeric="66"/>
+            <column name="CBR_ICON_PATH" value="images/browsers/chrome.gif"/>
+            <column name="CBR_COMMENT" value=" "/>
+            <column name="CBR_IS_COMPATIBLE" value="1"/>
+        </insert>
+        <insert tableName="ETX_WEB_COMPATIBLE_BROWSER">
+            <column name="CBR_ID" valueNumeric="2"/>
+            <column name="CBR_NAME" value="Firefox"/>
+            <column name="CBR_VERSION" valueNumeric="52"/>
+            <column name="CBR_ICON_PATH" value="images/browsers/firefox.gif"/>
+            <column name="CBR_COMMENT" value="Requires the folowing two preferences to be enabled in about:config. \r\n -javascript.option.streams \r\n -dom.streams.enabled"/>
+            <column name="CBR_IS_COMPATIBLE" value="1"/>
+        </insert>
+        <insert tableName="ETX_WEB_COMPATIBLE_BROWSER">
+            <column name="CBR_ID" valueNumeric="3"/>
+            <column name="CBR_NAME" value="Edge"/>
+            <column name="CBR_VERSION" valueNumeric="14"/>
+            <column name="CBR_ICON_PATH" value="images/browsers/edge.gif"/>
+            <column name="CBR_COMMENT" value=" "/>
+            <column name="CBR_IS_COMPATIBLE" value="1"/>
+        </insert>
+        <insert tableName="ETX_WEB_COMPATIBLE_BROWSER">
+            <column name="CBR_ID" value="4"/>
+            <column name="CBR_NAME" value="IE"/>
+            <column name="CBR_VERSION" valueNumeric="11"/>
+            <column name="CBR_ICON_PATH" value="images/browsers/ie.gif"/>
+            <column name="CBR_COMMENT" value="Not supported"/>
+            <column name="CBR_IS_COMPATIBLE" value="0"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="88" author="brighab">
+        <comment>ETRUSTEX-4579</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.message.body', 'Message body', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.emailErrorMessage', 'Please enter a email', 1, 1, 1, 1);
+        </sql>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="DG COMP Email recipients"/>
+            <where>LTR_KEY = 'label.distribution' and LNG_ID = 1</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="DG COMP reference"/>
+            <where>LTR_KEY = 'label.fileReference' and LNG_ID = 1</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="DG COMP instrument"/>
+            <where>LTR_KEY = 'label.instrument' and LNG_ID = 1</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="89" author="brighab">
+        <comment>ETRUSTEX-4516</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.files.to.upload', 'Files to upload: ', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.total.files', 'Total files: ', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+	<changeSet id="90" author="guerrpa">
+		<comment>ETRUSTEX-4548</comment>
+		<sql>
+			CALL ADD_LABEL_TRANSLATION('tooltip.download.success', 'File has been downloaded', 1, 1, 1, 1);
+			CALL ADD_LABEL_TRANSLATION('tooltip.download.failed', 'Error downloading the file', 1, 1, 1, 1);
+			CALL ADD_LABEL_TRANSLATION('tooltip.download.untrusted', 'Integrity check failed', 1, 1, 1, 1);
+			CALL ADD_LABEL_TRANSLATION('tooltip.download.cancelled', 'Cancelled by the user', 1, 1, 1, 1);
+		</sql>
+	</changeSet>
+
+	<changeSet id="91" author="guerrpa">
+		<comment>ETRUSTEX-4522</comment>
+		<update tableName="ETX_WEB_COMPATIBLE_BROWSER">
+			<column name="CBR_VERSION" valueNumeric="59"/>
+			<where>CBR_NAME = 'Firefox'</where>
+		</update>
+		<update tableName="ETX_WEB_COMPATIBLE_BROWSER">
+			<column name="CBR_VERSION" valueNumeric="40"/>
+			<where>CBR_NAME = 'Edge'</where>
+		</update>
+	</changeSet>
+
+    <changeSet id="92" author="brighab">
+        <comment>ETRUSTEX-4522</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('message.compatible.browsers.title1', 'The browser you are using is not compatible with this version of the application.', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.compatible.browsers.title2', 'To take fullest advantage of the application we highly recommend the use of one of the compatible browsers with the minimum version specified in the table below.', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.compatible.browsers.name', 'Browser', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.compatible.browsers.version', 'Required Version', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.compatible.browsers.comment', 'Additional information', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="93" author="brighab">
+        <comment>ETRUSTEX-4515</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('tooltip.upload.success', 'Upload successful', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('tooltip.upload.failed.exceed.maximum.size', 'The file exceeds the maximum size of 100 MB', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('tooltip.upload.failed.checksum.mismatch', 'Integrity check failed', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('tooltip.upload.failed', 'An error appeared during the upload. Please try again', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.upload.failed.exceed.maximum.files', 'Please select maximum 500 files for the upload', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="94" author="fuscoem">
+        <comment>ETRUSTEX-4530/4574</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('tooltip.identity.not.yet.valid', 'Certificate identity not yet valid', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('tooltip.identity.expired', 'Expired certificate identity', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.decryption.information', 'Decryption information', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.select.certificate', 'Select certificate', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.load.identities', 'Load identities', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.certificate.identities', 'Certificate identities', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.certificate.select.identity', 'Please select a certificate identity', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.certificate.select.identity.valid', 'Please select a valid certificate identity', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.certificate.select', 'Please select a certificate', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.certificate.insert.password', 'Please enter a certificate password', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.certificate.load.identities', 'Please load the certificate identities', 1, 1, 1, 1);
+        </sql>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Please select a certificate file below 100KB"/>
+            <where>LTR_KEY = 'message.certificate.file.max.size' and LNG_ID = 1</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Please select a valid certificate file and make sure you entered the correct password"/>
+            <where>LTR_KEY = 'message.certificate.file.not.valid' and LNG_ID = 1</where>
+        </update>
+        <delete tableName="ETX_WEB_LABEL_TRANSLATION">
+            <where>LTR_KEY in (
+                    'message.insert.password.and.provide.certificate.before.decoding',
+                    'label.wrong.certificate',
+                    'message.certificatePassword',
+                    'message.certificateInput',
+                    'message.pkcs12.generic',
+                    'message.certificate.expired'
+                )
+                and LNG_ID = 1
+            </where>
+        </delete>
+    </changeSet>
+    <changeSet id="95" author="fuscoem">
+        <comment>ETRUSTEX-4530/4574</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.certificate', 'Certificate', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.password', 'Password', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.subject.name', 'Subject name', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.valid.from', 'Valid from', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.valid.until', 'Valid until', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="96" author="brighab">
+        <comment>ETRUSTEX-4624</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.sign.message', 'Sign the message', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.add.files', 'Add files', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.add.folder', 'Add folder', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.start.upload', 'Start upload', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.remove.all.files', 'Remove all files', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="97" author="fuscoem">
+        <comment>ETRUSTEX-4625</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.hide.successful.downloads', 'Hide successful downloads', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.select.all', 'Select all', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.file.successfully.downloaded', 'files successfully downloaded.', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.download.selected.files', 'Download selected files', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="98" author="fuscoem">
+        <comment>Adding back labels removed or modified for version 3.2.1</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('v3.2.0_message.insert.password.and.provide.certificate.before.decoding', 'Please insert password and provide the p12 file for decoding', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('v3.2.0_label.wrong.certificate', 'Wrong certificate!', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('v3.2.0_message.certificatePassword', 'Certificate password is mandatory.', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('v3.2.0_message.certificateInput', 'Please, enter a certificate file.', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('v3.2.0_message.pkcs12.generic', 'Wrong password or invalid certificate!', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('v3.2.0_message.certificate.expired', 'The certificate is expired', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('v3.2.0_message.certificate.file.max.size', 'The selected certificate file is larger than 100 KB', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('v3.2.0_message.certificate.file.not.valid', 'The selected certificate file is not a valid x509 certificate', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="99" author="brighab">
+        <comment>ETRUSTEX-4624 check missing internationalizations in upload</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.downloading', 'Downloading', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.verifying', 'Verifying', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.preparing', 'Preparing', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.uploading', 'Uploading', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.cancelling', 'Cancelling...', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.remove.file', 'Remove file', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="100" author="fuscoem">
+        <comment>ETRUSTEX-4625 check missing internationalization in download</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.success', 'SUCCESS', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.failed', 'FAILED', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.cancelled', 'CANCELLED', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.untrusted', 'UNTRUSTED', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="101" author="fuscoem">
+        <comment>ETRUSTEX-4625 check missing internationalization in download</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('message.decryption.failed.wrong.key', '<![CDATA[Decryption failed.<br>The provided p12 file may not contain the correct key to decrypt the attachments of this message.]]>', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="102" author="fuscoem">
+        <comment>ETRUSTEX-4521 (For deploy of v.3.2.0)</comment>
+        <update tableName="ETX_WEB_CONFIG">
+            <column name="CFG_PROP_VALUE" valueNumeric="536870912"/>
+            <where>CFG_ID = 16 AND CFG_PROP_NAME = 'etx.web.zip.split_size'</where>
+        </update>
+    </changeSet>
+    <changeSet id="103" author="brighab">
+        <comment>Add label translations</comment>
+        <sqlFile path="./i18n/2018-06-18_3.2.0/translations.sql"
+                 encoding="utf8"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+    <changeSet id="104" author="fuscoem">
+        <comment>ETRUSTEX-4651 same message was used both for error while saving and while sending</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('message.upload.files.before.sending.message', '<![CDATA[Some files were added but not uploaded.<br/>Please upload the remaining files before sending the message.]]>', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="105" author="fuscoem">
+        <comment>ETRUSTEX-4654 the key was modified in the translated file</comment>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_KEY" value="label.totalSize"/>
+            <where>LTR_KEY = 'label.totalSise'</where>
+        </update>
+    </changeSet>
+    <changeSet id="106" author="fuscoem">
+        <comment>ETRUSTEX-4676 expired attachments</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.attachment.expired', 'EXPIRED', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('tooltip.attachment.expired', 'The attachment has expired.', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.attachmentListExpired', 'Please remove the expired attachments.', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="107" author="brighab">
+        <comment>ETRUSTEX-4629</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.admin.export.ParyUsers', 'Export Party Users', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.admin.select.one.business.domain', 'Please select at least one business domain', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.admin.no.business.domain.selected', 'No business domain selected', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+	<changeSet id="108" author="guerrpa">
+		<comment>ETRUSTEX-4630</comment>
+		<sql>
+			CALL ADD_LABEL_TRANSLATION('label.select.remote.dialog', 'Select Receiver Party', 1, 1, 1, 1);
+		</sql>
+	</changeSet>
+    <changeSet id="109" author="brighab">
+        <comment>ETRUSTEX-4479</comment>
+        <update tableName="ETX_WEB_CONFIG">
+            <column name="CFG_PROP_VALUE" value="@ec.europa.eu"/>
+            <where>CFG_ID = 15</where>
+        </update>
+    </changeSet>
+    <changeSet id="110" author="fuscoem">
+        <comment>ETRUSTEX-4748</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('tooltip.draft.cannotSave', 'A message containing attachments cannot be saved as draft.', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="111" author="fuscoem">
+        <comment>ETRUSTEX-4756</comment>
+        <delete tableName="ETX_WEB_LABEL_TRANSLATION">
+            <where>LTR_KEY in ('message.attachmentListExpired')
+                and LNG_ID = 1
+            </where>
+        </delete>
+    </changeSet>
+    <changeSet id="112" author="fuscoem">
+        <comment>ETRUSTEX-4756</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.signature', 'Signature', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="113" author="brighab">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="1">SELECT count(*) FROM ETX_WEB_LABEL_TRANSLATION where LTR_KEY = 'error.admin.wrongEmail'</sqlCheck>
+        </preConditions>
+        <comment>ETRUSTEX-4762</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Μη έγκυρος μορφότυπος ηλεκτρονικής διεύθυνσης', 1, 1, 1, 2);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Formatul adresei de e-mail este incorect.', 1, 1, 1, 3);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Nieprawidłowy format adresu e-mail', 1, 1, 1, 4);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Formato dell''e-mail non valido', 1, 1, 1, 5);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Невалиден формат на електронен адрес', 1, 1, 1, 7);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Neplatný e-mail', 1, 1, 1, 8);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Ugyldigt e-mailformat', 1, 1, 1, 9);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Ungültiges E-Mail-Format ', 1, 1, 1, 10);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Formato de correo electrónico no válido', 1, 1, 1, 11);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Vigane e-posti vorming', 1, 1, 1, 12);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Virheellinen sähköpostiosoite', 1, 1, 1, 13);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Format d''adresse électronique non valable', 1, 1, 1, 14);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Érvénytelen e-mail cím', 1, 1, 1, 15);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Netinkamas e. laiško formatas', 1, 1, 1, 16);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Nepareizs e-pasta adreses formāts!', 1, 1, 1, 17);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Il-format tal-email invalidu', 1, 1, 1, 18);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Ongeldig formaat e-mailadres', 1, 1, 1, 19);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Endereço eletrónico incorreto', 1, 1, 1, 20);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Neplatná e-mailová adresa', 1, 1, 1, 21);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Neveljavna oblika e-naslova', 1, 1, 1, 22);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Ogiltig mejladress', 1, 1, 1, 23);
+            CALL ADD_LABEL_TRANSLATION('error.admin.wrongEmail', 'Format adrese e-pošte nije valjan', 1, 1, 1, 24);
+        </sql>
+    </changeSet>
+    <changeSet id="114" author="brighab">
+        <comment>ETRUSTEX-4773</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.status.undelivered', 'Undelivered', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="115" author="brighab">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="1">SELECT count(*) FROM ETX_WEB_LABEL_TRANSLATION where LTR_KEY = 'label.admin.export.ParyUsers'</sqlCheck>
+        </preConditions>
+        <comment>ETRUSTEX-4803 Generate SQL file and Liquibase changeset for translation</comment>
+        <sqlFile path="./i18n/2018-09-26_3.2.1/translations.sql"
+                 encoding="utf8"
+                 relativeToChangelogFile="true"
+                 stripComments="true"/>
+    </changeSet>
+    <changeSet id="116" author="brighab">
+        <comment>ETRUSTEX-4805</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.openAsNew', 'Open as new', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="118" author="brighab">
+        <comment>ETRUSTEX-4923</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('edma.splash.screen',
+            '<![CDATA[
+            <p><strong>Welcome to eTrustEx!</strong></p>
+            <p>eTrustEx (Trusted Document Exchange) ensures secure transmission of documents between DG Competition and external stakeholders. It serves as the only communication channel to send documents to DG Competition whose total size is below 4GB. eTrustEx supports message encryption, message integrity through the use of checksum algorithms, authentication via EU Login and traceability. For more information see <a href="https://joinup.ec.europa.eu/sites/default/files/document/2018-11/eTrustEx%20-%20Web%20access%20-%20Java%20Script%20version.pdf">eTrustEx User Manual</a>.</p><br>
+            <p><strong>Your submission will be valid when it has reached DG Competition, that is when the sending has been completed successfully. This time will be marked in the sending receipt under "submission completed on".</strong></p><br>
+            <p>The limits currently envisaged for document transmission via eTrustEx are the following:</p>
+            <ul>
+                <li>Maximum size of transmission: 4GB;</li>
+                <li>Maximum size of each file uploaded in the same transmission: 100MB;</li>
+                <li>Maximum number of files uploaded in the same transmission: 1500;</li>
+                <li>ZIP files allowed: YES.</li>
+            </ul>
+            <p>For Merger cases you can use eTrustEx to submit to the Commission, for example:</p>
+            <ul>
+                <li>Draft Form CO</li>
+                <li>Responses to Requests For Information</li>
+                <li>Responses to requests for internal documents, if smaller than 4 GB</li>
+                <li>Response to a Statement of Objections</li>
+                <li>Submission of draft remedies</li>
+                <li>Any other submission to the Commission</li>
+            </ul>
+            <p>For Antitrust cases you can use eTrustEx to submit to the Commission, for example:</p>
+            <ul>
+                <li>Complaints</li>
+                <li>Comments on complaints</li>
+                <li>Responses to Requests For Information</li>
+                <li>Response to a Statement of Objections, a Preliminary Assessment or comments on the Article 7(1) letter</li>
+                <li>Any other submission to the Commission</li>
+            </ul>
+            <br>
+            <p>For submissions larger than 4GB, please use a physical external carrier only (DVD, USB, external hard drive).</p>
+            <p>For technical support, please contact <a href="mailto:COMP-ETRUSTEX@ec.europa.eu">COMP-ETRUSTEX@ec.europa.eu</a>.</p>
+            <p>&nbsp;</p>
+            ]]>'
+            , 1, 1, 1, 1)
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="119" author="fuscoem">
+        <comment>ETRUSTEX-4923</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('receipt.sentOn', 'Sent on', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('receipt.deliveredOn', 'Submission completed on', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="120" author="brighab">
+        <comment>ETRUSTEX-5043</comment>
+        <delete tableName="ETX_WEB_LABEL_TRANSLATION">
+            <where>LTR_KEY in ('edma.splash.screen')
+                and LNG_ID = 1
+            </where>
+        </delete>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('edma.splash.screen',
+            '<![CDATA[
+            <p><strong>Welcome to eTrustEx!</strong></p>
+            <p>eTrustEx (Trusted Document Exchange) ensures secure transmission of documents between DG Competition and external stakeholders. It serves as a secure communication channel to send documents to DG Competition whose total size is below 4GB. eTrustEx supports message encryption, message integrity through the use of checksum algorithms, authentication via EU Login and traceability. For more information see <a href="https://joinup.ec.europa.eu/sites/default/files/document/2018-11/eTrustEx%20-%20Web%20access%20-%20Java%20Script%20version.pdf">eTrustEx User Manual</a>.</p><br>
+            <p><strong>Your submission will be valid when it has reached DG Competition, that is when the sending has been completed successfully. This time will be marked in the sending receipt under "submission completed on".</strong></p><br>
+            <p>The limits currently envisaged for document transmission via eTrustEx are the following:</p><br>
+            <ul>
+                <li>Maximum size of transmission: 4GB;</li>
+                <li>Maximum size of each file uploaded in the same transmission: 100MB;</li>
+                <li>Maximum number of files uploaded in the same transmission: 1500;</li>
+            </ul>
+            <br>
+            <p>For Merger cases you can use eTrustEx to submit to the Commission, for example:</p>
+            <ul>
+                <li>Draft Form CO</li>
+                <li>Responses to Requests For Information</li>
+                <li>Responses to requests for internal documents, if smaller than 4 GB</li>
+                <li>Response to a Statement of Objections</li>
+                <li>Submission of draft remedies</li>
+                <li>Any other submission to the Commission</li>
+            </ul>
+            <br>
+            <p>For Antitrust cases you can use eTrustEx to submit to the Commission, for example:</p>
+            <ul>
+                <li>Complaints</li>
+                <li>Comments on complaints</li>
+                <li>Responses to Requests For Information</li>
+                <li>Response to a Statement of Objections, a Preliminary Assessment or comments on the Article 7(1) letter</li>
+                <li>Any other submission to the Commission</li>
+            </ul>
+            <br>
+            <p>For submissions larger than 4GB, please use a physical external carrier only (DVD, USB, external hard drive).</p>
+            <p>For technical support, please contact <a href="mailto:COMP-ETRUSTEX@ec.europa.eu">COMP-ETRUSTEX@ec.europa.eu</a>.</p>
+            <p>&nbsp;</p>
+            ]]>'
+            , 1, 1, 1, 1)
+        </sql>
+    </changeSet>
+    <changeSet id="121" author="brighab">
+        <comment>ETRUSTEX-5048</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.case.number', 'Case number', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('message.please.enter.case.number', 'Please enter a Case number', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="122" author="brighab">
+    <comment>ETRUSTEX-5092 remove beta</comment>
+        <delete tableName="ETX_WEB_LABEL_TRANSLATION">
+            <where>LTR_KEY = 'label.switchTo3.2'</where>
+        </delete>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Към новата версия',1,1,1,7);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Chci do nové verze',1,1,1,8);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Frem til den nye version',1,1,1,9);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Take me to the new version',1,1,1,1);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Zur neuen Version wechseln',1,1,1,10);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Siirry uuteen versioon',1,1,1,13);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Aller à la nouvelle version',1,1,1,14);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Μετάβαση στη νέα έκδοση',1,1,1,2);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Ir a la nueva versión',1,1,1,11);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Vii uue versiooni juurde',1,1,1,12);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Vai alla nuova versione',1,1,1,5);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Eiti į naują versiją',1,1,1,16);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Ħudni fil-verżjoni l-ġdida',1,1,1,18);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Overschakelen naar de nieuw versie',1,1,1,19);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Aizvediet mani uz jauno versiju',1,1,1,17);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Poveznica na novu verziju',1,1,1,24);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Továbblépés az új verzióra',1,1,1,15);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Przejście do nowej wersji',1,1,1,4);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Gå till den nya versionen',1,1,1,23);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Ir para a nova versão',1,1,1,20);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Către versiunea nouă',1,1,1,3);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Prejsť na novú verziu',1,1,1,21);
+            CALL ADD_LABEL_TRANSLATION('label.switchTo3.2','Na novo različico',1,1,1,22);
+        </sql>
+    </changeSet>
+    <changeSet id="123" author="brighab">
+        <comment>ETRUSTEX-5104</comment>
+        <delete tableName="ETX_WEB_LABEL_TRANSLATION">
+            <where>LTR_KEY in ('edma.splash.screen')
+                and LNG_ID = 1
+            </where>
+        </delete>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('edma.splash.screen',
+            '<![CDATA[
+            <p><strong>Welcome to eTrustEx!</strong></p>
+            <p>eTrustEx (Trusted Document Exchange) ensures secure transmission of documents between DG Competition and external stakeholders. It serves as a secure communication channel to send documents to DG Competition whose total size is below 4GB. eTrustEx supports message encryption, message integrity through the use of checksum algorithms, authentication via EU Login and traceability. For more information see <a href="http://europa.eu/competition/contacts/etrustex_user_guide.pdf">eTrustEx User Manual</a>.</p><br>
+            <p><strong>Your submission will be valid when it has reached DG Competition, that is when the sending has been completed successfully. This time will be marked in the sending receipt under "submission completed on".</strong></p><br>
+            <p>The limits currently envisaged for document transmission via eTrustEx are the following:</p><br>
+            <ul>
+                <li>Maximum size of transmission: 4GB;</li>
+                <li>Maximum size of each file uploaded in the same transmission: 100MB;</li>
+                <li>Maximum number of files uploaded in the same transmission: 1500;</li>
+            </ul>
+            <br>
+            <p>For Merger cases you can use eTrustEx to submit to the Commission, for example:</p>
+            <ul>
+                <li>Draft Form CO</li>
+                <li>Responses to Requests For Information</li>
+                <li>Responses to requests for internal documents, if smaller than 4 GB</li>
+                <li>Response to a Statement of Objections</li>
+                <li>Submission of draft remedies</li>
+                <li>Any other submission to the Commission</li>
+            </ul>
+            <br>
+            <p>For Antitrust cases you can use eTrustEx to submit to the Commission, for example:</p>
+            <ul>
+                <li>Complaints</li>
+                <li>Comments on complaints</li>
+                <li>Responses to Requests For Information</li>
+                <li>Response to a Statement of Objections, a Preliminary Assessment or comments on the Article 7(1) letter</li>
+                <li>Any other submission to the Commission</li>
+            </ul>
+            <br>
+            <p>For submissions larger than 4GB, please use a physical external carrier only (DVD, USB, external hard drive).</p>
+            <p>For technical support, please contact <a href="mailto:COMP-ETRUSTEX@ec.europa.eu">COMP-ETRUSTEX@ec.europa.eu</a>.</p>
+            <p>&nbsp;</p>
+            ]]>'
+            , 1, 1, 1, 1)
+        </sql>
+    </changeSet>
+    <changeSet id="125" author="brighab">
+        <comment>ETRUSTEX-5104</comment>
+        <sql dbms="oracle" splitStatements="true">
+            INSERT INTO ETX_WEB_BUSINESS_CONFIG (BCG_ID, BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+            VALUES ((SELECT MAX(BCG_ID) + 1
+            FROM ETX_WEB_BUSINESS_CONFIG), 1, 'etx.business.edma.splash.screen',
+                '<![CDATA[
+                <p><strong>Welcome to eTrustEx!</strong></p>
+                <p>eTrustEx (Trusted Document Exchange) ensures secure transmission of documents between DG Competition and external stakeholders. It serves as a secure communication channel to send documents to DG Competition whose total size is below 4GB. eTrustEx supports message encryption, message integrity through the use of checksum algorithms, authentication via EU Login and traceability. For more information see <a href="http://ec.europa.eu/competition/contacts/etrustex_user_guide.pdf">eTrustEx User Manual</a>.</p><br>
+                <p><strong>Your submission will be valid when it has reached DG Competition, that is when the sending has been completed successfully. This time will be marked in the sending receipt under "submission completed on".</strong></p><br>
+                <p>The limits currently envisaged for document transmission via eTrustEx are the following:</p><br>
+                <ul>
+                    <li>Maximum size of transmission: 4GB;</li>
+                    <li>Maximum size of each file uploaded in the same transmission: 100MB;</li>
+                    <li>Maximum number of files uploaded in the same transmission: 1500;</li>
+                </ul>
+                <br>
+                <p>For Merger cases you can use eTrustEx to submit to the Commission, for example:</p>
+                <ul>
+                    <li>Draft Form CO</li>
+                    <li>Responses to Requests For Information</li>
+                    <li>Responses to requests for internal documents, if smaller than 4 GB</li>
+                    <li>Response to a Statement of Objections</li>
+                    <li>Submission of draft remedies</li>
+                    <li>Any other submission to the Commission</li>
+                </ul>
+                <br>
+                <p>For Antitrust cases you can use eTrustEx to submit to the Commission, for example:</p>
+                <ul>
+                    <li>Complaints</li>
+                    <li>Comments on complaints</li>
+                    <li>Responses to Requests For Information</li>
+                    <li>Response to a Statement of Objections, a Preliminary Assessment or comments on the Article 7(1) letter</li>
+                    <li>Any other submission to the Commission</li>
+                </ul>
+                <br>
+                <p>For submissions larger than 4GB, please use a physical external carrier only (DVD, USB, external hard drive).</p>
+                <p>For technical support, please contact <a href="mailto:COMP-ETRUSTEX@ec.europa.eu">COMP-ETRUSTEX@ec.europa.eu</a>.</p>
+                <p>&nbsp;</p>
+                ]]>'
+            );
+        </sql>
+        <sql dbms="mysql" splitStatements="true">
+            INSERT INTO ETX_WEB_BUSINESS_CONFIG (BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+            VALUES (1, 'etx.business.edma.splash.screen',
+            '<![CDATA[
+                <p><strong>Welcome to eTrustEx!</strong></p>
+                <p>eTrustEx (Trusted Document Exchange) ensures secure transmission of documents between DG Competition and external stakeholders. It serves as a secure communication channel to send documents to DG Competition whose total size is below 4GB. eTrustEx supports message encryption, message integrity through the use of checksum algorithms, authentication via EU Login and traceability. For more information see <a href="http://ec.europa.eu/competition/contacts/etrustex_user_guide.pdf">eTrustEx User Manual</a>.</p><br>
+                <p><strong>Your submission will be valid when it has reached DG Competition, that is when the sending has been completed successfully. This time will be marked in the sending receipt under "submission completed on".</strong></p><br>
+                <p>The limits currently envisaged for document transmission via eTrustEx are the following:</p><br>
+                <ul>
+                    <li>Maximum size of transmission: 4GB;</li>
+                    <li>Maximum size of each file uploaded in the same transmission: 100MB;</li>
+                    <li>Maximum number of files uploaded in the same transmission: 1500;</li>
+                </ul>
+                <br>
+                <p>For Merger cases you can use eTrustEx to submit to the Commission, for example:</p>
+                <ul>
+                    <li>Draft Form CO</li>
+                    <li>Responses to Requests For Information</li>
+                    <li>Responses to requests for internal documents, if smaller than 4 GB</li>
+                    <li>Response to a Statement of Objections</li>
+                    <li>Submission of draft remedies</li>
+                    <li>Any other submission to the Commission</li>
+                </ul>
+                <br>
+                <p>For Antitrust cases you can use eTrustEx to submit to the Commission, for example:</p>
+                <ul>
+                    <li>Complaints</li>
+                    <li>Comments on complaints</li>
+                    <li>Responses to Requests For Information</li>
+                    <li>Response to a Statement of Objections, a Preliminary Assessment or comments on the Article 7(1) letter</li>
+                    <li>Any other submission to the Commission</li>
+                </ul>
+                <br>
+                <p>For submissions larger than 4GB, please use a physical external carrier only (DVD, USB, external hard drive).</p>
+                <p>For technical support, please contact <a href="mailto:COMP-ETRUSTEX@ec.europa.eu">COMP-ETRUSTEX@ec.europa.eu</a>.</p>
+                <p>&nbsp;</p>
+                ]]>'
+            );
+        </sql>
+
+    </changeSet>
+
+    <changeSet id="126" author="fuscoem">
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="The file exceeds the maximum size of 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 1</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Το αρχείο υπερβαίνει το μέγιστο μέγεθος των 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 2</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Fișierul depășește dimensiunea maximă de 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 3</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Rozmiar pliku przekracza dopuszczalny limit wynoszący 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 4</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Il file supera la dimensione massima di 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 5</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Файлът е по-голям от максимално допустимите 500 MB." />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 7</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Soubor přesahuje maximální velikost 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 8</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Filen overskrider den maksimale størrelse på 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 9</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Die Datei übersteigt die maximale Größe von 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 10</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="El archivo supera el tamaño máximo de 500 MB." />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 11</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Fail on suurem kui lubatud 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 12</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Tiedoston koko ylittää sallitun enimmäiskoon (500 MB)" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 13</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Le fichier dépasse la taille maximale autorisée (500 MB)" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 14</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="A fájl mérete meghaladja a megengedett 500MB-ot" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 15</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Rinkmena didesnė nei didžiausia leidžiama 500 MB riba" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 16</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Datne pārsniedz maksimālo 500 MB apjomu" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 17</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Il-fajl jaqbeż id-daqs massimu ta’ 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 18</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Het bestand is groter dan de toegestande 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 19</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="O ficheiro excede o tamanho máximo de 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 20</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Súbor prekračuje maximálnu veľkosť 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 21</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Datoteka presega največjo dovoljeno velikost 500 MB." />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 22</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Filen är större än den största tillåtna storleken (500 MB)" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 23</where>
+        </update>
+        <update tableName="ETX_WEB_LABEL_TRANSLATION">
+            <column name="LTR_MESSAGE" value="Datoteka je veća od dopuštenih 500 MB" />
+            <where>LTR_KEY = 'tooltip.upload.failed.exceed.maximum.size' AND LNG_ID = 24</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="127" author="fuscoem">
+        <comment>ETRUSTEX-5225</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('label.help', 'Help', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.user.guide', 'eTrustEx User Guide', 1, 1, 1, 1);
+            CALL ADD_LABEL_TRANSLATION('label.support.mail', 'EC eTrustEx SUPPORT', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="128" author="fuscoem">
+        <comment>ETRUSTEX-5225</comment>
+        <insert tableName="ETX_WEB_CONFIG">
+            <column name="CFG_ID" value="17" />
+            <column name="CFG_PROP_NAME" value="etx.web.userguide.url" />
+            <column name="CFG_PROP_VALUE" value="https://joinup.ec.europa.eu/sites/default/files/document/2019-06/eTrustEx%20Web%20User%20Guide%20-%20JavaScript%20version_v0.05_0.pdf" />
+        </insert>
+        <insert tableName="ETX_WEB_CONFIG">
+            <column name="CFG_ID" value="18" />
+            <column name="CFG_PROP_NAME" value="etx.web.support.email" />
+            <column name="CFG_PROP_VALUE" value="EC-ETRUSTEX-SUPPORT@ec.europa.eu" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="129" author="brighab">
+        <comment>ETRUSTEX-5434</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('tooltip.upload.failed.exceed.maximum.file.name.length', 'The file name should not exceed 250 characters (with the extension)', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+    
+    <changeSet id="130" author="brighab">
+        <comment>ETRUSTEX-4536</comment>
+        <sql>
+            INSERT INTO ETX_WEB_BUSINESS_CONFIG (BCG_ID, BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+            VALUES ((SELECT MAX(BCG_ID) + 1 from ETX_WEB_BUSINESS_CONFIG), 1, 'etx.business.announcements.content',
+            '<![CDATA[
+                <div style="text-align: left; background-color: #fab9b9; font-size: 13px; padding: 5px 0 5px 15px;"><strong>Important notice for all eTrustEx users: </strong><br /><br />
+                <div>The new JavaScript version 3.2.4 is now available. For more information on how to use this new version <a href="https://joinup.ec.europa.eu/sites/default/files/document/2019-06/eTrustEx Web User Guide - JavaScript version_v0.05_0.pdf" target="_blank" rel="noopener">click here</a>. <br /> <br /> <strong> For any question, you can contact us at <a href="mailto: COMP-ETRUSTEX@ec.europa.eu" target="_top">COMP ETRUSTEX</a> or <a href="mailto: EC-ETRUSTEX-SUPPORT@ec.europa.eu" target="_top">EC ETRUSTEX SUPPORT</a>.<br /> </strong></div>
+                </div>
+            ]]>'
+            )
+        </sql>
+    </changeSet>
+
+    <changeSet id="ETX-5566" author="fuscoem">
+        <comment>ETRUSTEX-4515</comment>
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('tooltip.upload.failed.empty.file', 'The file is empty', 1, 1, 1, 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="ETRUSTEX-5636" author="fuscoem">
+        <comment>ETRUSTEX-5636</comment>
+        <insert tableName="ETX_WEB_CONFIG">
+            <column name="CFG_ID" value="19" />
+            <column name="CFG_PROP_NAME" value="etx.web.archive.file.extensions" />
+            <column name="CFG_PROP_VALUE" value="7Z|AR|ARC|BZ|BZ2|BZIP|BZIP2|GZ|GZ2|RAR|ZIP" />
+        </insert>
+<!--        <insert tableName="ETX_WEB_BUSINESS_CONFIG">-->
+<!--            <column name="BUS_ID" value="1" />-->
+<!--            <column name="CFG_PROP_NAME" value="etx.web.forbid.archive.upload" />-->
+<!--            <column name="CFG_PROP_VALUE" value="true" />-->
+<!--        </insert>-->
+        <sql>
+            CALL ADD_LABEL_TRANSLATION('tooltip.upload.failed.extension.not.allowed', 'Archive file upload is not allowed', 1, 1, 1, 1);
+                INSERT INTO ETX_WEB_BUSINESS_CONFIG (BCG_ID, BUS_ID, BCG_PROPERTY_NAME, BCG_PROPERTY_VALUE)
+                VALUES ((SELECT MAX(BCG_ID) + 1 from ETX_WEB_BUSINESS_CONFIG), 1, 'etx.web.forbid.archive.upload','true');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

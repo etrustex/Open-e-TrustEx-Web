@@ -1,0 +1,8 @@
+{
+  "version": "v0.0001 DEV",
+  "ctx" : "/e-trustex-mobile",
+  "apiBaseUrl" : "/e-trustex-mobile/api",
+  "useFakeIdentity" : true,
+  "reportErrors" : false,
+  "ecasUrl": "https://ecas.acceptance.ec.europa.eu"
+}

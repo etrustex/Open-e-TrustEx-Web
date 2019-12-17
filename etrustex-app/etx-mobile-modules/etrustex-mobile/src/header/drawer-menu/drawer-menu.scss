@@ -1,0 +1,21 @@
+drawer-menu {
+
+  ion-header {
+    background-color: color($colors, menu_bg);
+
+    .item {
+      background-color: color($colors, menu_bg);
+    }
+  }
+
+  ion-footer {
+    background-color: color($colors, shadow_bg);
+
+    .footer-title {
+      font-size:  map-get($font-sizes, normal);
+      font-weight: lighter;
+      color: color($colors, text_primary);
+    }
+  }
+
+}

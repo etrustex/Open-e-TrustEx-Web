@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.3" name="com.sun.org.apache.xml.internal.security">
+	<dependencies>
+		<system export="true">
+			<paths>
+				<path name="com/sun/org/apache/xml/internal/security"/>
+				<path name="com/sun/org/apache/xml/internal/security/algorithms"/>
+				<path name="com/sun/org/apache/xml/internal/security/algorithms/implementations"/>
+				<path name="com/sun/org/apache/xml/internal/security/c14n"/>
+				<path name="com/sun/org/apache/xml/internal/security/c14n/helper"/>
+				<path name="com/sun/org/apache/xml/internal/security/c14n/implementations"/>
+				<path name="com/sun/org/apache/xml/internal/security/encryption"/>
+				<path name="com/sun/org/apache/xml/internal/security/exceptions"/>
+				<path name="com/sun/org/apache/xml/internal/security/keys"/>
+				<path name="com/sun/org/apache/xml/internal/security/keys/content"/>
+				<path name="com/sun/org/apache/xml/internal/security/keys/content/keyvalues"/>
+				<path name="com/sun/org/apache/xml/internal/security/keys/content/x509"/>
+				<path name="com/sun/org/apache/xml/internal/security/keys/keyresolver"/>
+				<path name="com/sun/org/apache/xml/internal/security/keys/keyresolver/implementations"/>
+				<path name="com/sun/org/apache/xml/internal/security/keys/storage"/>
+				<path name="com/sun/org/apache/xml/internal/security/keys/storage/implementations"/>
+				<path name="com/sun/org/apache/xml/internal/security/resource"/>
+				<path name="com/sun/org/apache/xml/internal/security/signature"/>
+				<path name="com/sun/org/apache/xml/internal/security/transforms"/>
+				<path name="com/sun/org/apache/xml/internal/security/transforms/implementations"/>
+				<path name="com/sun/org/apache/xml/internal/security/transforms/params"/>
+				<path name="com/sun/org/apache/xml/internal/security/utils"/>
+				<path name="com/sun/org/apache/xml/internal/security/utils/resolver"/>
+				<path name="com/sun/org/apache/xml/internal/security/utils/resolver/implementations"/>
+			</paths>
+		</system>
+	</dependencies>
+</module>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Identification>
+		<ShortName>AwardCriterionSpecification</ShortName>
+		<LongName>AC_AWARD_CRIT_SECTION IV.2.1</LongName>
+		<Version>1.0</Version>
+		<CanonicalUri>Placeholder</CanonicalUri>
+		<CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+		<AgencyLongName>OJEU</AgencyLongName>
+		<Locale>en</Locale>
+	</Identification>
+	<ValuesSet>
+		<ValueSet>
+			<Code>1</Code>
+			<Value>Lowest price</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>2</Code>
+			<Value>The most economic tender</Value>
+		</ValueSet>
+	</ValuesSet>
+</CodeList>

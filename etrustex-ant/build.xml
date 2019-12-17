@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project name="etrustex-ant" basedir=".">
+
+	<import file="./common.xml"/>
+	<import file="./scripts/ant/db.xml" />
+	<mkdir  dir="build"/>
+
+</project>

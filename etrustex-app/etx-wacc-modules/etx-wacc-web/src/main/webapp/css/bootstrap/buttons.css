@@ -1,0 +1,69 @@
+/*Bootstrap button outline override*/
+.btn-outline {
+  background-color: transparent;
+  color: inherit;
+  transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+  color: #426e99;
+}
+
+.btn-success.btn-outline {
+  color: #5cb85c;
+}
+
+.btn-info.btn-outline {
+  color: #0086cb;
+}
+
+.btn-warning.btn-outline {
+  color: #f0ad4e;
+}
+
+.btn-danger.btn-outline {
+  color: #d9534f;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+  color: #fff;
+}
+
+.attachment-remove,.attachment-comment,.attachment {cursor: pointer}
+
+.attachment {
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+}
+.confidential {
+    background-image: url('../../images/icons/confidential.png');
+}
+
+.non-confidential {
+    background-image: url('../../images/icons/non-confidential.png');
+}
+
+span.icon-download {
+    background-image: url('../../images/img/icon_download.png');
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    -webkit-background-size: 100% 100%;
+}
+span.icon-information {
+    background-image: url('../../images/icons/information.png');
+}
+span.icon-comment {
+    background-image: url('../../images/icons/comment.png');
+}
+.small-icon {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    -webkit-background-size: 100% 100%;
+}

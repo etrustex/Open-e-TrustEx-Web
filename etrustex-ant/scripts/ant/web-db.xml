@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<project name="etrustex-ant-web-db" basedir=".">
+
+    <dirname property="this.dir" file="${ant.file.db}"/>
+
+    <property name="wait.seconds" value="10"/>
+
+    <path id="db.classpath">
+        <fileset dir="${this.dir}/${lib.dir.db}" includes="ojdbc6_weblogic10.jar"/>
+    </path>
+
+    <macrodef name="web-runsql">
+        <attribute name="file"/>
+        <attribute name="delimiter" default="/"/>
+        <attribute name="log"/>
+        <attribute name="encoding" default="${file.encoding}"/>
+        <sequential>
+            <echo>[${ant.project.name}] :: running @{file}...</echo>
+            <sql
+                    classpathref="db.classpath"
+                    driver="oracle.jdbc.OracleDriver"
+                    url="jdbc:oracle:thin:@${db.web.host}:${db.web.port}/${db.web.service.name}"
+                    userid="${db.web.user}"
+                    password="${db.web.password}"
+                    src="${this.dir}/@{file}"
+                    delimiter="@{delimiter}"
+                    encoding="@{encoding}"
+                    onerror="continue"
+                    print="true"
+                    output="build/@{log}"/>
+            <echo>[${ant.project.name}] :: done.</echo>
+        </sequential>
+    </macrodef>
+
+    <target name="db-web-check-variables">
+        <fail unless="db.web.host" message="No db.web.host specified."/>
+        <fail unless="db.web.port" message="No db.web.port specified."/>
+        <fail unless="db.web.service.name" message="No db.web.service.name specified."/>
+        <fail unless="db.web.user" message="No db.web.user specified."/>
+        <fail unless="db.web.password" message="No db.web.password specified."/>
+
+        <property name="db.sqlplus.connectstring"
+                  value="${db.web.user}/${db.web.password}@${db.web.host}:${db.web.port}/${db.web.service.name}"/>
+    </target>
+
+    <target name="db-web-safety-net">
+        <echo level="warn">===========================</echo>
+        <echo level="warn">Configuration:</echo>
+        <echo level="warn">(*) ENV = ${etrustex.environment}</echo>
+        <echo level="warn">(*) host = ${db.web.host}</echo>
+        <echo level="warn">(*) port = ${db.web.port}</echo>
+        <echo level="warn">(*) service name = ${db.web.service.name}</echo>
+        <echo level="warn">(*) user = ${db.web.user}</echo>
+        <echo level="warn">(*) password = ${db.web.password}</echo>
+        <echo level="warn">===========================</echo>
+        <echo level="warn">[${ant.project.name}] :: *** starting DB operations in ${wait.seconds} seconds ***</echo>
+        <sleep seconds="${wait.seconds}"/>
+    </target>
+
+    <target name="db-web-drop" description="Drops the e-TrustEx Web DB."
+            depends="db-web-check-variables, db-web-safety-net">
+        <echo>[${ant.project.name}] :: dropping e-TrustEx Web DB...</echo>
+
+        <web-runsql file="scripts/oracle/web/99.clean_all.sql" delimiter="/" log="99.etrustex_web_clean_all.log"/>
+
+        <echo>[${ant.project.name}] :: done.</echo>
+    </target>
+
+    <target name="db-web-create" description="Creates the e-TrustEx Web DB."
+            depends="db-web-check-variables, db-web-safety-net">
+        <echo>[${ant.project.name}] :: creating e-TrustEx Web DB...</echo>
+
+        <web-runsql file="scripts/oracle/web/setup/00.create.tables.sql"
+                    log="web-setup-00.create.tables.log"/>
+        <web-runsql file="scripts/oracle/web/setup/01.create.indexes.sql"
+                    log="web-setup-01.create.indexes.log"/>
+        <web-runsql file="scripts/oracle/web/setup/02.create.constraints.sql"
+                    log="web-setup-02.create.constraints.log"/>
+        <web-runsql file="scripts/oracle/web/setup/03.create.package.sql"
+                    log="web-setup-03.create.package.log"/>
+        <web-runsql file="scripts/oracle/web/setup/04.create.package.body.sql"
+                    log="web-setup-04.create.package.body.log"/>
+        <web-runsql file="scripts/oracle/web/setup/05.create.sequence.sql"
+                    log="web-setup-05.create.sequence.log"/>
+        <web-runsql file="scripts/oracle/web/setup/06.import.data.sql"
+                    log="web-setup-06.import.data.log"/>
+
+        <!-- upgrade to version 2.8.0 -->
+        <web-runsql file="scripts/oracle/web/2.8.0/00.upgrade_label_translations.sql"
+                    log="web-2.8.0-00.upgrade_label_translations.log"/>
+        <web-runsql file="scripts/oracle/web/2.8.0/01.update_message_last_status.sql"
+                    log="web-2.8.0-01.update_message_last_status.log"/>
+        <web-runsql file="scripts/oracle/web/2.8.0/02.update_party.sql"
+                    log="web-2.8.0-02.update_party.log"/>
+        <web-runsql file="scripts/oracle/web/2.8.0/03.update_message_status_def.sql"
+                    log="web-2.8.0-03.update_message_status_def.log"/>
+        <web-runsql file="scripts/oracle/web/2.8.0/04.status_notification_support.sql"
+                    log="web-2.8.0-04.status_notification_support.log"/>
+
+        <!-- upgrade to version 2.9.0 -->
+        <web-runsql file="scripts/oracle/web/2.9.0/00.add_p2p_support.sql"
+                    log="web-2.9.0-00.add_p2p_support.log"/>
+        <web-runsql file="scripts/oracle/web/2.9.0/01.trim_emails.sql"
+                    log="web-2.9.0-01.trim_emails.log"/>
+        <web-runsql file="scripts/oracle/web/2.9.0/02.fix_metadata_table_constraint.sql"
+                    log="web-2.9.0-02.fix_metadata_table_constraint.log"/>
+        <web-runsql file="scripts/oracle/web/2.9.0/03.add_searchable_content_enhancement.sql"
+                    log="web-2.9.0-03.add_searchable_content_enhancement.log"/>
+
+        <!-- upgrade to version 2.9.3 -->
+        <web-runsql file="scripts/oracle/web/2.9.3/00.insert_announcement_web_config.sql"
+                    log="web-2.9.3-00.insert_announcement_web_config.log"/>
+
+        <!-- upgrade to version 2.10.0 -->
+        <web-runsql file="scripts/oracle/web/2.10.0/01.add_msg_signature_table.sql"
+                    log="web-2.10.0-01.add_msg_signature_table.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/02.migrate_signature_data.sql"
+                    log="web-2.10.0-02.migrate_signature_data.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/03.remove_message_signature_columns.sql"
+                    log="web-2.10.0-03.remove_message_signature_columns.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/04.add_attachment_signed_checksum_columns.sql"
+                    log="web-2.10.0-04.add_attachment_signed_checksum_columns.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/05.rename_attachment_checksum_columns.sql"
+                    log="web-2.10.0-05.rename_attachment_checksum_columns.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/06.add_workspace_folder.sql"
+                    log="web-2.10.0-06.add_workspace_folder.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/07.drop_is_certificate_expired_column.sql"
+                    log="web-2.10.0-07.drop_is_certificate_expired_column.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/08.migrate_business_sending_record.sql"
+                    log="web-2.10.0-08.migrate_business_sending_record.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/09.upgrade_label_translations.sql"
+                    log="web-2.10.0-09.upgrade_label_translations.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/10.extend_subject_column.sql"
+                    log="web-2.10.0-10.extend_subject_column.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/11.allow_nullable_certificate_values.sql"
+                    log="web-2.10.0-11.allow_nullable_certificate_values.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/12.add_sent_date_column_to_message_table.sql"
+                    log="web-2.10.0-12.add_sent_date_column_to_message_table.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/13.update_custom_view_name.sql"
+                    log="web-2.10.0-13.update_custom_view_name.log"/>
+        <web-runsql file="scripts/oracle/web/2.10.0/14.add_new_business_config_view_name.sql"
+                    log="web-2.10.0-14.add_new_business_config_view_name.log"/>					
+        <web-runsql file="scripts/oracle/web/2.10.0/15.add_status_fk_constraint_to_message_table.sql"
+                    log="web-2.10.0-15.add_status_fk_constraint_to_message_table.log"/>
+
+        <!-- upgrade to version 3.0.0 -->
+        <web-runsql file="scripts/oracle/web/3.0.0/00.migrate_receiver_party.sql"
+                    log="web-3.0.0-00.migrate_receiver_party.log"/>
+        <web-runsql file="scripts/oracle/web/3.0.0/01.migrate_parties_per_business.sql"
+                    log="web-3.0.0-01.migrate_parties_per_business.log"/>
+        <web-runsql file="scripts/oracle/web/3.0.0/02.upgrade_label_translations.sql"
+                    log="web-3.0.0-02.upgrade_label_translations.log"/>
+        <web-runsql file="scripts/oracle/web/3.0.0/03.migrate_message_remote_parties.sql"
+                    log="web-3.0.0-03.migrate_message_remote_parties.log"/>
+
+        <!-- insert the default data THIS IS THE PLACE WHERE DATA ARE INSTALLED ON CLEAN DB From here, data will be migrated-->
+        <web-runsql file="scripts/oracle/web/environment/etrustex.web.common.test.data.sql"
+                    log="etrustex.web.common.test.data.log"/>
+        <web-runsql file="scripts/oracle/web/environment/etrustex.web.${etrustex.environment}.sql"
+                    log="etrustex.${etrustex.environment}.log"/>
+
+        <echo>[${ant.project.name}] :: done.</echo>
+    </target>
+
+    <target name="db-web-recreate" description="Recreates the e-TrustEx Web DB."
+            depends="db-web-drop, db-web-create">
+    </target>
+</project>

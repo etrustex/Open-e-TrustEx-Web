@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="urn:eu:europa:ec:etrustex:integration:model:common:v2.0"
+            xmlns:tns="urn:eu:europa:ec:etrustex:integration:model:common:v2.0"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://www.w3.org/2005/05/xmlmime"
+            targetNamespace="urn:eu:europa:ec:etrustex:integration:model:common:v2.0" elementFormDefault="qualified"
+            attributeFormDefault="unqualified" version="1.0">
+    <!-- ===== Type Definitions ===== -->
+    <xsd:complexType name="ChecksumType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:hexBinary">
+                <xsd:attribute name="algorithm" type="tns:DigestAlgorithmType" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="DigestAlgorithmType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="SHA-512"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="ErrorType">
+        <xsd:annotation>
+            <xsd:documentation>Error</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="code" type="xsd:string"/>
+            <xsd:element name="description" type="xsd:string"/>
+            <xsd:element name="detail" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="EtxFileCodeType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                It is a code distinguish regular binary files from metadata file.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="BINARY"/>
+            <xsd:enumeration value="METADATA"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="EtxMessageBundleType">
+        <xsd:annotation>
+            <xsd:documentation>Message Bundle Metadata</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="id" type="tns:IdentifierType"/>
+            <xsd:element name="parentMessageReference" type="tns:EtxMessageReferenceType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        e-TrustEx Parent Message Reference; for grouping received/sent messages in a thread view
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="referenceId" type="tns:IdentifierType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>An (group) id that could be provided by the back-end in order to group some
+                        messages by it; similar with Dossier No concept.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="issueDateTime" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>Message bundle metadata issue date time</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="receivedDateTime" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>Date time when message bundle was received by the Adapter</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="subject" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="content" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Attached Document Content Text. Contains any free-form text pertinent to the
+                        entire document or to the document message itself. This element may contain notes or any other
+                        similar information that is not contained explicitly in another structure.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sender" type="tns:RecipientType"/>
+            <xsd:element name="receiverList" type="tns:RecipientListType"/>
+            <xsd:element name="fileMetadataList" type="tns:FileMetadataListType"/>
+            <xsd:element name="signedData" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="signature" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="EtxMessageCodeType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">The Message Type i.e. MESSAGE_BUNDLE or MESSAGE_STATUS</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="MESSAGE_BUNDLE"/>
+            <xsd:enumeration value="MESSAGE_STATUS"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="EtxMessageReferenceListType">
+        <xsd:annotation>
+            <xsd:documentation>List of Message References</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="messageReference" type="tns:EtxMessageReferenceType" minOccurs="0"
+                         maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="EtxMessageReferenceType">
+        <xsd:annotation>
+            <xsd:documentation>Message Reference</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="id" type="tns:IdentifierType">
+                <xsd:annotation>
+                    <xsd:documentation>The message Id</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sender" type="tns:RecipientType"/>
+            <xsd:element name="receiver" type="tns:RecipientType"/>
+            <xsd:element name="type" type="tns:EtxMessageCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>The message type, see EtxMessageCodeType</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="EtxMessageStatusCodeType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">Message Status Code</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DELIVERED"/>
+            <xsd:enumeration value="READ"/>
+            <xsd:enumeration value="FAILED"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="EtxMessageStatusType">
+        <xsd:annotation>
+            <xsd:documentation>Message Status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="id" type="tns:IdentifierType">
+                <xsd:annotation>
+                    <xsd:documentation>Message Status Id</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sender" type="tns:RecipientType"/>
+            <xsd:element name="receiver" type="tns:RecipientType"/>
+            <xsd:element name="statusCode" type="tns:EtxMessageStatusCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>Message Code Status</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="messageReference" type="tns:EtxMessageReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>e-TrustEx Message Reference for which the message status was produced
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="issueDateTime" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>Message Status issue date time</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="receivedDateTime" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>Date time when message status was received by the Adapter</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="errorReason" type="tns:ErrorType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Error details in case of status FAILED</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FileMetadataListType">
+        <xsd:annotation>
+            <xsd:documentation>List of File Metadata attached to a Message</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="file" type="tns:FileMetadataType" minOccurs="0" maxOccurs="500"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FileMetadataType">
+        <xsd:annotation>
+            <xsd:documentation>File Metadata</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="id" type="tns:IdentifierType">
+                <xsd:annotation>
+                    <xsd:documentation>Def: File unique ID. Can be referenced by other elements.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="fileType" type="tns:EtxFileCodeType"/>
+            <xsd:element name="relativePath" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation>The relative path for the file. Example: edma/incoming/message-007/
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="name" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>The file name that include also the extension</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="mimeType" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>application/word, application/pdf, etc. See
+                        http://www.iana.org/assignments/media-types for more info.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="size" type="xsd:long" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>File size in bytes</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="checksum" type="tns:ChecksumType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>hash key</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="IdentifierType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">A character string to identify and distinguish uniquely, one instance of an
+                object in an identification scheme from all other objects in the same scheme together with relevant
+                supplementary information.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:normalizedString">
+            <xsd:minLength value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="RecipientListType">
+        <xsd:annotation>
+            <xsd:documentation>The list of recipients for a Message</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="recipient" type="tns:RecipientType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RecipientType">
+        <xsd:annotation>
+            <xsd:documentation>Recipient of a Message</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="id" type="tns:IdentifierType"/>
+            <xsd:element name="name" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Recipient name</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FileWrapperType">
+        <xsd:sequence>
+            <xsd:element name="Content" mime:expectedContentTypes="application/octet-stream" type="xsd:base64Binary"
+                         minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="EncryptionInformation" type="tns:EncryptionInformationType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="EncryptionInformationType">
+        <xsd:sequence>
+            <xsd:element name="SessionKey" type="xsd:base64Binary" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="X509SubjectName" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="InterchangeAgreementType">
+        <xsd:sequence>
+            <xsd:sequence>
+                <xsd:element name="confidentialityLevelCode" type="xsd:string"/>
+                <xsd:element name="integrityLevelCode" type="xsd:string"/>
+                <xsd:element name="availabilityLevelCode" type="xsd:string"/>
+                <xsd:element name="receiverPartyCertificate" minOccurs="0" maxOccurs="unbounded"
+                             type="tns:CertificateType"/>
+            </xsd:sequence>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CertificateType">
+        <xsd:sequence>
+            <xsd:sequence>
+                <xsd:element name="KeyUsageCode" type="xsd:string">
+                    <xsd:annotation>
+                        <xsd:documentation>The current key usage supported is KEY_ENCIPHERMENT;</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="X509Certificate" type="xsd:base64Binary"/>
+                <xsd:element name="X509SubjectName" type="xsd:string"/>
+                <xsd:element name="X509CRL" type="xsd:base64Binary"/>
+            </xsd:sequence>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

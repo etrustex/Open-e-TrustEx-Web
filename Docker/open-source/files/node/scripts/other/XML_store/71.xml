@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:CodeList xmlns:n="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ https://webgate.ec.europa.eu/CITnet/svn/EPROCUREMENT/trunk/04-Source%20Code/tools/schematron_generation/utility/genericode.xsd" >
+   <Identification xmlns="">
+      <ShortName>AttachmentTypeCode</ShortName>
+      <LongName>Attachment Type Code</LongName>
+      <Version>0.1</Version>
+      <CanonicalUri>Placeholder</CanonicalUri>
+      <CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+      <Agency>
+         <LongName>European Commision</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet xmlns="">
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString"/>
+      </Column>
+      <Column Id="name" Use="optional">
+         <ShortName>Name</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="examples" Use="optional">
+         <ShortName>Examples</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList xmlns="">
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CV</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Curriculum Vitae</SimpleValue>
+         </Value>
+      </Row>
+       <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DSU</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Declaration of Suitability</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXPT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Expertise</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FOFF</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Formal Offer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OFFR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Offer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OTHR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other Document</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>REFU</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Refusal Report</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SPEC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Specifications</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TANX</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Technical Annex</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TASK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tasks</SimpleValue>
+         </Value></Row>
+               <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>COC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Code of Conduct Documents</SimpleValue>
+         </Value>
+         </Row>
+               <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EMAS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>EMAS Statement</SimpleValue>
+         </Value>
+         </Row>
+               <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DCO</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Declaration of Compliance</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LOI</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Letter of Intent</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PRIOF</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Price Offer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PRIREQ</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Price Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>INFSHT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Information Sheet</SimpleValue>
+         </Value>
+      </Row>      
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ORGDOC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Original Document</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TRADOC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Translated Document</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TRAMEM</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Translation Memories</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SCLER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Security Clearance</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FIMOD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Financial Model</SimpleValue>
+         </Value>
+      </Row>
+	  <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TECANA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Technical Analysis</SimpleValue>
+         </Value>
+      </Row>
+	  <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PRJPLN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Project Plan</SimpleValue>
+         </Value>
+      </Row>
+	  <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SCSTM</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Security statement</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FINOFF</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Financial Offer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DCONF</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Declaration of Confidentiality</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SCHDUL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Schedule</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</n:CodeList>

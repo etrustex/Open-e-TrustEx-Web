@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:eu:ec:cm:common:extensions:v11" xmlns="urn:eu:ec:cm:common:extensions:v11"
+           xmlns:cm="http://publications.europa.eu/resource/core-metadata"
+           xmlns:cmt="http://publications.europa.eu/resource/core-metadata-transmission"
+           xmlns:lang="http://publications.europa.eu/resource/languages/"
+           xmlns:rol="http://publications.europa.eu/resource/roles/"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<xs:import namespace="http://publications.europa.eu/resource/core-metadata" schemaLocation="coremetadata0211/CM-02.11-2012-11-15.xsd"/>
+	<xs:import namespace="http://publications.europa.eu/resource/core-metadata-transmission" schemaLocation="coremetadata0211/CM-Transmission-02.11-2012-11-15.xsd"/>
+	<xs:import namespace="http://publications.europa.eu/resource/corporatebodies/" schemaLocation="coremetadata0211/at-corporatebodies.xsd"/>
+	<xs:import namespace="http://publications.europa.eu/resource/languages/" schemaLocation="coremetadata0211/at-languages.xsd"/>
+	<xs:import namespace="http://publications.europa.eu/resource/roles/" schemaLocation="coremetadata0211/at-roles.xsd"/>
+	<xs:annotation>
+		<xs:appinfo>European Commission's Core Metadata Extensions</xs:appinfo>
+		<xs:documentation>
+			This format describes extension types to be used by the European Commission 
+			in the Core Metadata format defined by the Publications Office (PO)
+			and approved by the Interinstitutional Metadata Management Committee (IMMC).
+		</xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="ConstantType">
+		<xs:annotation>
+			<xs:documentation>Non empty string with at most 255 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SecurableConstantType">
+		<xs:annotation>
+			<xs:documentation>Constant with a public attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ConstantType">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="YearType">
+		<xs:annotation>
+			<xs:documentation>Positive integer representing a year.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:positiveInteger">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="NumberType">
+		<xs:annotation>
+			<xs:documentation>Positive integer representing a number.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:positiveInteger">
+				<xs:attribute ref="cm:public"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="GenericIdentificationNumberType">
+		<xs:sequence> 
+			<xs:element name="code" type="SecurableConstantType">
+				<xs:annotation>
+					<xs:documentation>Procedure/Cote type. Authorised values: see the section "Values" of the documentation, for fields WorkflowNumberType/code and WorkNumberType/code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="year" type="YearType">
+				<xs:annotation>
+					<xs:documentation>Procedure/Cote year.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="number" type="NumberType">
+				<xs:annotation>
+					<xs:documentation>Procedure/Cote number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:simpleType name="AddressType">
+		<xs:annotation>
+			<xs:documentation>String with at most 255 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NameType">
+		<xs:annotation>
+			<xs:documentation>String with at most 255 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FirstnameType">
+		<xs:annotation>
+			<xs:documentation>String with at most 255 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LastnameType">
+		<xs:annotation>
+			<xs:documentation>String with at most 255 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PhoneNumberType">
+		<xs:annotation>
+			<xs:documentation>String with at most 255 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmailAddressType">
+		<xs:annotation>
+			<xs:documentation>String with at most 255 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PlaceType">
+		<xs:annotation>
+			<xs:documentation>Non empty string with at most 255 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FunctionType">
+		<xs:annotation>
+			<xs:documentation>Non empty string with at most 255 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ContactDetailsType">
+		<xs:sequence>
+			<xs:element name="address" type="AddressType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Address.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="phone_number" type="PhoneNumberType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Telephone number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="fax_number" type="PhoneNumberType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Fax number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="email_address" type="EmailAddressType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Email address.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="language_code" type="lang:t_language" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Spoken language.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PersonType">
+		<xs:sequence>
+			<xs:element name="first_name" type="FirstnameType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>First name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="last_name" type="LastnameType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Last name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="person_details" type="ContactDetailsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Personal information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="WorkflowNumberType">
+		<xs:complexContent>
+			<xs:extension base="GenericIdentificationNumberType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ContactType">
+		<xs:sequence>
+			<xs:element name="name" type="NameType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Name of of the sender.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="phone_number" type="PhoneNumberType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Phone number of the sender.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="email_address" type="EmailAddressType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>E-mail address of the sender.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute ref="cm:public"/>
+	</xs:complexType>
+	<xs:complexType name="DelegationType">
+		<xs:sequence>
+			<xs:element name="delay" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Delay (in months) to object the delegated act.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="extension_delay" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Possible extension to the delay (in months).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="urgent_procedure" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>Indicates if the delegated act enters into force immediately as long as no objections are expressed. Authorised values: (true) urgent procedure, (false) normal procedure.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WorkNumberType">
+		<xs:complexContent>
+			<xs:extension base="GenericIdentificationNumberType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SecurityInfoType">
+		<xs:sequence>
+			<xs:element name="sensitivity_level" type="ConstantType">
+				<xs:annotation>
+					<xs:documentation>Sensitivity level. Authorised values: (NORMAL) normal, (RESTRICTED) restricted.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="PersonNameType">
+		<xs:annotation>
+			<xs:documentation>String with at least 1 character.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AgentPersonNameType">
+		<xs:annotation>
+			<xs:documentation>Person acting as an agent.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="PersonNameType">
+				<xs:attribute name="role" type="rol:t_role" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="AgentPersonNameListType">
+		<xs:sequence>
+			<xs:element name="agent_person" type="AgentPersonNameType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Every person acting as an agent.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SubsidiarityProportionalityApplicationType">
+		<xs:annotation>
+			<xs:documentation>Application of the principles of subsidiarity and proportionality.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="competence_type" type="ConstantType">
+				<xs:annotation>
+					<xs:documentation>Type of competence. Authorised values: EXCLUSIVE (exclusive competence), SHARED (shared competence).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="legal_reference" type="cm:t_legal_procedure" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						List of references in the treaties justifying the type of competence.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManifestationExtensionType">
+		<xs:annotation>
+			<xs:documentation>
+				Extension for a manifestation.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="cm:t_manifestation_extension_base">
+				<xs:sequence>
+					<xs:element name="last_sequence" type="xs:positiveInteger">
+						<xs:annotation>
+							<xs:documentation>Greatest sequence which can be hold by a manifestation reference within that manifestation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ExpressionExtensionType">
+		<xs:annotation>
+			<xs:documentation>
+				Extension for an expression.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="cm:t_expression_extension_base">
+				<xs:sequence>
+					<xs:element name="language_authentic" type="xs:boolean" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the language is authentic or not.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="estimated_transmission_date_time" type="xs:dateTime" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Estimated date and time of the transmission which may include the linguistic version (only if known and if no files are available at the EC).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WorkExtensionType">
+		<xs:annotation>
+			<xs:documentation>
+				Extension for a work.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="cm:t_work_extension_base">
+				<xs:sequence>
+					<xs:element name="category" type="ConstantType">
+						<xs:annotation>
+							<xs:documentation>Category of the work. Authorised values: (ACT) act, (DOCUMENT) document or (ASSOCIATED_DOCUMENT) associated document.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="original_language_code" type="lang:t_language" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Language code of the original expression.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="internal_number" type="WorkNumberType">
+						<xs:annotation>
+							<xs:documentation>Cote associated to the work.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="parent_work_reference" type="cm:t_work_ref" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Reference of a parent work (for example, an annex referencing its associated act).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="sequence" type="xs:int">
+						<xs:annotation>
+							<xs:documentation>Order number of the work in a group of works of the same type (starting from 1).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="security_info" type="SecurityInfoType">
+						<xs:annotation>
+							<xs:documentation>Security information about the content of the work.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="summary_title" type="cm:t_title">
+						<xs:annotation>
+							<xs:documentation>Title of the work, as specified by the author; for restricted works, this title contains no sensitive information.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="EventExtensionType">
+		<xs:annotation>
+			<xs:documentation>
+				Extension for an event.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="cm:t_event_extension_base">
+				<xs:sequence>
+					<xs:element name="agent_person" type="AgentPersonNameType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>
+								List of commissionners who are responsible (role “RESP_PERS”) or coresponsible (role “RESP_JOINT_PERS”) of the dossier.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ProcedureExtensionType">
+		<xs:annotation>
+			<xs:documentation>
+				Extension for a procedure.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="cm:t_procedure_extension_base">
+				<xs:sequence>
+					<xs:element name="subsidiarity_proportionality_application" type="SubsidiarityProportionalityApplicationType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Application of the principles of subsidiarity and proportionality in relation to the National Parliaments.
+								Specified if and only if National Parliaments are addressees.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WorkflowExtensionType">
+		<xs:complexContent>
+			<xs:extension base="cmt:WorkflowExtensionBaseType">
+				<xs:sequence>
+					<xs:element name="workflow_number" type="WorkflowNumberType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Workflow identifier at the European Commission.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="adoption_date_time" type="xs:dateTime" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Date and time of adoption of the dossier, if adopted.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="adoption_place" type="PlaceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Place of adoption of the dossier, if adopted.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="signer_name" type="NameType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Name of the person who signed the adoption on behalf of the European Commission.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="signer_function" type="FunctionType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Function of the person who signed the adoption on behalf of the European Commission.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="greffe_manager" type="PersonType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Person from the European Commission greffe to contact regarding the transmission.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="delegation" type="DelegationType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Information about the delegation and especially the right of objection (only in case of a delegated act).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agent_person_list" type="AgentPersonNameListType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								List of commissionners who are responsible (role “RESP_PERS”) or coresponsible (role “RESP_JOINT_PERS”) of the dossier.
+								If not specified, the information may be defined with the element procedure_interinstitutional/event_legal/extension.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="eea_relevance" type="xs:boolean" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Indicates if the act is of application for the European Economic Area (EEA), if the dossier has an act.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="codified_version" type="xs:boolean" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Identifies whether it is a codified version or not. Relevant to classify legal instruments.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="durability" type="ConstantType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Identifies whether the act is related to day-to-day management (usually agricultural matters, and generally valid for a limited period).
+								Authorised values: D, E.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TransmissionExtensionType">
+		<xs:complexContent>
+			<xs:extension base="cmt:TransmissionExtensionBaseType">
+				<xs:sequence>
+		 			<xs:element name="sender" type="ContactType">
+						<xs:annotation>
+							<xs:documentation>Person who sent the transmission.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

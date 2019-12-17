@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project name="eci-tools" basedir=".">
+	
+	<!-- JAXB targets below: -->
+	
+	<target name="jaxb-clean" description="Removes all generated JAXB mapping classes.">
+		<delete failonerror="false">
+			<fileset dir="src-generated" includes="**/*"/>
+		</delete>
+	</target>
+	
+	<target name="jaxb-generate" description="Generates the JAXB mapping classes.">
+		<exec executable="xjc">
+			<arg line="-d src-generated -p eu.europa.ec.etrustex.tools.translation.jaxb resources/translation/short_content.xsd"/>
+		</exec>
+	</target>
+
+</project>

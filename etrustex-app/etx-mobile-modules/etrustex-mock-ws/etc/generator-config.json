@@ -1,0 +1,9 @@
+{
+  "groupId":"eu.europa.ec.digit.etrustex.mobile",
+  "artifactId":"etrustex-mock-ws",
+  "artifactVersion":"1.0.0-SNAPSHOT",
+  "apiPackage" : "eu.europa.ec.digit.etrustex.mobile.api",
+  "modelPackage": "eu.europa.ec.digit.etrustex.mobile.model",
+  "configPackage":"eu.europa.ec.digit.etrustex.mobile.config",
+  "java8": true
+}

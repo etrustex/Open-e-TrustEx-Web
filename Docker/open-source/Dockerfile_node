@@ -1,0 +1,35 @@
+FROM jboss/wildfly:10.1.0.Final
+
+
+# Users & roles
+COPY --chown=jboss:root files/node/application-users.properties /opt/jboss/wildfly/standalone/configuration/application-users.properties
+COPY --chown=jboss:root files/node/application-roles.properties /opt/jboss/wildfly/standalone/configuration/application-roles.properties
+COPY --chown=jboss:root files/node/mgmt-users.properties /opt/jboss/wildfly/standalone/configuration/mgmt-users.properties
+COPY --chown=jboss:root files/node/mgmt-groups.properties /opt/jboss/wildfly/standalone/configuration/mgmt-groups.properties
+
+USER root
+
+# Configuration
+COPY --chown=jboss:jboss files/node/standalone-etrustex.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
+COPY --chown=jboss:jboss files/node/standalone.conf /opt/jboss/wildfly/standalone/configuration/standalone.conf
+COPY --chown=jboss:jboss files/node/modules /opt/jboss/wildfly/modules
+
+# etx config
+COPY --chown=jboss:jboss files/node/etx_config /opt/jboss/wildfly/etx_config
+RUN mkdir /opt/jboss/wildfly/etrFileStore
+RUN chown -R jboss:jboss /opt/jboss/wildfly/etrFileStore
+
+# Artifact
+COPY --chown=jboss:jboss files/node/etrustex.ear /opt/jboss/wildfly/standalone/deployments/
+
+# Enable SSH
+#RUN keytool -genkey -noprompt \
+#     -alias tomcat \
+#     -dname "CN=eusendweb, OU=DIGIT, O=EC, L=Brussels, S=Belgium, C=BE" \
+#     -keystore /ec/.keystore \
+#     -storepass changeit \
+#     -keypass changeit \
+#     -storetype PKCS12 \
+#     -keyalg RSA
+
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]

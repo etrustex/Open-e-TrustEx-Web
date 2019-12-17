@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Identification>
+		<ShortName>TenderSubmissionType</ShortName>
+		<ListID>TYPE_BID / TY_TYPE_BID / SECTION II.1.8</ListID>
+		<Version>1.0</Version>
+		<CanonicalUri>Placeholder</CanonicalUri>
+		<CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+		<AgencyLongName>OJEU</AgencyLongName>
+		<Locale>en</Locale>
+	</Identification>
+	<ValuesSet>
+		<ValueSet>
+			<Code>1</Code>
+			<Value>Submission for all lots</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>2</Code>
+			<Value>Submission for one lot only</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>3</Code>
+			<Value>Submission for one or more lots</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>9</Code>
+			<Value>Not applicable</Value>
+		</ValueSet>
+	</ValuesSet>
+</CodeList>

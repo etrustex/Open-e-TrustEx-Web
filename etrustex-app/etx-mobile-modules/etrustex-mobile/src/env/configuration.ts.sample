@@ -1,0 +1,38 @@
+/**
+ * Configuration file for the application. The content is automatically generated when executing either
+ *    'ionic server --env=<env>'
+ * or something like
+ *    'ionic build --prod --env=<env>'
+ * Generated on: ENV.__now__
+ */
+import {Injectable} from '@angular/core';
+
+@Injectable()
+export class Configuration {
+    env:string = ENV.env;
+    ctx : string = ENV.ctx;
+    apiBaseUrl: string = ENV.apiBaseUrl;
+    version: string = ENV.version;
+
+    // Enable to report uncaught errors to server side
+    reportErrors: boolean = ENV.reportErrors;
+
+    // Enable to use fake identity if supported by the server side
+    useFakeIdentity: boolean = ENV.useFakeIdentity;
+
+    public usersUrl: string = this.apiBaseUrl + "/user";
+    public partiesUrl: string = this.apiBaseUrl + "/parties";
+    public inboxCountersUrl: string = this.apiBaseUrl + "/parties/{partyId}/inboxcounters";
+    public sentCountersUrl: string = this.apiBaseUrl + "/parties/{partyId}/sentcounters";
+    public partyInboxUrl: string = this.apiBaseUrl + "/parties/{partyId}/inbox";
+    public partySentUrl: string = this.apiBaseUrl + "/parties/{partyId}/sent";
+    public messageAttachmentsUrl: string = this.apiBaseUrl + "/messages/{messageId}/attachments";
+    public messageReadUrl: string = this.apiBaseUrl + "/messages/{messageId}/read";
+    public clientErrorUrl: string = this.apiBaseUrl + "/clienterror";
+
+    public ecasLogoutUrl:string = ENV.ecasUrl + "/cas/logout";
+
+    constructor() {
+    }
+
+}

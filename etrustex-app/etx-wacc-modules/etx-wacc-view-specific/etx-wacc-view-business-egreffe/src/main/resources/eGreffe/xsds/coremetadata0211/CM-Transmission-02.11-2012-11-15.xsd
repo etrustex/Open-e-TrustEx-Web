@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://publications.europa.eu/resource/core-metadata-transmission" xmlns="http://publications.europa.eu/resource/core-metadata-transmission"
+	xmlns:cm="http://publications.europa.eu/resource/core-metadata"
+	xmlns:corp="http://publications.europa.eu/resource/corporatebodies/"
+	xmlns:lang="http://publications.europa.eu/resource/languages/"
+	xmlns:rol="http://publications.europa.eu/resource/roles/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://publications.europa.eu/resource/core-metadata" schemaLocation="CM-02.11-2012-11-15.xsd"/>
+	<xs:import namespace="http://publications.europa.eu/resource/corporatebodies/" schemaLocation="at-corporatebodies.xsd"/>
+	<xs:import namespace="http://publications.europa.eu/resource/languages/" schemaLocation="at-languages.xsd"/>
+	<xs:import namespace="http://publications.europa.eu/resource/roles/" schemaLocation="at-roles.xsd"/>
+	<xs:simpleType name="ServiceType">
+		<xs:annotation>
+			<xs:documentation>String with at most 255 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CommentBaseType">
+		<xs:annotation>
+			<xs:documentation>String with at most 4000 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ContextType">
+		<xs:annotation>
+			<xs:documentation>String with at most 255 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CommentType">
+		<xs:simpleContent>
+			<xs:extension base="CommentBaseType">
+				<xs:attribute name="language_code" type="lang:t_language">
+					<xs:annotation>
+						<xs:documentation>Code of the language in which the comment is.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="LegalBasisListType">
+		<xs:sequence>
+			<xs:element name="legal_basis" type="cm:t_legal_procedure" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Every reference to a legal basis, including 
+						reference to TFEU (Treaty on the functioning of the European Union) articles being put forward by the European Commission to justify its right of initiative,
+						and reference to an act on which the work is based.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AgentType">
+		<xs:simpleContent>
+			<xs:extension base="cm:t_author">
+				<xs:attribute name="role" type="rol:t_role" use="required">
+					<xs:annotation>
+						<xs:documentation>Role of the agent.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="AgentListType">
+		<xs:sequence>
+			<xs:element name="agent" type="AgentType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Every agent in the list.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WorkflowExtensionBaseType"/>
+	<xs:complexType name="WorkflowType">
+		<xs:sequence>
+			<xs:element name="legal_basis_list" type="LegalBasisListType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						List of references to a legal basis.
+						If not specified, the legal basis is defined with the element procedure_interinstitutional/basis_legal_procedure.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="addressee_list" type="AgentListType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						List of agents to which the dossier should be sent.
+						Attribute role only takes values prefixed by “ADDRESSEE”.
+						If not specified, the addressees are defined with the elements procedure_interinstitutional/event_legal/agent_event.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="extension" type="WorkflowExtensionBaseType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="cm:work">
+					<xs:annotation>
+						<xs:documentation>Every work sent with the transmission and not specified in the structure procedure_interinstitutional.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="work_reference" type="cm:t_work_ref">
+					<xs:annotation>
+						<xs:documentation>Every reference to works specified in the structure procedure_interinstitutional.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TransmissionExtensionBaseType"/>
+	<xs:complexType name="TransmissionType">
+		<xs:sequence>
+			<xs:element name="institution" type="corp:t_corporatebody">
+				<xs:annotation>
+					<xs:documentation>Name of the institution sending the transmission (COM).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="service" type="ServiceType">
+				<xs:annotation>
+					<xs:documentation>Name of the service sending the transmission (SG Greffe A.1).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="context" type="ContextType">
+				<xs:annotation>
+					<xs:documentation>Name of the application sending the transmission (e-Greffe).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date_time" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Date and time of the transmission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="comment" type="CommentType">
+				<xs:annotation>
+					<xs:documentation>Remarks regarding the transmission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="extension" type="TransmissionExtensionBaseType" minOccurs="0" maxOccurs="unbounded"/>
+ 			<xs:element name="workflow" type="WorkflowType">
+				<xs:annotation>
+					<xs:documentation>Information about the workflow of the dossier for which the transmission is done.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+ 			<xs:element ref="cm:procedure_interinstitutional" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Information about the interinstitutional procedure.
+						Present if and only if the internal procedure enters an interinstitutional procedure.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Unique identifier of the transmission.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TransmissionRequestExtensionBaseType"/>
+	<xs:complexType name="TransmissionRequestType">
+		<xs:sequence>
+			<xs:element name="transmission" type="TransmissionType">
+				<xs:annotation>
+					<xs:documentation>Sent transmission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="extension" type="TransmissionRequestExtensionBaseType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

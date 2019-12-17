@@ -1,0 +1,9 @@
+sent-counters-menu {
+
+  .counter-header {
+    text-transform: none;
+    font-size: map-get($font-sizes, larger);
+    color: color($colors, text_buttons);
+  }
+
+}

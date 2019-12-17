@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>etx-wacc-view-specific</artifactId>
+        <groupId>eu.europa.ec.etrustex</groupId>
+        <version>trunk</version>
+    </parent>
+
+    <artifactId>etx-wacc-view-business-egreffe</artifactId>
+    <name>etx-wacc-view-business-egreffe</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>eu.europa.ec.etrustex</groupId>
+            <artifactId>etx-wacc-view-business-common</artifactId>
+            <version>${eTrustEx.version}</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
+   <!-- <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>eGreffe</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <packageName>eu.ec.etrustex.metadata.egreffe</packageName>
+                    <outputDirectory>${project.build.directory}/generated-sources/egreffe/jaxb</outputDirectory>
+                    <schemaDirectory>${project.basedir}/src/main/resources/eGreffe/xsds</schemaDirectory>
+                    <staleFile>${project.build.directory}/jaxb2/.eGreffeXjcStaleFlag</staleFile>
+                    <clearOutputDir>true</clearOutputDir>
+                    If you want to add more ids (e.g. EDMA this should be set to false to the other ids)
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>-->
+
+</project>

@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified" attributeFormDefault="unqualified">
+  
+  <!-- MKE: exchanged by stripped XHTML definition schema -->
+  <!-- 
+  <xsd:include schemaLocation="xhtml1-transitional.xsd"/>
+  -->
+  <xsd:include schemaLocation="xhtml1-stripped.xsd"/>
+  
+  <xsd:include schemaLocation="ipg.xsd"/>
+  
+  <xsd:include schemaLocation="meta.xsd"/>
+    
+
+  <!-- ============================== -->
+  <!-- SHARED GROUP DEFINITIONS       -->
+  <!-- ============================== -->
+  <!-- 
+  We have created this seperate group because the event template defines 
+  2 event specific elements placed before all the elements of this group.
+  Thus this groups enables us to reuse the elements to create a specific 
+  event content_qual element.
+  -->
+  <xsd:group name="content_qual_base_group">
+    <xsd:sequence>
+      <!-- 
+      Some examples of 'agenda' instances do not have the content_priority and 
+      content_category_r tags. To enable validation of these instances minOccurs was 
+      set to 0 for these tags. Another solution would be working with groups.
+      -->
+      <xsd:element name="content_priority" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="content_category_r" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="content_category" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="content_life_cycle">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="clc_creation_date" type="date_type"/>
+            <xsd:element name="clc_modification_date" type="date_type"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="content_ipg" type="ipg_meta_type"/>
+    </xsd:sequence>
+  </xsd:group>
+  
+  <!-- ============================== -->
+  <!-- SHARED ELEMENT DEFINITIONS     -->
+  <!-- ============================== -->
+  <xsd:element name="content_qual">
+    <xsd:complexType>
+      <xsd:group ref="content_qual_base_group"/>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="language_descriptor">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="language_reference" type="officialLanguage"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="links" type="link_r_list_type"/>
+  
+  <xsd:element name="medias" type="media_r_list_type"/>
+  
+  <xsd:element name="text" type="text_type"/>
+
+  <xsd:element name="content_r" type="xhtml_r_type"/>
+  
+  <xsd:element name="short_title" type="xsd:string"/>
+  
+  <xsd:element name="long_title" type="xsd:string"/>
+  
+  <xsd:element name="abstract" type="abstract_type"/>
+  
+  <xsd:element name="media">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="media_reference" type="media_reference_type"/>
+	<!-- case 3: new tag added here after -->
+	<xsd:element name="media_alternative_text" type="xsd:string" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <!-- ============================== -->
+  <!-- SHARED TYPE DEFINITIONS        -->
+  <!-- ============================== -->
+  <!--
+  Headings were devided in two different heading types.
+  Two different contents were found for the tag heading in the examples.
+  Each of the contents were used in specific cases.
+  Old xsd's used <choice> to ebale both contents.
+  -->
+  <xsd:complexType name="heading_type">
+    <xsd:sequence>
+      <xsd:element ref="short_title"/>
+      <xsd:element ref="long_title"/>
+      <xsd:element name="abstract">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="xhtml_r">
+              <xsd:complexType>
+                <xsd:complexContent>
+                  <xsd:extension base="xhtml_r_type">
+                    <xsd:sequence>
+                      <!--
+                      In examples of the chapter_content 'media' tags 
+                      where encountered in the hd_heading. The rest of 
+                      the structure remains the same. 
+                      Perhaps creating a seperate type for this is more appropriated 
+                      But this forces us to create a specific heading element for the 
+                      chapter_content template.
+                      -->
+                      <xsd:element name="media" type="media_type" minOccurs="0"/>
+                    </xsd:sequence>
+                  </xsd:extension>
+                </xsd:complexContent>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ref="media"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="hd_heading_type">
+    <xsd:sequence>
+      <xsd:element name="hd_short_title" type="xsd:string"/>
+      <xsd:element name="hd_long_title" type="xsd:string"/>
+      <xsd:element name="hd_abstract">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="xhtml_r">
+              <xsd:complexType>
+                <xsd:complexContent>
+                  <xsd:extension base="xhtml_r_type">
+                    <xsd:sequence>
+                      <!--
+                      In examples of the chapter_content 'media' tags 
+                      where encountered in the hd_heading. The rest of 
+                      the structure remains the same. 
+                      Perhaps creating a seperate type for this is more appropriated 
+                      But this forces us to create a specific heading element for the 
+                      chapter_content template.
+                      -->
+                      <xsd:element name="media" type="media_type" minOccurs="0"/>
+                    </xsd:sequence>
+                  </xsd:extension>
+                </xsd:complexContent>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hd_media">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="media_reference" type="media_reference_type"/>
+	    <!-- case 4: new tag added here after -->
+	    <xsd:element name="media_alternative_text" type="xsd:string" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!--
+  This tag shows up in almost all templates.
+  The names used and the structure is more or less the same.
+  For some templates some elements are not desired for others they are.
+  The original xsd's each declared a own specific version ot the content_ref_type.
+  We grouped all used elements in one structure and added minOccurs="0" to 
+  almost each of them te enable validation of the templates and examples.
+  The problem with this approach is the battle between:
+    1. being to non-restrictive and the possibility of erros
+    2. having a central structure
+  To create template specific content_ref_type elements we probably 
+  have to define a base structure and present other elements as individual 
+  building blocks. 
+  -->
+  <xsd:complexType name="content_ref_type">
+    <xsd:sequence>
+      <xsd:element name="ref_date" type="date_type"/>
+      <xsd:element name="ref_contact_mail" type="xsd:string"/>
+      <xsd:element name="ref_links">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ref_link_r" type="link_r_type"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- added because forum has a ref_text element -->
+      <!-- <xsd:element name="ref_text" type="text_type" minOccurs="0"/> -->
+      <xsd:element name="ref_target_audience"/>
+      <xsd:element name="ref_organisation" minOccurs="0"/>
+      <xsd:element name="ref_geographic_region" minOccurs="0"/>
+      <xsd:element name="ref_full_address" minOccurs="0"/>
+      <xsd:element name="ref_author" type="xsd:string" minOccurs="0"/>
+      <!-- added because speech has a ref_speaker element -->
+      <xsd:element name="ref_speaker" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="media_type">
+    <xsd:sequence>
+      <xsd:element name="media_reference" type="media_reference_type"/>
+      <!-- case 5 and also case 8: new tag added here after -->
+      <xsd:element name="media_alternative_text" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="media_r_type">
+    <xsd:sequence>
+      <xsd:element name="short_title" type="short_title_type"/>
+      <xsd:element name="media" type="media_type"/>
+      <xsd:element name="abstract" type="abstract_type"/>
+      <!-- "alternative_text" here after is optional from now -->
+      <!-- This element does not exist in the new version of the templates anymore -->
+      <xsd:element name="alternative_text" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="transcript" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:simpleType name="media_reference_type">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="short_title_type">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="date_type">
+    <xsd:restriction base="xsd:string">
+      <!--
+      Strange values were found in the examples, i.e. 15/06/2005 10:0
+      We temporarily removed the pattern restriction.
+      Still, a validation on this level should be usefull.
+      <xsd:pattern value="(\d\d/\d\d/\d\d\d\d)?"/>
+      -->
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="mail_type">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="(([\.a-zA-Z0-9_\-])+@([a-zA-Z0-9_\-])+(([a-zA-Z0-9_\-])*\.([a-zA-Z0-9_\-])+)+)?"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!--
+  URL contains html
+  -->
+  <xsd:complexType name="url_type">
+    <xsd:complexContent>
+      <xsd:extension base="xhtml_fragment_type"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="text_type">
+    <xsd:sequence>
+      <xsd:element name="content_r" type="xhtml_r_type" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="abstract_type">
+    <xsd:sequence>
+      <xsd:element name="xhtml_r" type="xhtml_r_type"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="xhtml_r_type">
+    <xsd:sequence>
+      <xsd:element name="xhtml_fragment" type="xhtml_fragment_type"/>
+    </xsd:sequence>
+  </xsd:complexType>
+ 
+  <xsd:complexType name="xhtml_fragment_type">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+    	<xsd:group ref="block"/>     
+    </xsd:choice>
+  </xsd:complexType>
+  
+  
+  <!-- 31/01/2007 UPDATED LIST -->
+  <!--
+  <xsd:simpleType name="officialLanguage">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value=""/>
+      <xsd:enumeration value="bg"/>
+      <xsd:enumeration value="cs"/>
+      <xsd:enumeration value="da"/>
+      <xsd:enumeration value="de"/>
+      <xsd:enumeration value="et"/>
+      <xsd:enumeration value="el"/>
+      <xsd:enumeration value="en"/>
+      <xsd:enumeration value="es"/>
+      <xsd:enumeration value="fr"/>
+      <xsd:enumeration value="ga"/>
+      <xsd:enumeration value="it"/>
+      <xsd:enumeration value="lv"/>
+      <xsd:enumeration value="lt"/>
+      <xsd:enumeration value="hu"/>
+      <xsd:enumeration value="mt"/>
+      <xsd:enumeration value="nl"/>
+      <xsd:enumeration value="pl"/>
+      <xsd:enumeration value="pt"/>
+      <xsd:enumeration value="ro"/>
+      <xsd:enumeration value="sk"/>
+      <xsd:enumeration value="sl"/>
+      <xsd:enumeration value="fi"/>
+      <xsd:enumeration value="sv"/>
+      <xsd:enumeration value="tr"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  -->
+  
+  <!--  
+  <xsd:simpleType name="officialLanguage">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value=""/>
+      <xsd:enumeration value="bg"/>
+      <xsd:enumeration value="cs"/>
+      <xsd:enumeration value="da"/>
+      <xsd:enumeration value="de"/>
+      <xsd:enumeration value="el"/>
+      <xsd:enumeration value="en"/>
+      <xsd:enumeration value="es"/>
+      <xsd:enumeration value="et"/>
+      <xsd:enumeration value="fi"/>
+      <xsd:enumeration value="fr"/>
+      <xsd:enumeration value="ga"/>
+      <xsd:enumeration value="hr"/>
+      <xsd:enumeration value="hu"/>
+      <xsd:enumeration value="is"/>
+      <xsd:enumeration value="it"/>
+      <xsd:enumeration value="lt"/>
+      <xsd:enumeration value="lv"/>
+      <xsd:enumeration value="mk"/>
+      <xsd:enumeration value="mt"/>
+      <xsd:enumeration value="nl"/>
+      <xsd:enumeration value="no"/>
+      <xsd:enumeration value="pl"/>
+      <xsd:enumeration value="pt"/>
+      <xsd:enumeration value="ro"/>
+      <xsd:enumeration value="sk"/>
+      <xsd:enumeration value="sl"/>
+      <xsd:enumeration value="sv"/>
+      <xsd:enumeration value="tr"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  -->
+  
+  <!-- we removed the validation of languages; otherwise the XSD have to be 
+  re-delivered each time the list of languages changes; a valid language has two lower-case characters or is empty -->
+  <xsd:simpleType name="officialLanguage">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="([a-z][a-z]|)"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="link_r_type">
+    <xsd:sequence>
+      <xsd:element name="short_title" type="short_title_type"/>
+      <xsd:element name="url" type="url_type"/>
+      <xsd:element name="abstract" type="abstract_type"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="link_r_list_type">
+    <xsd:sequence>
+      <xsd:element name="link_r" type="link_r_type" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="media_r_list_type">
+    <xsd:sequence>
+      <xsd:element name="media_r" type="media_r_type" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+</xsd:schema>
+
+
+
+

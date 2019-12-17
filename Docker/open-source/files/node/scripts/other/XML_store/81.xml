@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Identification>
+		<ShortName>PartyIdentificationSchemeID</ShortName>
+		<LongName>Party Identification SchemeID</LongName>
+		<Version>0.1</Version>
+		<CanonicalUri>Placeholder</CanonicalUri>
+		<CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+		<AgencyIdentifier>European Commision</AgencyIdentifier>
+		<Locale>en</Locale>
+	</Identification>
+	<ValuesSet>
+		<ValueSet>
+			<Code>AT:VAT</Code>
+			<Value>Austrian VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>BE:VAT</Code>
+			<Value>Belgian VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>BG:VAT</Code>
+			<Value>Bulgarian VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>CH:VAT</Code>
+			<Value>Swiss VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>CY:VAT</Code>
+			<Value>Cypriot VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>CZ:VAT</Code>
+			<Value>Czech VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>DE:VAT</Code>
+			<Value>German VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>DK:VAT</Code>
+			<Value>Danish VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>EE:VAT</Code>
+			<Value>Estonian VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>EL:VAT</Code>
+			<Value>Greek VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>ES:VAT</Code>
+			<Value>Spanish VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>FI:VAT</Code>
+			<Value>Finnish VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>FR:VAT</Code>
+			<Value>French VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>GB:VAT</Code>
+			<Value>British VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>GLN</Code>
+			<Value>Global Location Number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>HU:VAT</Code>
+			<Value>Hungarian VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>IE:VAT</Code>
+			<Value>Irish VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>IT:VAT</Code>
+			<Value>Italian VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>LT:VAT</Code>
+			<Value>Lithuanian VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>LU:VAT</Code>
+			<Value>Luxembourg VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>LV:VAT</Code>
+			<Value>Latvian VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>MT:VAT</Code>
+			<Value>Maltese VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>NL:VAT</Code>
+			<Value>Dutch VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>NO:VAT</Code>
+			<Value>Norwegian VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>PL:VAT</Code>
+			<Value>Polish VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>PT:VAT</Code>
+			<Value>Portuguese VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>RO:VAT</Code>
+			<Value>Romanian VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>SE:VAT</Code>
+			<Value>Swedish VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>SI:VAT</Code>
+			<Value>Slovenian VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>SK:VAT</Code>
+			<Value>Slovak VAT number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>NAL</Code>
+			<Value>Named Authority List number</Value>
+		</ValueSet>
+		<ValueSet>
+			<Code>EMAIL</Code>
+			<Value>Email address</Value>
+		</ValueSet>
+	</ValuesSet>
+</CodeList>

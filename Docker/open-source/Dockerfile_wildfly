@@ -1,0 +1,34 @@
+FROM jboss/wildfly:10.1.0.Final
+
+
+# Users & roles
+COPY --chown=jboss:root files/application-users.properties /opt/jboss/wildfly/standalone/configuration/application-users.properties
+COPY --chown=jboss:root files/application-roles.properties /opt/jboss/wildfly/standalone/configuration/application-roles.properties
+COPY --chown=jboss:root files/mgmt-users.properties /opt/jboss/wildfly/standalone/configuration/mgmt-users.properties
+COPY --chown=jboss:root files/mgmt-groups.properties /opt/jboss/wildfly/standalone/configuration/mgmt-groups.properties
+
+USER root
+
+# MySQL driver
+RUN mkdir -p /opt/jboss/wildfly/modules/system/layers/base/com/mysql/main
+RUN chown -R jboss:root /opt/jboss/wildfly/modules/system/layers/base/com/mysql
+COPY --chown=jboss:root files/module.xml /opt/jboss/wildfly/modules/system/layers/base/com/mysql/main/
+COPY --chown=jboss:root files/mysql-connector-java-5.1.48-bin.jar /opt/jboss/wildfly/modules/system/layers/base/com/mysql/main/
+
+# Datasource & JMS queues
+COPY --chown=jboss:jboss files/standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
+
+# Artifact
+#COPY --chown=jboss:jboss files/etx-wacc-modules-ear-wildfly.ear /opt/jboss/wildfly/standalone/deployments/
+
+# Enable SSH
+#RUN keytool -genkey -noprompt \
+#     -alias tomcat \
+#     -dname "CN=eusendweb, OU=DIGIT, O=EC, L=Brussels, S=Belgium, C=BE" \
+#     -keystore /ec/.keystore \
+#     -storepass changeit \
+#     -keypass changeit \
+#     -storetype PKCS12 \
+#     -keyalg RSA
+
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]

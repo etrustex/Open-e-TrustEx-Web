@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="ec:services:wsdl:RetrieveInterchangeAgreementsRequest-2" xmlns:iar="ec:schema:xsd:RetrieveInterchangeAgreementsRequest-2" xmlns:ias="ec:schema:xsd:RetrieveInterchangeAgreementsResponse-2" xmlns:eccac="ec:schema:xsd:CommonAggregateComponents-2" xmlns:fault="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="RetrieveInterchangeAgreementsRequest" targetNamespace="ec:services:wsdl:RetrieveInterchangeAgreementsRequest-2">
+	<wsdl:types>
+		<xsd:schema targetNamespace="ec:services:wsdl:RetrieveInterchangeAgreementsRequest-2" elementFormDefault="qualified">
+			<xsd:import namespace="ec:schema:xsd:RetrieveInterchangeAgreementsRequest-2" schemaLocation="../xsd/maindoc/EC-RetrieveInterchangeAgreementsRequest-2.1.xsd"/>
+			<xsd:import namespace="ec:schema:xsd:RetrieveInterchangeAgreementsResponse-2" schemaLocation="../xsd/maindoc/EC-RetrieveInterchangeAgreementsResponse-2.0.xsd"/>
+			<xsd:import namespace="ec:schema:xsd:CommonAggregateComponents-2" schemaLocation="../xsd/custom/EC-CommonAggregateComponents-2.0.xsd"/>
+			<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:Fault-1" schemaLocation="../xsd/maindoc/EC-Fault-1.0.xsd"/>
+			<xsd:element name="SubmitRetrieveInterchangeAgreementsRequestRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="RetrieveInterchangeAgreementsRequest" type="iar:RetrieveInterchangeAgreementsRequestType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SubmitRetrieveInterchangeAgreementsRequestResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="RetrieveInterchangeAgreementsResponse" type="ias:RetrieveInterchangeAgreementsResponseType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Header" type="eccac:HeaderType"/>
+			<xsd:element name="Fault" type="fault:FaultType"/>
+		</xsd:schema>
+	</wsdl:types>
+	<message name="RetrieveInterchangeAgreementsRequestRequest">
+		<part name="RetrieveInterchangeAgreementsRequestRequest" element="tns:SubmitRetrieveInterchangeAgreementsRequestRequest"/>
+		<part name="Header" element="tns:Header"/>
+	</message>
+	<message name="RetrieveInterchangeAgreementsRequestResponse">
+		<part name="RetrieveInterchangeAgreementsRequestResponse" element="tns:SubmitRetrieveInterchangeAgreementsRequestResponse"/>
+		<part name="Header" element="tns:Header"/>
+	</message>
+	<message name="FaultResponse">
+		<part name="FaultResponse" element="tns:Fault"/>
+	</message>
+	<portType name="RetrieveInterchangeAgreementsRequestPortType">
+		<operation name="submitRetrieveInterchangeAgreementsRequest">
+			<input message="tns:RetrieveInterchangeAgreementsRequestRequest"/>
+			<output message="tns:RetrieveInterchangeAgreementsRequestResponse"/>
+			<fault name="FaultResponse" message="tns:FaultResponse"/>
+		</operation>
+	</portType>
+	<binding name="RetrieveInterchangeAgreementsRequestBinding" type="tns:RetrieveInterchangeAgreementsRequestPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="submitRetrieveInterchangeAgreementsRequest">
+			<soap:operation style="document"/>
+			<input>
+				<soap:body parts="RetrieveInterchangeAgreementsRequestRequest" use="literal"/>
+				<soap:header message="tns:RetrieveInterchangeAgreementsRequestRequest" part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse" part="FaultResponse" use="literal"/>
+				</soap:header>
+			</input>
+			<output>
+				<soap:body parts="RetrieveInterchangeAgreementsRequestResponse" use="literal"/>
+				<soap:header message="tns:RetrieveInterchangeAgreementsRequestResponse" part="Header" use="literal">
+					<soap:headerfault message="tns:FaultResponse" part="FaultResponse" use="literal"/>
+				</soap:header>
+			</output>
+			<fault name="FaultResponse">
+				<soap:fault name="FaultResponse" use="literal"/>
+			</fault>
+		</operation>
+	</binding>
+	<service name="RetrieveInterchangeAgreementsRequestService">
+		<port name="RetrieveInterchangeAgreementsRequestPort" binding="tns:RetrieveInterchangeAgreementsRequestBinding">
+			<soap:address location="http://localhost:18181/RetrieveInterchangeAgreementsRequestService/RetrieveInterchangeAgreementsRequestPort"/>
+		</port>
+	</service>
+</definitions>

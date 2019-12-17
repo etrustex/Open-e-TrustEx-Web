@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<weblogic-web-app
+        xmlns="http://xmlns.oracle.com/weblogic/weblogic-web-app"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.4/weblogic-web-app.xsd">
+
+    <!-- For information only -->
+    <weblogic-version>12.1.3</weblogic-version>
+
+    <context-root>/mobimeet</context-root>
+    <!--<context-root>/e-trustex</context-root>-->
+
+    <!-- Required for ECAS ! -->
+    <session-descriptor>
+        <timeout-secs>1800</timeout-secs>
+        <cookie-path>/mobimeet</cookie-path>
+        <!--<cookie-path>/e-trustex</cookie-path>-->
+    </session-descriptor>
+
+    <container-descriptor>
+        <prefer-application-packages>
+            <package-name>org.apache.log4j.*</package-name>
+            <package-name>org.slf4j.*</package-name>
+            <package-name>com.google.common.*</package-name>
+            <package-name>org.joda.time.*</package-name>
+        </prefer-application-packages>
+
+        <prefer-application-resources>
+            <!-- Prevent WebLogic from loading a concrete SLF4J binding. We do that ourselves -->
+            <resource-name>org/slf4j/impl/StaticLoggerBinder.class</resource-name>
+        </prefer-application-resources>
+
+        <!-- we want to allow some resources to be accessed by authenticated users who do not possess any role -->
+        <allow-all-roles>true</allow-all-roles>
+    </container-descriptor>
+</weblogic-web-app>
