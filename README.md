@@ -17,6 +17,7 @@ level to set up secure exchange of digital documents by human users via standard
 
 
 ## Run with docker-compose
+**Pre-requisites**: docker & docker-compose installed
 1. Download and extract zip or clone this repository﻿
 2. Download the right Node Release package and place it in Docker/open-source/files/node/. Make sure that the name of the package is 'etrustex.ear'
 3. Download the right Web Release package﻿ and place it in Docker/open-source/files/deployments/
